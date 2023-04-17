@@ -1,6 +1,8 @@
-PY=python
-PANDOC=pandoc
+.PHONY: help install pdf docx html tex, install_pandoc, clean
 
+#################################################################################
+# GLOBALS                                                                       #
+#################################################################################
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/source
 OUTPUTDIR=$(BASEDIR)/output
@@ -9,39 +11,57 @@ STYLEDIR=$(BASEDIR)/style
 SCRATCHDIR=$(BASEDIR)/scratch
 
 BIBFILE=$(INPUTDIR)/references.bib
+#################################################################################
+# COMMANDS                                                                      #
+#################################################################################
 
-help:
-	@echo ''
-	@echo 'Makefile for the Markdown thesis'
-	@echo ''
-	@echo 'Usage:'
-	@echo '   make install                     install pandoc plugins'
-	@echo '   make html                        generate a web version'
-	@echo '   make pdf                         generate a PDF file'
-	@echo '   make docx                        generate a Docx file'
-	@echo '   make tex                         generate a Latex file'
-	@echo ''
-	@echo ''
-	@echo 'get local templates with: pandoc -D latex/html/etc'
-	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates'
+## Install LaTeX libraries on Linux systems
+install_latex:
+	@echo ">>> Installing LaTeX libraries"
+	sudo apt install texlive-base texlive-latex-recommended texlive-latex-extra texlive-bibtex-extra texlive-extra-utils texlive-font-utils
+	@echo ">>> Installing XeTeX (other fonts)"
+	sudo apt install texlive-xetex
+	@echo ">>> Installing latexmk (maker)"
+	sudo apt install latexmk
+	@echo ">>> Installing chktex (linter)"
+	sudo apt install chktex
+	@echo ">>> Installing latexdiff"
+	sudo apt install latexdiff
+	@echo ">>> Get TeX and LaTeX docs"
+	sudo apt install texlive-latex-recommended-doc texlive-latex-extra-doc
 
-ifeq ($(OS),Windows_NT) 
-	detected_OS=Windows
-else
-	detected_OS=$(shell sh -c 'uname 2>/dev/null || echo Unknown')
-endif
+## Install Pandoc reqs
+install_pandoc:
+	@echo ">>> Installing stack"
+	curl -sSL "https://get.haskellstack.org/" | sh
+	@echo ">>> Installing pandoc-crossref"
+	git clone "https://github.com/lierdakil/pandoc-crossref.git"
+	cd pandoc-crossref && git checkout master && stack install
+	sudo rm -r pandoc-crossref
+	@echo ">>> Installing pandoc-sidenote"
+	git clone "https://github.com/jez/pandoc-sidenote" && cd pandoc-sidenote && stack build && stack install
+	sudo rm -r pandoc-sidenote
 
-UNAME := $(shell uname)
-ifeq ($(UNAME), Linux)
-install:
-	bash $(BASEDIR)/install_linux.sh
-else ifeq ($(shell uname), Darwin)
-install:
-	bash $(BASEDIR)/install_mac.sh
-endif
+## Clean auxiliary LaTeX files
+clean:
+	find . -type f -name '*.aux' -delete
+	find . -type f -name '*.abs' -delete
+	find . -type f -name '*.bbl' -delete
+	find . -type f -name '*.blg' -delete
+	find . -type f -name '*.fdb_latexmk' -delete
+	find . -type f -name '*.fls' -delete
+	find . -type f -name '*.log' -delete
+	find . -type f -name '*.out' -delete
+	find . -type f -name '*.spl' -delete
+	find . -type f -name '*.synctex.gz' -delete
+	find . -type f -name '*.toc' -delete
+	find . -type f -name '*.xdv' -delete
 
+## Create PDF
 pdf:
 	pandoc  \
+		--standalone \
+		--number-sections \
 		--output "$(OUTPUTDIR)/thesis.pdf" \
 		--template="$(STYLEDIR)/template.tex" \
 		--include-in-header="$(STYLEDIR)/preamble.tex" \
@@ -51,17 +71,18 @@ pdf:
 		--pdf-engine=xelatex \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
-		--number-sections \
 		--verbose \
+		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.pdf.log
 
 tex:
 	pandoc  \
+		--standalone \
+		--number-sections \
 		--output "$(OUTPUTDIR)/thesis.tex" \
 		--template="$(STYLEDIR)/template.tex" \
 		--include-in-header="$(STYLEDIR)/preamble.tex" \
@@ -71,30 +92,32 @@ tex:
 		--pdf-engine=xelatex \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
-		--number-sections \
 		--verbose \
+		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.tex.log
 
 html:
 	pandoc  \
+		--standalone \
+		--number-sections \
 		--output "$(OUTPUTDIR)/thesis.html" \
 		--template="$(STYLEDIR)/template.html" \
 		--include-in-header="$(STYLEDIR)/style.css" \
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--filter=pandoc-crossref \
+		--to=html5+smart \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
+		--katex \
 		--csl="$(STYLEDIR)/ref_format.csl" \
-		--number-sections \
 		--verbose \
+		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.html.log
 	rm -rf "$(OUTPUTDIR)/source"
 	mkdir "$(OUTPUTDIR)/source"
@@ -102,19 +125,78 @@ html:
 
 docx:
 	pandoc  \
+		--standalone \
+		--number-sections \
 		--output "$(OUTPUTDIR)/thesis.docx" \
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
-		--number-sections \
 		--verbose \
+		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.docx.log
 
 all: pdf tex html docx
 
-.PHONY: help install pdf docx html tex
+#################################################################################
+# Self Documenting Commands                                                     #
+#################################################################################
+
+.DEFAULT_GOAL := help
+
+# Inspired by <http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html>
+# sed script explained:
+# /^##/:
+# 	* save line in hold space
+# 	* purge line
+# 	* Loop:
+# 		* append newline + line to hold space
+# 		* go to next line
+# 		* if line starts with doc comment, strip comment character off and loop
+# 	* remove target prerequisites
+# 	* append hold space (+ newline) to line
+# 	* replace newline plus comments by `---`
+# 	* print line
+# Separate expressions are necessary because labels cannot be delimited by
+# semicolon; see <http://stackoverflow.com/a/11799865/1968>
+help:
+	@echo "$$(tput bold)Available rules:$$(tput sgr0)"
+	@echo
+	@sed -n -e "/^## / { \
+		h; \
+		s/.*//; \
+		:doc" \
+		-e "H; \
+		n; \
+		s/^## //; \
+		t doc" \
+		-e "s/:.*//; \
+		G; \
+		s/\\n## /---/; \
+		s/\\n/ /g; \
+		p; \
+	}" ${MAKEFILE_LIST} \
+	| LC_ALL='C' sort --ignore-case \
+	| awk -F '---' \
+		-v ncol=$$(tput cols) \
+		-v indent=19 \
+		-v col_on="$$(tput setaf 6)" \
+		-v col_off="$$(tput sgr0)" \
+	'{ \
+		printf "%s%*s%s ", col_on, -indent, $$1, col_off; \
+		n = split($$2, words, " "); \
+		line_length = ncol - indent; \
+		for (i = 1; i <= n; i++) { \
+			line_length -= length(words[i]) + 1; \
+			if (line_length <= 0) { \
+				line_length = ncol - indent - length(words[i]) - 1; \
+				printf "\n%*s ", -indent, " "; \
+			} \
+			printf "%s ", words[i]; \
+		} \
+		printf "\n"; \
+	}' \
+	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
