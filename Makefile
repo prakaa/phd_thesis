@@ -1,4 +1,4 @@
-.PHONY: help install pdf docx html tex, install_pandoc, clean
+.PHONY: help install pdf docx html tex, install_pandoc_filters, install_stack, clean
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -30,10 +30,13 @@ install_latex:
 	@echo ">>> Get TeX and LaTeX docs"
 	sudo apt install texlive-latex-recommended-doc texlive-latex-extra-doc
 
-## Install Pandoc reqs
-install_pandoc:
+## Install stack (for compiling pandoc filters)
+install_stack:
 	@echo ">>> Installing stack"
 	curl -sSL "https://get.haskellstack.org/" | sh
+
+## Install Pandoc filters
+install_pandoc_filters:
 	@echo ">>> Installing pandoc-crossref"
 	git clone "https://github.com/lierdakil/pandoc-crossref.git"
 	cd pandoc-crossref && git checkout master && stack install
@@ -74,7 +77,7 @@ pdf:
 		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
-		--csl="$(STYLEDIR)/ref_format.csl" \
+		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.pdf.log
@@ -95,7 +98,7 @@ tex:
 		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
-		--csl="$(STYLEDIR)/ref_format.csl" \
+		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.tex.log
@@ -115,7 +118,7 @@ html:
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--katex \
-		--csl="$(STYLEDIR)/ref_format.csl" \
+		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.html.log
@@ -134,7 +137,7 @@ docx:
 		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
-		--csl="$(STYLEDIR)/ref_format.csl" \
+		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.docx.log
