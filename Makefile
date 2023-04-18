@@ -113,8 +113,8 @@ html:
 		--number-sections \
 		--output "$(OUTPUTDIR)/index.html" \
 		--template="$(STYLEDIR)/template.html5" \
-		--css="$(STYLEDIR)/theme.css" \
-		--css="$(STYLEDIR)/skylighting-paper-theme.css" \
+		--css="css/theme.css" \
+		--css="css/skylighting-paper-theme.css" \
 		--wrap=none \
 		--toc \
 		"$(INPUTDIR)"/*.md \
