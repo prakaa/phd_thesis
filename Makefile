@@ -111,7 +111,7 @@ html:
 		-f markdown+raw_tex+tex_math_dollars \
 		--katex \
 		--number-sections \
-		--output "$(OUTPUTDIR)/thesis.html" \
+		--output "$(OUTPUTDIR)/index.html" \
 		--template="$(STYLEDIR)/template.html5" \
 		--css="$(STYLEDIR)/theme.css" \
 		--css="$(STYLEDIR)/skylighting-paper-theme.css" \
