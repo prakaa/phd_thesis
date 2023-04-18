@@ -106,10 +106,14 @@ tex:
 html:
 	pandoc  \
 		--standalone \
+		-f markdown+raw_tex+tex_math_dollars \
+		--katex \
 		--number-sections \
 		--output "$(OUTPUTDIR)/thesis.html" \
-		--template="$(STYLEDIR)/template.html" \
-		--include-in-header="$(STYLEDIR)/style.css" \
+		--template="$(STYLEDIR)/template.html5" \
+		--css="$(STYLEDIR)/theme.css" \
+		--css="$(STYLEDIR)/skylighting-paper-theme.css" \
+		--wrap=none \
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
@@ -117,10 +121,8 @@ html:
 		--to=html5+smart \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
-		--katex \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.html.log
 	rm -rf "$(OUTPUTDIR)/source"
 	mkdir "$(OUTPUTDIR)/source"

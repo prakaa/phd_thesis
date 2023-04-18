@@ -39,6 +39,8 @@ For bold and italic, add _** on either side of the text
 
 This is a brief outline of what went into each chapter, and a section which shows how to reference headers (which are labelled automatically for you). This chapter, @sec:intro, shows how to use citations and how to reference section headers. @sec:lit_review shows how use and reference equations. @sec:first shows how to use and reference code. @sec:second shows how to use, reference, and resize pdf and jpg figures. @sec:third shows how to use and reference tables. @sec:fourth is truly revolutionary (but shows nothing functional). **[Appendix 1](#appendix-1-some-extra-stuff)** shows how to add chapters which are not numbered, and has to be referenced manually, as does **[Appendix 2](#appendix-2-some-more-extra-stuff)**. See the base [`README.md`](https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md) for how References are handled - leave `*_references.md` alone, and provide it to `pandoc` last.
 
-Proin faucibus nibh sit amet augue blandit varius.
+Proin faucibus nibh sit amet augue blandit varius[^1].
+
+[^1]: Try a footnote
 
 
