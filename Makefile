@@ -82,6 +82,7 @@ pdf:
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.pdf.log
 
+## Create TeX
 tex:
 	pandoc  \
 		--standalone \
@@ -103,6 +104,7 @@ tex:
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.tex.log
 
+## Create HTML
 html:
 	pandoc  \
 		--standalone \
@@ -128,6 +130,7 @@ html:
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
+## Create DOCX
 docx:
 	pandoc  \
 		--standalone \
@@ -144,6 +147,7 @@ docx:
 		-f markdown+raw_tex+tex_math_dollars \
 		2>pandoc.docx.log
 
+## Create all
 all: pdf tex html docx
 
 #################################################################################

@@ -3,13 +3,8 @@
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
 \usepackage{float}
-\let\origfigure=\figure
-\let\endorigfigure=\endfigure
-\renewenvironment{figure}[1][]{%
-\origfigure[b]
-}{%
-\endorigfigure
-}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
 % fix for pandoc 1.14
 \providecommand{\tightlist}{%
@@ -21,6 +16,8 @@
 \usepackage{tocloft}
 % TP: end hack
 
+\usepackage{setspace}
+\setstretch{1.5}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 
@@ -42,6 +39,8 @@
   \fi
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
   \newcommand{\euro}{€}
+    \setmainfont{TeX Gyre Pagella}
+    \setsansfont{Source Sans Pro}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -107,7 +106,7 @@
 \fi
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={Firstname Surname},
+            pdfauthor={Abhijith Prakash},
             pdftitle={This is the title of the thesis},
             colorlinks=true,
             citecolor=blue,
@@ -146,8 +145,6 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-
 
 % Table of contents formatting
 \renewcommand{\contentsname}{Table of Contents}
@@ -193,35 +190,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{color}
-
-% JAVA CODE BLOCKS
-%\definecolor{backcolour}{RGB}{242,242,242}
-%\definecolor{javared}{rgb}{0.6,0,0}
-%\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
-%\definecolor{javapurple}{rgb}{0.5,0,0.35}
-%\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
-
-\lstdefinestyle{javaCodeStyle}{
-  language=Java,                         % the language of the code
-  backgroundcolor=\color{backcolour},    % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-  basicstyle=\fontsize{10}{8}\sffamily,
-  breakatwhitespace=false,
-  breaklines=true,
-  keywordstyle=\color{javapurple}\bfseries,
-  stringstyle=\color{javared},
-  commentstyle=\color{javagreen},
-  morecomment=[s][\color{javadocblue}]{/**}{*/},
-  captionpos=t,                          % sets the caption-position to bottom
-  frame=single,                          % adds a frame around the code
-  numbers=left,
-  numbersep=10pt,                         % margin between number and code block
-  keepspaces=true,                       % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  columns=fullflexible,
-  showspaces=false,                      % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,                % underline spaces within strings only
-  showtabs=false,                        % show tabs within strings adding particular underscores
-  tabsize=2                              % sets default tabsize to 2 spaces
-}
 
 %Attempt to set math size
 %First size must match the text size in the document or command will not work
@@ -292,9 +260,6 @@
 \usepackage{bbold}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 
-% For use of \cref and \Cref used by pandoc secnos
-\usepackage{cleveref}
-
 \begin{document}
 
 
@@ -319,19 +284,25 @@
         \vspace{1.5cm}
 
         \Large
-        Firstname Surname
+        Abhijith Prakash
 
         \vspace{1.5cm}
 
         \normalsize
-        A thesis presented for the degree of\\
+        A thesis in fulfilment of the requirements for the degree of\\
         Doctor of Philosophy
 
         \vfill
 
         \normalsize
+        School of Electrical Engineering and Telecommunications\\
+        Faculty of Engineering\\
+
+        \vfill
+        
+        \normalsize
         Supervised by:\\
-        Professor Louis Fage \\ Captain J. Y. Cousteau
+        Professor Iain MacGill \\ Associate Professor Anna Bruce
 
         \vspace{0.8cm}
 
@@ -340,8 +311,8 @@
         % \includegraphics[width=0.4\textwidth]{style/univ_logo.eps}
 
         \normalsize
-        University College London, UK\\
-        January 2015
+        UNSW Sydney, Australia\\
+        April 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -423,9 +394,8 @@ varius, sed finibus turpis placerat.
 \doublespacing
 \setlength{\parindent}{0.5in}
 
-\hypertarget{introduction-with-a-citation}{%
-\chapter{Introduction, with a
-citation}\label{introduction-with-a-citation}}
+\hypertarget{sec:intro}{%
+\chapter{Introduction, with a citation}\label{sec:intro}}
 
 \hypertarget{background}{%
 \section{Background}\label{background}}
@@ -439,7 +409,8 @@ interdum lectus.
 To include a citation to the text, just add the citation key shown in
 the references.bib file. The style of the citation is determined by the
 ref\_format.csl file. For example, in The Living Sea you can find
-pictures of the Calypso (Cousteau Jacques \& Dugan James 1963).
+pictures of the Calypso (\protect\hyperlink{ref-Cousteau1963}{Cousteau
+Jacques and Dugan James, 1963}).
 
 In neque mauris, maximus at sapien a, iaculis dignissim justo. Aliquam
 erat volutpat. Praesent varius risus auctor est ultricies, sit amet
@@ -482,15 +453,14 @@ tempus non risus. Suspendisse ut felis mi.
 
 This is a brief outline of what went into each chapter, and a section
 which shows how to reference headers (which are labelled automatically
-for you). This chapter, +sec.~\ref{sec:introduction-with-a-citation},
-shows how to use citations and how to reference section headers.
-*sec.~\ref{sec:literature-review-with-maths} shows how use and reference
-equations. *sec.~\ref{sec:first-research-study-with-code} shows how to
-use and reference code. *sec.~\ref{sec:research-containing-a-figure}
-shows how to use, reference, and resize pdf and jpg figures.
-*sec.~\ref{sec:research-containing-a-table} shows how to use and
-reference tables. *sec.~\ref{sec:final-research-study} is truly
-revolutionary (but shows nothing functional).
+for you). This chapter, Chapter~\ref{sec:intro}, shows how to use
+citations and how to reference section headers.
+Chapter~\ref{sec:lit_review} shows how use and reference equations.
+Chapter~\ref{sec:first} shows how to use and reference code.
+Chapter~\ref{sec:second} shows how to use, reference, and resize pdf and
+jpg figures. Chapter~\ref{sec:third} shows how to use and reference
+tables. Chapter~\ref{sec:fourth} is truly revolutionary (but shows
+nothing functional).
 \textbf{\protect\hyperlink{appendix-1-some-extra-stuff}{Appendix 1}}
 shows how to add chapters which are not numbered, and has to be
 referenced manually, as does
@@ -500,11 +470,11 @@ referenced manually, as does
 for how References are handled - leave \texttt{*\_references.md} alone,
 and provide it to \texttt{pandoc} last.
 
-Proin faucibus nibh sit amet augue blandit varius.
+Proin faucibus nibh sit amet augue blandit varius\footnote{Try a
+  footnote}.
 
-\hypertarget{literature-review-with-maths}{%
-\chapter{Literature review, with
-maths}\label{literature-review-with-maths}}
+\hypertarget{sec:lit_review}{%
+\chapter{Literature review, with maths}\label{sec:lit_review}}
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -523,31 +493,30 @@ quis, vestibulum nec nulla. Aenean nec dapibus in
 mL/min\textsuperscript{-1}. Mathematical formula can be inserted using
 Latex and can be automatically numbered:
 
-\(f(x) = ax^3 + bx^2 + cx + d\) \{\#eq:my\_equation\}
+\begin{equation}\protect\hypertarget{eq:my_equation}{}{f(x) = ax^3 + bx^2 + cx + d}\label{eq:my_equation}\end{equation}
 
 Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut
 sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus.
 Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.
 
-Later on in the text, you can reference Equation
-\{!eq.~\ref{eq:my_equation}\} and its mind-blowing ramifications.
-Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper
-fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus
-laoreet ut nibh.
+Later on in the text, you can reference Equation~\ref{eq:my_equation}
+and its mind-blowing ramifications. Pellentesque habitant morbi
+tristique senectus et netus et malesuada fames ac turpis egestas. Sed
+faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc
+vitae felis eget purus placerat finibus laoreet ut nibh.
 
 \hypertarget{a-complicated-math-equation}{%
 \section{A complicated math
 equation}\label{a-complicated-math-equation}}
 
-The following raw text in markdown behind Equation
-\{!eq.~\ref{eq:my_complicated_equation}\} shows that you can fall back
+The following raw text in markdown behind
+Equation~\ref{eq:my_complicated_equation} shows that you can fall back
 on \LaTeX if it is more convenient for you. Note that this will only be
 rendered in \texttt{thesis.pdf}
 
 \begin{equation}\protect\hypertarget{eq:my_complicated_equation}{}{
 \begin{aligned}
-    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\ 
+    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\
     &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
 \end{aligned}
 }\label{eq:my_complicated_equation}\end{equation}
@@ -560,19 +529,8 @@ tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida
 iaculis. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas.
 
-\begin{itemize}
-\tightlist
-\item
-  first item in the list
-\item
-  second item in the list
-\item
-  third item in the list
-\end{itemize}
-
-\hypertarget{first-research-study-with-code}{%
-\chapter{First research study, with
-code}\label{first-research-study-with-code}}
+\hypertarget{sec:first}{%
+\chapter{First research study, with code}\label{sec:first}}
 
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
@@ -590,9 +548,9 @@ Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum
 eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum
 est at, maximus sapien. Sed ut diam tortor.
 
-\hypertarget{subsection-1-with-example-code-block}{%
+\hypertarget{sec:subsec-code-example}{%
 \subsection{Subsection 1 with example code
-block}\label{subsection-1-with-example-code-block}}
+block}\label{sec:subsec-code-example}}
 
 This is the first part of the methodology. Cras porta dui a dolor
 tincidunt placerat. Cras scelerisque sem et malesuada vestibulum.
@@ -615,13 +573,12 @@ before and after a code block:
 \hypertarget{subsection-2}{%
 \subsection{Subsection 2}\label{subsection-2}}
 
-By running the code in
-+sec.~\ref{sec:subsection-1-with-example-code-block}, we solved AI
-completely. This is the second part of the methodology. Proin tincidunt
-odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec
-mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis
-nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus
-ligula.
+By running the code in Chapter~\ref{sec:subsec-code-example}, we solved
+AI completely. This is the second part of the methodology. Proin
+tincidunt odio non sem mollis tristique. Fusce pharetra accumsan
+volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent
+malesuada sagittis nulla, eget commodo mauris ultricies eget.
+Suspendisse iaculis finibus ligula.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -647,9 +604,8 @@ venenatis tellus venenatis at. Etiam ornare, est sed lacinia elementum,
 lectus diam tempor leo, sit amet elementum ex elit id ex. Ut ac viverra
 turpis. Quisque in nisl auctor, ornare dui ac, consequat tellus.
 
-\hypertarget{research-containing-a-figure}{%
-\chapter{Research containing a
-figure}\label{research-containing-a-figure}}
+\hypertarget{sec:second}{%
+\chapter{Research containing a figure}\label{sec:second}}
 
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
@@ -695,7 +651,7 @@ ligula et ipsum mollis fringilla.
 \hypertarget{discussion-1}{%
 \section{Discussion}\label{discussion-1}}
 
-Fig. fig.~\ref{fig:my_fig} shows how to add a figure. Donec ut lacinia
+Figure~\ref{fig:my_fig} shows how to add a figure. Donec ut lacinia
 nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio
 nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor
 laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque
@@ -732,9 +688,8 @@ faucibus.
 }
 \end{figure}
 
-\hypertarget{research-containing-a-table}{%
-\chapter{Research containing a
-table}\label{research-containing-a-table}}
+\hypertarget{sec:third}{%
+\chapter{Research containing a table}\label{sec:third}}
 
 \hypertarget{introduction-3}{%
 \section{Introduction}\label{introduction-3}}
@@ -775,8 +730,8 @@ ipsum dolor sit amet, consectetur adipiscing elit.
 \hypertarget{results-2}{%
 \section{Results}\label{results-2}}
 
-Table tbl.~\ref{tbl:random} shows us how to add a table. Integer
-tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis
+Table~\ref{tbl:random} shows us how to add a table. Integer tincidunt
+sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis
 fringilla, sapien eros aliquet orci, vitae pretium massa neque eu
 turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex
 sodales laoreet.
@@ -845,7 +800,7 @@ Antarctica & 83\% & 2964 & 3175 & 4,402 & 4,941 & 1.13 \\
 \hypertarget{discussion-2}{%
 \section{Discussion}\label{discussion-2}}
 
-This is the discussion. As we saw in Table tbl.~\ref{tbl:random}, many
+This is the discussion. As we saw in Table Table~\ref{tbl:random}, many
 things are true, and other things are not. Etiam sit amet mi eros. Donec
 vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl
 sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla
@@ -862,8 +817,8 @@ mauris laoreet iaculis. Morbi volutpat orci felis, id condimentum nulla
 suscipit eu. Fusce in turpis quis ligula tempus scelerisque eget quis
 odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.
 
-\hypertarget{final-research-study}{%
-\chapter{Final research study}\label{final-research-study}}
+\hypertarget{sec:fourth}{%
+\chapter{Final research study}\label{sec:fourth}}
 
 \hypertarget{introduction-4}{%
 \section{Introduction}\label{introduction-4}}
@@ -921,8 +876,8 @@ Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id
 vestibulum sapien. Cum sociis natoque penatibus et magnis dis parturient
 montes, nascetur ridiculus mus.
 
-\hypertarget{conclusion-5}{%
-\chapter{Conclusion}\label{conclusion-5}}
+\hypertarget{sec:conclusion}{%
+\chapter{Conclusion}\label{sec:conclusion}}
 
 \hypertarget{thesis-summary}{%
 \section{Thesis summary}\label{thesis-summary}}
@@ -981,8 +936,8 @@ Aenean dictum nunc id felis rhoncus aliquam.
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-Cousteau1963}{}}%
-Cousteau Jacques \& Dugan James, 1963. \emph{{The Living Sea: by
-Jacques-Yves Cousteau}}, London: Hamish Hamilton.
+Cousteau Jacques, Dugan James, 1963. {The Living Sea: by Jacques-Yves
+Cousteau}. Hamish Hamilton, London.
 
 \end{CSLReferences}
 
