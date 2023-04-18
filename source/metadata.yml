@@ -26,4 +26,6 @@ tblPrefix:
 mainfont: TeX Gyre Pagella
 sansfont: Source Sans Pro
 linestretch: 1.5
+link-citations: true
+link-bibliography: true
 ---
