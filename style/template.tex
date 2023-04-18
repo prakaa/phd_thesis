@@ -7,13 +7,8 @@ $endif$
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
 \usepackage{float}
-\let\origfigure=\figure
-\let\endorigfigure=\endfigure
-\renewenvironment{figure}[1][]{%
-\origfigure[b]
-}{%
-\endorigfigure
-}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
 % fix for pandoc 1.14
 \providecommand{\tightlist}{%
@@ -225,11 +220,17 @@ $endfor$
         \vspace{1.5cm}
 
         \normalsize
-        A thesis presented for the degree of\\
+        A thesis in fulfilment of the requirements for the degree of\\
         $degree$
 
         \vfill
 
+        \normalsize
+        $school$\\
+        $faculty$\\
+
+        \vfill
+        
         \normalsize
         Supervised by:\\
         $for(supervisor)$$supervisor$$sep$ \\ $endfor$

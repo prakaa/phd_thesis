@@ -1,5 +1,3 @@
-
-
 % Table of contents formatting
 \renewcommand{\contentsname}{Table of Contents}
 \setcounter{tocdepth}{3}
@@ -44,35 +42,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{color}
-
-% JAVA CODE BLOCKS
-%\definecolor{backcolour}{RGB}{242,242,242}
-%\definecolor{javared}{rgb}{0.6,0,0}
-%\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
-%\definecolor{javapurple}{rgb}{0.5,0,0.35}
-%\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
-
-\lstdefinestyle{javaCodeStyle}{
-  language=Java,                         % the language of the code
-  backgroundcolor=\color{backcolour},    % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-  basicstyle=\fontsize{10}{8}\sffamily,
-  breakatwhitespace=false,
-  breaklines=true,
-  keywordstyle=\color{javapurple}\bfseries,
-  stringstyle=\color{javared},
-  commentstyle=\color{javagreen},
-  morecomment=[s][\color{javadocblue}]{/**}{*/},
-  captionpos=t,                          % sets the caption-position to bottom
-  frame=single,                          % adds a frame around the code
-  numbers=left,
-  numbersep=10pt,                         % margin between number and code block
-  keepspaces=true,                       % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  columns=fullflexible,
-  showspaces=false,                      % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,                % underline spaces within strings only
-  showtabs=false,                        % show tabs within strings adding particular underscores
-  tabsize=2                              % sets default tabsize to 2 spaces
-}
 
 %Attempt to set math size
 %First size must match the text size in the document or command will not work
@@ -142,6 +111,3 @@
 % Custom math
 \usepackage{bbold}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
-
-% For use of \cref and \Cref used by pandoc secnos
-\usepackage{cleveref}

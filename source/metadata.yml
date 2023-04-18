@@ -2,11 +2,28 @@
 pagetitle: This is the HTML document title
 title: This is the title of the thesis
 subtitle: This is the subtitle of the thesis
-author: Firstname Surname
-date: January 2015
-location: University College London, UK
+author: Abhijith Prakash
+date: April 2023
+location: UNSW Sydney, Australia
 supervisor:
-- Professor Louis Fage
-- Captain J. Y. Cousteau
+- Professor Iain MacGill
+- Associate Professor Anna Bruce
 degree: Doctor of Philosophy
+school: School of Electrical Engineering and Telecommunications
+faculty: Faculty of Engineering
+eqnPrefix:
+  - "Equation"
+  - "Equations"
+figPrefix:
+  - "Figure"
+  - "Figures"
+secPrefix:
+  - "Chapter"
+  - "Chapters"
+tblPrefix:
+  - "Table"
+  - "Tables"
+mainfont: TeX Gyre Pagella
+sansfont: Source Sans Pro
+linestretch: 1.5
 ---

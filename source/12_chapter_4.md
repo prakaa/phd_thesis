@@ -1,4 +1,4 @@
-# Research containing a figure
+# Research containing a figure {#sec:second}
 
 ## Introduction
 
@@ -26,12 +26,7 @@ These are the results. In vitae odio at libero elementum fermentum vel iaculis e
 
 ## Discussion
 
-<!--
-Figures can be either referenced using @fig:mylabel, and can be auto-completed
-to **Fig. number: mylabel** by prefixing with @ for mid-sentence references and * for the start of sentences. See https://github.com/tomduck/pandoc-fignos
--->
-
-Fig. @fig:my_fig shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+@fig:my_fig shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
 <!-- 
 Figures can be added with the following syntax:
