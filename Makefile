@@ -1,4 +1,4 @@
-.PHONY: help install pdf docx html tex, install_pandoc_filters, install_stack, clean
+.PHONY: help copy_bib install_pandoc_filters install_stack clean
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -14,6 +14,11 @@ BIBFILE=$(INPUTDIR)/references.bib
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
+
+## Copy bib file from master bib file synced with Zotero
+copy_bib:
+	@echo ">>> Copying bib file"
+	cp ~/version_control/ResearchNotes/zoterolibrary.bib ~/version_control/phd_thesis/source/references.bib
 
 ## Install LaTeX libraries on Linux systems
 install_latex:
@@ -61,7 +66,7 @@ clean:
 	find . -type f -name '*.xdv' -delete
 
 ## Create PDF
-pdf:
+pdf: copy_bib
 	pandoc  \
 		--standalone \
 		--number-sections \
@@ -83,7 +88,7 @@ pdf:
 		2>pandoc.pdf.log
 
 ## Create TeX
-tex:
+tex: copy_bib
 	pandoc  \
 		--standalone \
 		--number-sections \
@@ -105,7 +110,7 @@ tex:
 		2>pandoc.tex.log
 
 ## Create HTML
-html:
+html: copy_bib
 	pandoc  \
 		--standalone \
 		-f markdown+raw_tex+tex_math_dollars \
@@ -131,7 +136,7 @@ html:
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
 ## Create DOCX
-docx:
+docx: copy_bib
 	pandoc  \
 		--standalone \
 		--number-sections \
