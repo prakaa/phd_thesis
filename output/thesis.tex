@@ -49,44 +49,6 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx}
 \makeatletter
@@ -378,13 +340,55 @@ varius, sed finibus turpis placerat.
 
 \newpage
 
-\hypertarget{abbreviations}{%
-\chapter*{Abbreviations}\label{abbreviations}}
-\addcontentsline{toc}{chapter}{Abbreviations}
+\hypertarget{abbreviations-and-nomenclature}{%
+\chapter*{Abbreviations and
+Nomenclature}\label{abbreviations-and-nomenclature}}
+\addcontentsline{toc}{chapter}{Abbreviations and Nomenclature}
 
 \begin{tabbing}
-\textbf{API}~~~~~~~~~~~~ \= \textbf{A}pplication \textbf{P}rogramming \textbf{I}nterface \\  
-\textbf{JSON} \> \textbf{J}ava\textbf{S}cript \textbf{O}bject \textbf{N}otation \\  
+\textbf{AC}~~~~~~~~~~~~~~~~ \= \textbf{A}lternating \textbf{C}urrent \\
+\textbf{AEMC} \> \textbf{A}ustralian \textbf{E}nergy \textbf{M}arket \textbf{C}ommission \\ 
+\textbf{AEMO} \> \textbf{A}ustralian \textbf{E}nergy \textbf{M}arket \textbf{O}perator \\
+\textbf{AER} \> \textbf{A}ustralian \textbf{E}nergy \textbf{R}egulator \\
+\textbf{AGC} \> \textbf{A}utomatic \textbf{g}eneration \textbf{c}ontrol \\
+\textbf{BESS} \> \textbf{B}attery \textbf{e}nergy \textbf{s}torage \textbf{s}ystems \\
+\textbf{BRP} \> \textbf{B}alancing \textbf{r}esponsible \textbf{p}arty \\
+\textbf{BSP} \> \textbf{B}alancing \textbf{s}ervice \textbf{p}rovider \\
+\textbf{DC} \> \textbf{D}irect \textbf{c}urrent \\
+\textbf{DR} \> \textbf{D}emand \textbf{r}esponse \\
+\textbf{ENSTO-E} \> \textbf{E}uropean \textbf{N}etwork of \textbf{T}ransmission \textbf{S}ystem \textbf{O}perators for \textbf{E}lectricity \\
+\textbf{ESB} \> \textbf{E}nergy \textbf{S}ecurity \textbf{B}oard \\
+\textbf{IBR} \> \textbf{I}nverter-\textbf{b}ased \textbf{r}esources \\
+\textbf{ISO/RTO} \>  \textbf{I}ndependent \textbf{S}ystem \textbf{O}perator/\textbf{R}egional \textbf{T}ransmission \textbf{O}rganisation \\
+\textbf{FCS} \> \textbf{F}requency \textbf{c}ontrol \textbf{s}ervices \\
+\textbf{FCAS} \> \textbf{F}requency \textbf{C}ontrol \textbf{A}ncillary \textbf{S}ervices \\
+\textbf{FERC} \> \textbf{F}ederal \textbf{E}nergy \textbf{R}egulatory \textbf{C}ommission \\
+\textbf{FFR} \> \textbf{F}ast \textbf{f}requency \textbf{r}esponse \\
+\textbf{Hz} \> Hertz \\
+\textbf{mHz} \> Millihertz \\
+\textbf{MW} \> Megawatts \\
+\textbf{NEM} \> \textbf{N}ational \textbf{E}lectricity \textbf{M}arket \\
+\textbf{NER} \> \textbf{N}ational \textbf{E}lectricity \textbf{R}ules \\
+\textbf{NOFB} \> \textbf{N}ormal \textbf{o}perating \textbf{f}requency \textbf{b}and \\
+\textbf{NSW} \> \textbf{N}ew \textbf{S}outh \textbf{W}ales \\
+\textbf{OFGS} \> \textbf{O}ver-\textbf{f}requency \textbf{g}eneration \textbf{s}hedding \\
+\textbf{PFR} \> \textbf{P}rimary \textbf{f}requency \textbf{r}esponse \\
+\textbf{PV} \> \textbf{P}hoto\textbf{v}oltaic \\
+\textbf{QLD} \> Queensland \\
+\textbf{RoCoF} \> \textbf{R}ate \textbf{o}f \textbf{c}hange \textbf{o}f \textbf{f}requency \\
+\textbf{SA} \>  \textbf{S}outh \textbf{A}ustralia \\
+\textbf{SFR} \> \textbf{S}econdary \textbf{f}requency \textbf{r}esponse \\
+\textbf{SO} \> \textbf{S}ystem \textbf{o}perator \\
+\textbf{TAS} \> Tasmania \\
+\textbf{TFR} \> \textbf{T}ertiary \textbf{f}requency \textbf{r}esponse \\
+\textbf{TNSP} \> \textbf{T}ransmission \textbf{N}etwork \textbf{S}ervice \textbf{P}rovider \\
+\textbf{TSO} \> \textbf{T}ransmission \textbf{S}ystem \textbf{O}perator \\
+\textbf{UFLS} \> \textbf{U}nder-\textbf{f}requency \textbf{l}oad \textbf{s}hedding \\
+\textbf{UK} \> \textbf{U}nited \textbf{K}ingdom \\
+\textbf{US} \> \textbf{U}nited \textbf{S}tates \\
+\textbf{UFLS} \> \textbf{U}nder-\textbf{f}requency \textbf{l}oad \textbf{s}hedding \\
+\textbf{VIC} \> Victoria \\
+\textbf{VRE} \> \textbf{V}ariable \textbf{r}enewable \textbf{e}nergy \\
 \end{tabbing}
 
 \newpage
@@ -409,8 +413,8 @@ interdum lectus.
 To include a citation to the text, just add the citation key shown in
 the references.bib file. The style of the citation is determined by the
 ref\_format.csl file. For example, in The Living Sea you can find
-pictures of the Calypso (\protect\hyperlink{ref-Cousteau1963}{Cousteau
-Jacques and Dugan James, 1963}).
+pictures of the Calypso
+(\protect\hyperlink{ref-Cousteau1963}{\textbf{Cousteau1963?}}).
 
 In neque mauris, maximus at sapien a, iaculis dignissim justo. Aliquam
 erat volutpat. Praesent varius risus auctor est ultricies, sit amet
@@ -470,8 +474,9 @@ referenced manually, as does
 for how References are handled - leave \texttt{*\_references.md} alone,
 and provide it to \texttt{pandoc} last.
 
-Proin faucibus nibh sit amet augue blandit varius\footnote{Try a
-  footnote}.
+Proin faucibus nibh sit amet augue blandit varius\footnote{The term
+  \emph{balancing services} is used in European systems, whereas the
+  term \emph{operating reserves} is widely used in North America.}.
 
 \hypertarget{sec:lit_review}{%
 \chapter{Literature review, with maths}\label{sec:lit_review}}
@@ -529,11 +534,12 @@ tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida
 iaculis. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas.
 
-\hypertarget{sec:first}{%
-\chapter{First research study, with code}\label{sec:first}}
+\hypertarget{sec:fcs}{%
+\chapter{Frequency control arrangements: insights from the National
+Electricity Market}\label{sec:fcs}}
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\hypertarget{link-to-thesis}{%
+\section{Link to thesis}\label{link-to-thesis}}
 
 This is the introduction. Nam mollis congue tortor, sit amet convallis
 tortor mollis eget. Fusce viverra ut magna eu sagittis. Vestibulum at
@@ -541,74 +547,765 @@ ultrices sapien, at elementum urna. Nam a blandit leo, non lobortis
 quam. Aliquam feugiat turpis vitae tincidunt ultricies. Mauris
 ullamcorper pellentesque nisl, vel molestie lorem viverra at.
 
-\hypertarget{method}{%
-\section{Method}\label{method}}
+\hypertarget{abstract-1}{%
+\section{Abstract}\label{abstract-1}}
 
-Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum
-eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum
-est at, maximus sapien. Sed ut diam tortor.
+For restructured electricity industries undergoing energy transition,
+designing effective and efficient frequency control arrangements is a
+complex and ongoing task that requires appropriate configuration of
+controllers, generator technical connection requirements, market
+arrangements and wider policy settings. In this paper, we provide an
+overview and assessment of these arrangements in Australia's National
+Electricity Market - a useful case study given its long-standing
+frequency control ancillary services markets, yet recent challenges in
+maintaining secure frequency control. We assess the performance of these
+evolving arrangements in delivering improved frequency control outcomes,
+with particular regard to growing renewable penetrations and evident
+tensions between mandatory requirements and market-based incentives.
+Based on this assessment, we draw out four key insights on designing
+frequency control arrangements as power system capabilities and needs
+change: 1) Understanding control action interactions, 2) Implementing
+efficient price formation and cost-allocation mechanisms, 3) Monitoring
+and assessing service provision to better align participant remuneration
+with service quality, and 4) Considering both regulatory and market
+mechanisms and their consequences and interactions. In particular, we
+discuss the trade-offs between effective and efficient outcomes, and
+provide arguments for more robust and forward-looking frequency control
+arrangements during energy transition.
 
-\hypertarget{sec:subsec-code-example}{%
-\subsection{Subsection 1 with example code
-block}\label{sec:subsec-code-example}}
+\hypertarget{sec:fcs-intro}{%
+\section{Introduction}\label{sec:fcs-intro}}
 
-This is the first part of the methodology. Cras porta dui a dolor
-tincidunt placerat. Cras scelerisque sem et malesuada vestibulum.
-Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique
-nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere
-facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex
-blandit.
+As a consequence of growing momentum to address global warming and
+continually declining technology costs, many power systems around the
+world are undergoing an energy transition in which significant capacity
+additions of variable renewable energy (VRE) and other inverter-based
+resources (IBR) are being accompanied by the progressive retirement of
+existing fossil fuel generation
+(\protect\hyperlink{ref-internationalenergyagencyNetZero20502021}{International
+Energy Agency, 2021}). Such power systems are currently experiencing or
+expected to soon experience high instantaneous penetrations of VRE
+(i.e.~beyond 50\% of grid demand being met by VRE at any given time),
+which can pose technical challenges to the stable and secure operation
+of a power system
+(\protect\hyperlink{ref-kenyonStabilityControlPower2020}{Kenyon et al.,
+2020};
+\protect\hyperlink{ref-kroposkiAchieving100Renewable2017}{Kroposki et
+al., 2017};
+\protect\hyperlink{ref-meegahapolaPowerSystemStability2021}{Meegahapola
+et al., 2021}). While several of these challenges have technological
+solutions of various maturities, configuring mechanisms in an effective
+and efficient manner across power system design layers, which span from
+how resources are controlled to how grid codes and markets are designed,
+remains an open and significant challenge.
 
-For syntax highlighting in code blocks, add three ```'' characters
-before and after a code block:
+In this article, we focus on one aspect of power system security:
+control of AC frequency. Maintaining frequency near the nominal value of
+a power system (either 50 or 60 Hz) is contingent on the ongoing balance
+of active power supply and demand within a synchronous area
+(\protect\hyperlink{ref-graingerPowerSystemAnalysis1994}{Grainger,
+1994}). Power system frequency deviations are a consequence of
+instantaneous supply-demand imbalances, which typically occur as a
+result of system variability (predictable changes in supply or demand,
+such as fluctuations and ramps of generation or load) and uncertainty
+(unpredicted changes in supply or demand, such as forecast errors or
+unplanned outages)
+(\protect\hyperlink{ref-elaOperatingReservesVariable2011}{Ela et al.,
+2011}). System operators (SOs) achieve short-term active power balancing
+using reserve capacity. Whilst there are many names for these
+reserves\footnote{The term \emph{balancing services} is used in European
+  systems, whereas the term \emph{operating reserves} is widely used in
+  North America.}, this article will focus on a common subset that
+responds to and mitigates frequency deviations over short timeframes
+(milliseconds to minutes). We will refer to such reserves as
+\emph{Frequency Control Services} (FCS). If FCS are insufficient or
+inadequate, the system frequency may deviate beyond acceptable system
+limits and lead to equipment damage, load shedding, generator trips and
+cascading failures that lead to blackouts
+(\protect\hyperlink{ref-kirbyFrequencyControlConcerns2002}{Kirby et al.,
+2002}; \protect\hyperlink{ref-ulbigImpactLowRotational2014}{Ulbig et
+al., 2014}).
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{mood }\OperatorTok{=} \StringTok{\textquotesingle{}happy\textquotesingle{}}
-\ControlFlowTok{if}\NormalTok{ mood }\OperatorTok{==} \StringTok{\textquotesingle{}happy\textquotesingle{}}\NormalTok{:}
-    \BuiltInTok{print}\NormalTok{(}\StringTok{"I am a happy robot"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+In electricity industries with competitive markets for energy and FCS,
+frequency control arrangements consist of control, regulatory and
+market-based mechanisms
+(\protect\hyperlink{ref-mancarellaFragileGridPhysics2021}{Mancarella and
+Billimoria, 2021}). Control mechanisms specify the technical
+requirements for FCS. Regulatory and market-based mechanisms are used by
+the SO to:
 
-\hypertarget{subsection-2}{%
-\subsection{Subsection 2}\label{subsection-2}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Mandate or incentivise participant behaviour in the energy market that
+  facilitates system balancing. This includes enforcing dispatch
+  compliance or penalising participant portfolio imbalances; and
+\item
+  Procure FCS from capable resources (i.e.~generators, loads and network
+  elements).
+\end{enumerate}
 
-By running the code in Chapter~\ref{sec:subsec-code-example}, we solved
-AI completely. This is the second part of the methodology. Proin
-tincidunt odio non sem mollis tristique. Fusce pharetra accumsan
-volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent
-malesuada sagittis nulla, eget commodo mauris ultricies eget.
-Suspendisse iaculis finibus ligula.
+Regulatory FCS procurement mechanisms are often mandatory and include
+equipment standards, connection requirements and SO intervention,
+whereas market-based FCS procurement mechanisms are often voluntary and
+include remunerative schemes and contract or spot markets. Together,
+these mechanisms dictate the physical effectiveness and productive,
+dynamic, price formation and cost-allocation efficiencies of FCS
+provision and procurement. Well-designed arrangements should be
+effective and efficient, where \emph{effectiveness} entails sufficient
+and robust frequency response to meet physical power system requirements
+and \emph{efficiency} relates to frequency response being provided at
+low cost, both now and into the future
+(\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{Y. Rebours
+et al., 2007};
+\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{van der
+Veen and Hakvoort, 2016}).
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+As power systems transition towards higher instantaneous penetrations of
+VRE and IBR, SOs are likely to face the following challenges to
+short-term system balancing that may require existing frequency control
+arrangements to be revisited:
 
-These are the results. Ut accumsan tempus aliquam. Sed massa ex, egestas
-non libero id, imperdiet scelerisque augue. Duis rutrum ultrices arcu et
-ultricies. Proin vel elit eu magna mattis vehicula. Sed ex erat,
-fringilla vel feugiat ut, fringilla non diam.
+\begin{itemize}
+\item
+  VRE adds variability and uncertainty to a power system, particularly
+  if similar technologies are situated within close proximity of one
+  another (i.e.~correlated production and/or forecast errors)
+  (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{Australian
+  Energy Market Operator, 2020a};
+  \protect\hyperlink{ref-keeratimahatAnalysisShorttermOperational2021}{Keeratimahat
+  et al., 2021}). Furthermore, unless an appropriate response is
+  incorporated and enabled in their control systems, VRE and other IBR
+  do not provide FCS. In jurisdictions that do not require, incentivise
+  or allow VRE and IBR to provide FCS, the displacement of synchronous
+  machines in dispatch has led to lower availabilities of resources that
+  provide FCS
+  (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020c}{Australian
+  Energy Market Operator, 2020b};
+  \protect\hyperlink{ref-denholmInertiaPowerGrid2020}{Denholm et al.,
+  2020};
+  \protect\hyperlink{ref-milanoFoundationsChallengesLowInertia2018}{Milano
+  et al., 2018}) .
+\item
+  In jurisdictions with competitive markets for energy and FCS, there is
+  a tension between achieving economically efficient markets and the
+  redundancy, certainty and control afforded to the SO. While the
+  societal and economic costs of power system failure are often very
+  large, it may be difficult for the SO to justify the cost of
+  mitigation measures when they are ongoing or significant and when the
+  joint probability of events or failures is low. The uncertainties
+  associated with energy transition and the impacts of global warming
+  are likely to present additional challenges. Power system security
+  measures may need to be implemented rapidly and be both robust to a
+  range of futures and resilient in the face of shocks, such as severe
+  weather events
+  (\protect\hyperlink{ref-egglestonSecurityResilienceTechnical2021}{Eggleston
+  et al., 2021};
+  \protect\hyperlink{ref-prakashResponseFrequencyControl2021}{Prakash et
+  al., 2021}).
+\end{itemize}
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+In this paper, we provide insights and recommendations on designing more
+effective and efficient frequency control arrangements based on
+experience from the Australian National Electricity Market (NEM). The
+NEM is currently experiencing relatively high system-wide instantaneous
+VRE penetrations (just over 60\% in 2021) and is expected to experience
+penetrations as high as 75-100\% by 2025
+(\protect\hyperlink{ref-australianenergymarketoperatorNEMEngineeringFramework2021}{Australian
+Energy Market Operator, 2021a},
+\protect\hyperlink{ref-australianenergymarketoperatorQuarterlyEnergyDynamics2021}{2021b}).
+Though the NEM's frequency control arrangements were once arguably
+world-leading
+(\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et
+al., 2015};
+\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{Thorncraft
+and Outhred, 2007}), the speed at which system capabilities and needs
+are changing and the removal of mandatory requirements in 2001 as a part
+of a paradigm shift from obligation to remuneration for FCS have exposed
+design issues. In attempting to address these issues, the NEM's rule
+makers have placed FCS obligations on generators and transmission
+network operators and have undertaken reforms to the NEM's energy and
+FCS markets, including introducing a new market to procure emergency
+fast frequency response (FFR) from IBR. Whilst the NEM is an
+electrically-isolated power system with a relatively simple energy-only
+market, the insights and recommendations from this paper are likely to
+be relevant to other power systems and interconnections as their
+existing conventional generation retires and VRE deployment levels
+increase.
 
-This is the discussion. Duis ultrices tempor sem vitae convallis.
-Pellentesque lobortis risus ac nisi varius bibendum. Phasellus volutpat
-aliquam varius. Mauris vitae neque quis libero volutpat finibus. Nunc
-diam metus, imperdiet vitae leo sed, varius posuere orci.
+This paper offers three contributions to the literature. First, we
+provide a high-level overview and comparison of the key features of
+frequency control arrangements in North America and Central and Western
+Europe, and provide a review of the most prominent challenges to
+designing effective and efficient frequency control arrangements and the
+potential solutions discussed in the literature. Second, we provide a
+comprehensive update to previous literature on frequency control in the
+NEM (\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et
+al., 2015};
+\protect\hyperlink{ref-thorncraftMarketbasedAncillaryServices2008}{Thorncraft
+et al., 2008};
+\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{Thorncraft
+and Outhred, 2007}). Our analysis benefits from recent experience in the
+NEM that encompasses deteriorating frequency performance, the
+reintroduction of mandatory requirements and integrating higher shares
+of VRE. While several of these aspects have been discussed independently
+in the literature, this paper seeks to provide a structured and holistic
+analysis of developments in the NEM and their implications for frequency
+control arrangement design. Third, this article advocates for designers
+placing a greater emphasis on delivering forward-looking frequency
+control arrangements during energy transition through the implementation
+of more robust regulatory mechanisms and ensuring that market-based
+mechanisms are capable of supporting FCS investment. As highlighted in
+the following sections, these design features have received surprisingly
+little attention in the literature.
 
-\hypertarget{conclusion-1}{%
-\section{Conclusion}\label{conclusion-1}}
+The rest of the chapter is structured as follows. In Section
+\ref{sec:fcs-context}, we provide an overview of typical frequency
+control arrangements, with a focus on restructured electricity
+industries in North America and Europe, and the main challenges faced in
+their design. We describe the NEM, its frequency control arrangements
+and the specific challenges posed by increasing penetrations of VRE and
+other IBR in Section \protect\hyperlink{sec:nem_frequency_control}{3}.
+In Section \protect\hyperlink{sec:insights}{{[}sec:insights{]}}, we
+analyse the performance of the NEM's frequency control arrangements in
+responding to the challenges explored in Section
+\protect\hyperlink{sec:context}{2}, with primary frequency response and
+regulation (secondary frequency response) services in the NEM as case
+studies. Based on our analysis, we conclude by offering four key
+insights to operators, regulators and market-bodies that include
+understanding control action interactions; ensuring that arrangements
+are capable of supporting investment in FCS capability; monitoring,
+assessing and remunerating FCS performance; and considering both
+regulatory and market-based mechanisms in the design of effective and
+efficient frequency control arrangements.
 
-This is the conclusion to the chapter. Praesent bibendum urna orci, a
-venenatis tellus venenatis at. Etiam ornare, est sed lacinia elementum,
-lectus diam tempor leo, sit amet elementum ex elit id ex. Ut ac viverra
-turpis. Quisque in nisl auctor, ornare dui ac, consequat tellus.
+\hypertarget{sec:fcs-context}{%
+\section{Context}\label{sec:fcs-context}}
+
+\hypertarget{conventional-frequency-control-schemes}{%
+\subsection{Conventional frequency control
+schemes}\label{conventional-frequency-control-schemes}}
+
+SOs employ hierarchical and sequential frequency control schemes. In
+most power systems, such schemes implicitly include inertial response
+and explicitly define FCS such as primary frequency response (PFR),
+secondary frequency response (SFR) and tertiary frequency response
+(TFR). In general, once frequency has deviated from the system nominal
+value, synchronous machines provide an inertial response that is
+inherent and immediate in slowing the rate of change of frequency
+(RoCoF). Within seconds, generators and/or loads provide autonomous and
+decentralised control action through PFR
+(\protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto et al.,
+2018};
+\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{Machowski et
+al., 2020}). PFR arrests the frequency deviation to enable the slower
+and more centralised control actions of SFR and TFR to return the power
+system frequency to its nominal value
+(\protect\hyperlink{ref-elaAlternativeApproachesIncentivizing2012}{Ela
+et al., 2012b}; \protect\hyperlink{ref-etoUseFrequencyResponse2010}{Eto
+et al., 2010}). Should system frequency continue to rise or fall beyond
+the system's allowable limits, emergency protection schemes such as
+under-frequency load shedding (UFLS) and over-frequency generation
+shedding (OFGS) relays may be triggered. In some systems, RoCoF relays
+are also used to prevent high RoCoFs from tripping or damaging equipment
+and to contain frequency nadirs and zeniths
+(\protect\hyperlink{ref-akramEnergyStorageShortTerm2020}{Akram et al.,
+2020};
+\protect\hyperlink{ref-dgaconsultingInternationalReviewFrequency2016}{DGA
+Consulting, 2016};
+\protect\hyperlink{ref-millerAdvisoryEquipmentLimits2017}{Miller et al.,
+2017a}).
+
+\hypertarget{procurement-of-frequency-control-services}{%
+\subsection{Procurement of frequency control
+services}\label{procurement-of-frequency-control-services}}
+
+Except for inertial response from synchronous machines, the SO procures
+FCS capacity from capable resources within its control area and, in the
+case of SFR and TFR, activates FCS energy if necessary. In electricity
+industries where the SO owns most if not all the generation assets
+(i.e.~a vertically-integrated utility), the SO is able to jointly
+schedule generation and FCS capacity with knowledge of the condition of
+the system and the status and cost structures of their plant. However,
+many electricity industries have undergone some degree of restructuring,
+which has created a greater role for competitively-oriented
+decentralised decision-making
+(\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{van
+der Veen and Hakvoort, 2016}) . The diverse outcomes of restructuring
+processes and differences in technical characteristics
+(e.g.~capabilities of resource mix and network topology) have led to a
+wide range of frequency control arrangements across power systems
+(\protect\hyperlink{ref-poplavskayaDistributedEnergyResources2019}{Poplavskaya
+and de Vries, 2019};
+\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{Y. Rebours et
+al., 2007}) , which have been reviewed and compared extensively within
+industry and academic literature
+(\protect\hyperlink{ref-banshwarInternationalExperienceTechnical2018}{Banshwar
+et al., 2018};
+\protect\hyperlink{ref-brooksReviewFrequencyRegulation2019}{Brooks and
+Lesieutre, 2019};
+\protect\hyperlink{ref-elaAncillaryServicesUnited2019}{Ela and Hytowitz,
+2019};
+\protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
+et al., 2020};
+\protect\hyperlink{ref-lopezSurveyAssessmentTechnical2020}{Lopez et al.,
+2020}; \protect\hyperlink{ref-ockerDesignEuropeanBalancing2016}{Ocker et
+al., 2016};
+\protect\hyperlink{ref-reboursSurveyFrequencyVoltage2007a}{Y. G. Rebours
+et al., 2007a},
+\protect\hyperlink{ref-reboursSurveyFrequencyVoltage2007}{2007b};
+\protect\hyperlink{ref-reishusconsultingllcElectricityAncillaryServices2017}{Reishus
+Consulting LLC, 2017};
+\protect\hyperlink{ref-zhouSurveyAncillaryServices2016}{Zhou et al.,
+2016}).
+
+In restructured electricity industries, the provision of more passive
+FCS (e.g.~ride-through capabilities) is usually mandated by regulatory
+mechanisms such as connection agreements and grid codes, whereas FCS
+that require additional response capabilities or impose
+opportunity-costs on suppliers are procured and remunerated by the SO
+through market-based mechanisms. In Sections \ref{sec:fcs-NA} \&
+\ref{sec:fcs-EU}, we provide an overview of typical features\footnote{We
+  note that there are numerous differences between jurisdictional
+  arrangements and terminology in each of these regions. For a more
+  general overview of potential procurement models, refer to Billimoria
+  et al.
+  (\protect\hyperlink{ref-billimoriaMarketDesignSystem2020}{2020}).} and
+key developments in market-based mechanisms for procuring FCS in North
+America and Central and Western Europe, respectively. These regions best
+represent the two prevailing short-term wholesale electricity market
+models: central dispatch markets, in which the SO issues dispatch
+instructions, and decentralised or self-dispatch markets, in which
+resource dispatch is managed by market participants
+(\protect\hyperlink{ref-ahlqvistCentralSelfDispatchElectricity2018}{Ahlqvist
+et al., 2018}). Given that FCS and energy are partially substitutable
+goods, the characteristics of short-term wholesale electricity markets
+heavily influence the design of FCS arrangements and thus these regions
+provide an interesting contrast. However, despite their differences, the
+SO plays a central role in both of these regions as they determine the
+area demand for FCS capacity, activate FCS energy as required and are
+ultimately responsible for ensuring that the power system is balanced
+and securely operated.
+
+\hypertarget{sec:fcs-NA}{%
+\subsection{North American markets}\label{sec:fcs-NA}}
+
+In North America, central dispatch wholesale electricity markets are
+operated by an Independent System Operator (ISO) or Regional
+Transmission Organization (RTO) and are distributed across three
+synchronous areas. These markets consist of two short-term centralised
+platforms: a day-ahead market and a real-time market. In the day-ahead
+market, the SO solves a security-constrained unit commitment problem
+using supply offers (single or three-part) and demand bids (quantity or
+price-quantity) to produce day-ahead locational marginal prices and a
+financially-binding hourly schedule. In the real-time market, the SO
+solves a security-constrained economic dispatch problem (typically every
+five minutes) using generator price-quantity offers and a demand
+forecast to produce real-time locational marginal prices and a set of
+physically and financially binding dispatch instructions. Thus, each
+short-term market is cleared to maximise social welfare whilst
+respecting network and system security constraints
+(\protect\hyperlink{ref-chowElectricityMarketDesign2005}{Chow et al.,
+2005};
+\protect\hyperlink{ref-cramtonElectricityMarketDesign2017}{Cramton,
+2017}).
+
+Except for Frequency Responsive Reserves (i.e.~PFR), operating reserves
+(i.e.~FCS capacity) are explicitly procured by placing an obligation on
+load-serving entities to self-provide or purchase their share from
+SO-run FCS markets
+(\protect\hyperlink{ref-elaAlternativeApproachesIncentivizing2012}{Ela
+et al., 2012b};
+\protect\hyperlink{ref-zhouSurveyAncillaryServices2016}{Zhou et al.,
+2016}). These FCS markets are usually integrated into day-ahead market
+and, in most jurisdictions, the real-time market. Standard products in
+North American markets include Regulation (i.e.~SFR during normal
+operation), Spinning and Non-Spinning Reserves (i.e.~TFR deployed
+following an event)
+(\protect\hyperlink{ref-elaAncillaryServicesUnited2019}{Ela and
+Hytowitz, 2019};
+\protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
+et al., 2020};
+\protect\hyperlink{ref-zhouSurveyAncillaryServices2016}{Zhou et al.,
+2016}). Participants can submit offers for FCS in addition to offer for
+energy. Unit commitment and economic dispatch permit co-optimisation of
+energy and FCS procurement. From the perspective of the SO,
+co-optimisation ensures that the total system cost of achieving an
+energy supply-demand balance is minimised alongside FCS requirements,
+subject to network and system security constraints. From the perspective
+of participants, co-optimisation leads to an FCS price that not only
+reflects the price offer of the marginal resource, but also any "profit"
+it forgoes in the energy market (assuming supplier offers reflect their
+short-run marginal costs)
+(\protect\hyperlink{ref-elaEffectiveAncillaryServices2012}{Ela et al.,
+2012a};
+\protect\hyperlink{ref-isemongerEvolvingDesignRTO2009}{Isemonger,
+2009}). As such, ISO/RTO FCS markets can compensate opportunity-costs
+related to the day-ahead and/or real-time market but only allocate costs
+to load-serving entities through a procurement obligation.
+
+Though North American FCS markets have predominantly procured and
+remunerated FCS capacity, ISO/RTOs (except Texas' ISO, ERCOT) were
+ordered to also remunerate Regulation providers for the quantity of
+energy provided whilst accurately following control signals by the
+Federal Energy Regulatory Commission's (FERC) Order 755
+(\protect\hyperlink{ref-federalenergyregulatorycommissionfercOrderNo7552011}{Commission,
+2011}). As such, Regulation providers offer a quantity of capacity, a
+price for capacity and a price for "mileage", which is the energy
+delivered. Remuneration for Regulation takes performance (the ability of
+a resource to follow the ISO/RTO's control signals) into account, though
+how this is implemented varies between ISO/RTOs
+(\protect\hyperlink{ref-elaAncillaryServicesUnited2019}{Ela and
+Hytowitz, 2019};
+\protect\hyperlink{ref-fernandez-munozFastFrequencyControl2020}{Fernández-Muñoz
+et al., 2020}). A notable example is the PJM RTO, which uses both a
+standard SFR control signal (RegA) and faster SFR control signal (RegD)
+intended for battery energy storage systems (BESS). PJM determines how
+interchangeable a resource's RegD provision is with RegA provision (the
+marginal benefit factor) to clear the Regulation market and calculates a
+performance score for use in market clearing and settlement. However,
+according to the independent market monitor, the omission of the
+marginal benefit factor from market settlement has led to perverse
+market outcomes
+(\protect\hyperlink{ref-brooksReviewFrequencyRegulation2019}{Brooks and
+Lesieutre, 2019};
+\protect\hyperlink{ref-monitoringanalytics2021QuarterlyState2021}{Monitoring
+Analytics, 2021}).
+
+\hypertarget{sec:fcs-EU}{%
+\subsection{European markets}\label{sec:fcs-EU}}
+
+Most of the electricity markets of Central and Western Europe are
+self-dispatch and consist of two short-term platforms: the day-ahead
+market and the intraday market, which can be continuous, composed of
+frequently-run discrete auctions or a combination of the two. Each of
+these platforms is coupled across the majority of market zones in
+Europe, with a single price coupling algorithm used to simultaneously
+clear zonal day-ahead markets and a single order book compiled to match
+cross-zonal intraday orders
+(\protect\hyperlink{ref-epexspotEuropeanMarketCoupling}{EPEX Spot,
+n.d.}; \protect\hyperlink{ref-nemocommitteeSingleIntradayCoupling}{NEMO
+Committee, n.d.}). In contrast to North American electricity markets,
+the market operator is responsible for market operation and is distinct
+from the Transmission System Operator (TSO). Generation and load are
+managed by Balancing Responsible Parties (BRP), which must submit
+binding operational schedules to the TSO ahead of delivery (often by the
+day prior to delivery). As BRPs become aware of potential deviations
+closer to real time (e.g.~improved forecasts), they are able to adjust
+their submitted schedules (i.e.~remain "balanced") through trades on the
+intraday market
+(\protect\hyperlink{ref-lagoMarketFrameworkGrid2021}{Lago et al., 2021};
+\protect\hyperlink{ref-musgensEconomicsDesignBalancing2014}{Müsgens et
+al., 2014}). BRPs face financial repercussions if they are imbalanced
+via an imbalance price and, in some jurisdictions, are legally obliged
+to be balanced
+(\protect\hyperlink{ref-entso-ewgasSurveyAncillaryServices2021}{ENTSO-E
+WGAS, 2021}).
+
+Following gate-closure of the intraday market, residual imbalances are
+primarily addressed by FCS (known as balancing services) procured by the
+TSO. Standard FCS in Europe include Frequency Containment Reserve
+(i.e.~PFR), automatic Frequency Restoration Reserves (i.e.~SFR), and
+manual Frequency Restoration Reserves and Replacement Reserves
+(i.e.~both TFR), with minimum technical requirements for each specified
+by the European Network of Transmission System Operators for Electricity
+(ENTSO-E)
+(\protect\hyperlink{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eNetworkCodeLoadFrequency2013}{European
+Network of Transmission System Operators for Electricity, 2013}).
+Depending on the FCS product and the jurisdiction, TSOs may distinguish
+between FCS capacity (balancing capacity) and the delivery of FCS energy
+(balancing energy). The provision of one or both is mandated in some
+cases, but where both are procured competitively, Balancing Service
+Providers (BSP) typically submit separate offers for FCS capacity and
+FCS energy
+(\protect\hyperlink{ref-abbasyNationalDesignMultinational2012}{Abbasy,
+2012}). FCS capacity markets are often cleared days to months in advance
+of real-time whereas the FCS energy market, which effectively
+constitutes merit-order or pro rata activation of capacity for FCS
+energy provision, is cleared within an hour or minutes of real-time
+(\protect\hyperlink{ref-entso-ewgasSurveyAncillaryServices2021}{ENTSO-E
+WGAS, 2021};
+\protect\hyperlink{ref-ockerDesignEuropeanBalancing2016}{Ocker et al.,
+2016};
+\protect\hyperlink{ref-poplavskayaDistributedEnergyResources2019}{Poplavskaya
+and de Vries, 2019}). FCS capacity costs are typically allocated to
+power system users via a grid tariff. FCS energy costs are typically
+allocated to BRPs based on their schedule deviations and an imbalance
+price, which may differ from the FCS energy price paid to BSPs
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{Hirth and
+Ziegenhagen, 2015};
+\protect\hyperlink{ref-vandezandeWellfunctioningBalancingMarkets2010}{Vandezande
+et al., 2010}). As such, European FCS markets generally disincentivise
+causers of imbalance through the imbalance price, which may also recover
+or reflect the cost of FCS energy. However, since FCS capacity markets
+are typically decoupled from and cleared ahead of short-term energy
+markets, perceived opportunity-costs based on expected short-term energy
+market prices must be internalised within participants' FCS offers.
+
+Given the relatively high degree of interconnection between transmission
+systems in Central and Western Europe, cross-TSO initiatives are in
+place and being expanded to address imbalances and share FCS across the
+Continental Europe synchronous area. When sufficient cross-TSO
+transmission capacity is available, initiatives currently in place
+enable participating TSOs to jointly procure Frequency Containment
+Reserve capacity, net imbalances (i.e.~reduce the demand for SFR by
+aggregating individual control area imbalances) and jointly procure
+automatic Frequency Restoration Reserve capacity and energy
+(\protect\hyperlink{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eENTSOEBalancingReport2020}{European
+Network of Transmission System Operators for Electricity, 2020}).
+Further efficiency gains are expected following the implementation of
+integrated market platforms for imbalance netting and balancing energy
+for SFR and TFR. The implementation of these platforms is mandated by
+the European Commission's European Balancing Guideline and requires
+certain FCS product definitions and market features to be harmonised
+across the balancing energy markets of participating TSOs
+(\protect\hyperlink{ref-50hzamprionapgeliartetennetConsultationDesignPlatform2017}{50hz,
+2017};
+\protect\hyperlink{ref-europeancommissionCommissionRegulationEU2017}{European
+Commission, 2017}).
+
+\hypertarget{designing-frequency-control-arrangements}{%
+\section{Designing frequency control
+arrangements}\label{designing-frequency-control-arrangements}}
+
+As with any policy problem, designing frequency control arrangements in
+restructured electricity industries requires design principles,
+variables and performance criteria to be established. The public good
+characteristics of frequency control have heavily influenced arrangement
+design principles across jurisdictions, such as the common preference
+for the SO to centrally coordinate FCS procurement and activation
+(\protect\hyperlink{ref-musgensEconomicsDesignBalancing2014}{Müsgens et
+al., 2014};
+\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{Y. Rebours et
+al., 2007}). In contrast, though some design variables are common,
+others may only apply to particular systems based on their resource mix,
+network topology and/or market design. Y. Rebours et al.
+(\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{2007})
+discuss design variables for central dispatch markets related to the
+following arrangement features:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  FCS procurement;
+\item
+  Price formation, which when efficient should lead to FCS prices not
+  only reflecting the true cost of the service, but also its true value
+  to the system; and
+\item
+  Allocation of the cost of FCS.
+\end{enumerate}
+
+Similarly, Abbasy
+(\protect\hyperlink{ref-abbasyNationalDesignMultinational2012}{2012})
+discusses the main design variables applicable to European self-dispatch
+markets. van der Veen and Hakvoort
+(\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{2016})
+build upon this work to provide a more comprehensive treatment of design
+variables in self-dispatch markets. Y. Rebours et al.
+(\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{2007}),
+Abbasy
+(\protect\hyperlink{ref-abbasyNationalDesignMultinational2012}{2012})
+and van der Veen and Hakvoort
+(\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{2016})
+all propose some variation of effectiveness and efficiency as
+performance criteria, with van der Veen and Hakvoort
+(\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{2016})
+analysing the various trade-offs between and within each criterion.
+
+Despite the well-defined nature of the design problem, there are several
+challenges to achieving effective and efficient arrangements. In
+Sections \ref{sec:fcs-ibr-challenges} and
+\ref{sec:fcs-efficiency-challenges}, we present the most prominent
+challenges and their treatment in the literature.
+
+\hypertarget{sec:fcs-ibr-challenges}{%
+\subsection{The influx of VRE and other IBR in power
+systems}\label{sec:fcs-ibr-challenges}}
+
+As discussed in Section \ref{sec:fcs-intro}, VRE adds variability and
+uncertainty to power systems which, at the very least, can lead to
+increased procurement and activation requirements for PFR and SFR during
+normal operating conditions
+(\protect\hyperlink{ref-elaOperatingReservesVariable2011}{Ela et al.,
+2011}). Three proposals to address this issue and thus reduce FCS
+requirements with growing penetrations of VRE have been discussed in the
+literature. The first is to shorten energy market trading/dispatch
+intervals (\protect\hyperlink{ref-ockerGermanParadoxBalancing2017}{Ocker
+and Ehrhart, 2017};
+\protect\hyperlink{ref-rieszDesigningElectricityMarkets2015}{Riesz and
+Milligan, 2015}) and the time between market gate closure and dispatch
+(\protect\hyperlink{ref-katzOpeningMarketsDesigning2019}{Katz et al.,
+2019}), thereby enabling scheduling based on up-to-date system
+conditions and forecasts. The second is to increase coordination between
+control areas within a synchronous area by netting imbalances
+(\protect\hyperlink{ref-kingFlexibilityReserveReductions2011}{King et
+al., 2011}), jointly procuring and dispatching FCS
+(\protect\hyperlink{ref-schererIntegratedPanEuropeanAncillary2013}{Scherer
+et al., 2013}) or aggregating them into a single market region
+(\protect\hyperlink{ref-milliganMarketCharacteristicsEfficient2010}{Milligan
+and Kirby, 2010};
+\protect\hyperlink{ref-rieszDesigningElectricityMarkets2015}{Riesz and
+Milligan, 2015}). These two proposals alone have delivered significant
+system savings in Germany despite growing penetrations of VRE
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{Hirth and
+Ziegenhagen, 2015};
+\protect\hyperlink{ref-ockerGermanParadoxBalancing2017}{Ocker and
+Ehrhart, 2017}). The third is for the SO to determine the required
+quantity of FCS capacity (\emph{dimensioning}) using dynamic and
+probabilistic approaches (as opposed to static and deterministic) that
+adequately reflect current or expected power system conditions and an
+acceptable level of risk, such as a reliability standard
+(\protect\hyperlink{ref-devosDynamicDimensioningApproach2019}{De Vos et
+al., 2019};
+\protect\hyperlink{ref-holttinenMethodologiesDetermineOperating2013}{Holttinen
+et al., 2013};
+\protect\hyperlink{ref-ortega-vazquezRiskBasedReserveProcurement2020}{Ortega-Vazquez
+et al., 2020}).
+
+In recent years, SOs have become increasingly concerned with growing
+penetrations of asynchronous IBR leading to higher RoCoFs and fewer
+resources offering conventional FCS
+(\protect\hyperlink{ref-denholmInertiaPowerGrid2020}{Denholm et al.,
+2020};
+\protect\hyperlink{ref-dgaconsultingInternationalReviewFrequency2016}{DGA
+Consulting, 2016};
+\protect\hyperlink{ref-hartmannEffectsDecreasingSynchronous2019}{Hartmann
+et al., 2019}). However, VRE and other IBR are able to provide tunable
+conventional FCS, FFR and/or an inherent response that strongly
+resembles the inertial response of synchronous machines\footnote{The
+  terms \emph{virtual, emulated and synthetic} inertia have been used in
+  the literature to refer to a proportional active power response to
+  RoCoF. However, these terms do not distinguish whether the inverter
+  control scheme provides an inherent response (i.e.~from inverters
+  operated as a voltage source which are commonly referred to as
+  \emph{grid-forming inverters}
+  (\protect\hyperlink{ref-cherevatskiyGridFormingEnergy2020}{Cherevatskiy
+  et al., 2020};
+  \protect\hyperlink{ref-linResearchRoadmapGridForming2020}{Lin et al.,
+  2020})) or a controlled response following frequency measurement
+  (\protect\hyperlink{ref-erikssonSyntheticInertiaFast2018}{Eriksson et
+  al., 2018};
+  \protect\hyperlink{ref-tielensRelevanceInertiaPower2016}{Tielens and
+  Van Hertem, 2016}).} if this is facilitated by arrangement design
+(\protect\hyperlink{ref-fernandez-munozFastFrequencyControl2020}{Fernández-Muñoz
+et al., 2020};
+\protect\hyperlink{ref-mancarellaFragileGridPhysics2021}{Mancarella and
+Billimoria, 2021};
+\protect\hyperlink{ref-millerTechnologyCapabilitiesFast2017}{Miller et
+al., 2017b}). Following a contingency event in a low-inertia power
+system, rapid FCS from IBR can mitigate higher RoCoFs, which when
+unabated can lead to deeper frequency nadirs and zeniths and the
+subsequent activation of UFLS or OFGS
+(\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2017}{Australian
+Energy Market Operator, 2017};
+\protect\hyperlink{ref-nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020}{NERC
+Inverter-Based Resource Performance Task Force, 2020};
+\protect\hyperlink{ref-tielensRelevanceInertiaPower2016}{Tielens and Van
+Hertem, 2016}).
+
+\hypertarget{sec:fcs-efficiency-challenges}{%
+\subsection{Achieving economic
+efficiency}\label{sec:fcs-efficiency-challenges}}
+
+Achieving short-run efficiency entails supplier costs being reflected in
+their offers and adequately propagated to FCS prices, and the SO
+assigning at least some portion of FCS costs to system users that create
+a need for procurement or activation. A widely used pricing approach in
+ISO/RTO co-optimised FCS markets is a marginal price which incorporates
+the marginal resource's short-term market opportunity-costs and their
+offer, which could reflect potential mileage or wear-and-tear costs
+(\protect\hyperlink{ref-frewImpactOperatingReserve2021}{Frew et al.,
+2021}; \protect\hyperlink{ref-zhouSurveyAncillaryServices2016}{Zhou et
+al., 2016}). Though improving cost-allocation has been repeatedly
+proposed in North American literature
+(\protect\hyperlink{ref-elaEffectiveAncillaryServices2012}{Ela et al.,
+2012a};
+\protect\hyperlink{ref-isemongerEvolvingDesignRTO2009}{Isemonger, 2009};
+\protect\hyperlink{ref-milliganIntegrationVariableGeneration2011}{Milligan
+et al., 2011}), FCS costs are predominantly socialised across loads
+based on demand or consumption. In Europe, however, much attention has
+been given to FCS market pricing, scoring (the order in which offers are
+selected) and cost-allocation. Specifically, literature on European FCS
+markets has explored whether pay-as-bid or uniform pricing better
+facilitates suppliers revealing their true costs
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{Hirth and
+Ziegenhagen, 2015};
+\protect\hyperlink{ref-musgensEconomicsDesignBalancing2014}{Müsgens et
+al., 2014};
+\protect\hyperlink{ref-ockerHarmonizationEuropeanBalancing2018}{Ocker et
+al., 2018}), the particular offers scoring should consider
+(\protect\hyperlink{ref-ehrhartDesignRegulationBalancing2021}{Ehrhart
+and Ocker, 2021};
+\protect\hyperlink{ref-musgensEconomicsDesignBalancing2014}{Müsgens et
+al., 2014}) and the design of imbalance prices to sufficiently
+incentivise short-term balancing
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{Hirth and
+Ziegenhagen, 2015};
+\protect\hyperlink{ref-papavasiliouScarcityPricingMissing2020}{Papavasiliou,
+2020};
+\protect\hyperlink{ref-vandezandeWellfunctioningBalancingMarkets2010}{Vandezande
+et al., 2010}). Regardless, both European and North American literature
+suggest that increased competition in FCS markets is a priority. This
+could be facilitated by enabling distributed and utility-scale VRE and
+IBR to qualify for FCS provision, reducing minimum offer quantities,
+separating raise and lower (positive and negative) products and
+increasing market clearing frequency and the time resolution of FCS
+products (\protect\hyperlink{ref-frewImpactOperatingReserve2021}{Frew et
+al., 2021};
+\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{Hirth and
+Ziegenhagen, 2015};
+\protect\hyperlink{ref-lagoMarketFrameworkGrid2021}{Lago et al., 2021};
+\protect\hyperlink{ref-poplavskayaDistributedEnergyResources2019}{Poplavskaya
+and de Vries, 2019}). Despite the typically "shallow" nature of FCS
+markets (i.e.~additional supply can significantly reduce prices
+(\protect\hyperlink{ref-rieszDesigningElectricityMarkets2015}{Riesz and
+Milligan, 2015})), dynamic efficiency has received considerably less
+attention. Notable exceptions include Papavasiliou
+(\protect\hyperlink{ref-papavasiliouScarcityPricingMissing2020}{2020})
+and Frew et al.
+(\protect\hyperlink{ref-frewImpactOperatingReserve2021}{2021}), who
+briefly discuss the potential for FCS scarcity pricing to better reflect
+the true value of system reliability and support investment in FCS.
+
+An additional challenge in implementing efficient FCS markets involves
+the trade-offs that must be considered. As outlined in Section
+\ref{sec:fcs-intro}, some mechanisms that improve efficiency may come at
+the expense of visibility, control and redundancy afforded to the SO,
+which typically does not own any FCS-capable assets. The former is
+typically achieved using market-based mechanisms and the latter through
+regulatory mechanisms. Ela et al.
+(\protect\hyperlink{ref-elaAlternativeApproachesIncentivizing2012}{2012b}),
+Billimoria et al.
+(\protect\hyperlink{ref-billimoriaMarketDesignSystem2020}{2020}),
+Mancarella and Billimoria
+(\protect\hyperlink{ref-mancarellaFragileGridPhysics2021}{2021}) and Lal
+et al. (\protect\hyperlink{ref-lalEssentialSystemServices2021}{2021})
+discuss several prerequisites for implementing market-based mechanisms
+and stress that balance between market-based and regulatory mechanisms
+may be required. However, achieving this balance can be challenging due
+to the asymmetry between the risk of an event and its consequences, and
+that between the benefits of market efficiency and the cost of resilient
+and robust mitigation measures
+(\protect\hyperlink{ref-lalEssentialSystemServices2021}{Lal et al.,
+2021};
+\protect\hyperlink{ref-mancarellaFragileGridPhysics2021}{Mancarella and
+Billimoria, 2021}). Another trade-off is the arbitrary definition of FCS
+products. Market-based mechanisms will work best when FCS are "discrete"
+commodities and fungible. However, this ignores the wide ``spectrum'' of
+resource technical capabilities. Favouring fungibility may obscure
+physical and control interdependencies between FCS and restrict or fail
+to incentivise higher quality provision, thereby leading to an
+inefficient overall outcome
+(\protect\hyperlink{ref-gimonGridPhysicsMarkets2020}{Gimon, 2020};
+\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill and
+Esplin, 2020}).
 
 \hypertarget{sec:second}{%
 \chapter{Research containing a figure}\label{sec:second}}
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 This is the introduction. Sed vulputate tortor at nisl blandit interdum.
 Cras sagittis massa ex, quis eleifend purus condimentum congue. Maecenas
@@ -616,8 +1313,8 @@ tristique, justo vitae efficitur mollis, mi nulla varius elit, in
 consequat ligula nulla ut augue. Phasellus diam sapien, placerat sit
 amet tempor non, lobortis tempus ante.
 
-\hypertarget{method-1}{%
-\section{Method}\label{method-1}}
+\hypertarget{method}{%
+\section{Method}\label{method}}
 
 Donec imperdiet, lectus vestibulum sagittis tempus, turpis dolor euismod
 justo, vel tempus neque libero sit amet tortor. Nam cursus commodo
@@ -631,8 +1328,8 @@ ultrices blandit. Sed porta mauris tortor, eu vulputate arcu dapibus ac.
 Curabitur sodales at felis efficitur sollicitudin. Quisque at neque
 sollicitudin, mollis arcu vitae, faucibus tellus.
 
-\hypertarget{subsection-2-1}{%
-\subsection{Subsection 2}\label{subsection-2-1}}
+\hypertarget{subsection-2}{%
+\subsection{Subsection 2}\label{subsection-2}}
 
 This is the second part of the methodology. Sed ut ipsum ultrices,
 interdum ipsum vel, lobortis diam. Curabitur sit amet massa quis tortor
@@ -641,15 +1338,15 @@ consequat. Integer leo turpis, suscipit ac venenatis pellentesque,
 efficitur non sem. Pellentesque eget vulputate turpis. Etiam id nibh at
 elit fermentum interdum.
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 These are the results. In vitae odio at libero elementum fermentum vel
 iaculis enim. Nullam finibus sapien in congue condimentum. Curabitur et
 ligula et ipsum mollis fringilla.
 
-\hypertarget{discussion-1}{%
-\section{Discussion}\label{discussion-1}}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 Figure~\ref{fig:my_fig} shows how to add a figure. Donec ut lacinia
 nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio
@@ -669,8 +1366,8 @@ research.}\label{fig:my_fig}
 }
 \end{figure}
 
-\hypertarget{conclusion-2}{%
-\section{Conclusion}\label{conclusion-2}}
+\hypertarget{conclusion-1}{%
+\section{Conclusion}\label{conclusion-1}}
 
 This is the conclusion to the chapter. Quisque nec purus a quam
 consectetur volutpat. Cum sociis natoque penatibus et magnis dis
@@ -691,8 +1388,8 @@ faucibus.
 \hypertarget{sec:third}{%
 \chapter{Research containing a table}\label{sec:third}}
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
 
 This is the introduction. Phasellus non purus id mauris aliquam rutrum
 vitae quis tellus. Maecenas rhoncus ligula nulla, fringilla placerat mi
@@ -700,8 +1397,8 @@ consectetur eu. Aenean nec metus ac est ornare posuere. Nunc ipsum
 lacus, gravida commodo turpis quis, rutrum eleifend erat. Pellentesque
 id lorem eget ante porta tincidunt nec nec tellus.
 
-\hypertarget{method-2}{%
-\section{Method}\label{method-2}}
+\hypertarget{method-1}{%
+\section{Method}\label{method-1}}
 
 Vivamus consectetur, velit in congue lobortis, massa massa lacinia urna,
 sollicitudin semper ipsum augue quis tortor. Donec quis nisl at arcu
@@ -718,8 +1415,8 @@ sollicitudin dolor ut ipsum varius tincidunt. Duis dignissim massa in
 ipsum accumsan imperdiet. Maecenas suscipit sapien sed dui pharetra
 blandit. Morbi fermentum est vel quam pretium maximus.
 
-\hypertarget{subsection-2-2}{%
-\subsection{Subsection 2}\label{subsection-2-2}}
+\hypertarget{subsection-2-1}{%
+\subsection{Subsection 2}\label{subsection-2-1}}
 
 This is the second part of the methodology. Nullam accumsan condimentum
 eros eu volutpat. Maecenas quis ligula tempor, interdum ante sit amet,
@@ -727,8 +1424,8 @@ aliquet sem. Fusce tellus massa, blandit id tempus at, cursus in tortor.
 Nunc nec volutpat ante. Phasellus dignissim ut lectus quis porta. Lorem
 ipsum dolor sit amet, consectetur adipiscing elit.
 
-\hypertarget{results-2}{%
-\section{Results}\label{results-2}}
+\hypertarget{results-1}{%
+\section{Results}\label{results-1}}
 
 Table~\ref{tbl:random} shows us how to add a table. Integer tincidunt
 sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis
@@ -797,8 +1494,8 @@ Oceania & 87\% & 4044 & 4127 & 5,540 & 6,972 & 1.28 \\
 Antarctica & 83\% & 2964 & 3175 & 4,402 & 4,941 & 1.13 \\
 \end{longtable}
 
-\hypertarget{discussion-2}{%
-\section{Discussion}\label{discussion-2}}
+\hypertarget{discussion-1}{%
+\section{Discussion}\label{discussion-1}}
 
 This is the discussion. As we saw in Table Table~\ref{tbl:random}, many
 things are true, and other things are not. Etiam sit amet mi eros. Donec
@@ -807,8 +1504,8 @@ sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla
 facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum.
 Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.
 
-\hypertarget{conclusion-3}{%
-\section{Conclusion}\label{conclusion-3}}
+\hypertarget{conclusion-2}{%
+\section{Conclusion}\label{conclusion-2}}
 
 This is the conclusion to the chapter. Nullam porta tortor id vehicula
 interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci
@@ -820,16 +1517,16 @@ odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.
 \hypertarget{sec:fourth}{%
 \chapter{Final research study}\label{sec:fourth}}
 
-\hypertarget{introduction-4}{%
-\section{Introduction}\label{introduction-4}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 This is the introduction. Nunc lorem odio, laoreet eu turpis at,
 condimentum sagittis diam. Phasellus metus ligula, auctor ac nunc vel,
 molestie mattis libero. Praesent id posuere ex, vel efficitur nibh.
 Quisque vestibulum accumsan lacus vitae mattis.
 
-\hypertarget{method-3}{%
-\section{Method}\label{method-3}}
+\hypertarget{method-2}{%
+\section{Method}\label{method-2}}
 
 In tincidunt viverra dolor, ac pharetra tellus faucibus eget.
 Pellentesque tempor a enim nec venenatis. Morbi blandit magna imperdiet
@@ -843,15 +1540,15 @@ amet tristique lacus vulputate quis. Vivamus rhoncus est rhoncus tellus
 lacinia, a interdum sem egestas. Curabitur quis urna vel quam blandit
 semper vitae a leo. Nam vel lectus lectus.
 
-\hypertarget{subsection-2-3}{%
-\subsection{Subsection 2}\label{subsection-2-3}}
+\hypertarget{subsection-2-2}{%
+\subsection{Subsection 2}\label{subsection-2-2}}
 
 This is the second part of the methodology. Aenean vel pretium tortor.
 Aliquam erat volutpat. Quisque quis lobortis mi. Nulla turpis leo,
 ultrices nec nulla non, ullamcorper laoreet risus.
 
-\hypertarget{results-3}{%
-\section{Results}\label{results-3}}
+\hypertarget{results-2}{%
+\section{Results}\label{results-2}}
 
 These are the results. Curabitur vulputate nisl non ante tincidunt
 tempor. Aenean porta nisi quam, sed ornare urna congue sed. Curabitur in
@@ -859,8 +1556,8 @@ sapien justo. Quisque pulvinar ullamcorper metus, eu varius mauris
 pellentesque et. In hac habitasse platea dictumst. Pellentesque nec
 porttitor libero. Duis et magna a massa lacinia cursus.
 
-\hypertarget{discussion-3}{%
-\section{Discussion}\label{discussion-3}}
+\hypertarget{discussion-2}{%
+\section{Discussion}\label{discussion-2}}
 
 This is the discussion. Curabitur gravida nisl id gravida congue. Duis
 est nisi, sagittis eget accumsan ullamcorper, semper quis turpis. Mauris
@@ -868,8 +1565,8 @@ ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut
 egestas vehicula enim, porta molestie neque consectetur placerat.
 Integer iaculis sapien dolor, non porta nibh condimentum ut.
 
-\hypertarget{conclusion-4}{%
-\section{Conclusion}\label{conclusion-4}}
+\hypertarget{conclusion-3}{%
+\section{Conclusion}\label{conclusion-3}}
 
 This is the conclusion to the chapter. Nulla sed condimentum lectus.
 Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id
@@ -935,9 +1632,460 @@ Aenean dictum nunc id felis rhoncus aliquam.
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-Cousteau1963}{}}%
-Cousteau Jacques, Dugan James, 1963. {The Living Sea: by Jacques-Yves
-Cousteau}. Hamish Hamilton, London.
+\leavevmode\vadjust pre{\hypertarget{ref-50hzamprionapgeliartetennetConsultationDesignPlatform2017}{}}%
+50hz, A., Amprion, 2017. Consultation on the design of the platform for
+automatic {Frequency Restoration Reserve} ({aFRR}) of {PICASSO} region
+(No. November).
+
+\leavevmode\vadjust pre{\hypertarget{ref-abbasyNationalDesignMultinational2012}{}}%
+Abbasy, A., 2012. National {Design} and {Multinational Integration} of
+{Balancing Services Markets} (PhD thesis). TU Delft.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ahlqvistCentralSelfDispatchElectricity2018}{}}%
+Ahlqvist, V., Holmberg, P., Tangerås, T., 2018. Central- versus
+{Self-Dispatch} in {Electricity Markets}. SSRN Electronic Journal.
+\url{https://doi.org/10.2139/ssrn.3302569}
+
+\leavevmode\vadjust pre{\hypertarget{ref-akramEnergyStorageShortTerm2020}{}}%
+Akram, U., Mithulananthan, N., Shah, R., Basit, S.A., 2020. Energy
+{Storage} for {Short-Term Frequency Stability Enhancement} in
+{Low-Inertia Power Systems}. 2020 Australasian Universities Power
+Engineering Conference (AUPEC).
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorNEMEngineeringFramework2021}{}}%
+Australian Energy Market Operator, 2021a. {NEM Engineering Framework}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorQuarterlyEnergyDynamics2021}{}}%
+Australian Energy Market Operator, 2021b. Quarterly {Energy Dynamics Q3}
+2021.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{}}%
+Australian Energy Market Operator, 2020a. Renewable {Integration Study
+Appendix C} : {Managing} variability and uncertainty.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020c}{}}%
+Australian Energy Market Operator, 2020b. Renewable {Integration Study
+Appendix B} : {Frequency} control.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastFrequencyResponse2017}{}}%
+Australian Energy Market Operator, 2017. Fast {Frequency Response} in
+the {NEM}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-banshwarInternationalExperienceTechnical2018}{}}%
+Banshwar, A., Sharma, N.K., Sood, Y.R., Shrivastava, R., 2018. An
+international experience of technical and economic aspects of ancillary
+services in deregulated power industry: {Lessons} for emerging {BRIC}
+electricity markets. Renewable and Sustainable Energy Reviews 90,
+774--801. \url{https://doi.org/10.1016/j.rser.2018.03.085}
+
+\leavevmode\vadjust pre{\hypertarget{ref-billimoriaMarketDesignSystem2020}{}}%
+Billimoria, F., Mancarella, P., Poudineh, R., 2020. Market design for
+system security in low-carbon electricity grids: From the physics to the
+economics. {Oxford Institute for Energy Studies}.
+\url{https://doi.org/10.26889/9781784671600}
+
+\leavevmode\vadjust pre{\hypertarget{ref-brooksReviewFrequencyRegulation2019}{}}%
+Brooks, A.E., Lesieutre, B.C., 2019. A review of frequency regulation
+markets in three {U}.{S}. {ISO}/{RTOs}. Electricity Journal 32, 106668.
+\url{https://doi.org/10.1016/j.tej.2019.106668}
+
+\leavevmode\vadjust pre{\hypertarget{ref-cherevatskiyGridFormingEnergy2020}{}}%
+Cherevatskiy, S., Sproul, S., Zabihi, S., Korte, R., Klingenberg, H.,
+Buchholz, B., Oudalov, A., 2020. Grid {Forming Energy Storage System}
+addresses challenges of grids with high penetration of renewables ({A}
+case study), in: 48th {CIGRE Session} 2020, {Paris}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chowElectricityMarketDesign2005}{}}%
+Chow, J.H., De Mello, R.W., Cheung, K.W., 2005. Electricity market
+design: {An} integrated approach to reliability assurance. Proceedings
+of the IEEE 93, 1956--1968.
+\url{https://doi.org/10.1109/jproc.2005.857493}
+
+\leavevmode\vadjust pre{\hypertarget{ref-federalenergyregulatorycommissionfercOrderNo7552011}{}}%
+Commission, F.E.R., 2011. Order {No}. 755: {Frequency Regulation
+Compensation} in the {Oragnized Wholesale Power Markets}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cramtonElectricityMarketDesign2017}{}}%
+Cramton, P., 2017. Electricity market design. Oxford Review of Economic
+Policy 33, 589--612. \url{https://doi.org/10.1093/oxrep/grx041}
+
+\leavevmode\vadjust pre{\hypertarget{ref-devosDynamicDimensioningApproach2019}{}}%
+De Vos, K., Stevens, N., Devolder, O., Papavasiliou, A., Hebb, B.,
+Matthys-Donnadieu, J., 2019. Dynamic dimensioning approach for operating
+reserves: {Proof} of concept in {Belgium}. Energy Policy 124, 272--285.
+\url{https://doi.org/10.1016/j.enpol.2018.09.031}
+
+\leavevmode\vadjust pre{\hypertarget{ref-denholmInertiaPowerGrid2020}{}}%
+Denholm, P., Mai, T., Kenyon, R.W., Kroposki, B., Malley, M.O., 2020.
+Inertia and the {Power Grid} : {A Guide Without} the {Spin} (No. May).
+{NREL}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dgaconsultingInternationalReviewFrequency2016}{}}%
+DGA Consulting, 2016. International {Review} of {Frequency Control
+Adaptation}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-egglestonSecurityResilienceTechnical2021}{}}%
+Eggleston, J., Zuur, C., Mancarella, P., 2021. From security to
+resilience: {Technical} and regulatory options to manage extreme events
+in low-carbon grids. IEEE Power and Energy Magazine 19, 67--75.
+\url{https://doi.org/10.1109/MPE.2021.3088958}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ehrhartDesignRegulationBalancing2021}{}}%
+Ehrhart, K.M., Ocker, F., 2021. Design and regulation of balancing power
+auctions: An integrated market model approach. Journal of Regulatory
+Economics 60, 55--73. \url{https://doi.org/10.1007/s11149-021-09430-7}
+
+\leavevmode\vadjust pre{\hypertarget{ref-elaAncillaryServicesUnited2019}{}}%
+Ela, E., Hytowitz, R.B., 2019. Ancillary {Services} in the {United
+States}: {Technical Requirements}, {Market Designs} and {Price Trends}.
+{Electric Power Research Institute}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-elaEffectiveAncillaryServices2012}{}}%
+Ela, E., Kirby, B., Navid, N., Smith, J.C., 2012a. Effective ancillary
+services market designs on high wind power penetration systems. IEEE
+Power and Energy Society General Meeting 1--8.
+\url{https://doi.org/10.1109/pesgm.2012.6345361}
+
+\leavevmode\vadjust pre{\hypertarget{ref-elaOperatingReservesVariable2011}{}}%
+Ela, E., Milligan, M., Kirby, B., 2011. Operating {Reserves} and
+{Variable Generation}. {NREL}. \url{https://doi.org/10.2172/1023095}
+
+\leavevmode\vadjust pre{\hypertarget{ref-elaAlternativeApproachesIncentivizing2012}{}}%
+Ela, E., Tuohy, A., Milligan, M., Kirby, B., Brooks, D., 2012b.
+Alternative {Approaches} for {Incentivizing} the {Frequency Responsive
+Reserve Ancillary Service}. Electricity Journal 25, 88--102.
+\url{https://doi.org/10.1016/j.tej.2012.04.015}
+
+\leavevmode\vadjust pre{\hypertarget{ref-entso-ewgasSurveyAncillaryServices2021}{}}%
+ENTSO-E WGAS, 2021. Survey on {Ancillary Services Procurement},
+{Balancing Market Design} 2020.
+
+\leavevmode\vadjust pre{\hypertarget{ref-epexspotEuropeanMarketCoupling}{}}%
+EPEX Spot, n.d. European {Market Coupling}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-erikssonSyntheticInertiaFast2018}{}}%
+Eriksson, R., Modig, N., Elkington, K., 2018. Synthetic inertia versus
+fast frequency response: {A} definition. IET Renewable Power Generation
+12, 507--514. \url{https://doi.org/10.1049/iet-rpg.2017.0370}
+
+\leavevmode\vadjust pre{\hypertarget{ref-etoFrequencyControlRequirements2018}{}}%
+Eto, J.H., Undrill, J., Roberts, C., Mackin, P., Ellis, J., 2018.
+Frequency {Control Requirements} for {Reliable Interconnection Frequency
+Response}. {Lawrence Berkeley National Laboratory}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-etoUseFrequencyResponse2010}{}}%
+Eto, J., Undrill, J., Mackin, P., Daschmans, R., Williams, B., Haney,
+B., Hunt, R., Ellis, J., Illian, H., Martinez, C., OMalley, M.,
+Coughlin, K., Hamachi-LaCommare, K., 2010. Use of {Frequency Response
+Metrics} to {Assess} the {Planning} and {Operating Requirements} for
+{Reliable Integration} of {Variable Renewable Generation}. {Lawrence
+Berkeley National Laboratory}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-europeancommissionCommissionRegulationEU2017}{}}%
+European Commission, 2017. Commission {Regulation} ({EU}) 2017/2195 of
+23 {November} 2017 establishing a guideline on electricity balancing.
+Official Journal of the European Union.
+
+\leavevmode\vadjust pre{\hypertarget{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eENTSOEBalancingReport2020}{}}%
+European Network of Transmission System Operators for Electricity, 2020.
+{ENTSO-E Balancing Report}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eNetworkCodeLoadFrequency2013}{}}%
+European Network of Transmission System Operators for Electricity, 2013.
+Network {Code} on {Load-Frequency Control} and {Reserves}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fernandez-munozFastFrequencyControl2020}{}}%
+Fernández-Muñoz, D., Pérez-Díaz, J.I., Guisández, I., Chazarra, M.,
+Fernández-Espina, Á., 2020. Fast frequency control ancillary services:
+{An} international review. Renewable and Sustainable Energy Reviews 120.
+\url{https://doi.org/10.1016/j.rser.2019.109662}
+
+\leavevmode\vadjust pre{\hypertarget{ref-frewImpactOperatingReserve2021}{}}%
+Frew, B., Brinkman, G., Denholm, P., Narwade, V., Stephen, G., Bloom,
+A., Lau, J., 2021. Impact of operating reserve rules on electricity
+prices with high penetrations of renewable energy. Energy Policy 156,
+112443. \url{https://doi.org/10.1016/j.enpol.2021.112443}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gimonGridPhysicsMarkets2020}{}}%
+Gimon, E., 2020. Grid {Physics} and {Markets}: {A Non-Engineer}'s
+{Perspective}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-graingerPowerSystemAnalysis1994}{}}%
+Grainger, J.J., 1994. Power system analysis. {McGraw-Hill}, {New York}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hartmannEffectsDecreasingSynchronous2019}{}}%
+Hartmann, B., Vokony, I., Táczi, I., 2019. Effects of decreasing
+synchronous inertia on power system dynamics\textemdash{{Overview}} of
+recent experiences and marketisation of services. International
+Transactions on Electrical Energy Systems 29.
+\url{https://doi.org/10.1002/2050-7038.12128}
+
+\leavevmode\vadjust pre{\hypertarget{ref-hewickerDimensioningControlReserves2020}{}}%
+Hewicker, C., Kumar, A., Arappil, M., 2020. Dimensioning of {Control
+Reserves} in {Southern Region Grid States}. {Deutsche Gesellschaft für
+Internationale Zusammenarbeit GmbH}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hirthBalancingPowerVariable2015}{}}%
+Hirth, L., Ziegenhagen, I., 2015. Balancing power and variable
+renewables: {Three} links. Renewable and Sustainable Energy Reviews 50,
+1035--1051. \url{https://doi.org/10.1016/j.rser.2015.04.180}
+
+\leavevmode\vadjust pre{\hypertarget{ref-holttinenMethodologiesDetermineOperating2013}{}}%
+Holttinen, H., Milligan, M., Ela, E., Menemenlis, N., Dobschinski, J.,
+Rawn, B., Bessa, R.J., Flynn, D., Gomez Lazaro, E., Detlefsen, N., 2013.
+Methodologies to determine operating reserves due to increased wind
+power. IEEE Power and Energy Society General Meeting 3, 713--723.
+\url{https://doi.org/10.1109/pesmg.2013.6673067}
+
+\leavevmode\vadjust pre{\hypertarget{ref-internationalenergyagencyNetZero20502021}{}}%
+International Energy Agency, 2021. Net {Zero} by 2050 - {A Roadmap} for
+the {Global Energy Sector}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-isemongerEvolvingDesignRTO2009}{}}%
+Isemonger, A.G., 2009. The evolving design of {RTO} ancillary service
+markets. Energy Policy 37, 150--157.
+\url{https://doi.org/10.1016/j.enpol.2008.06.033}
+
+\leavevmode\vadjust pre{\hypertarget{ref-katzOpeningMarketsDesigning2019}{}}%
+Katz, J., Pawan Kumar, K.V.N., Cochran, J., Saxena, S.C., Soonee, S.K.,
+Narasimhan, S.R., Baba, K.V.S., 2019. Opening {Markets}, {Designing
+Windows}, and {Closing Gates}. {NREL, USAID, Indian Ministry of Power}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-keeratimahatAnalysisShorttermOperational2021}{}}%
+Keeratimahat, K., Bruce, A., MacGill, I., 2021. Analysis of short-term
+operational forecast deviations and controllability of utility-scale
+photovoltaic plants. Renewable Energy 167, 343--358.
+\url{https://doi.org/10.1016/j.renene.2020.11.090}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kenyonStabilityControlPower2020}{}}%
+Kenyon, R.W., Bossart, M., Marković, M., Doubleday, K., Matsuda-Dunn,
+R., Mitova, S., Julien, S.A., Hale, E.T., Hodge, B.M., 2020. Stability
+and control of power systems with high penetrations of inverter-based
+resources: {An} accessible review of current knowledge and open
+questions. Solar Energy 210, 149--168.
+\url{https://doi.org/10.1016/j.solener.2020.05.053}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kingFlexibilityReserveReductions2011}{}}%
+King, J., Kirby, B., Milligan, M., Beuning, S., 2011. Flexibility
+{Reserve Reductions} from an {Energy Imbalance Market} with {High
+Levels} of {Wind Energy} in the {Western Interconnection}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kirbyFrequencyControlConcerns2002}{}}%
+Kirby, B.J., Dyer, J., Martinez, C., Shoureshi, R.A., Guttromson, R.,
+Dagle, J., 2002. Frequency {Control Concerns In The North American
+Electric Power System}. {Oak Ridge National Laboratory}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kroposkiAchieving100Renewable2017}{}}%
+Kroposki, B., Johnson, B., Zhang, Y., Gevorgian, V., Denholm, P., Hodge,
+B., Hannegan, B., 2017. Achieving a 100\% {Renewable Grid}: {Operating
+Electric Power Systems} with {Extremely High Levels} of {Variable
+Renewable Energy}. IEEE Power and Energy Magazine 15, 61--73.
+\url{https://doi.org/10.1109/mpe.2016.2637122}
+
+\leavevmode\vadjust pre{\hypertarget{ref-lagoMarketFrameworkGrid2021}{}}%
+Lago, J., Poplavskaya, K., Suryanarayana, G., De Schutter, B., 2021. A
+market framework for grid balancing support through imbalances trading.
+Renewable and Sustainable Energy Reviews 137, 110467.
+\url{https://doi.org/10.1016/j.rser.2020.110467}
+
+\leavevmode\vadjust pre{\hypertarget{ref-lalEssentialSystemServices2021}{}}%
+Lal, N., Price, T., Kwek, L., Wilson, C., Billimoria, F., Morrow, T.,
+Garbutt, M., Sharafi, D., 2021. Essential system services reform:
+{Australian} market design for renewable-dominated grids. IEEE Power and
+Energy Magazine 19, 29--45.
+\url{https://doi.org/10.1109/mpe.2021.3088959}
+
+\leavevmode\vadjust pre{\hypertarget{ref-linResearchRoadmapGridForming2020}{}}%
+Lin, Y., Eto, J., Johnson, B., Flicker, J., Lasseter, R., Pico, H., Seo,
+G., Pierre, B., Ellis, A., Krishnaswami, H., Miller, J., Yuan, G., 2020.
+Research {Roadmap} on {Grid-Forming Inverters}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lopezSurveyAssessmentTechnical2020}{}}%
+Lopez, A., Ogayar, B., Hernández, J.C., Sutil, F.S., 2020. Survey and
+assessment of technical and economic features for the provision of
+frequency control services by household-prosumers. Energy Policy 146.
+\url{https://doi.org/10.1016/j.enpol.2020.111739}
+
+\leavevmode\vadjust pre{\hypertarget{ref-macgillEndtoendElectricityMarket2020}{}}%
+MacGill, I., Esplin, R., 2020. End-to-end electricity market design -
+some lessons from the {Australian National Electricity Market}.
+Electricity Journal 33, 106831.
+\url{https://doi.org/10.1016/j.tej.2020.106831}
+
+\leavevmode\vadjust pre{\hypertarget{ref-machowskiPowerSystemDynamics2020}{}}%
+Machowski, J., Lubosny, Z., Bialek, J.W., R., B.J., 2020. Power {System
+Dynamics}: {Stability} and {Control}. {John Wiley \& Sons, Ltd}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mancarellaFragileGridPhysics2021}{}}%
+Mancarella, P., Billimoria, F., 2021. The {Fragile Grid}: {The Physics}
+and {Economics} of {Security Services} in {Low-Carbon Power Systems}.
+IEEE Power and Energy Magazine 19, 79--88.
+\url{https://doi.org/10.1109/mpe.2020.3043570}
+
+\leavevmode\vadjust pre{\hypertarget{ref-meegahapolaPowerSystemStability2021}{}}%
+Meegahapola, L., Mancarella, P., Flynn, D., Moreno, R., 2021. Power
+system stability in the transition to a low carbon grid: {A}
+techno-economic perspective on challenges and opportunities. WIREs
+Energy and Environment 1--27. \url{https://doi.org/10.1002/wene.399}
+
+\leavevmode\vadjust pre{\hypertarget{ref-milanoFoundationsChallengesLowInertia2018}{}}%
+Milano, F., Dorfler, F., Hug, G., Hill, D.J., Verbic, G., 2018.
+Foundations and {Challenges} of {Low-Inertia Systems} ({Invited Paper}),
+in: 2018 {Power Systems Computation Conference} ({PSCC}). {IEEE}, pp.
+1--25. \url{https://doi.org/10.23919/pscc.2018.8450880}
+
+\leavevmode\vadjust pre{\hypertarget{ref-millerAdvisoryEquipmentLimits2017}{}}%
+Miller, N., Lew, D., Barnes, S., Ren, W., Reichard, M., Alexander, M.,
+Freeman, L., Achilles, S., Adamiak, M., 2017a. Advisory on {Equipment
+Limits} associated with {High RoCoF}. {GE Energy Consulting}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-millerTechnologyCapabilitiesFast2017}{}}%
+Miller, N., Lew, D., Piwko, R., 2017b. Technology {Capabilities} for
+{Fast Frequency Response}, GE Energy Consulting. {GE Energy Consulting}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-milliganIntegrationVariableGeneration2011}{}}%
+Milligan, M., Ela, E., Hodge, B.M., Kirby, B., Lew, D., Clark, C.,
+DeCesaro, J., Lynn, K., 2011. Integration of {Variable Generation},
+{Cost-Causation}, and {Integration Costs}. Electricity Journal 24,
+51--63. \url{https://doi.org/10.1016/j.tej.2011.10.011}
+
+\leavevmode\vadjust pre{\hypertarget{ref-milliganMarketCharacteristicsEfficient2010}{}}%
+Milligan, M., Kirby, B., 2010. Market characteristics for efficient
+integration of variable generation in the {Western Interconnection}.
+{National Renewable Energy Laboratory (NREL)}, {Golden, CO}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-monitoringanalytics2021QuarterlyState2021}{}}%
+Monitoring Analytics, 2021. 2021 {Quarterly State} of the {Market
+Report} for {PJM}: {January} through {June} - {Section} 10: {Ancillary
+Services}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-musgensEconomicsDesignBalancing2014}{}}%
+Müsgens, F., Ockenfels, A., Peek, M., 2014. Economics and design of
+balancing power markets in {Germany}. International Journal of
+Electrical Power and Energy Systems 55, 392--401.
+\url{https://doi.org/10.1016/j.ijepes.2013.09.020}
+
+\leavevmode\vadjust pre{\hypertarget{ref-nemocommitteeSingleIntradayCoupling}{}}%
+NEMO Committee, n.d. {Single Intraday Coupling (SIDC)}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020}{}}%
+NERC Inverter-Based Resource Performance Task Force, 2020. Fast
+{Frequency Response Concepts} and {Bulk Power System Reliability Needs}.
+{North American Electric Reliability Corporation}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ockerDesignEuropeanBalancing2016}{}}%
+Ocker, F., Braun, S., Will, C., 2016. Design of {European} balancing
+power markets, in: 2016 13th {International Conference} on the {European
+Energy Market} ({EEM}). {IEEE}, pp. 1--6.
+\url{https://doi.org/10.1109/eem.2016.7521193}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ockerGermanParadoxBalancing2017}{}}%
+Ocker, F., Ehrhart, K.M., 2017. The {``{German Paradox}''} in the
+balancing power markets. Renewable and Sustainable Energy Reviews 67,
+892--898. \url{https://doi.org/10.1016/j.rser.2016.09.040}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ockerHarmonizationEuropeanBalancing2018}{}}%
+Ocker, F., Ehrhart, K.M., Belica, M., 2018. Harmonization of the
+{European} balancing power auction: {A} game-theoretical and empirical
+investigation. Energy Economics 73, 194--211.
+\url{https://doi.org/10.1016/j.eneco.2018.05.003}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ortega-vazquezRiskBasedReserveProcurement2020}{}}%
+Ortega-Vazquez, M.A., Costilla-Enriquez, N., Ela, E., Tuohy, A., 2020.
+Risk-{Based Reserve Procurement}. 2020 International Conference on
+Probabilistic Methods Applied to Power Systems, PMAPS 2020 -
+Proceedings. \url{https://doi.org/10.1109/pmaps47429.2020.9183585}
+
+\leavevmode\vadjust pre{\hypertarget{ref-papavasiliouScarcityPricingMissing2020}{}}%
+Papavasiliou, A., 2020. Scarcity pricing and the missing {European}
+market for real-time reserve capacity. Electricity Journal 33, 106863.
+\url{https://doi.org/10.1016/j.tej.2020.106863}
+
+\leavevmode\vadjust pre{\hypertarget{ref-poplavskayaDistributedEnergyResources2019}{}}%
+Poplavskaya, K., de Vries, L., 2019. Distributed energy resources and
+the organized balancing market: {A} symbiosis yet? {Case} of three
+{European} balancing markets. Energy Policy 126, 264--276.
+\url{https://doi.org/10.1016/j.enpol.2018.11.009}
+
+\leavevmode\vadjust pre{\hypertarget{ref-prakashResponseFrequencyControl2021}{}}%
+Prakash, A., Macgill, I., Bruce, A., 2021. Response to {Frequency}
+control rule changes directions paper.
+\url{https://doi.org/10.13140/RG.2.2.11620.50560}
+
+\leavevmode\vadjust pre{\hypertarget{ref-reboursSurveyFrequencyVoltage2007}{}}%
+Rebours, Y.G., Kirschen, D.S., Trotignon, M., Rossignol, S., 2007b. A
+{Survey} of {Frequency} and {Voltage Control Ancillary Services} - {Part
+II}: {Economic Features}. IEEE Transactions on Power Systems 22,
+358--366. \url{https://doi.org/10.1109/tpwrs.2006.888965}
+
+\leavevmode\vadjust pre{\hypertarget{ref-reboursSurveyFrequencyVoltage2007a}{}}%
+Rebours, Y.G., Kirschen, D.S., Trotignon, M., Rossignol, S., 2007a. A
+{Survey} of {Frequency} and {Voltage Control Ancillary Services} - {Part
+I}: {Technical Features}. IEEE Transactions on Power Systems 22,
+350--357. \url{https://doi.org/10.1109/tpwrs.2006.888963}
+
+\leavevmode\vadjust pre{\hypertarget{ref-reboursFundamentalDesignIssues2007}{}}%
+Rebours, Y., Kirschen, D., Trotignon, M., 2007. Fundamental {Design
+Issues} in {Markets} for {Ancillary Services}. Electricity Journal 20,
+26--34. \url{https://doi.org/10.1016/j.tej.2007.06.003}
+
+\leavevmode\vadjust pre{\hypertarget{ref-reishusconsultingllcElectricityAncillaryServices2017}{}}%
+Reishus Consulting LLC, 2017. Electricity {Ancillary Services Primer}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rieszFrequencyControlAncillary2015}{}}%
+Riesz, J., Gilmore, J., MacGill, I., 2015. Frequency {Control Ancillary
+Service Market Design}: {Insights} from the {Australian National
+Electricity Market}. Electricity Journal 28, 86--99.
+\url{https://doi.org/10.1016/j.tej.2015.03.006}
+
+\leavevmode\vadjust pre{\hypertarget{ref-rieszDesigningElectricityMarkets2015}{}}%
+Riesz, J., Milligan, M., 2015. Designing electricity markets for a high
+penetration of variable renewables. Wiley Interdisciplinary Reviews:
+Energy and Environment 4, 279--289.
+\url{https://doi.org/10.1002/wene.137}
+
+\leavevmode\vadjust pre{\hypertarget{ref-schererIntegratedPanEuropeanAncillary2013}{}}%
+Scherer, M., Zima, M., Andersson, G., 2013. An integrated pan-{European}
+ancillary services market for frequency control. Energy Policy 62,
+292--300. \url{https://doi.org/10.1016/j.enpol.2013.07.030}
+
+\leavevmode\vadjust pre{\hypertarget{ref-thorncraftExperienceMarketbasedAncillary2007}{}}%
+Thorncraft, S.R., Outhred, H.R., 2007. Experience with market-based
+ancillary services in the {Australian National Electricity Market}. 2007
+IEEE Power Engineering Society General Meeting, PES.
+\url{https://doi.org/10.1109/pes.2007.385855}
+
+\leavevmode\vadjust pre{\hypertarget{ref-thorncraftMarketbasedAncillaryServices2008}{}}%
+Thorncraft, S.R., Outhred, H.R., Clements, D.J., Barker, F.K., 2008.
+Market-based ancillary services in the {Australian National Electricity
+Market} for increased levels of wind integration. Wind Engineering 32,
+1--12. \url{https://doi.org/10.1260/030952408784305868}
+
+\leavevmode\vadjust pre{\hypertarget{ref-tielensRelevanceInertiaPower2016}{}}%
+Tielens, P., Van Hertem, D., 2016. The relevance of inertia in power
+systems. Renewable and Sustainable Energy Reviews 55, 999--1009.
+\url{https://doi.org/10.1016/j.rser.2015.11.016}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ulbigImpactLowRotational2014}{}}%
+Ulbig, A., Borsche, T.S., Andersson, G., 2014. Impact of low rotational
+inertia on power system stability and operation, in: Proceedings of the
+19th {IFAC World Congress}. {IFAC}, pp. 7290--7297.
+\url{https://doi.org/10.3182/20140824-6-za-1003.02615}
+
+\leavevmode\vadjust pre{\hypertarget{ref-vanderveenElectricityBalancingMarket2016}{}}%
+van der Veen, R.A.C., Hakvoort, R.A., 2016. The electricity balancing
+market: {Exploring} the design challenge. Utilities Policy 43, 186--194.
+\url{https://doi.org/10.1016/j.jup.2016.10.008}
+
+\leavevmode\vadjust pre{\hypertarget{ref-vandezandeWellfunctioningBalancingMarkets2010}{}}%
+Vandezande, L., Meeus, L., Belmans, R., Saguan, M., Glachant, J.M.,
+2010. Well-functioning balancing markets: {A} prerequisite for wind
+power integration. Energy Policy 38, 3146--3154.
+\url{https://doi.org/10.1016/j.enpol.2009.07.034}
+
+\leavevmode\vadjust pre{\hypertarget{ref-zhouSurveyAncillaryServices2016}{}}%
+Zhou, Z., Levin, T., Conzelmann, G., 2016. Survey of {U}.{S}. {Ancillary
+Services Markets}. {Argonne National Laboratory}.
 
 \end{CSLReferences}
 
