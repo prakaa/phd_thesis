@@ -35,7 +35,7 @@ In this paper, we provide insights and recommendations on designing more effecti
 
 This paper offers three contributions to the literature. First, we provide a high-level overview and comparison of the key features of frequency control arrangements in North America and Central and Western Europe, and provide a review of the most prominent challenges to designing effective and efficient frequency control arrangements and the potential solutions discussed in the literature. Second, we provide a comprehensive update to previous literature on frequency control in the NEM [@thorncraftExperienceMarketbasedAncillary2007; @thorncraftMarketbasedAncillaryServices2008; @rieszFrequencyControlAncillary2015]. Our analysis benefits from recent experience in the NEM that encompasses deteriorating frequency performance, the reintroduction of mandatory requirements and integrating higher shares of VRE. While several of these aspects have been discussed independently in the literature, this paper seeks to provide a structured and holistic analysis of developments in the NEM and their implications for frequency control arrangement design. Third, this article advocates for designers placing a greater emphasis on delivering forward-looking frequency control arrangements during energy transition through the implementation of more robust regulatory mechanisms and ensuring that market-based mechanisms are capable of supporting FCS investment. As highlighted in the following sections, these design features have received surprisingly little attention in the literature.
 
-The rest of the chapter is structured as follows. In @sec:fcs-context, we provide an overview of typical frequency control arrangements, with a focus on restructured electricity industries in North America and Europe, and the main challenges faced in their design. We describe the NEM, its frequency control arrangements and the specific challenges posed by increasing penetrations of VRE and other IBR in Section [3](#sec:nem_frequency_control){reference-type="ref" reference="sec:nem_frequency_control"}. In Section [\[sec:insights\]](#sec:insights){reference-type="ref" reference="sec:insights"}, we analyse the performance of the NEM's frequency control arrangements in responding to the challenges explored in Section [2](#sec:context){reference-type="ref" reference="sec:context"}, with primary frequency response and regulation (secondary frequency response) services in the NEM as case studies. Based on our analysis, we conclude by offering four key insights to operators, regulators and market-bodies that include understanding control action interactions; ensuring that arrangements are capable of supporting investment in FCS capability; monitoring, assessing and remunerating FCS performance; and considering both regulatory and market-based mechanisms in the design of effective and efficient frequency control arrangements.
+The rest of the chapter is structured as follows. In Section [-@sec:fcs-context], we provide an overview of typical frequency control arrangements, with a focus on restructured electricity industries in North America and Europe, and the main challenges faced in their design. We describe the NEM, its frequency control arrangements and the specific challenges posed by increasing penetrations of VRE and other IBR in Section [3](#sec:nem_frequency_control){reference-type="ref" reference="sec:nem_frequency_control"}. In Section [\[sec:insights\]](#sec:insights){reference-type="ref" reference="sec:insights"}, we analyse the performance of the NEM's frequency control arrangements in responding to the challenges explored in Section [2](#sec:context){reference-type="ref" reference="sec:context"}, with primary frequency response and regulation (secondary frequency response) services in the NEM as case studies. Based on our analysis, we conclude by offering four key insights to operators, regulators and market-bodies that include understanding control action interactions; ensuring that arrangements are capable of supporting investment in FCS capability; monitoring, assessing and remunerating FCS performance; and considering both regulatory and market-based mechanisms in the design of effective and efficient frequency control arrangements.
 
 ## Context {#sec:fcs-context}
 
@@ -48,7 +48,7 @@ most power systems, such schemes implicitly include inertial response and explic
 
 Except for inertial response from synchronous machines, the SO procures FCS capacity from capable resources within its control area and, in the case of SFR and TFR, activates FCS energy if necessary. In electricity industries where the SO owns most if not all the generation assets (i.e. a vertically-integrated utility), the SO is able to jointly schedule generation and FCS capacity with knowledge of the condition of the system and the status and cost structures of their plant. However, many electricity industries have undergone some degree of restructuring, which has created a greater role for competitively-oriented decentralised decision-making [@vanderveenElectricityBalancingMarket2016] . The diverse outcomes of restructuring processes and differences in technical characteristics (e.g. capabilities of resource mix and network topology) have led to a wide range of frequency control arrangements across power systems [@reboursFundamentalDesignIssues2007; @poplavskayaDistributedEnergyResources2019] , which have been reviewed and compared extensively within industry and academic literature [@reboursSurveyFrequencyVoltage2007a; @reboursSurveyFrequencyVoltage2007; @zhouSurveyAncillaryServices2016; @ockerDesignEuropeanBalancing2016; @reishusconsultingllcElectricityAncillaryServices2017; @banshwarInternationalExperienceTechnical2018; @brooksReviewFrequencyRegulation2019; @elaAncillaryServicesUnited2019; @hewickerDimensioningControlReserves2020; @lopezSurveyAssessmentTechnical2020].
 
-In restructured electricity industries, the provision of more passive FCS (e.g. ride-through capabilities) is usually mandated by regulatory mechanisms such as connection agreements and grid codes, whereas FCS that require additional response capabilities or impose opportunity-costs on suppliers are procured and remunerated by the SO through market-based mechanisms. In @sec:fcs-NA;@sec:fcs-EU, we provide an overview of typical features[^2] and key developments in market-based mechanisms for procuring FCS in North America and Central and Western Europe, respectively. These regions best represent the two prevailing short-term wholesale electricity market models: central dispatch markets, in which the SO issues dispatch instructions, and decentralised or self-dispatch markets, in which resource dispatch is managed by market participants [@ahlqvistCentralSelfDispatchElectricity2018]. Given that FCS and energy are partially substitutable goods, the characteristics of short-term wholesale electricity markets heavily influence the design of FCS arrangements and thus these regions provide an interesting contrast. However, despite their differences, the SO plays a central role in both of these regions as they determine the area demand for FCS capacity, activate FCS energy as required and are ultimately responsible for ensuring that the power system is balanced and securely operated.
+In restructured electricity industries, the provision of more passive FCS (e.g. ride-through capabilities) is usually mandated by regulatory mechanisms such as connection agreements and grid codes, whereas FCS that require additional response capabilities or impose opportunity-costs on suppliers are procured and remunerated by the SO through market-based mechanisms. In Sections [-@sec:fcs-NA] & [-@sec:fcs-EU], we provide an overview of typical features[^2] and key developments in market-based mechanisms for procuring FCS in North America and Central and Western Europe, respectively. These regions best represent the two prevailing short-term wholesale electricity market models: central dispatch markets, in which the SO issues dispatch instructions, and decentralised or self-dispatch markets, in which resource dispatch is managed by market participants [@ahlqvistCentralSelfDispatchElectricity2018]. Given that FCS and energy are partially substitutable goods, the characteristics of short-term wholesale electricity markets heavily influence the design of FCS arrangements and thus these regions provide an interesting contrast. However, despite their differences, the SO plays a central role in both of these regions as they determine the area demand for FCS capacity, activate FCS energy as required and are ultimately responsible for ensuring that the power system is balanced and securely operated.
 
 [^2]: We note that there are numerous differences between jurisdictional arrangements and terminology in each of these regions. For a more general overview of potential procurement models, refer to @billimoriaMarketDesignSystem2020.
 
@@ -58,12 +58,12 @@ In North America, central dispatch wholesale electricity markets are operated by
 
 Except for Frequency Responsive Reserves (i.e. PFR), operating reserves (i.e. FCS capacity) are explicitly procured by placing an obligation on load-serving entities to self-provide or purchase their share from SO-run FCS markets [@elaAlternativeApproachesIncentivizing2012; @zhouSurveyAncillaryServices2016]. These FCS markets are usually integrated into day-ahead market and, in most jurisdictions, the real-time market. Standard products in North American markets include Regulation (i.e. SFR during normal operation), Spinning and Non-Spinning Reserves (i.e. TFR deployed following an event) [@zhouSurveyAncillaryServices2016; @elaAncillaryServicesUnited2019; @hewickerDimensioningControlReserves2020]. Participants can submit offers for FCS in addition to offer for energy. Unit commitment and economic dispatch permit co-optimisation of energy and FCS procurement. From the perspective of the SO, co-optimisation ensures that the total system cost of achieving an energy supply-demand balance is minimised alongside FCS requirements, subject to network and system security constraints. From the perspective of participants, co-optimisation leads to an FCS price that not only reflects the price offer of the marginal resource, but also any \"profit\" it forgoes in the energy market (assuming supplier offers reflect their short-run marginal costs) [@isemongerEvolvingDesignRTO2009; @elaEffectiveAncillaryServices2012]. As such, ISO/RTO FCS markets can compensate opportunity-costs related to the day-ahead and/or real-time market but only allocate costs to load-serving entities through a procurement obligation.
 
-Though North American FCS markets have predominantly procured and remunerated FCS capacity, ISO/RTOs (except Texas' ISO, ERCOT) were ordered to also remunerate Regulation providers for the quantity of energy provided whilst accurately following control signals by the Federal Energy Regulatory Commission's (FERC) Order 755 . As such, Regulation
+Though North American FCS markets have predominantly procured and remunerated FCS capacity, ISO/RTOs (except Texas' ISO, ERCOT) were ordered to also remunerate Regulation providers for the quantity of energy provided whilst accurately following control signals by the Federal Energy Regulatory Commission's (FERC) Order 755 [@federalenergyregulatorycommissionfercOrderNo7552011]. As such, Regulation
 providers offer a quantity of capacity, a price for capacity and a price
 for \"mileage\", which is the energy delivered. Remuneration for
 Regulation takes performance (the ability of a resource to follow the
 ISO/RTO's control signals) into account, though how this is implemented
-varies between ISO/RTOs [@Ela2019b; @Fernandez-Munoz2020]. A notable
+varies between ISO/RTOs [@elaAncillaryServicesUnited2019; @fernandez-munozFastFrequencyControl2020]. A notable
 example is the PJM RTO, which uses both a standard SFR control signal
 (RegA) and faster SFR control signal (RegD) intended for battery energy
 storage systems (BESS). PJM determines how interchangeable a resource's
@@ -71,207 +71,40 @@ RegD provision is with RegA provision (the marginal benefit factor) to
 clear the Regulation market and calculates a performance score for use
 in market clearing and settlement. However, according to the independent
 market monitor, the omission of the marginal benefit factor from market
-settlement has led to perverse market outcomes
-[@Brooks2019; @MonitoringAnalytics2021].
+settlement has led to perverse market outcomes [@brooksReviewFrequencyRegulation2019; @monitoringanalytics2021QuarterlyState2021].
 
-### European markets {#subsubsec:EU}
+### European markets {#sec:fcs-EU}
 
-Most of the electricity markets of Central and Western Europe are
-self-dispatch and consist of two short-term platforms: the day-ahead
-market and the intraday market, which can be continuous, composed of
-frequently-run discrete auctions or a combination of the two. Each of
-these platforms is coupled across the majority of market zones in
-Europe, with a single price coupling algorithm used to simultaneously
-clear zonal day-ahead markets and a single order book compiled to match
-cross-zonal intraday orders
-[@nemocommitteeSingleIntradayCoupling; @epexspotEuropeanMarketCoupling].
-In contrast to North American electricity markets, the market operator
-is responsible for market operation and is distinct from the
-Transmission System Operator (TSO). Generation and load are managed by
-Balancing Responsible Parties (BRP), which must submit binding
-operational schedules to the TSO ahead of delivery (often by the day
-prior to delivery). As BRPs become aware of potential deviations closer
-to real time (e.g. improved forecasts), they are able to adjust their
-submitted schedules (i.e. remain \"balanced\") through trades on the
-intraday market [@Lago2021; @Musgens2014]. BRPs face financial
-repercussions if they are imbalanced via an imbalance price and, in some
-jurisdictions, are legally obliged to be balanced [@ENTSO-EWGAS2021a].
+Most of the electricity markets of Central and Western Europe are self-dispatch and consist of two short-term platforms: the day-ahead market and the intraday market, which can be continuous, composed of frequently-run discrete auctions or a combination of the two. Each of these platforms is coupled across the majority of market zones in Europe, with a single price coupling algorithm used to simultaneously clear zonal day-ahead markets and a single order book compiled to match cross-zonal intraday orders [@nemocommitteeSingleIntradayCoupling; @epexspotEuropeanMarketCoupling]. In contrast to North American electricity markets, the market operator is responsible for market operation and is distinct from the Transmission System Operator (TSO). Generation and load are managed by Balancing Responsible Parties (BRP), which must submit binding operational schedules to the TSO ahead of delivery (often by the day prior to delivery). As BRPs become aware of potential deviations closer to real time (e.g. improved forecasts), they are able to adjust their submitted schedules (i.e. remain \"balanced\") through trades on the intraday market [@lagoMarketFrameworkGrid2021; @musgensEconomicsDesignBalancing2014]. BRPs face financial repercussions if they are imbalanced via an imbalance price and, in some jurisdictions, are legally obliged to be balanced [@entso-ewgasSurveyAncillaryServices2021].
 
-Following gate-closure of the intraday market, residual imbalances are
-primarily addressed by FCS (known as balancing services) procured by the
-TSO. Standard FCS in Europe include Frequency Containment Reserve (i.e.
-PFR), automatic Frequency Restoration Reserves (i.e. SFR), and manual
-Frequency Restoration Reserves and Replacement Reserves (i.e. both TFR),
-with minimum technical requirements for each specified by the European
-Network of Transmission System Operators for Electricity (ENTSO-E)
-[@EuropeanNetworkofTransmissionSystemOperatorsforElectricityENTSO-E2013].
-Depending on the FCS product and the jurisdiction, TSOs may distinguish
-between FCS capacity (balancing capacity) and the delivery of FCS energy
-(balancing energy). The provision of one or both is mandated in some
-cases, but where both are procured competitively, Balancing Service
-Providers (BSP) typically submit separate offers for FCS capacity and
-FCS energy [@Abbasy2012]. FCS capacity markets are often cleared days to
-months in advance of real-time whereas the FCS energy market, which
-effectively constitutes merit-order or pro rata activation of capacity
-for FCS energy provision, is cleared within an hour or minutes of
-real-time [@Ocker2016; @Poplavskaya2019; @ENTSO-EWGAS2021a]. FCS
-capacity costs are typically allocated to power system users via a grid
-tariff. FCS energy costs are typically allocated to BRPs based on their
-schedule deviations and an imbalance price, which may differ from the
-FCS energy price paid to BSPs [@Vandezande2010; @Hirth2015]. As such,
-European FCS markets generally disincentivise causers of imbalance
-through the imbalance price, which may also recover or reflect the cost
-of FCS energy. However, since FCS capacity markets are typically
-decoupled from and cleared ahead of short-term energy markets, perceived
-opportunity-costs based on expected short-term energy market prices must
-be internalised within participants' FCS offers.
+Following gate-closure of the intraday market, residual imbalances are primarily addressed by FCS (known as balancing services) procured by the TSO. Standard FCS in Europe include Frequency Containment Reserve (i.e. PFR), automatic Frequency Restoration Reserves (i.e. SFR), and manual Frequency Restoration Reserves and Replacement Reserves (i.e. both TFR), with minimum technical requirements for each specified by the European Network of Transmission System Operators for Electricity (ENTSO-E) [@europeannetworkoftransmissionsystemoperatorsforelectricityentso-eNetworkCodeLoadFrequency2013]. Depending on the FCS product and the jurisdiction, TSOs may distinguish between FCS capacity (balancing capacity) and the delivery of FCS energy (balancing energy). The provision of one or both is mandated in some cases, but where both are procured competitively, Balancing Service Providers (BSP) typically submit separate offers for FCS capacity and FCS energy [@abbasyNationalDesignMultinational2012]. FCS capacity markets are often cleared days to months in advance of real-time whereas the FCS energy market, which effectively constitutes merit-order or pro rata activation of capacity for FCS energy provision, is cleared within an hour or minutes of real-time [@poplavskayaDistributedEnergyResources2019; @ockerDesignEuropeanBalancing2016; @entso-ewgasSurveyAncillaryServices2021]. FCS capacity costs are typically allocated to power system users via a grid tariff. FCS energy costs are typically allocated to BRPs based on their schedule deviations and an imbalance price, which may differ from the FCS energy price paid to BSPs [@vandezandeWellfunctioningBalancingMarkets2010; @hirthBalancingPowerVariable2015]. As such, European FCS markets generally disincentivise causers of imbalance through the imbalance price, which may also recover or reflect the cost of FCS energy. However, since FCS capacity markets are typically decoupled from and cleared ahead of short-term energy markets, perceived opportunity-costs based on expected short-term energy market prices must be internalised within participants' FCS offers.
 
-Given the relatively high degree of interconnection between transmission
-systems in Central and Western Europe, cross-TSO initiatives are in
-place and being expanded to address imbalances and share FCS across the
-Continental Europe synchronous area. When sufficient cross-TSO
-transmission capacity is available, initiatives currently in place
-enable participating TSOs to jointly procure Frequency Containment
-Reserve capacity, net imbalances (i.e. reduce the demand for SFR by
-aggregating individual control area imbalances) and jointly procure
-automatic Frequency Restoration Reserve capacity and energy
-[@EuropeanNetworkofTransmissionSystemOperatorsforElectricityENTSO-E2020].
-Further efficiency gains are expected following the implementation of
-integrated market platforms for imbalance netting and balancing energy
-for SFR and TFR. The implementation of these platforms is mandated by
-the European Commission's European Balancing Guideline and requires
-certain FCS product definitions and market features to be harmonised
-across the balancing energy markets of participating TSOs
-[@EuropeanCommission2017; @50hertz2017].
+Given the relatively high degree of interconnection between transmission systems in Central and Western Europe, cross-TSO initiatives are in place and being expanded to address imbalances and share FCS across the Continental Europe synchronous area. When sufficient cross-TSO transmission capacity is available, initiatives currently in place enable participating TSOs to jointly procure Frequency Containment Reserve capacity, net imbalances (i.e. reduce the demand for SFR by aggregating individual control area imbalances) and jointly procure automatic Frequency Restoration Reserve capacity and energy [@europeannetworkoftransmissionsystemoperatorsforelectricityentso-eENTSOEBalancingReport2020]. Further efficiency gains are expected following the implementation of integrated market platforms for imbalance netting and balancing energy for SFR and TFR. The implementation of these platforms is mandated by the European Commission's European Balancing Guideline and requires certain FCS product definitions and market features to be harmonised across the balancing energy markets of participating TSOs [@europeancommissionCommissionRegulationEU2017; @50hzamprionapgeliartetennetConsultationDesignPlatform2017].
 
 ## Designing frequency control arrangements
 
-As with any policy problem, designing frequency control arrangements in
-restructured electricity industries requires design principles,
-variables and performance criteria to be established. The public good
-characteristics of frequency control have heavily influenced arrangement
-design principles across jurisdictions, such as the common preference
-for the SO to centrally coordinate FCS procurement and activation
-[@Rebours2007b; @Musgens2014]. In contrast, though some design variables
-are common, others may only apply to particular systems based on their
-resource mix, network topology and/or market design. @Rebours2007b
-discuss design variables for central dispatch markets related to the
-following arrangement features:
+As with any policy problem, designing frequency control arrangements in restructured electricity industries requires design principles, variables and performance criteria to be established. The public good characteristics of frequency control have heavily influenced arrangement design principles across jurisdictions, such as the common preference for the SO to centrally coordinate FCS procurement and activation [@reboursFundamentalDesignIssues2007; @musgensEconomicsDesignBalancing2014]. In contrast, though some design variables are common, others may only apply to particular systems based on their resource mix, network topology and/or market design. @reboursFundamentalDesignIssues2007 discuss design variables for central dispatch markets related to the following arrangement features:
 
 1.  FCS procurement;
 
-2.  Price formation, which when efficient should lead to FCS prices not
-    only reflecting the true cost of the service, but also its true
-    value to the system; and
+2.  Price formation, which when efficient should lead to FCS prices not only reflecting the true cost of the service, but also its true value to the system; and
 
 3.  Allocation of the cost of FCS.
 
-Similarly, @Abbasy2012 discusses the main design variables applicable to
-European self-dispatch markets. @VanderVeen2016 build upon this work to
-provide a more comprehensive treatment of design variables in
-self-dispatch markets. @Rebours2007b [@Abbasy2012] and @VanderVeen2016
-all propose some variation of effectiveness and efficiency as
-performance criteria, with van der Veen and Hakvoort analysing the
-various trade-offs between and within each criterion.
+Similarly, @abbasyNationalDesignMultinational2012 discusses the main design variables applicable to European self-dispatch markets. @vanderveenElectricityBalancingMarket2016 build upon this work to provide a more comprehensive treatment of design variables in self-dispatch markets. @reboursFundamentalDesignIssues2007, @abbasyNationalDesignMultinational2012 and @vanderveenElectricityBalancingMarket2016 all propose some variation of effectiveness and efficiency as performance criteria, with @vanderveenElectricityBalancingMarket2016 analysing the various trade-offs between and within each criterion.
 
-Despite the well-defined nature of the design problem, there are several
-challenges to achieving effective and efficient arrangements. In
-Sections [2.3.1](#subsubsec:ibrchallenges){reference-type="ref"
-reference="subsubsec:ibrchallenges"} and
-[2.3.2](#subsubsec:efficiencychallenges){reference-type="ref"
-reference="subsubsec:efficiencychallenges"}, we present the most
-prominent challenges and their treatment in the literature.
+Despite the well-defined nature of the design problem, there are several challenges to achieving effective and efficient arrangements. In Sections [-@sec:fcs-ibr-challenges] and [-@sec:fcs-efficiency-challenges], we present the most prominent challenges and their treatment in the literature.
 
-### The influx of VRE and other IBR in power systems {#subsubsec:ibrchallenges}
+### The influx of VRE and other IBR in power systems {#sec:fcs-ibr-challenges}
 
-As discussed in Section [1](#sec:intro){reference-type="ref"
-reference="sec:intro"}, VRE adds variability and uncertainty to power
-systems which, at the very least, can lead to increased procurement and
-activation requirements for PFR and SFR during normal operating
-conditions [@Ela2011]. Three proposals to address this issue and thus
-reduce FCS requirements with growing penetrations of VRE have been
-discussed in the literature. The first is to shorten energy market
-trading/dispatch intervals [@Riesz2015a; @Ocker2017] and the time
-between market gate closure and dispatch [@Katz2019], thereby enabling
-scheduling based on up-to-date system conditions and forecasts. The
-second is to increase coordination between control areas within a
-synchronous area by netting imbalances [@King2011], jointly procuring
-and dispatching FCS [@Scherer2013] or aggregating them into a single
-market region [@Milligan2010; @Riesz2015a]. These two proposals alone
-have delivered significant system savings in Germany despite growing
-penetrations of VRE [@Hirth2015; @Ocker2017]. The third is for the SO to
-determine the required quantity of FCS capacity (*dimensioning*) using
-dynamic and probabilistic approaches (as opposed to static and
-deterministic) that adequately reflect current or expected power system
-conditions and an acceptable level of risk, such as a reliability
-standard [@Holttinen2013; @DeVos2019; @Ortega-Vazquez2020].
+As discussed in Section [-@sec:fcs-intro], VRE adds variability and uncertainty to power systems which, at the very least, can lead to increased procurement and activation requirements for PFR and SFR during normal operating conditions [@elaOperatingReservesVariable2011]. Three proposals to address this issue and thus reduce FCS requirements with growing penetrations of VRE have been discussed in the literature. The first is to shorten energy market trading/dispatch intervals [@rieszDesigningElectricityMarkets2015; @ockerGermanParadoxBalancing2017] and the time between market gate closure and dispatch [@katzOpeningMarketsDesigning2019], thereby enabling scheduling based on up-to-date system conditions and forecasts. The second is to increase coordination between control areas within a synchronous area by netting imbalances [@kingFlexibilityReserveReductions2011], jointly procuring and dispatching FCS [@schererIntegratedPanEuropeanAncillary2013] or aggregating them into a single market region [@milliganMarketCharacteristicsEfficient2010; @rieszDesigningElectricityMarkets2015]. These two proposals alone have delivered significant system savings in Germany despite growing penetrations of VRE [@hirthBalancingPowerVariable2015; @ockerGermanParadoxBalancing2017]. The third is for the SO to determine the required quantity of FCS capacity (*dimensioning*) using dynamic and probabilistic approaches (as opposed to static and deterministic) that adequately reflect current or expected power system conditions and an acceptable level of risk, such as a reliability standard [@holttinenMethodologiesDetermineOperating2013; @devosDynamicDimensioningApproach2019; @ortega-vazquezRiskBasedReserveProcurement2020].
 
-In recent years, SOs have become increasingly concerned with growing
-penetrations of asynchronous IBR leading to higher RoCoFs and fewer
-resources offering conventional FCS
-[@DGAConsulting2016; @Hartmann2019; @Denholm2020]. However, VRE and
-other IBR are able to provide tunable conventional FCS, FFR and/or an
-inherent response that strongly resembles the inertial response of
-synchronous machines[^3] if this is facilitated by arrangement design
-[@Miller2017; @Fernandez-Munoz2020; @Mancarella2021a]. Following a
-contingency event in a low-inertia power system, rapid FCS from IBR can
-mitigate higher RoCoFs, which when unabated can lead to deeper frequency
-nadirs and zeniths and the subsequent activation of UFLS or OFGS
-[@Tielens2016; @AustralianEnergyMarketOperator2017a; @NERCInverter-BasedResourcePerformancetaskForceIRPTF2020a].
+In recent years, SOs have become increasingly concerned with growing penetrations of asynchronous IBR leading to higher RoCoFs and fewer resources offering conventional FCS [@dgaconsultingInternationalReviewFrequency2016;@hartmannEffectsDecreasingSynchronous2019;@denholmInertiaPowerGrid2020]. However, VRE and other IBR are able to provide tunable conventional FCS, FFR and/or an inherent response that strongly resembles the inertial response of synchronous machines[^3] if this is facilitated by arrangement design [@millerTechnologyCapabilitiesFast2017; @fernandez-munozFastFrequencyControl2020; @mancarellaFragileGridPhysics2021]. Following a contingency event in a low-inertia power system, rapid FCS from IBR can mitigate higher RoCoFs, which when unabated can lead to deeper frequency nadirs and zeniths and the subsequent activation of UFLS or OFGS [@tielensRelevanceInertiaPower2016; @australianenergymarketoperatorFastFrequencyResponse2017; @nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020].
 
-### Achieving economic efficiency {#subsubsec:efficiencychallenges}
+[^3]: The terms *virtual, emulated and synthetic* inertia have been used in the literature to refer to a proportional active power response to RoCoF. However, these terms do not distinguish whether the inverter control scheme provides an inherent response (i.e. from inverters operated as a voltage source which are commonly referred to as *grid-forming inverters* [@linResearchRoadmapGridForming2020; @cherevatskiyGridFormingEnergy2020]) or a controlled response following frequency measurement [@tielensRelevanceInertiaPower2016; @erikssonSyntheticInertiaFast2018].
 
-Achieving short-run efficiency entails supplier costs being reflected in
-their offers and adequately propagated to FCS prices, and the SO
-assigning at least some portion of FCS costs to system users that create
-a need for procurement or activation. A widely used pricing approach in
-ISO/RTO co-optimised FCS markets is a marginal price which incorporates
-the marginal resource's short-term market opportunity-costs and their
-offer, which could reflect potential mileage or wear-and-tear costs
-[@Zhou2016; @Frew2021]. Though improving cost-allocation has been
-repeatedly proposed in North American literature
-[@Isemonger2009; @Milligan2011a; @Ela2012a], FCS costs are predominantly
-socialised across loads based on demand or consumption. In Europe,
-however, much attention has been given to FCS market pricing, scoring
-(the order in which offers are selected) and cost-allocation.
-Specifically, literature on European FCS markets has explored whether
-pay-as-bid or uniform pricing better facilitates suppliers revealing
-their true costs [@Musgens2014; @Hirth2015; @Ocker2018], the particular
-offers scoring should consider [@Musgens2014; @Ehrhart2021] and the
-design of imbalance prices to sufficiently incentivise short-term
-balancing [@Vandezande2010; @Hirth2015; @Papavasiliou2020]. Regardless,
-both European and North American literature suggest that increased
-competition in FCS markets is a priority. This could be facilitated by
-enabling distributed and utility-scale VRE and IBR to qualify for FCS
-provision, reducing minimum offer quantities, separating raise and lower
-(positive and negative) products and increasing market clearing
-frequency and the time resolution of FCS products
-[@Hirth2015; @Poplavskaya2019; @Lago2021; @Frew2021]. Despite the
-typically \"shallow\" nature of FCS markets (i.e. additional supply can
-significantly reduce prices [@Riesz2015a]), dynamic efficiency has
-received considerably less attention. Notable exceptions include
-@Papavasiliou2020 and @Frew2021, who briefly discuss the potential for
-FCS scarcity pricing to better reflect the true value of system
-reliability and support investment in FCS.
+### Achieving economic efficiency {#sec:fcs-efficiency-challenges}
 
-An additional challenge in implementing efficient FCS markets involves
-the trade-offs that must be considered. As outlined in Section
-[1](#sec:intro){reference-type="ref" reference="sec:intro"}, some
-mechanisms that improve efficiency may come at the expense of
-visibility, control and redundancy afforded to the SO, which typically
-does not own any FCS-capable assets. The former is typically achieved
-using market-based mechanisms and the latter through regulatory
-mechanisms. @Ela2012b, @Billimoria2020, @Mancarella2021a and @Lal2021a
-discuss several prerequisites for implementing market-based mechanisms
-and stress that balance between market-based and regulatory mechanisms
-may be required. However, achieving this balance can be challenging due
-to the asymmetry between the risk of an event and its consequences, and
-that between the benefits of market efficiency and the cost of resilient
-and robust mitigation measures [@Mancarella2021a; @Lal2021a]. Another
-trade-off is the arbitrary definition of FCS products. Market-based
-mechanisms will work best when FCS are \"discrete\" commodities and
-fungible. However, this ignores the wide "spectrum" of resource
-technical capabilities. Favouring fungibility may obscure physical and
-control interdependencies between FCS and restrict or fail to
-incentivise higher quality provision, thereby leading to an inefficient
-overall outcome [@Gimon2020; @MacGill2020].
+Achieving short-run efficiency entails supplier costs being reflected in their offers and adequately propagated to FCS prices, and the SO assigning at least some portion of FCS costs to system users that create a need for procurement or activation. A widely used pricing approach in ISO/RTO co-optimised FCS markets is a marginal price which incorporates the marginal resource's short-term market opportunity-costs and their offer, which could reflect potential mileage or wear-and-tear costs [@zhouSurveyAncillaryServices2016; @frewImpactOperatingReserve2021]. Though improving cost-allocation has been repeatedly proposed in North American literature [@isemongerEvolvingDesignRTO2009; @elaEffectiveAncillaryServices2012; @milliganIntegrationVariableGeneration2011], FCS costs are predominantly socialised across loads based on demand or consumption. In Europe, however, much attention has been given to FCS market pricing, scoring (the order in which offers are selected) and cost-allocation. Specifically, literature on European FCS markets has explored whether pay-as-bid or uniform pricing better facilitates suppliers revealing their true costs [@musgensEconomicsDesignBalancing2014; @hirthBalancingPowerVariable2015; @ockerHarmonizationEuropeanBalancing2018], the particular offers scoring should consider [@musgensEconomicsDesignBalancing2014; @ehrhartDesignRegulationBalancing2021] and the design of imbalance prices to sufficiently incentivise short-term balancing [@vandezandeWellfunctioningBalancingMarkets2010; @hirthBalancingPowerVariable2015; @papavasiliouScarcityPricingMissing2020]. Regardless, both European and North American literature suggest that increased competition in FCS markets is a priority. This could be facilitated by enabling distributed and utility-scale VRE and IBR to qualify for FCS provision, reducing minimum offer quantities, separating raise and lower (positive and negative) products and increasing market clearing frequency and the time resolution of FCS products [@hirthBalancingPowerVariable2015; @poplavskayaDistributedEnergyResources2019; @lagoMarketFrameworkGrid2021; @frewImpactOperatingReserve2021]. Despite the typically \"shallow\" nature of FCS markets (i.e. additional supply can significantly reduce prices [@rieszDesigningElectricityMarkets2015]), dynamic efficiency has received considerably less attention. Notable exceptions include @papavasiliouScarcityPricingMissing2020 and @frewImpactOperatingReserve2021, who briefly discuss the potential for FCS scarcity pricing to better reflect the true value of system reliability and support investment in FCS.
+
+An additional challenge in implementing efficient FCS markets involves the trade-offs that must be considered. As outlined in Section [-@sec:fcs-intro], some mechanisms that improve efficiency may come at the expense of visibility, control and redundancy afforded to the SO, which typically does not own any FCS-capable assets. The former is typically achieved using market-based mechanisms and the latter through regulatory mechanisms. @elaAlternativeApproachesIncentivizing2012, @billimoriaMarketDesignSystem2020, @mancarellaFragileGridPhysics2021 and @lalEssentialSystemServices2021 discuss several prerequisites for implementing market-based mechanisms and stress that balance between market-based and regulatory mechanisms may be required. However, achieving this balance can be challenging due to the asymmetry between the risk of an event and its consequences, and that between the benefits of market efficiency and the cost of resilient and robust mitigation measures [@mancarellaFragileGridPhysics2021; @lalEssentialSystemServices2021]. Another trade-off is the arbitrary definition of FCS products. Market-based mechanisms will work best when FCS are \"discrete\" commodities and fungible. However, this ignores the wide "spectrum" of resource technical capabilities. Favouring fungibility may obscure physical and control interdependencies between FCS and restrict or fail to incentivise higher quality provision, thereby leading to an inefficient overall outcome [@gimonGridPhysicsMarkets2020; @macgillEndtoendElectricityMarket2020].

@@ -780,14 +780,6 @@ the UNSW Digital Grid Futures Institute.
 
 
 
-[^3]: The terms *virtual, emulated and synthetic* inertia have been used
-    in the literature to refer to a proportional active power response
-    to RoCoF. However, these terms do not distinguish whether the
-    inverter control scheme provides an inherent response (i.e. from
-    inverters operated as a voltage source which are commonly referred
-    to as *grid-forming inverters* [@Lin2020a; @Cherevatskiy2020]) or a
-    controlled response following frequency measurement
-    [@Tielens2016; @Eriksson2018].
 
 [^4]: From 2015-2019, the Tasmanian and mainland contingency FCAS
     markets were separated on average for 40% of the time due to the
