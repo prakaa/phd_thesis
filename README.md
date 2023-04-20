@@ -1,19 +1,37 @@
 # PhD Thesis - Abhijith Prakash
 
-This repository provides a framework for writing a PhD thesis in Markdown. I used the template for my PhD submission to University College London (UCL), but it should be straightforward to adapt suit other universities too.
+This repository contains my PhD thesis. 
 
-## Template to cite
+I am using the template below and [`pandoc`](https://pandoc.org/) to write my thesis in markdown and build `.docx`, `.tex`, `.pdf` and `.html` outputs.
+
+## How to use
+
+1. The Makefile contains commands to build outputs.
+    - Ensure GNU Make is installed
+    - Rewrite the `copy_bib` command as need be (based on my file system), or remove altogether
+    - Run `make pdf`, `make html`, `make docx` or `make tex` to generate the appropriate output. Prior to running `pandoc`, these commands will run `copy_bib` to ensure the local `.bib` file is up to date.
+    - Alternatively, you can run `make all` to make all outputs
+
+2. A GitHub action (`static.yml`) hosts the HTML output (`index.html`) on the repository page
+    - Pages must be enabled for the repository
+    - The `pandoc` HTML template enables a [`hypothes.is`](https://web.hypothes.is/) toolbar which can be used for annotations/commenting
+    - This URL cannot be made private unless you are a GitHub Enterprise member
+
+## Template
 
 This uses the following template, which should be cited:
 
 > Tom Pollard et al. (2016). Template for writing a PhD thesis in Markdown. Zenodo. http://dx.doi.org/10.5281/zenodo.58490
 
-## Are there any reasons not to use Markdown?
+### Useful template notes
+
+#### Are there any reasons not to use Markdown?
 
 Note:
 - it isn't possible to add a short caption to tables ~~and figures~~ ([figures are now fixed](https://github.com/tompollard/phd_thesis_markdown/pull/47), thanks to @martisak). This means that /listoftables includes the long-caption, which probably isn't what you want. If you want to include the list of tables, then you'll need to write it manually.
 - Image size can now be specified. Thanks to @rudolfbyker for [highlighting this](https://github.com/tompollard/phd_thesis_markdown/issues/15)).
-## How does it work?
+
+#### How does it work?
 The universal document converter [`pandoc`](https://pandoc.org/) does all the heavy lifting. For example:
 
 1. `make pdf` (the code under `pdf: ...` in [`Makefile`](./Makefile)) runs `pandoc` which takes as input
@@ -44,10 +62,10 @@ Put simply, `pandoc` uses the latex template provided to create a `.tex` file, t
 1. Compile `thesis.tex` (you can see the logs for this process, and what "`thesis.tex`" would look like in `pandoc.pdf.log`)
     * **TIP**: You can also generate and view `output/thesis.tex` by running `make tex` - this follows all the above steps, bar the final compilation
 
-## What else do I need to know?
+#### What else do I need to know?
 
 Some useful points, in a random order:
-- if you only care about generating `theis.pdf` you can always fall back on writing LaTeX within the markdown files (but note that `theis.html` and other outputs will not be able to render this)
+- if you only care about generating `thesis.pdf` you can always fall back on writing LaTeX within the markdown files (but note that `theis.html` and other outputs will not be able to render this)
 - the markdown files you write (i.e. your chapters) will be compiled in alphabetical order, so keep the filenames sorted in the order you want them to appear e.g. `01_chapter_1.md`, `02_chapter_2.md`, etc. This is required because of the way we have written `make pdf`. You can change this behaviour by writing a custom `pandoc` command instead of using `make pdf`.
 - each chapter must finish with at least one blank line, otherwise the header of the following chapter may not be picked up.
 - add two spaces at the end of a line to force a line break.
