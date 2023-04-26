@@ -91,7 +91,7 @@ tex: copy_bib
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+tex_math_dollars+grid_tables \
+		-f markdown+raw_tex+grid_tables \
 		2>pandoc.tex.log
 	# Change multirow{*} to multirow{=} - ensures multirow text wrapped
 	sed -i 's/{\*}/{=}/g' output/thesis.tex;
@@ -102,7 +102,7 @@ tex: copy_bib
 html: copy_bib
 	pandoc  \
 		--standalone \
-		-f markdown+raw_tex+tex_math_dollars+grid_tables \
+		-f markdown+raw_tex+grid_tables \
 		--katex \
 		--number-sections \
 		--output "$(OUTPUTDIR)/index.html" \
@@ -138,7 +138,7 @@ docx: copy_bib
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+tex_math_dollars+simple_tables+multiline_tables+grid_tables \
+		-f markdown+raw_tex+simple_tables+multiline_tables+grid_tables \
 		2>pandoc.docx.log
 
 ## Create all
