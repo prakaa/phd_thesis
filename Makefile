@@ -66,10 +66,6 @@ clean:
 
 ## Create PDF
 pdf: tex
-	# Change multirow{*} to multirow{=} - ensures multirow text wrapped
-	sed -i 's/{\*}/{=}/g' output/thesis.tex;
-	# Change p columns to m columns for multirow centering
-	sed -i 's/}p{/}m{/g' output/thesis.tex;
 	latexmk -xelatex "$(OUTPUTDIR)/thesis.tex" 2> latexmk.pdf.log -outdir="$(OUTPUTDIR)"
 	make clean
 	rm "$(OUTPUTDIR)/thesis.log"
@@ -97,6 +93,10 @@ tex: copy_bib
 		--verbose \
 		-f markdown+raw_tex+tex_math_dollars+grid_tables \
 		2>pandoc.tex.log
+	# Change multirow{*} to multirow{=} - ensures multirow text wrapped
+	sed -i 's/{\*}/{=}/g' output/thesis.tex;
+	# Change p columns to m columns for multirow centering
+	sed -i 's/}p{/}m{/g' output/thesis.tex;
 
 ## Create HTML
 html: copy_bib
