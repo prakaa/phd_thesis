@@ -58,7 +58,6 @@ clean:
 	find . -type f -name '*.blg' -delete
 	find . -type f -name '*.fdb_latexmk' -delete
 	find . -type f -name '*.fls' -delete
-	find . -type f -name '*.log' -delete
 	find . -type f -name '*.out' -delete
 	find . -type f -name '*.spl' -delete
 	find . -type f -name '*.synctex.gz' -delete
@@ -66,26 +65,16 @@ clean:
 	find . -type f -name '*.xdv' -delete
 
 ## Create PDF
-pdf: copy_bib
-	pandoc  \
-		--standalone \
-		--number-sections \
-		--output "$(OUTPUTDIR)/thesis.pdf" \
-		--template="$(STYLEDIR)/template.tex" \
-		--include-in-header="$(STYLEDIR)/preamble.tex" \
-		--variable=fontsize:12pt \
-		--variable=papersize:a4paper \
-		--variable=documentclass:report \
-		--pdf-engine=xelatex \
-		"$(INPUTDIR)"/*.md \
-		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-crossref \
-		--bibliography="$(BIBFILE)" \
-		--citeproc \
-		--csl="$(STYLEDIR)/energy-policy.csl" \
-		--verbose \
-		-f markdown+raw_tex+tex_math_dollars \
-		2>pandoc.pdf.log
+pdf: tex
+	# Change multirow{*} to multirow{=} - ensures multirow text wrapped
+	sed -i 's/{\*}/{=}/g' output/thesis.tex;
+	# Change p columns to m columns for multirow centering
+	sed -i 's/}p{/}m{/g' output/thesis.tex;
+	latexmk -xelatex "$(OUTPUTDIR)/thesis.tex" 2> latexmk.pdf.log -outdir="$(OUTPUTDIR)"
+	make clean
+	rm "$(OUTPUTDIR)/thesis.log"
+	rm "$(OUTPUTDIR)/thesis.lot"
+	rm "$(OUTPUTDIR)/thesis.lof"
 
 ## Create TeX
 tex: copy_bib
@@ -106,14 +95,14 @@ tex: copy_bib
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+tex_math_dollars \
+		-f markdown+raw_tex+tex_math_dollars+grid_tables \
 		2>pandoc.tex.log
 
 ## Create HTML
 html: copy_bib
 	pandoc  \
 		--standalone \
-		-f markdown+raw_tex+tex_math_dollars \
+		-f markdown+raw_tex+tex_math_dollars+grid_tables \
 		--katex \
 		--number-sections \
 		--output "$(OUTPUTDIR)/index.html" \
@@ -149,7 +138,7 @@ docx: copy_bib
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+tex_math_dollars \
+		-f markdown+raw_tex+tex_math_dollars+simple_tables+multiline_tables+grid_tables \
 		2>pandoc.docx.log
 
 ## Create all
