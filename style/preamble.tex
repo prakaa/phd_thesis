@@ -80,8 +80,8 @@
 
 % Add space between pararaphs
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
-% \usepackage{parskip}
-% \setlength{\parskip}{\baselineskip}
+%\usepackage{parskip}
+%\setlength{\parskip}{\baselineskip}
 
 % Set colour of links to black so that they don't show up when printed
 \usepackage{hyperref}
@@ -92,6 +92,7 @@
 \usepackage{threeparttable}
 \usepackage{array}
 \usepackage{makecell}
+\usepackage[longtable]{multirow}
 \newcolumntype{x}[1]{%
 >{\centering\arraybackslash}m{#1}}%
 
@@ -105,6 +106,8 @@
 \usepackage{float}
 \usepackage{pdfpages}
 \usepackage{pdflscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
 \usepackage{graphicx}
 \usepackage{rotating}
 
