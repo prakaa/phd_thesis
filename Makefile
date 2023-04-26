@@ -9,6 +9,8 @@ OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
 SCRATCHDIR=$(BASEDIR)/scratch
+PANDOC_DIR=/home/abi/.local/share/pandoc
+LUA_FILTERS_RELEASE_URL=https://github.com/pandoc/lua-filters/releases/latest
 
 BIBFILE=$(INPUTDIR)/references.bib
 #################################################################################
@@ -42,6 +44,9 @@ install_stack:
 
 ## Install Pandoc filters
 install_pandoc_filters:
+	@echo ">>> Installing pandoc lua filters"
+	curl -LSs "$(LUA_FILTERS_RELEASE_URL)/download/lua-filters.tar.gz" | \
+		tar --strip-components=1 --one-top-level="$(PANDOC_DIR)" -zvxf -
 	@echo ">>> Installing pandoc-crossref"
 	git clone "https://github.com/lierdakil/pandoc-crossref.git"
 	cd pandoc-crossref && git checkout master && stack install
@@ -84,12 +89,13 @@ tex: copy_bib
 		--variable=papersize:a4paper \
 		--variable=documentclass:report \
 		--pdf-engine=xelatex \
-		"$(INPUTDIR)"/*.md \
-		"$(INPUTDIR)/metadata.yml" \
 		--filter=pandoc-crossref \
+		--lua-filter=short-captions.lua \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
+		"$(INPUTDIR)"/*.md \
+		"$(INPUTDIR)/metadata.yml" \
 		--verbose \
 		-f markdown+raw_tex+grid_tables \
 		2>pandoc.tex.log
@@ -138,7 +144,7 @@ docx: copy_bib
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
 		--verbose \
-		-f markdown+raw_tex+simple_tables+multiline_tables+grid_tables \
+		-f markdown+raw_tex+grid_tables \
 		2>pandoc.docx.log
 
 ## Create all
