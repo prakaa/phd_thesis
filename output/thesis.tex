@@ -190,8 +190,8 @@
 
 % Add space between pararaphs
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
-% \usepackage{parskip}
-% \setlength{\parskip}{\baselineskip}
+%\usepackage{parskip}
+%\setlength{\parskip}{\baselineskip}
 
 % Set colour of links to black so that they don't show up when printed
 \usepackage{hyperref}
@@ -202,6 +202,7 @@
 \usepackage{threeparttable}
 \usepackage{array}
 \usepackage{makecell}
+\usepackage[longtable]{multirow}
 \newcolumntype{x}[1]{%
 >{\centering\arraybackslash}m{#1}}%
 
@@ -215,6 +216,8 @@
 \usepackage{float}
 \usepackage{pdfpages}
 \usepackage{pdflscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
 \usepackage{graphicx}
 \usepackage{rotating}
 
@@ -309,20 +312,12 @@ nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.
 \chapter*{Acknowledgements}\label{acknowledgements}}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam
-congue fermentum ante, semper porta nisl consectetur ut. Duis ornare sit
-amet dui ac faucibus. Phasellus ullamcorper leo vitae arcu ultricies
-cursus. Duis tristique lacus eget metus bibendum, at dapibus ante
-malesuada. In dictum nulla nec porta varius. Fusce et elit eget sapien
-fringilla maximus in sit amet dui.
-
-Mauris eget blandit nisi, faucibus imperdiet odio. Suspendisse blandit
-dolor sed tellus venenatis, venenatis fringilla turpis pretium. Donec
-pharetra arcu vitae euismod tincidunt. Morbi ut turpis volutpat,
-ultrices felis non, finibus justo. Proin convallis accumsan sem ac
-vulputate. Sed rhoncus ipsum eu urna placerat, sed rhoncus erat
-facilisis. Praesent vitae vestibulum dui. Proin interdum tellus ac velit
-varius, sed finibus turpis placerat.
+The authors would like to thank Andrew Corrigan and Max Zekulich for
+sharing their data and analysis on frequency response and FCAS markets.
+We greatly appreciate the thoughtful comments provided by the reviewers
+in response to our original submission. This research was supported by
+an Australian Government Research Training Program Scholarship and by
+the UNSW Digital Grid Futures Institute.
 
 \newpage
 
@@ -765,14 +760,13 @@ control arrangements, with a focus on restructured electricity
 industries in North America and Europe, and the main challenges faced in
 their design. We describe the NEM, its frequency control arrangements
 and the specific challenges posed by increasing penetrations of VRE and
-other IBR in Section \protect\hyperlink{sec:nem_frequency_control}{3}.
-In Section \protect\hyperlink{sec:insights}{{[}sec:insights{]}}, we
-analyse the performance of the NEM's frequency control arrangements in
-responding to the challenges explored in Section
-\protect\hyperlink{sec:context}{2}, with primary frequency response and
-regulation (secondary frequency response) services in the NEM as case
-studies. Based on our analysis, we conclude by offering four key
-insights to operators, regulators and market-bodies that include
+other IBR in Section \ref{sec:fcs-nem}. In Section
+Chapter~\ref{sec:fcs-insights}, we analyse the performance of the NEM's
+frequency control arrangements in responding to the challenges explored
+in Section Chapter~\ref{sec:fcs-context}, with primary frequency
+response and regulation (secondary frequency response) services in the
+NEM as case studies. Based on our analysis, we conclude by offering four
+key insights to operators, regulators and market-bodies that include
 understanding control action interactions; ensuring that arrangements
 are capable of supporting investment in FCS capability; monitoring,
 assessing and remunerating FCS performance; and considering both
@@ -1198,7 +1192,7 @@ system, rapid FCS from IBR can mitigate higher RoCoFs, which when
 unabated can lead to deeper frequency nadirs and zeniths and the
 subsequent activation of UFLS or OFGS
 (\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2017}{Australian
-Energy Market Operator, 2017};
+Energy Market Operator, 2017a};
 \protect\hyperlink{ref-nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020}{NERC
 Inverter-Based Resource Performance Task Force, 2020};
 \protect\hyperlink{ref-tielensRelevanceInertiaPower2016}{Tielens and Van
@@ -1301,6 +1295,1090 @@ inefficient overall outcome
 \protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill and
 Esplin, 2020}).
 
+\hypertarget{sec:fcs-nem}{%
+\section{Frequency control arrangements in the Australian National
+Electricity Market}\label{sec:fcs-nem}}
+
+\hypertarget{overview-of-the-nem}{%
+\subsection{Overview of the NEM}\label{overview-of-the-nem}}
+
+The NEM consists of five regions corresponding to the eastern and
+southern Australian states of New South Wales (NSW), Queensland (QLD),
+Victoria (VIC), South Australia (SA) and Tasmania (TAS)
+(Figure~\ref{fig:NEM}). In 2020, the NEM serviced a total electricity
+consumption of approximately 190 TWh/year and a peak demand of
+approximately 35 GW across a `stringy' network over 5000 kilometres long
+with relatively weak interconnection between regions through
+interconnectors
+(\protect\hyperlink{ref-australianenergyregulatorStateEnergyMarket2021}{Australian
+Energy Regulator, 2021};
+\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill and
+Esplin, 2020}). As high voltage DC transmission connects the island of
+Tasmania to the mainland state of Victoria, the NEM consists of two
+synchronous areas operated at a nominal frequency of 50 Hz: the mainland
+states and Tasmania. Due to the large distances involved, the NEM is not
+electrically connected to other markets.
+
+\begin{figure}
+\hypertarget{fig:NEM}{%
+\centering
+\includegraphics{source/figures/NEM.png}
+\caption{Regions/states and transmission in the NEM. Source: Australian
+Energy Market Commission
+(\protect\hyperlink{ref-australianenergymarketcommissionNationalElectricityMarket}{n.d.})}\label{fig:NEM}
+}
+\end{figure}
+
+The NEM is a single platform (real-time) energy-only market with no
+explicit capacity mechanisms. Unit commitment is managed by market
+participants, who must submit resource-specific offers for energy and
+Frequency Control Ancillary Services (FCAS) capacity in price-quantity
+pairs the day before delivery. These offers are subsequently used in a
+pre-dispatch process, which provides forecasted market information
+(e.g.~generation and demand, interconnector flows, prices, etc.) to
+market participants. While prices in submitted offers are fixed,
+participants may change the energy volumes in their offer up to a few
+minutes before the delivery dispatch interval commences. As the NEM is
+single-sided, security-constrained economic dispatch is run every five
+minute to meet forecast demand at least cost, subject to network and
+security constraints. Much like ISO/RTO markets, energy and FCAS markets
+are co-optimised with respect to technical feasibility and cost
+(\protect\hyperlink{ref-australianenergymarketoperatorDispatchStandardOperating2019}{Australian
+Energy Market Operator, 2021c},
+\protect\hyperlink{ref-australianenergymarketoperatorFCASModelNEMDE2017}{2017b}).
+Real-time dispatch produces zonal marginal prices for energy and FCAS,
+which form the basis for market settlement in each of the NEM's regions.
+
+\hypertarget{fcas-markets}{%
+\subsection{FCAS markets}\label{fcas-markets}}
+
+The NEM's competitive FCAS markets consist of eight separate raise and
+lower FCAS products that can be classed as regulation FCAS or
+contingency FCAS, with the former responsible for control when frequency
+is within the normal operating frequency band (NOFB) and the latter for
+when frequency deviates outside the NOFB after an event (see
+Table~\ref{tbl:fcs-fcas}). This is similar to arrangements in many
+ISO/RTO markets, where FCS are divided into event and non-event reserves
+(\protect\hyperlink{ref-elaOperatingReservesVariable2011}{Ela et al.,
+2011}).
+
+Security-constrained economic dispatch includes system-wide and regional
+FCAS requirement constraints. Regulation and contingency FCAS are
+typically procured for and from all regions of the NEM in the absence of
+binding local constraints. Local requirements for FCAS procurement apply
+to Tasmania and to the other regions of the NEM if they experience
+network constraints, are at risk of separation or when
+islanded\footnote{From 2015-2019, the Tasmanian and mainland contingency
+  FCAS markets were separated on average for 40\% of the time due to the
+  technical limitations of the high voltage DC interconnector
+  (\protect\hyperlink{ref-ghdadvisoryGHDReportTasNetworks2019}{GHD
+  Advisory, 2019}). However, if the interconnector flow is within the
+  appropriate operating envelope, NEM-wide FCAS procurement is possible
+  as the interconnector's frequency controller enables FCAS transfer
+  between the mainland and Tasmania
+  (\protect\hyperlink{ref-australianenergymarketoperatorInterconnectorCapabilitiesNational2017}{Australian
+  Energy Market Operator, 2017c}).}
+(\protect\hyperlink{ref-australianenergymarketoperatorConstraintImplementationGuidelines2015}{Australian
+Energy Market Operator, 2015a},
+\protect\hyperlink{ref-australianenergymarketoperatorConstraintFormulationGuidelines2010}{2010}).
+Prices are calculated for each region of the NEM based on the sum of the
+shadow prices of local and system-wide constraints and FCAS costs are
+allocated to market participants based on a "Causer Pays" principle,
+which bears similarities to imbalance penalties in European markets
+(\protect\hyperlink{ref-australianenergymarketoperatorGuideAncillaryServices2015}{Australian
+Energy Market Operator, 2015b}). FCAS providers are paid for enablement
+(capacity provision) regardless of whether their capacity is activated
+(\protect\hyperlink{ref-australianenergymarketoperatorGuideAncillaryServices2015}{Australian
+Energy Market Operator, 2015b};
+\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et al.,
+2015};
+\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{Thorncraft
+and Outhred, 2007}).
+
+For a resource to provide FCAS, it must meet pre-qualification criteria
+and undergo a registration process. Historically, FCAS was provided by
+thermal generation (predominantly coal and some gas), hydropower
+generation and some large loads, such as hydropower pumps and an
+aluminium smelter, as only resources associated with wholesale energy
+market participants were permitted to offer FCAS. In 2017, the first
+battery energy storage system (BESS) in the NEM began to offer FCAS and
+market reform enabled demand response (DR) aggregators to offer
+contingency FCAS without participating in the energy market
+(\protect\hyperlink{ref-aureconLargeScaleBatteryStorage2019}{Aurecon,
+2019};
+\protect\hyperlink{ref-australianenergymarketcommissionNationalElectricityAmendment2016}{Australian
+Energy Market Commission, 2016}). In recent years, new FCAS market
+entrants have included several DR aggregators, new BESS, distributed
+PV-battery virtual power plants and wind farms (the latter two through
+trials)
+(\protect\hyperlink{ref-aureconLargeScaleBatteryStorage2019}{Aurecon,
+2019};
+\protect\hyperlink{ref-australianenergymarketoperatorAEMOVirtualPower2021}{Australian
+Energy Market Operator, 2021d};
+\protect\hyperlink{ref-australianenergyregulatorStateEnergyMarket2021}{Australian
+Energy Regulator, 2021}). However, these new entrants tend to offer
+smaller volumes and there are still relatively few FCAS providers in the
+NEM, with no single FCAS product having more than 30 providers across
+the system or 8 providers in any one region
+(\protect\hyperlink{ref-australianenergyregulatorStateEnergyMarket2021}{Australian
+Energy Regulator, 2021}).
+
+\blandscape
+
+\hypertarget{tbl:fcs-fcas}{}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 6\tabcolsep) * \real{0.2182}}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 6\tabcolsep) * \real{0.2606}}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 6\tabcolsep) * \real{0.2667}}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 6\tabcolsep) * \real{0.2424}}@{}}
+\caption{\label{tbl:fcs-fcas}Frequency control ancillary services in the
+National Electricity Market. Sources: Thorncraft and Outhred
+(\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{2007}),
+Riesz et al.
+(\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{2015}),
+Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2017}{2017a}),
+Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorConstraintFormulationGuidelines2010}{2010}),
+Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorConstraintImplementationGuidelines2015}{2015a}),
+Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorGuideAncillaryServices2015}{2015b}),
+Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorPowerSystemRequirements2020}{2020c}).}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Product
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Control action
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Procurement
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Timeframe
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Product
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Control action
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Procurement
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Timeframe
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Regulation (raise \& lower) & Centralised control through AEMO Automatic
+Generation Control (AGC), which adjusts unit set points & Minimum
+capacity enablement with dynamic additional reserve setting based on
+time error for every dispatch interval & Unit set points adjusted by AGC
+every 4-s over dispatch interval \\
+6-s contingency (fast raise \& lower) & \multirow{2}{=}{Decentralised
+control response to locally-measured frequency, typically delivered
+through droop settings in governors or inverters or frequency-responsive
+loads (raise only)} & \multirow{2}{=}{Capacity enablement based on size
+of largest generator (raise) or load block (lower), minus assumed load
+relief for every dispatch interval} & Full response delivered by 6-s
+after frequency has left NOFB and orderly transition to 60-s service \\
+60-s contingency (slow raise \& lower) & & & Full response delivered by
+60-s after frequency has left NOFB and orderly transition to 5-min
+service \\
+5-min contingency (delayed raise \& lower) & Response pre-configured by
+AEMO but triggered in response to locally-measured frequency. Typically
+consists of unit control systems increasing or decreasing set points
+with sustained frequency deviations & Capacity enablement based on size
+of largest generator (raise) or load block (lower), minus assumed load
+relief and corresponding Regulation FCAS procurement for every dispatch
+interval & Full response delivered by 5-min after frequency has left
+NOFB and sustained until frequency returns to NOFB or 10-min has
+elapsed \\
+\end{longtable}
+
+\elandscape
+
+\hypertarget{nem-operation-and-governance}{%
+\subsection{NEM operation and
+governance}\label{nem-operation-and-governance}}
+
+The Australian Energy Market Operator (AEMO) is responsible for the
+operation of the market and power system in the NEM in accordance with
+the National Electricity Rules (NER). They act as a single buyer of
+dynamically-determined volumes of FCS. The Australian Energy Market
+Commission (AEMC) is responsible for making or amending rules for the
+NEM. Both AEMO and the AEMC provide operational and strategic advice to
+the Energy Security Board (ESB), which is responsible for coordinating
+market oversight and longer-term reform such as the ongoing post-2025
+NEM market design framework. As the market regulator, the Australian
+Energy Regulator (AER) monitors compliance with and enforces the NER.
+
+\hypertarget{challenges-to-frequency-control-posed-by-vre-and-ibr}{%
+\subsection{Challenges to frequency control posed by VRE and
+IBR}\label{challenges-to-frequency-control-posed-by-vre-and-ibr}}
+
+The rapid pace at which IBR have entered the NEM was preceded by the
+exit of FCAS-capable synchronous generation
+(Figure~\ref{fig:entry_exit}). Many of these IBR do not currently offer
+FCAS or any meaningful frequency response to deviations other than the
+most extreme. Furthermore, though updated equipment standards require
+distributed IBR to ride-through and/or respond to certain frequency
+deviations, some inverter models have been found to be non-compliant and
+there is still a significant number of legacy systems in the NEM
+(\protect\hyperlink{ref-australianenergymarketoperatorBehaviourDistributedResources2021}{Australian
+Energy Market Operator, 2021e};
+\protect\hyperlink{ref-stringerConsumerLedTransitionAustralia2020}{Stringer
+et al., 2020}).
+
+\begin{figure}
+\hypertarget{fig:entry_exit}{%
+\centering
+\includegraphics{source/figures/synchronous_ibr_entry_exit.eps}
+\caption{Entry (of IBR) and exit (of synchronous generation) capacity in
+the NEM between Australian financial years 2013/14 and 2019/20. Data
+source: Australian Energy Market Commission
+(\protect\hyperlink{ref-australianenergymarketcommissionAnnualMarketPerformance2020}{2020a}).}\label{fig:entry_exit}
+}
+\end{figure}
+
+The challenges that VRE and other IBR pose to frequency control have
+been exacerbated by the NEM's network topology. Limited interconnection
+between regions reduces the NEM's cross-regional balancing capabilities
+and increases the likelihood of synchronous area separation following
+power system events, a consequence of which is that local requirements
+for FCAS may apply
+(\protect\hyperlink{ref-australianenergymarketoperatorMaintainingPowerSystem2019}{Australian
+Energy Market Operator, 2019a}). Furthermore, correlated variability and
+uncertainty can arise from intensive development of similar
+utility-scale VRE in areas with good wind or solar resources (as might
+occur in the Renewable Energy Zones identified by AEMO's least-regrets
+transmission planning study
+(\protect\hyperlink{ref-australianenergymarketoperator2020IntegratedSystem2020}{Australian
+Energy Market Operator, 2020d})). This is also an issue at the
+distribution level given the significant installed capacities of rooftop
+solar PV located within proximity of one another in suburban areas
+(\protect\hyperlink{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{Australian
+Energy Market Operator, 2021f}).
+
+\hypertarget{features-of-nem-frequency-control-arrangements}{%
+\subsection{Features of NEM frequency control
+arrangements}\label{features-of-nem-frequency-control-arrangements}}
+
+Below, we highlight some noteworthy features of the NEM's frequency
+control arrangements that complement or contrast previous analyses in
+Thorncraft and Outhred
+(\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{2007}),
+Riesz et al.
+(\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{2015}) and
+Thorncraft et al.
+(\protect\hyperlink{ref-thorncraftMarketbasedAncillaryServices2008}{2008}).
+
+\hypertarget{control-mechanisms}{%
+\subsubsection{Control mechanisms:}\label{control-mechanisms}}
+
+\begin{itemize}
+\tightlist
+\item
+  There is no explicit TFR FCS in the NEM. Security-constrained economic
+  dispatch is run every five minutes and is expected to relieve PFR and
+  SFR and address supply-demand imbalances
+  (\protect\hyperlink{ref-australianenergymarketoperatorPowerSystemRequirements2020}{Australian
+  Energy Market Operator, 2020c}).
+\item
+  PFR from contingency FCAS is only required to respond to frequency
+  deviations outside the NOFB (50 \(\pm\) 0.15 Hz). When FCAS markets
+  were implemented in the NEM in 2001, mandatory PFR around a tight
+  deadband of \(\pm\) 50 mHz was removed from the NER
+  (\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+  Energy Market Operator, 2019b}). Since then and prior to 2020, there
+  was no explicit procurement or requirement for tight-deadband PFR
+  provision within the NOFB. The decline in the provision of
+  tight-deadband PFR in the NEM is discussed further in Section
+  \ref{sec:fcs-pfr}.
+\item
+  The mainland synchronous area is controlled as one balancing area by
+  AEMO's AGC (i.e.~no tie-line biased SFR) despite limited
+  interconnection between adjacent regions
+  (\protect\hyperlink{ref-australianenergymarketoperatorAEMCFrequencyControl2018}{Australian
+  Energy Market Operator, 2018a}). AGC control performance is discussed
+  further in Section \ref{sec:fcs-regulation}.
+\end{itemize}
+
+\hypertarget{market-based-mechanisms}{%
+\subsubsection{Market-based mechanisms:}\label{market-based-mechanisms}}
+
+\begin{itemize}
+\tightlist
+\item
+  There are relatively few limits imposed on FCAS participation. FCAS
+  can be provided by any technology through variable, switched or hybrid
+  controllers
+  (\protect\hyperlink{ref-australianenergymarketoperatorMarketAncillaryService2020a}{Australian
+  Energy Market Operator, 2020e}). Furthermore, regulation and
+  contingency FCAS products are unbundled into raise and lower services,
+  and contingency FCAS products are unbundled based on response time.
+  All of these features improve the potential for participation and
+  competition in FCAS markets, though market participants can and often
+  are enabled to provide multiple FCAS.
+\item
+  FCAS unbundling has enabled a `Causer Pays' cost allocation framework.
+  Raise contingency FCAS costs, which are incurred as insurance for the
+  failure of a generator, are distributed amongst generators in
+  proportion to their generation in the trading interval. Similarly,
+  lower contingency FCAS costs are distributed amongst loads based on
+  their consumption in a trading interval. A complex methodology is used
+  to calculate monthly, portfolio-wide Causer Pays contribution factors
+  (outlined in Australian Energy Market Operator
+  (\protect\hyperlink{ref-australianenergymarketoperatorRegulationFCASContribution2018a}{2018b})
+  and summarised in Riesz et al.
+  (\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{2015}))
+  that determine how regulation FCAS costs are allocated to market
+  participants. We discuss the issues associated with this methodology
+  in Section Chapter~\ref{sec:fcs-regulation}.
+\item
+  The NEM co-optimises FCAS that respond within similar timeframes. In
+  the absence of constraints, the volume of 5-minute delayed contingency
+  FCAS procured is reduced by the volume of regulation FCAS enabled
+  (\protect\hyperlink{ref-australianenergymarketoperatorConstraintFormulationGuidelines2010}{Australian
+  Energy Market Operator, 2010}).
+\end{itemize}
+
+\hypertarget{regulatory-mechanisms}{%
+\subsubsection{Regulatory mechanisms:}\label{regulatory-mechanisms}}
+
+\begin{itemize}
+\item
+  Connecting utility-scale generators negotiate the frequency response
+  capability of their plant between a minimum access standard and an
+  automatic access standard, the latter guaranteeing network access to
+  the applicant. A suite of generator standards for frequency response
+  were added to the NER in October 2018 and apply to any
+  newly-connecting generation. These standards include minimum frequency
+  disturbance ride-through times, automatic generation output reduction
+  following extreme over-frequency events and the capability to operate
+  in a frequency response mode with a proportional response\footnote{In
+    addition to these standards, newly-connected generation may install
+    a synchronous condenser under the `do no harm' requirements outlined
+    in the NER if they are determined to have an adverse impact on
+    system strength. Particularly when fitted with a rotating mass or
+    flywheel, these synchronous condensers can also provide inertial
+    response
+    (\protect\hyperlink{ref-australianenergymarketoperatorSystemStrengthNEM2020}{Australian
+    Energy Market Operator, 2020f}).}
+  (\protect\hyperlink{ref-australianenergymarketcommissionGeneratorTechnicalPerformance2018}{Australian
+  Energy Market Commission, 2018a}).
+\item
+  Transmission Network Service Providers (TNSPs) are required to address
+  any inertia shortfalls identified by AEMO within the NEM region in
+  which they build, maintain, plan and operate the transmission network.
+  AEMO's assessment considers whether an islanded region can be securely
+  operated following a contingency event. Shortfalls can be reduced by
+  special protection schemes (e.g.~disconnection of load following
+  interconnector trip) and the provision of FFR, but they must
+  ultimately be met by providers of inertial response
+  (\protect\hyperlink{ref-australianenergymarketoperatorNoticeSouthAustralia2020}{Australian
+  Energy Market Operator, 2020g},
+  \protect\hyperlink{ref-australianenergymarketoperatorInertiaRequirementsMethodology2018}{2018c}).
+\end{itemize}
+
+\hypertarget{sec:fcs-insights}{%
+\section{Insights from the National Electricity
+Market}\label{sec:fcs-insights}}
+
+In light of existing challenges and those posed by energy transition,
+effective and efficient frequency control arrangements should enable
+sufficient FCS to be procured across timeframes and strike the
+appropriate balance between efficiency and robustness. In the following
+sections, we review issues associated with two core elements of the
+NEM's frequency control hierarchy (i.e.~PFR and SFR), assess their
+physical and economic performance and outline reform underway. Drawing
+on developments in the NEM and our review of arrangements in North
+America and Europe, we then discuss the merits and flaws of regulatory
+and market-based mechanisms with respect to sufficiency and efficiency.
+We conclude by offering insights that could serve as design principles
+for jurisdictions revisiting their frequency control arrangements during
+energy transition.
+
+\hypertarget{sec:fcs-pfr}{%
+\section{Declining tight-deadband primary frequency
+response}\label{sec:fcs-pfr}}
+
+When FCAS markets were implemented in 2001, mandatory tight-deadband PFR
+was superseded by two types of PFR: voluntary PFR within the NOFB and
+competitive procurement for PFR outside the NOFB in the form of
+contingency FCAS
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b}).
+
+As such, the NEM's frequency control scheme deviated from what has been
+argued to be international best practice as it only explicitly specified
+and procured wide-deadband PFR (i.e.~deadband of \(\pm\) 150 mHz)
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b}). In contrast, ENTSO-E specifies that PFR
+providers have a deadband no greater than \(\pm\) 10-15 mHz depending on
+the control area
+(\protect\hyperlink{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eNetworkCodeLoadFrequency2013}{European
+Network of Transmission System Operators for Electricity, 2013}) and
+FERC Order 842 mandates all newly-connecting generation in US
+interconnections to operate frequency-responsive control equipment with
+maximum deadbands of \(\pm\) 36 mHz
+(\protect\hyperlink{ref-federalenergyregulatorycommissionfercOrderNo8422018}{Federal
+Energy Regulatory Commission, 2018}).
+
+In recent years in the NEM, the lack of an incentive or requirement for
+tight-deadband PFR and perceived disincentives to its provision (through
+Causer Pays contribution factors discussed further in Section
+\ref{sec:fcs-regulation}) has led to many synchronous generators that
+once provided tight-deadband PFR to widen deadbands or install control
+systems that block or dampen PFR from the speed governor within the NOFB
+(\protect\hyperlink{ref-australianenergymarketcommissionMandatoryPrimaryFrequency2020}{Australian
+Energy Market Commission, 2020b}). Furthermore, many VRE generators were
+deployed in the NEM and connected with inverter control systems that
+were unresponsive to any frequency deviations other than the most
+serious.
+
+The extent to which tight-deadband PFR provision had declined in the NEM
+and the consequences of this became clear to AEMO following a major
+power system incident on the 25\textsuperscript{th} of August 2018
+(\protect\hyperlink{ref-australianenergymarketoperatorFinalReportQueensland2019}{Australian
+Energy Market Operator, 2019c}). Prior to the event, the QLD region was
+exporting \(\sim\) 900 MW to the rest of the NEM. Around 13:11:41,
+lightning strikes at the QLD-NSW interconnector resulted in the QLD
+region being separated from the rest of the NEM with excess supply. The
+SA region was exporting \(\sim\) 200 MW prior to the event and following
+QLD's separation, this increased by more than 200 MW in response to
+under-frequency. The sudden increase in active power flow triggered an
+emergency scheme that disconnected SA from the NSW-VIC synchronous area,
+resulting in local over-frequency.
+
+There were diverse responses from various generators following the
+double separation event. While many synchronous generators provided some
+form of PFR though not enabled for FCAS, their response was withdrawn by
+their load controllers in several cases so that the unit could return to
+its dispatch target (e.g.~green and pink lines in top frame of
+Figure~\ref{fig:plant_responses}). Wind and solar farms were either
+unresponsive, tripped due to protection settings in their inverters, or
+reduced their active power output in line with performance standards
+negotiated in their connection agreements (middle and bottom frames in
+Figure~\ref{fig:plant_responses}). AEMO attributed slow frequency
+recovery and under-frequency load shedding in NSW and VIC to
+insufficient PFR from generators and a lack of appropriate contingency
+FCAS within the islanded regions. Over 50\% of fast and slow raise
+contingency FCAS needed in NSW-VIC was enabled in SA and QLD, whilst QLD
+had no lower FCAS enabled to respond to over-frequency\footnote{AEMO is
+  currently investigating appropriate regional requirements for FCAS,
+  particularly for contingency FCAS in the terminal regions of QLD and
+  SA
+  (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020b}{Australian
+  Energy Market Operator, 2020h},
+  \protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019a}{2019d}).}
+(\protect\hyperlink{ref-australianenergymarketoperatorFinalReportQueensland2019}{Australian
+Energy Market Operator, 2019c}).
+
+\begin{figure}
+\hypertarget{fig:plant_responses}{%
+\centering
+\includegraphics{source/figures/all_responses_25082018.eps}
+\caption{Active power output of QLD super-critical coal generators
+(top), SA solar PV farms (middle) and SA wind farms (bottom). The
+response of an individual generator is denoted by solid lines (obtained
+from 4-second AEMO SCADA data using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018})). None of these generators are enabled for FCAS. The red dashed
+line in each frame is the regional frequency as measured by high-speed
+(1-second) phasor measurement units.}\label{fig:plant_responses}
+}
+\end{figure}
+
+Prior to this incident, deteriorating control of frequency within the
+NOFB was of concern to AEMO and the AEMC, and trials and investigations
+were recommended to inform the design of an incentive for tight-deadband
+PFR provision
+(\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{Australian
+Energy Market Commission, 2018b}). However, this separation event
+demonstrated the ``urgent need for regulatory changes to arrest the
+ongoing decline in frequency performance in the NEM'' and to enhance
+``the resilience of the NEM to similar major disturbances'', with AEMO
+submitting a rule change proposal for all capable generators in the NEM
+to provide mandatory PFR with a maximum deadband of \(\pm\) 0.015 Hz
+(i.e.~10\% of the NOFB)
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b}).
+
+This rule was initially incorporated into the NER in 2020 as a temporary
+arrangement through the addition of a ``sunset'' after three years to
+demonstrate the AEMC's commitment to investigating incentives or
+market-based mechanisms for tight-deadband PFR
+(\protect\hyperlink{ref-australianenergymarketcommissionMandatoryPrimaryFrequency2020}{Australian
+Energy Market Commission, 2020b},
+\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlRule2020}{2020c}).
+AEMO has specified PFR settings, including maximum droop and response
+time, but is unable to require generation to reserve headroom for PFR
+(\protect\hyperlink{ref-australianenergymarketoperatorInterimPrimaryFrequency2020}{Australian
+Energy Market Operator, 2020i}).
+
+\hypertarget{sec:fcs-regulation}{%
+\section{Performance and efficiency issues of regulation
+services}\label{sec:fcs-regulation}}
+
+For SFR provided by regulation FCAS within the NOFB to be effective, the
+dynamics of the system need to accommodate slower SFR control action and
+the centralised secondary controller (in the NEM, AEMO's AGC) needs to
+be properly configured. Prior to the introduction of mandatory PFR in
+the NEM, AEMO observed no significant improvement in NOFB frequency
+stability despite several increases in the minimum volumes procured for
+regulation FCAS in 2019
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b}). This is likely due to:
+
+\begin{itemize}
+\tightlist
+\item
+  A lack of fast and decentralised tight-deadband PFR supporting slower
+  SFR;
+\item
+  Inappropriate control signals being calculated within the AGC due to
+  the use of rate limiters to account for ramping constraints, signal
+  filtering and generator controller models that do not accurately
+  reflect a unit's frequency response
+  (\protect\hyperlink{ref-digsilentReviewFrequencyControl2017}{DIgSILENT,
+  2017}). The latter is the consequence of an absence of control
+  coordination between market participants and AEMO; and
+\item
+  Variable communication delays between individual unit controllers and
+  AEMO's AGC system, and disparate response times from generators.
+\end{itemize}
+
+Furthermore, the control of all mainland regions as one balancing area
+can be problematic in the event of separation. AGC control of regulation
+FCAS enabled in islanded regions may exacerbate local frequency
+deviations when responding to the AGC frequency reference. This was the
+case during the double separation event on the 25\textsuperscript{th} of
+August 2018, in which the AGC instructed raise regulation FCAS
+generators in QLD and SA to respond to under-frequency in the AGC
+frequency reference despite local over-frequency
+(Figure~\ref{fig:regional_freq}). Such incorrect control action can
+occur until AEMO is able to manually reconfigure the AGC to treat each
+island as a control area - a process which can take up to 15 minutes
+(\protect\hyperlink{ref-australianenergymarketoperatorFinalReportQueensland2019}{Australian
+Energy Market Operator, 2019c}) .
+
+\begin{figure}
+\hypertarget{fig:regional_freq}{%
+\centering
+\includegraphics{source/figures/regional_SCADA_frequencies.eps}
+\caption{Regional phasor measurement unit frequency data and AGC
+reference frequency data from AEMO's NSW control centre (obtained using
+NEMOSIS (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018})) during the power system event on the 25\textsuperscript{th} of
+August, 2018. Note that the AGC reference frequency deviates in the
+opposite direction to local frequency in QLD and
+SA.}\label{fig:regional_freq}
+}
+\end{figure}
+
+Over time, inefficiencies in regulation FCAS procurement and
+cost-allocation have also become apparent. Regulation FCAS procurement
+in the NEM is dynamic beyond a minimum volume, but the dynamic component
+is based on the system time error
+(\protect\hyperlink{ref-australianenergymarketoperatorConstraintImplementationGuidelines2015}{Australian
+Energy Market Operator, 2015a}). Time error control is largely
+unnecessary as modern clocks no longer rely on power system frequency to
+keep the time
+(\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{Y. Rebours
+et al., 2007}). Furthermore, whilst AEMO is required to control the NEM
+within certain time error limits, these have been relaxed in recent
+years
+(\protect\hyperlink{ref-australianenergymarketcommissionreliabilitypanelStageOneFinal2017}{Australian
+Energy Market Commission Reliability Panel, 2017}). Given that time
+error is no longer prioritised as a control objective, dynamic
+regulation FCAS procurement based on better measures of sustained
+frequency deviation (e.g.~mean absolute error as suggested by Riesz et
+al. (\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{2015}))
+and/or a modelled distribution of potential intra-dispatch ramp
+uncertainty may be more suitable.
+
+Regulation FCAS costs are allocated to market participants based on
+their contribution factor, a calculation which represents the extent to
+which the participant has contributed to the need for regulation FCAS
+through a deviation from a dispatch trajectory. Though the calculation
+methodology assigns weights to a generator or load's dispatch trajectory
+deviation based on the AGC regulation direction and mileage requirement
+every 4 seconds, the disincentive for dispatch deviation suffers from a
+disconnect to causation. This is because the contribution factors of a
+generator or load are averaged over a 5-minute dispatch interval, summed
+over a 28-day period and then within a market participant's portfolio
+(\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{Australian
+Energy Market Commission, 2018b};
+\protect\hyperlink{ref-australianenergymarketoperatorRegulationFCASContribution2018a}{Australian
+Energy Market Operator, 2018b};
+\protect\hyperlink{ref-australianenergyregulatorIssuesPaperSemi2020}{Australian
+Energy Regulator, 2020}).
+
+Much like portfolio-based balancing in Europe, the aggregation of
+contribution factors enables a market participant to offset antagonistic
+deviations with assisting deviations (from the provision of
+tight-deadband PFR) across its resources and time. However, the
+complexity and opacity of the methodology and cost-allocation process
+has contributed to the withdrawal of tight-deadband PFR in the NEM.
+Several generators disabled governor response in the NOFB in the belief
+that dispatch adherence alone will minimise Causer Pays liabilities
+(\protect\hyperlink{ref-digsilentReviewFrequencyControl2017}{DIgSILENT,
+2017}).
+
+\hypertarget{nem-assessment-and-outlook}{%
+\section{NEM assessment and outlook}\label{nem-assessment-and-outlook}}
+
+Though the introduction of competitive FCAS markets in 2001 initially
+resulted in significantly lower FCAS prices in the NEM
+(\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et
+al., 2015};
+\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{Thorncraft
+and Outhred, 2007}), volume-weighted average FCAS prices, particularly
+those for raise regulation and contingency services, have increased
+relative to the volume-weighted average energy price since 2016
+(Figure~\ref{fig:raise_fcas_vwap}). Furthermore, the increases in
+minimum regulation FCAS volumes and reductions in assumed load relief in
+2019 have raised the procured volumes of regulation and contingency
+FCAS, respectively. Together, these factors have contributed to higher
+NEM-wide FCAS costs
+(\protect\hyperlink{ref-australianenergymarketoperatorReviewNEMLoad2019}{Australian
+Energy Market Operator, 2019e}). While quarterly FCAS costs were less
+than 1\% of quarterly total NEM costs in 2015, 50\% of all quarters from
+2017 to 2020 had FCAS costs that were between 1-2\% of total NEM cost
+(\protect\hyperlink{ref-australianenergyregulatorStateEnergyMarket2021}{Australian
+Energy Regulator, 2021}).
+
+\begin{figure}
+\hypertarget{fig:raise_fcas_vwap}{%
+\centering
+\includegraphics{source/figures/energy_raise_fcas_vwap_quarterly_2014_2020_v2.png}
+\caption{Events and volume-weighted NEM-wide average quarterly prices
+for energy, raise regulation FCAS and raise contingency FCAS in the NEM.
+The entry of new albeit smaller FCAS providers in 2017 was preceded by
+the retirement of several large thermal generation. Q1 2020 FCAS prices
+were high due to local procurement in the SA region, which was islanded
+for approximately two weeks. Note that while average energy prices fell
+in Q2-Q4 in 2020 to levels previously seen in 2014-2015 (due to lower
+demand during COVID-19 lockdowns), FCAS prices remained relatively high.
+Five-minute price and volume data obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018}).}\label{fig:raise_fcas_vwap}
+}
+\end{figure}
+
+Prior to the implementation of mandatory PFR, higher NEM FCAS costs were
+arguably not accompanied by an improvement in frequency control
+performance. Alongside deteriorating frequency control performance
+within the NOFB (Figure~\ref{fig:nofb_freq_2005_2018}), AEMO has
+expressed a loss of confidence in the NEM's resilience to complex power
+system events, such as the double separation incident on the
+25\textsuperscript{th} of August 2018
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b}). These events are typically more severe
+than the `credible' contingency events (i.e.~N-1 contingency) that
+dictate the volume of contingency FCAS procured.
+
+\begin{figure}
+\hypertarget{fig:nofb_freq_2005_2018}{%
+\centering
+\includegraphics{source/figures/nem_nofb_frequency_2005_2018_digitised.eps}
+\caption{Normalised distribution of mainland frequency within the NOFB
+in 2005 and 2018. Reproduced from
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019a}{Australian
+Energy Market Operator, 2019d})}\label{fig:nofb_freq_2005_2018}
+}
+\end{figure}
+
+Since the implementation of the mandatory PFR, settings specified by
+AEMO have been applied to a majority of large synchronous generators
+(\(>\) 200MW) and some smaller synchronous generators. Despite the
+absence of requirements for maintaining headroom and/or footroom,
+preliminary analysis by AEMO\footnote{We note that AEMO has yet to
+  complete mandatory PFR implementation. In particular, settings have
+  yet to be changed for many VRE plant as inverter control system
+  software changes are being trialled.} suggests that mandatory PFR has
+delivered better control of frequency within the NOFB (see
+Figure~\ref{fig:mpfr_dist}) and reduced excursions beyond the NOFB
+(\protect\hyperlink{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{Australian
+Energy Market Operator, 2021f}). As a result of this initial success and
+further technical advice provided by AEMO, the AEMC has indicated that
+it intends to retain mandatory PFR at a tight-deadband following the
+``sunset'' of the initial rule
+(\protect\hyperlink{ref-australianenergymarketcommissionPrimaryFrequencyResponse2021}{Australian
+Energy Market Commission, 2021a}).
+
+\begin{figure}
+\hypertarget{fig:mpfr_dist}{%
+\centering
+\includegraphics{source/figures/f_stddev_2009_2021.png}
+\caption{Standard deviation of mainland frequency grouped by each day,
+week, month or quarter from 2009 to 2021. Some initial PFR setting
+changes were made in late September 2020 and many generators moved to
+final settings in late October 2020. Source: Australian Energy Market
+Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{2021f}).}\label{fig:mpfr_dist}
+}
+\end{figure}
+
+However, this initial success may be a result of the headroom maintained
+by these generators for risk management purposes (e.g.~defending
+contract positions) and any headroom made available to the system
+through the displacement of more expensive synchronous capacity by VRE.
+Given that several large synchronous generators are expected to retire
+in the coming decades
+(\protect\hyperlink{ref-australianenergymarketoperator2020IntegratedSystem2020}{Australian
+Energy Market Operator, 2020d}), continuing to rely on this ``free''
+headroom (and any available footroom) into the future may reduce the
+potential resilience benefits of widespread, tight-deadband PFR and
+place a greater burden on generators that do reserve headroom and hence
+respond. The AEMC is proposing to address this issue by paying resources
+that provide assisting tight-deadband PFR (``double-siding'')
+(\protect\hyperlink{ref-australianenergymarketcommissionPrimaryFrequencyResponse2021}{Australian
+Energy Market Commission, 2021a}).
+
+Presently, several other operational and market changes are being
+considered or implemented with the goal of improving the effectiveness
+of arrangements in the NEM. AEMO is investigating the use of dispatch
+constraints to
+(\protect\hyperlink{ref-australianenergymarketoperatorFrequencyControlWork2021}{Australian
+Energy Market Operator, 2021g}):
+
+\begin{itemize}
+\tightlist
+\item
+  Procure contingency FCAS volumes based on system inertia;
+\item
+  Apply regional contingency and regulation FCAS requirements; and
+\item
+  To limit the amount of switched contingency FCAS procured. Switched
+  FCAS has a number of limitations compared to governor-like control
+  (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020c}{Australian
+  Energy Market Operator, 2020b}).
+\end{itemize}
+
+These additional constraints will likely improve the effectiveness of
+frequency control arrangements but may lead to higher FCAS costs. In
+addition to these procurement changes, the AEMC has made a rule to
+introduce raise and lower contingency markets for FFR by October 2023,
+each with a likely response time of 1 second
+(\protect\hyperlink{ref-australianenergymarketcommissionFastFrequencyResponse2021}{Australian
+Energy Market Commission, 2021b};
+\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2021}{Australian
+Energy Market Operator, 2021h}). Whilst AEMO has highlighted that
+potential stability issues and interconnector maloperation will need to
+be managed (e.g.~through delivery caps or provision constraints)
+(\protect\hyperlink{ref-australianenergymarketoperatorImplementationNationalElectricity2021}{Australian
+Energy Market Operator, 2021i}), these FFR markets, along with the ESB's
+proposals for short-term scheduling and/or procurement of inertial
+response
+(\protect\hyperlink{ref-energysecurityboardPost2025Market2021}{Energy
+Security Board, 2021}), will likely improve AEMO's operational toolbox
+for managing a low-inertia NEM.
+
+\hypertarget{reactive-regulatory-requirements}{%
+\subsection{Reactive regulatory
+requirements}\label{reactive-regulatory-requirements}}
+
+Despite a broad set of FCS markets, there is a high degree of reliance
+on regulatory mechanisms in the NEM. Performance standards and mandatory
+PFR enforced by connection requirements in the NEM have recently been
+aligned with international grid-codes
+(\protect\hyperlink{ref-robertsReviewInternationalGrid2018}{Roberts,
+2018}). As argued by TNSPs and AEMO during the mandatory PFR rule change
+process, near-universal widespread provision of frequency control should
+lead to relatively low costs for individual participants and be
+outweighed by greater visibility and certainty for AEMO alongside the
+system-wide benefits of improved physical frequency control performance
+(\protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019}{Australian
+Energy Market Operator, 2019b};
+\protect\hyperlink{ref-dillonMandatoryPrimaryFrequency2019}{Dillon,
+2019};
+\protect\hyperlink{ref-hopwoodMandatoryPrimaryFrequency2019}{Hopwood,
+2019}).
+
+Regulatory mechanisms are ideal for mandating basic FCS capabilities as
+a condition for access, which may reduce the need to procure more
+specialised FCS, or where FCS faces significant barriers to efficient
+price formation or unbundled procurement. The latter reasons are
+particularly pertinent in the NEM. Current FCAS prices do not appear to
+be incentivising FCS provision from the vast majority of VRE generators,
+which have business models centred around energy provision
+(\protect\hyperlink{ref-australianenergymarketcommissionReserveServicesNational2021}{Australian
+Energy Market Commission, 2021c};
+\protect\hyperlink{ref-meegahapolaPowerSystemStability2021}{Meegahapola
+et al., 2021}). Furthermore, procuring inertial response is challenging
+due to its inseparability from system strength provision and unit
+commitment costs
+(\protect\hyperlink{ref-billimoriaMarketDesignSystem2020}{Billimoria et
+al., 2020}). With respect to these challenges, regulatory mechanisms in
+the NEM have assisted in ensuring some level of frequency response from
+most power system resources (e.g.~mandatory PFR) and improving the
+ability of AEMO and TNSPs to coordinate the procurement of essential but
+``lumpy'' FCS (e.g.~inertia shortfall mechanism).
+
+While mechanisms such as mandatory PFR are likely to improve the
+robustness of frequency control arrangements, it may be difficult for
+other regulatory mechanisms to keep in step with changing physical
+performance requirements in systems rapidly facing higher penetrations
+of VRE and IBR. Regulatory mechanisms are often only updated after a
+number of years to reduce the burden placed on connecting resources. As
+such, they are slow to respond to changing capabilities and
+requirements. This delay often makes new standards and requirements
+reactive rather than proactive. For example, AEMO can only review
+utility-scale generator technical performance standards every 5 years
+(\protect\hyperlink{ref-australianenergymarketcommissionGeneratorTechnicalPerformance2018}{Australian
+Energy Market Commission, 2018a}), a timeframe in which the solar PV
+capacity installed in the NEM has more than quadrupled (2015-2020)
+(\protect\hyperlink{ref-australianpvinstituteInstalledPVGeneration}{Australian
+PV Institute, n.d.}).
+
+Additional concerns with regulatory mechanisms include poor dynamic
+efficiency and opaque
+costs(\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz
+et al., 2015}). In the absence of remuneration or incentives,
+particularly those that are linked to the quality of frequency response,
+there is no incentive to innovate or invest in higher-quality frequency
+control capabilities
+(\protect\hyperlink{ref-meegahapolaPowerSystemStability2021}{Meegahapola
+et al., 2021}). Furthermore, cost opacity may lead to FCS provision
+costs being internalised within other prices (e.g.~energy) by
+participants and prevent the implementation of imbalance or dispatch
+non-conformance disincentives through cost-allocation mechanisms.
+
+\hypertarget{preference-for-market-based-arrangements}{%
+\section{Preference for market-based
+arrangements}\label{preference-for-market-based-arrangements}}
+
+Since the establishment of the NEM, a competition norm has been
+established, with markets being viewed as a key driver for delivering
+the National Electricity Objective of ``efficient investment in, and
+efficient operation and use of electricity services''
+(\protect\hyperlink{ref-hainesEnvironmentalNormsElectricity2016}{Haines
+and McConnell, 2016};
+\protect\hyperlink{ref-macgillElectricityMarketNorms2020}{MacGill et
+al., 2020}). This norm has pervaded all levels of participation and
+governance in the NEM. Generator owners opposed the mandatory nature of
+the mandatory PFR rule change on the basis that a lack of remuneration
+was against market principles and that it would lead to economically
+inefficient outcomes
+(\protect\hyperlink{ref-rolfeMandatoryPrimaryFrequency2019}{Rolfe,
+2019}; \protect\hyperlink{ref-scottMandatoryPrimaryFrequency2019}{Scott,
+2019};
+\protect\hyperlink{ref-skinnerMandatoryPrimaryFrequency2019}{Skinner,
+2019}). AEMO did not include a headroom requirement in its proposal,
+making the mandatory PFR rule change more palatable to market bodies and
+participants. The AEMC, who have expressed a clear preference for
+market-based approaches
+(\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{Australian
+Energy Market Commission, 2018b}), included a ``sunset'' clause in their
+initial decision to implement mandatory PFR. Furthermore, a market for
+FFR will be implemented in 2023 and the ESB's post-2025 market design
+process is considering new system services markets for inertial response
+and TFR
+(\protect\hyperlink{ref-energysecurityboardPost2025Market2021}{Energy
+Security Board, 2021},
+\protect\hyperlink{ref-energysecurityboardPost2025Market2020}{2020}).
+
+If incentives or remuneration are designed correctly, markets can drive
+short-run efficiency. Where required, they can also support investment
+in FCS capability and assist a power system in achieving dynamically
+efficient frequency control arrangements. However, in some cases, simply
+introducing new FCS markets may serve as `patchwork' solutions to
+existing control deficiencies and market failures. These deficiencies
+and failures could be partially addressed by improving FCS cost
+allocation processes, verifying FCS performance and linking incentives
+to higher quality provision.
+
+As discussed in Section {[}-Chapter~\ref{sec:fcs-context}), efficient
+Causer Pays cost-allocation mechanisms in FCS markets could provide
+suitable disincentives for dispatch non-conformance or imbalances. In
+the NEM, the aggregation of regulation FCAS Causer Pays contribution
+factors over time and a portfolio has resulted in a blunt frequency
+performance market signal. The solution to this problem may not be as
+simple as strengthening disincentives (e.g.~as proposed by Hirth and
+Ziegenhagen
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{2015}) and
+Papavasiliou
+(\protect\hyperlink{ref-papavasiliouScarcityPricingMissing2020}{2020}))
+for resource-based cost-allocation processes as potential exposure to
+high instantaneous FCS costs may lead to participants curtailing or
+decommitting flexible resources rather than providing an assisting
+frequency response. This has been observed in the NEM when local
+constraints have resulted in regulation FCAS
+(\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{Australian
+Energy Market Commission, 2018b}) and contingency FCAS
+(\protect\hyperlink{ref-australianenergymarketoperatorQuarterlyEnergyDynamics2020}{Australian
+Energy Market Operator, 2020j}) price spikes. The AEMC has proposed a
+compromise to this problem by shortening the settlement period for
+regulation FCAS Causer Pays to 5 minutes but only allocating the costs
+of regulation FCAS capacity that is activated by AEMO (i.e.~the cost of
+any unactivated capacity is socialised across power system users)
+(\protect\hyperlink{ref-australianenergymarketcommissionPrimaryFrequencyResponse2021}{Australian
+Energy Market Commission, 2021a}).
+
+An alternative to Causer Pays is to allocate costs based on needs (`User
+Pays'), such that connected equipment imposing RoCoF or frequency
+constraints pay for FCS. `Users' of frequency control currently include
+synchronous machines and IBR that have not been configured to
+ride-through higher RoCoFs and greater frequency deviations. Following
+more extreme frequency deviations, the former may suffer equipment
+damage whereas both have the potential to trip
+(\protect\hyperlink{ref-dgaconsultingInternationalReviewFrequency2016}{DGA
+Consulting, 2016};
+\protect\hyperlink{ref-millerAdvisoryEquipmentLimits2017}{Miller et al.,
+2017a}). A User Pays approach to cost-allocation could encourage
+resources to be more resilient to frequency deviations and thereby
+reduce system FCS costs
+(\protect\hyperlink{ref-lalEssentialSystemServices2021}{Lal et al.,
+2021}), particularly if a significant proportion of connected equipment
+are IBR that can be configured to ride-through such disturbances.
+
+Beyond choosing who costs should be allocated to and what an appropriate
+granularity for cost-allocation might be, market designers should ensure
+that the chosen methodology is transparent, can be understood by
+participants and that any calculations can be replicated using
+accessible data. If appropriate design choices are made, efficient
+cost-allocation could create counter-parties for financial instruments
+that hedge price risk
+(\protect\hyperlink{ref-skinnerIncorporatingNewPower2020}{Skinner et
+al., 2020};
+\protect\hyperlink{ref-thorncraftExperienceMarketbasedAncillary2007}{Thorncraft
+and Outhred, 2007}). FCS derivatives may drive investment in FCS
+capabilities by supporting business models in which FCS is a major
+revenue stream (this is currently the case for utility-scale BESS, DR
+aggregators and virtual power plants in the NEM) and assist in FCS price
+formation
+(\protect\hyperlink{ref-billimoriaMarketDesignSystem2020}{Billimoria et
+al., 2020};
+\protect\hyperlink{ref-pollittCompetitionMarketsAncillary2019}{Pollitt
+and Anaya, 2019}).
+
+As in ISO/RTO Regulation markets, aligning FCS procurement and/or
+remuneration with performance essentially recognises that there is a
+spectrum of FCS capabilities. This recognition is lacking in the NEM,
+where battery energy storage systems are responding precisely and
+rapidly to AGC regulation signals but are being paid the same as thermal
+plant that provide lower quality regulation FCAS
+(\protect\hyperlink{ref-australianenergymarketoperatorInitialOperationHornsdale2018}{Australian
+Energy Market Operator, 2018d}). However, implementing performance-based
+design is contingent on the SO verifying FCS provision. While AEMO has
+outlined FCAS delivery measurement standards and verification principles
+(\protect\hyperlink{ref-australianenergymarketoperatorMarketAncillaryService2020a}{Australian
+Energy Market Operator, 2020e}), delivery verification appears to be
+restricted to confirming contingency FCAS delivery following a power
+system event (to the authors' best knowledge). While a regular
+verification process does not appear to be in place for regulation FCAS,
+AEMO is proposing to specify minimum control requirements (e.g.~response
+delay and ramp rate) and implement a regular testing cycle for resources
+registered for regulation FCAS
+(\protect\hyperlink{ref-australianenergymarketoperatorAmendmentMarketAncillary2021}{Australian
+Energy Market Operator, 2021j}).
+
+Market designers may also need to consider price formation in FCS
+markets to ensure that arrangements are at least capable of supporting
+investment during energy transition. As discussed by Hirth and
+Ziegenhagen
+(\protect\hyperlink{ref-hirthBalancingPowerVariable2015}{2015}), VRE
+have low to no short-term energy market opportunity-costs when providing
+lower/negative FCS but can incur significant short-term energy market
+opportunity-costs when providing raise/positive FCS. The raise/positive
+opportunity-cost may be even higher if the SO requires additional
+curtailment to better ensure that FCS capacity is firm, which AEMO has
+required, or if the resource has entered into an energy off-take
+agreement, which is common in the NEM
+(\protect\hyperlink{ref-australianenergymarketoperatorHornsdaleWindFarm2018}{Australian
+Energy Market Operator, 2018e}). While co-optimised FCS markets mean
+that such opportunity-costs can be accounted for, FCS prices can be
+suppressed if large conventional generators with low to no
+opportunity-costs offer large volumes of FCS. Low prices can limit the
+incentive for high capital, low operating cost IBR to provide and invest
+in FCS capabilities. This may lead to a dynamically inefficient outcome
+as additional conventional generators are retired and limited FCS
+capabilities are offered by VRE and other IBR
+(\protect\hyperlink{ref-elaFutureElectricityMarkets2019}{Ela et al.,
+2019};
+\protect\hyperlink{ref-meegahapolaPowerSystemStability2021}{Meegahapola
+et al., 2021}). As discussed in Section
+\ref{sec:fcs-efficiency-challenges}, one potential solution to this
+issue is to strengthen scarcity pricing in FCS markets. The AEMC and ESB
+have discussed implementing system demand curves with scarcity pricing
+for all existing and proposed FCAS
+(\protect\hyperlink{ref-australianenergymarketcommissionFrequencyControlRule2020}{Australian
+Energy Market Commission, 2020c};
+\protect\hyperlink{ref-energysecurityboardPost2025Market2020}{Energy
+Security Board, 2020}). However, the shape of these system demand curves
+and how they account for interdependent or interchangeable FCAS will
+ultimately dictate their success.
+
+\hypertarget{conclusion-1}{%
+\section{Conclusion}\label{conclusion-1}}
+
+Whilst recent years have seen increasing participation from demand
+response and IBR, energy transition and a pervasive competition norm
+have exposed design issues in the NEM's frequency control arrangements.
+As such, considerable attention and effort have been devoted to
+reforming the NEM's arrangements in the past two years.
+
+From our review of North American and European frequency control
+arrangements and our analysis of the NEM's, we share four key insights
+below that could serve as design principles for operators, regulators
+and market-bodies attempting to design effective and efficient frequency
+control arrangements in restructured electricity industries during
+energy transition:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Control deficiencies may not be addressable through introducing new
+  FCS. While this solution may address emerging needs (e.g.~low-inertia
+  operation), SOs and market bodies need to better understand the
+  interdependency, interoperability and interchangeability between FCS
+  and the interactions with other technical attributes of the power
+  system (e.g.~system strength) to ensure that frequency control is
+  first and foremost effective. Once this has been achieved, the
+  short-run efficiency of arrangements can be improved through
+  mechanisms such as dynamic and probabilistic dimensioning and
+  co-optimising the procurement of interchangeable FCS.
+\item
+  Given the pace and scale of energy transition, a dynamically efficient
+  outcome in some power systems may require additional investments in
+  FCS capability. FCS prices can be strengthened through scarcity
+  pricing, which may better reflect the system's preference for security
+  and reliability. Such pricing mechanisms are complementary to
+  appropriate and efficient cost-allocation based on causation or needs.
+  Both efficient price formation and cost-allocation will improve the
+  potential for FCS derivatives, which may assist in providing price
+  signals for investment.
+\item
+  SOs should systematically and frequently verify FCS delivery, where
+  relevant, and withhold or penalise remuneration when delivery is
+  deemed to be insufficient. If such monitoring is in place, FCS
+  remuneration can be performance-based to drive the provision of high
+  quality FCS. Performance monitoring would also enable the SO to assess
+  FCS arrangements and identify any deficiencies in control action or
+  procurement.
+\item
+  During energy transition, a suitable set of frequency control
+  arrangements will most likely involve a combination of market-based
+  and regulatory mechanisms. Frequency control is a power system public
+  good and achieving frequency stability requires a degree of
+  coordination and cooperation between resources. These characteristics
+  make it difficult to establish complete markets for FCS, and an
+  emphasis on market solutions may obscure these characteristics to
+  market participants and undermine effective control. In contrast,
+  regulatory mechanisms may prove to be more robust and resilient in the
+  face of uncertainties, particularly those that are exogenous to the
+  power system (e.g.~climate risk). Regardless of whether arrangements
+  are skewed towards market-based mechanisms or regulatory mechanisms,
+  designers should be more forward-looking and avoid assumptions
+  regarding the provision of FCS capability over time, particularly when
+  there is a pervasive competition norm and effective frequency control
+  relies on sequential and hierarchical control actions.
+\end{enumerate}
+
 \hypertarget{sec:second}{%
 \chapter{Research containing a figure}\label{sec:second}}
 
@@ -1366,8 +2444,8 @@ research.}\label{fig:my_fig}
 }
 \end{figure}
 
-\hypertarget{conclusion-1}{%
-\section{Conclusion}\label{conclusion-1}}
+\hypertarget{conclusion-2}{%
+\section{Conclusion}\label{conclusion-2}}
 
 This is the conclusion to the chapter. Quisque nec purus a quam
 consectetur volutpat. Cum sociis natoque penatibus et magnis dis
@@ -1437,13 +2515,13 @@ sodales laoreet.
 
 \hypertarget{tbl:random}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0941}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1176}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1765}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1529}}@{}}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.0941}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1176}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1529}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1529}}@{}}
 \caption{\label{tbl:random}Important data for various land
 masses.}\tabularnewline
 \toprule\noalign{}
@@ -1504,8 +2582,8 @@ sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla
 facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum.
 Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.
 
-\hypertarget{conclusion-2}{%
-\section{Conclusion}\label{conclusion-2}}
+\hypertarget{conclusion-3}{%
+\section{Conclusion}\label{conclusion-3}}
 
 This is the conclusion to the chapter. Nullam porta tortor id vehicula
 interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci
@@ -1565,8 +2643,8 @@ ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut
 egestas vehicula enim, porta molestie neque consectetur placerat.
 Integer iaculis sapien dolor, non porta nibh condimentum ut.
 
-\hypertarget{conclusion-3}{%
-\section{Conclusion}\label{conclusion-3}}
+\hypertarget{conclusion-4}{%
+\section{Conclusion}\label{conclusion-4}}
 
 This is the conclusion to the chapter. Nulla sed condimentum lectus.
 Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id
@@ -1652,6 +2730,88 @@ Akram, U., Mithulananthan, N., Shah, R., Basit, S.A., 2020. Energy
 {Low-Inertia Power Systems}. 2020 Australasian Universities Power
 Engineering Conference (AUPEC).
 
+\leavevmode\vadjust pre{\hypertarget{ref-aureconLargeScaleBatteryStorage2019}{}}%
+Aurecon, 2019. Large-{Scale Battery Storage Knowledge Sharing Report}.
+{ARENA}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNationalElectricityMarket}{}}%
+Australian Energy Market Commission, n.d. National {Electricity Market}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFastFrequencyResponse2021}{}}%
+Australian Energy Market Commission, 2021b. Fast frequency response
+market ancillary service, {Final} report.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionPrimaryFrequencyResponse2021}{}}%
+Australian Energy Market Commission, 2021a. Primary frequency response
+incentive arrangements, {Draft} rule determination.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionReserveServicesNational2021}{}}%
+Australian Energy Market Commission, 2021c. Reserve services in the
+{National Electricity Market}, {Directions Paper}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionAnnualMarketPerformance2020}{}}%
+Australian Energy Market Commission, 2020a. Annual {Market Performance
+Review} 2020.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFrequencyControlRule2020}{}}%
+Australian Energy Market Commission, 2020c. Frequency control rule
+changes.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionMandatoryPrimaryFrequency2020}{}}%
+Australian Energy Market Commission, 2020b. Mandatory primary frequency
+response, {Rule} determination.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{}}%
+Australian Energy Market Commission, 2018b. Frequency {Control
+Frameworks Review}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionGeneratorTechnicalPerformance2018}{}}%
+Australian Energy Market Commission, 2018a. Generator technical
+performance standards, {Rule} determination.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNationalElectricityAmendment2016}{}}%
+Australian Energy Market Commission, 2016. National {Electricity
+Amendment} ({Demand Response Mechanism} and {Ancillary Services
+Unbundling}) {Rule} 2016 - {Final} rule determination.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionreliabilitypanelStageOneFinal2017}{}}%
+Australian Energy Market Commission Reliability Panel, 2017. Stage {One
+Final Determination}: {Review} of the {Frequency Operating Standard}
+(No. November).
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAEMOVirtualPower2021}{}}%
+Australian Energy Market Operator, 2021d. {AEMO Virtual Power Plant
+Demonstrations}, {Knowledge Sharing Report} \#3.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAmendmentMarketAncillary2021}{}}%
+Australian Energy Market Operator, 2021j. Amendment of the {Market
+Ancillary Service Specification} - {DER} and {General Consultation},
+{Draft} report and determination.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorBehaviourDistributedResources2021}{}}%
+Australian Energy Market Operator, 2021e. Behaviour of distributed
+resources during power system disturbances {Overview} of key findings.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorDispatchStandardOperating2019}{}}%
+Australian Energy Market Operator, 2021c. Dispatch {Standard Operating
+Procedure}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{}}%
+Australian Energy Market Operator, 2021f. Enduring primary frequency
+response requirements for the {NEM}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastFrequencyResponse2021}{}}%
+Australian Energy Market Operator, 2021h. Fast {Frequency Response
+Implementation Options}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFrequencyControlWork2021}{}}%
+Australian Energy Market Operator, 2021g. Frequency {Control Work Plan}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorImplementationNationalElectricity2021}{}}%
+Australian Energy Market Operator, 2021i. Implementation of the
+{National Electricity Amendment} ({Mandatory Primary Frequency
+Response}) {Rule} 2020: {Status} as at 20 {Jan} 2021.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorNEMEngineeringFramework2021}{}}%
 Australian Energy Market Operator, 2021a. {NEM Engineering Framework}.
 
@@ -1659,17 +2819,120 @@ Australian Energy Market Operator, 2021a. {NEM Engineering Framework}.
 Australian Energy Market Operator, 2021b. Quarterly {Energy Dynamics Q3}
 2021.
 
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020IntegratedSystem2020}{}}%
+Australian Energy Market Operator, 2020d. 2020 {Integrated System Plan}
+(No. December), Clean Energy Council.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorInterimPrimaryFrequency2020}{}}%
+Australian Energy Market Operator, 2020i. Interim {Primary Frequency
+Response Requirements}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorMarketAncillaryService2020a}{}}%
+Australian Energy Market Operator, 2020e. Market ancillary service
+specification.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorNoticeSouthAustralia2020}{}}%
+Australian Energy Market Operator, 2020g. Notice of {South Australia
+Inertia Requirements} and {Shortfall}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorPowerSystemRequirements2020}{}}%
+Australian Energy Market Operator, 2020c. Power {System Requirements}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorQuarterlyEnergyDynamics2020}{}}%
+Australian Energy Market Operator, 2020j. Quarterly {Energy Dynamics Q1}
+2020.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{}}%
 Australian Energy Market Operator, 2020a. Renewable {Integration Study
 Appendix C} : {Managing} variability and uncertainty.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020b}{}}%
+Australian Energy Market Operator, 2020h. Renewable {Integration Study}
+: {Stage} 1 report.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020c}{}}%
 Australian Energy Market Operator, 2020b. Renewable {Integration Study
 Appendix B} : {Frequency} control.
 
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorSystemStrengthNEM2020}{}}%
+Australian Energy Market Operator, 2020f. System strength in the {NEM}
+explained.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorElectricityRuleChange2019}{}}%
+Australian Energy Market Operator, 2019b. Electricity {Rule Change
+Proposal} - {Mandatory Primary Frequency Response}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorElectricityRuleChange2019a}{}}%
+Australian Energy Market Operator, 2019d. Electricity {Rule Change
+Proposal} - {Removal} of disincentives to the provision of primary
+frequency response under normal operating conditions.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFinalReportQueensland2019}{}}%
+Australian Energy Market Operator, 2019c. Final {Report} \textendash{}
+{Queensland} and {South Australia} system separation on 25 {August}
+2018.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorMaintainingPowerSystem2019}{}}%
+Australian Energy Market Operator, 2019a. Maintaining {Power System
+Security} with {High Penetrations} of {Wind} and {Solar Generation}:
+{International Insights}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorReviewNEMLoad2019}{}}%
+Australian Energy Market Operator, 2019e. Review of {NEM} load relief.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAEMCFrequencyControl2018}{}}%
+Australian Energy Market Operator, 2018a. {AEMC Frequency Control
+Frameworks Review} - {AEMO Advice}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorHornsdaleWindFarm2018}{}}%
+Australian Energy Market Operator, 2018e. Hornsdale {Wind Farm} 2 {FCAS}
+trial.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorInertiaRequirementsMethodology2018}{}}%
+Australian Energy Market Operator, 2018c. Inertia requirements
+methodology: Inertia requirements \& shortfalls.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorInitialOperationHornsdale2018}{}}%
+Australian Energy Market Operator, 2018d. Initial operation of the
+{Hornsdale Power Reserve Battery Energy Storage System}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRegulationFCASContribution2018a}{}}%
+Australian Energy Market Operator, 2018b. Regulation {FCAS Contribution
+Factor Procedure}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastFrequencyResponse2017}{}}%
-Australian Energy Market Operator, 2017. Fast {Frequency Response} in
+Australian Energy Market Operator, 2017a. Fast {Frequency Response} in
 the {NEM}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFCASModelNEMDE2017}{}}%
+Australian Energy Market Operator, 2017b. {FCAS Model} in {NEMDE}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorInterconnectorCapabilitiesNational2017}{}}%
+Australian Energy Market Operator, 2017c. Interconnector {Capabilities}
+for the {National Electricity Market}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorConstraintImplementationGuidelines2015}{}}%
+Australian Energy Market Operator, 2015a. Constraint {Implementation
+Guidelines}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorGuideAncillaryServices2015}{}}%
+Australian Energy Market Operator, 2015b. Guide {To Ancillary Services}
+in the {National Electricity Market}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorConstraintFormulationGuidelines2010}{}}%
+Australian Energy Market Operator, 2010. Constraint {Formulation
+Guidelines}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergyregulatorStateEnergyMarket2021}{}}%
+Australian Energy Regulator, 2021. State of the {Energy Market} 2021.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergyregulatorIssuesPaperSemi2020}{}}%
+Australian Energy Regulator, 2020. Issues paper - {Semi} scheduled
+generator rule change(s).
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianpvinstituteInstalledPVGeneration}{}}%
+Australian PV Institute, n.d. Installed {PV} generation capacity by
+{State}/{Territory}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-banshwarInternationalExperienceTechnical2018}{}}%
 Banshwar, A., Sharma, N.K., Sood, Y.R., Shrivastava, R., 2018. An
@@ -1724,6 +2987,14 @@ Inertia and the {Power Grid} : {A Guide Without} the {Spin} (No. May).
 DGA Consulting, 2016. International {Review} of {Frequency Control
 Adaptation}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-digsilentReviewFrequencyControl2017}{}}%
+DIgSILENT, 2017. Review of {Frequency Control Performance} in the {NEM}
+under {Normal Operating Conditions Final Report}. {DIgSILENT Pacific}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dillonMandatoryPrimaryFrequency2019}{}}%
+Dillon, A., 2019. Mandatory primary frequency response consultation
+paper submission - {Energy Networks Australia}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-egglestonSecurityResilienceTechnical2021}{}}%
 Eggleston, J., Zuur, C., Mancarella, P., 2021. From security to
 resilience: {Technical} and regulatory options to manage extreme events
@@ -1750,11 +3021,26 @@ Power and Energy Society General Meeting 1--8.
 Ela, E., Milligan, M., Kirby, B., 2011. Operating {Reserves} and
 {Variable Generation}. {NREL}. \url{https://doi.org/10.2172/1023095}
 
+\leavevmode\vadjust pre{\hypertarget{ref-elaFutureElectricityMarkets2019}{}}%
+Ela, E., Sotkiewicz, P., Billimoria, F., Ragsdale, K., Moorty, S.,
+OSullivan, J., Gramlich, R., Rothleder, M., Rew, B., Supponen, M., 2019.
+Future {Electricity Markets}: {Designing} for {Massive Amounts} of
+{Zero-Variable-Cost Renewable Resources}. IEEE Power and Energy Magazine
+17, 58--66. \url{https://doi.org/10.1109/mpe.2019.2933281}
+
 \leavevmode\vadjust pre{\hypertarget{ref-elaAlternativeApproachesIncentivizing2012}{}}%
 Ela, E., Tuohy, A., Milligan, M., Kirby, B., Brooks, D., 2012b.
 Alternative {Approaches} for {Incentivizing} the {Frequency Responsive
 Reserve Ancillary Service}. Electricity Journal 25, 88--102.
 \url{https://doi.org/10.1016/j.tej.2012.04.015}
+
+\leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardPost2025Market2021}{}}%
+Energy Security Board, 2021. Post 2025 {Market Design Options}
+\textendash{} {A} paper for consultation: {Part B}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardPost2025Market2020}{}}%
+Energy Security Board, 2020. Post 2025 {Market Design Consultation
+Paper}. {COAG Energy Council}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-entso-ewgasSurveyAncillaryServices2021}{}}%
 ENTSO-E WGAS, 2021. Survey on {Ancillary Services Procurement},
@@ -1794,6 +3080,11 @@ European Network of Transmission System Operators for Electricity, 2020.
 European Network of Transmission System Operators for Electricity, 2013.
 Network {Code} on {Load-Frequency Control} and {Reserves}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-federalenergyregulatorycommissionfercOrderNo8422018}{}}%
+Federal Energy Regulatory Commission, 2018. Order {No}. 842: {Essential
+Reliability Services} and the {Evolving Bulk-Power
+System}\textemdash{{Primary Frequency Response}}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-fernandez-munozFastFrequencyControl2020}{}}%
 Fernández-Muñoz, D., Pérez-Díaz, J.I., Guisández, I., Chazarra, M.,
 Fernández-Espina, Á., 2020. Fast frequency control ancillary services:
@@ -1806,12 +3097,28 @@ A., Lau, J., 2021. Impact of operating reserve rules on electricity
 prices with high penetrations of renewable energy. Energy Policy 156,
 112443. \url{https://doi.org/10.1016/j.enpol.2021.112443}
 
+\leavevmode\vadjust pre{\hypertarget{ref-ghdadvisoryGHDReportTasNetworks2019}{}}%
+GHD Advisory, 2019. {GHD Report} for {TasNetworks} - {Ancillary Service
+Benefits} for {Marinus Link}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-gimonGridPhysicsMarkets2020}{}}%
 Gimon, E., 2020. Grid {Physics} and {Markets}: {A Non-Engineer}'s
 {Perspective}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-gormanNEMOSISNEMOpen2018}{}}%
+Gorman, N., Haghdadi, N., Bruce, A., MacGill, I., 2018. {NEMOSIS}
+\textendash{} {NEM Open Source Information Service}; open-source access
+to {Australian National Electricity Market Data}. Asia-Pacific Solar
+Research Conference.
+
 \leavevmode\vadjust pre{\hypertarget{ref-graingerPowerSystemAnalysis1994}{}}%
 Grainger, J.J., 1994. Power system analysis. {McGraw-Hill}, {New York}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hainesEnvironmentalNormsElectricity2016}{}}%
+Haines, F., McConnell, D., 2016. Environmental norms and electricity
+supply: An analysis of normative change and household solar {PV} in
+{Australia}. Environmental Sociology 2, 155--165.
+\url{https://doi.org/10.1080/23251042.2016.1155690}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hartmannEffectsDecreasingSynchronous2019}{}}%
 Hartmann, B., Vokony, I., Táczi, I., 2019. Effects of decreasing
@@ -1836,6 +3143,10 @@ Rawn, B., Bessa, R.J., Flynn, D., Gomez Lazaro, E., Detlefsen, N., 2013.
 Methodologies to determine operating reserves due to increased wind
 power. IEEE Power and Energy Society General Meeting 3, 713--723.
 \url{https://doi.org/10.1109/pesmg.2013.6673067}
+
+\leavevmode\vadjust pre{\hypertarget{ref-hopwoodMandatoryPrimaryFrequency2019}{}}%
+Hopwood, C., 2019. Mandatory primary frequency response consultation
+paper submission - {TasNetworks}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-internationalenergyagencyNetZero20502021}{}}%
 International Energy Agency, 2021. Net {Zero} by 2050 - {A Roadmap} for
@@ -1905,6 +3216,13 @@ Lopez, A., Ogayar, B., Hernández, J.C., Sutil, F.S., 2020. Survey and
 assessment of technical and economic features for the provision of
 frequency control services by household-prosumers. Energy Policy 146.
 \url{https://doi.org/10.1016/j.enpol.2020.111739}
+
+\leavevmode\vadjust pre{\hypertarget{ref-macgillElectricityMarketNorms2020}{}}%
+MacGill, I., Bruce, A., Zekulich, M., 2020. Electricity market norms vs
+power system norms: The example of {Primary Frequency Response} in the
+{Australian National Electricity Market}, in: 2020 {IEEE Power} \&
+{Energy Society General Meeting} ({PESGM}). {IEEE}, pp. 1--5.
+\url{https://doi.org/10.1109/pesgm41954.2020.9282169}
 
 \leavevmode\vadjust pre{\hypertarget{ref-macgillEndtoendElectricityMarket2020}{}}%
 MacGill, I., Esplin, R., 2020. End-to-end electricity market design -
@@ -2001,6 +3319,11 @@ Papavasiliou, A., 2020. Scarcity pricing and the missing {European}
 market for real-time reserve capacity. Electricity Journal 33, 106863.
 \url{https://doi.org/10.1016/j.tej.2020.106863}
 
+\leavevmode\vadjust pre{\hypertarget{ref-pollittCompetitionMarketsAncillary2019}{}}%
+Pollitt, M.G., Anaya, K.L., 2019. Competition in {Markets} for
+{Ancillary Services}? {The} implications of rising distributed
+generation. {University of Cambridge Energy Policy Research Group}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-poplavskayaDistributedEnergyResources2019}{}}%
 Poplavskaya, K., de Vries, L., 2019. Distributed energy resources and
 the organized balancing market: {A} symbiosis yet? {Case} of three
@@ -2044,10 +3367,38 @@ penetration of variable renewables. Wiley Interdisciplinary Reviews:
 Energy and Environment 4, 279--289.
 \url{https://doi.org/10.1002/wene.137}
 
+\leavevmode\vadjust pre{\hypertarget{ref-robertsReviewInternationalGrid2018}{}}%
+Roberts, C., 2018. Review of {International Grid Codes}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rolfeMandatoryPrimaryFrequency2019}{}}%
+Rolfe, R., 2019. Mandatory primary frequency response consultation paper
+submission - {Infigen}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-schererIntegratedPanEuropeanAncillary2013}{}}%
 Scherer, M., Zima, M., Andersson, G., 2013. An integrated pan-{European}
 ancillary services market for frequency control. Energy Policy 62,
 292--300. \url{https://doi.org/10.1016/j.enpol.2013.07.030}
+
+\leavevmode\vadjust pre{\hypertarget{ref-scottMandatoryPrimaryFrequency2019}{}}%
+Scott, T., 2019. Mandatory primary frequency response consultation paper
+submission - {CS Energy}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-skinnerMandatoryPrimaryFrequency2019}{}}%
+Skinner, B., 2019. Mandatory primary frequency response consultation
+paper submission - {Australian Energy Council}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-skinnerIncorporatingNewPower2020}{}}%
+Skinner, B., Mancarella, P., Vrakopoulou, M., Hiskens, I., 2020.
+Incorporating new power system security paradigms into low-carbon
+electricity markets. The Electricity Journal 33, 106837.
+\url{https://doi.org/10.1016/j.tej.2020.106837}
+
+\leavevmode\vadjust pre{\hypertarget{ref-stringerConsumerLedTransitionAustralia2020}{}}%
+Stringer, N., Bruce, A., MacGill, I., Haghdadi, N., Kilby, P., Mills,
+J., Veijalainen, T., Armitage, M., Wilmot, N., 2020. Consumer-{Led
+Transition}: {Australia}'s {World-Leading Distributed Energy Resource
+Integration Efforts}. IEEE Power and Energy Magazine 18, 20--36.
+\url{https://doi.org/10.1109/mpe.2020.3014720}
 
 \leavevmode\vadjust pre{\hypertarget{ref-thorncraftExperienceMarketbasedAncillary2007}{}}%
 Thorncraft, S.R., Outhred, H.R., 2007. Experience with market-based
