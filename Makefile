@@ -89,8 +89,9 @@ tex: copy_bib
 		--variable=papersize:a4paper \
 		--variable=documentclass:report \
 		--pdf-engine=xelatex \
+		--lua-filter=filters/figure-short-captions.lua \
+		--lua-filter=filters/table-short-captions.lua \
 		--filter=pandoc-crossref \
-		--lua-filter=short-captions.lua \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/energy-policy.csl" \
