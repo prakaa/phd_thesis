@@ -9,6 +9,7 @@
 \textbf{BESS} & Battery energy storage systems \\
 \textbf{BRP} & Balancing responsible party \\
 \textbf{BSP} & Balancing service provider \\
+\textbf{CCGT} & Combined-cycle gas turbine \\
 \textbf{DC} & Direct current \\
 \textbf{DR} & Demand response \\
 \textbf{ENSTO-E} & European Network of Transmission System Operators for Electricity \\
@@ -19,30 +20,40 @@
 \textbf{FCAS} & Frequency Control Ancillary Services \\
 \textbf{FERC} & Federal Energy Regulatory Commission \\
 \textbf{FFR} & Fast frequency response \\
+\textbf{Gas-Steam} & Gas-powered steam turbine \\
 \textbf{Hz} & Hertz \\
 \textbf{mHz} & Millihertz \\
+\textbf{ISP} & Integrated System Plan \\
+\textbf{LOR} & Lack of reserves \\
+\textbf{MSL} & Minimum stable level \\
 \textbf{MW} & Megawatts \\
 \textbf{NEM} & National Electricity Market \\
 \textbf{NER} & National Electricity Rules \\
 \textbf{NOFB} & Normal operating frequency band \\
 \textbf{NSW} & New South Wales \\
+\textbf{OCGT} & Open-cycle gas turbine \\
 \textbf{OFGS} & Over-frequency generation shedding \\
+\textbf{PASA} & Projected Assessment of System Adequacy \\
 \textbf{PFR} & Primary frequency response \\
 \textbf{PV} & Photovoltaic \\
 \textbf{QLD} & Queensland \\
+\textbf{RERT} & Reliability and Emergency Reserve Trader \\
 \textbf{RoCoF} & Rate of change of frequency \\
 \textbf{SA} &  South Australia \\
+\textbf{SDP} & Synthetic daily profile \\
 \textbf{SFR} & Secondary frequency response \\
 \textbf{SO} & System operator \\
 \textbf{TAS} & Tasmania \\
 \textbf{TFR} & Tertiary frequency response \\
 \textbf{TNSP} & Transmission Network Service Provider \\
-\textbf{SO} & Transmission System Operator \\
+\textbf{TSO} & Transmission System Operator \\
+\textbf{UC-ED} & Unit commitment and economic dispatch \\
 \textbf{UFLS} & Under-frequency load shedding \\
 \textbf{UK} & United Kingdom \\
 \textbf{US} & United States \\
 \textbf{UFLS} & Under-frequency load shedding \\
 \textbf{VIC} & Victoria \\
+\textbf{VPP} & Virtual power plant \\
 \textbf{VRE} & Variable renewable energy \\
 \end{longtable}
 
