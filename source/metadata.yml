@@ -18,8 +18,8 @@ figPrefix:
   - "Figure"
   - "Figures"
 secPrefix:
-  - "Chapter"
-  - "Chapters"
+  - "Section"
+  - "Sections"
 tblPrefix:
   - "Table"
   - "Tables"
