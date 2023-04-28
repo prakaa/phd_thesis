@@ -91,6 +91,7 @@ tex: copy_bib
 		--pdf-engine=xelatex \
 		--lua-filter=filters/figure-short-captions.lua \
 		--lua-filter=filters/table-short-captions.lua \
+		--lua-filter=filters/date-today.lua \
 		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
@@ -120,6 +121,7 @@ html: copy_bib
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
+		--lua-filter=filters/date-today.lua \
 		--filter=pandoc-crossref \
 		--to=html5+smart \
 		--bibliography="$(BIBFILE)" \
@@ -140,6 +142,7 @@ docx: copy_bib
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
+		--lua-filter=filters/date-today.lua \
 		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
