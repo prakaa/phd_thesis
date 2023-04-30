@@ -228,32 +228,32 @@ These equations are used to calculate system available reserves and footroom for
 
 ## Case Study: Two Regions in the National Electricity Market {#sec:reserves-casestudy}
 
-###  Scenarios
+### Scenarios
 
 In this study, available reserves and footroom were quantified for NSW and SA in calendar year 2020 and for two resource mix scenarios in 2025 (see [@tbl:scenariodesc]). The 2025 scenarios roughly correspond to the Central and Step Change scenarios in AEMO's 2020 Integrated System Plan (ISP) [@australianenergymarketoperator2020ISPGeneration2020], a least-regrets transmission planning study that incorporates scenario-based capacity expansion modelling [@australianenergymarketoperator2020IntegratedSystem2020] [^11].
 
 [^11]: The 2022 ISP was recently released [@australianenergymarketoperator2022IntegratedSystem2022]. For the planning horizon relevant to this study (i.e. to 2025), the 2022 ISP broadly reflects the outlook of its predecessor, with the exception that it draws on extensive consultation with electricity industry stakeholders in determining the Step Change scenario to be the most likely scenario.
 
-+------------------+-------------------------------------------------------------------------------------+
-|    Scenario      |                                     Description                                     |
-+:=================+:====================================================================================+
-| 2020             | - Modelled using historical demand and existing resources                           |
-|                  |   - Synchronous units (gas-fired) must run for system strength in SA                |
-+------------------+-------------------------------------------------------------------------------------+
-|                  | - Based on existing policy settings at the time of 2020 ISP:                        |
-|                  |   - Moderate deployment of VRE and BESS                                             |
-| 2025 Central     |   - Distributed solar PV has moderate impact on operational demand                  |
-|                  |   - Thermal unit retirements in both states                                         |
-|                  |   - Large hydropower capacity addition in NSW                                       |
-|                  |   - Fewer synchronous units must run for system strength in SA                      |
-+------------------+-------------------------------------------------------------------------------------+
-|                  | - More aggressive transition:                                                       |
-|                  |   - Large deployments of VRE and BESS                                               |
-| 2025 Step Change |   - Distributed solar PV has greater impact on operational demand                   |
-|                  |   - Further thermal unit retirements in NSW                                         |
-|                  |   - Large hydropower capacity addition in NSW                                       |
-|                  |   - Fewer synchronous units must run for system strength in SA                      |
-+------------------+-------------------------------------------------------------------------------------+
++------------------+-------------------------------------------------------------------------+
+|    Scenario      | Description                                                             |
++:================:+:=======================================================================:+
+| 2020             | - Modelled using historical demand and existing resources               |
+|                  |   - Synchronous units (gas-fired) must run for system strength in SA    |
++------------------+-------------------------------------------------------------------------+
+|                  | - Based on existing policy settings at the time of 2020 ISP:            |
+|                  |   - Moderate deployment of VRE and BESS                                 |
+| 2025 Central     |   - Distributed solar PV has moderate impact on operational demand      |
+|                  |   - Thermal unit retirements in both states                             |
+|                  |   - Large hydropower capacity addition in NSW                           |
+|                  |   - Fewer synchronous units must run for system strength in SA          |
++------------------+-------------------------------------------------------------------------+
+|                  | - More aggressive transition:                                           |
+|                  |   - Large deployments of VRE and BESS                                   |
+| 2025 Step Change |   - Distributed solar PV has greater impact on operational demand       |
+|                  |   - Further thermal unit retirements in NSW                             |
+|                  |   - Large hydropower capacity addition in NSW                           |
+|                  |   - Fewer synchronous units must run for system strength in SA          |
++------------------+-------------------------------------------------------------------------+
 
 : Scenarios simulated for NSW and SA. {#tbl:scenariodesc}
 
@@ -351,49 +351,41 @@ The available footroom in the system is likely sensitive to extent of convention
 
 While the available reserves metric does not consider the duration for which reserve deployment can be sustained, we can infer whether reserves are short-term energy-limited (i.e. with a duration no more than a few hours) based on their resource type. For this analysis, BESS reserve power was calculated based on the BESS's state of charge at the end of each dispatch interval and the requirement to sustain provision for 15 minutes. This duration is consistent with the BESS power and capacity that is reserved in SA for the possibility of loss of interconnection [@australianenergymarketoperator2020SystemStrength2020]. In addition, the maximum available price-responsive demand available in each state was added to the available reserves in each dispatch interval (assuming an emergency response time of 5 minutes) to gain a better understanding of the maximum potential contribution of demand response. This corresponded to \~60 MW in SA and \~290 MW in NSW, based on AEMO analysis and forecasts in @australianenergymarketoperator2020InputsAssumptions2020. Both BESS and DR can be considered to be short-term energy-limited reserve providers. Though conventional generation fuel constraints (e.g reservoir schemes and the gas system) were not modelled in this market simulation, the contribution of conventional resources was separated into those of thermal and hydro to assess the importance of the energy constraints on each resource type to available reserves in NSW.
 
-Tables \ref{tab:nsw_stel} and \ref{tab:sa_stel} show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term[^16]. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions [@prakashInsightsDesigningEffective2022]. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.
+Tables [-@tbl:nsw_stel] and [-@tbl:sa_stel] show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term[^16]. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions [@prakashInsightsDesigningEffective2022]. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.
 
-\begin{table}
-  \centering
-  \begin{tabular}{|l|l|l|l|l|l|l|}
-    \hline
-    \multirow{2}{*}{NSW Resources} &
-      \multicolumn{2}{c}{2020} &
-      \multicolumn{2}{c}{2025 Central} &
-      \multicolumn{2}{c|}{2025 Step Change} \\
-    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
-    \hline
-    BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
-    \hline
-    DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
-    \hline
-    Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
-    \hline
-    Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
-    \hline
-  \end{tabular}
-  \caption{\label{tab:nsw_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
-\end{table}
++---------------------+----------+----------+----------+----------+----------+----------+
+|    NSW resources    | 2020                | 2025 Central        | 2025 Step Change    |
+|                     |                     |                     |                     |
++                     +----------+----------+----------+----------+----------+----------+
+|                     | 5 min    | 30 min   | 5 min    | 30 min   | 5 min    | 30 min   |
++:===================:+:========:+:========:+:========:+:========:+:========:+:========:+
+|    BESS (15 min)    | 0%       | 0%       | 2%       | 1%       | 16%      | 14%      |
+|                     |          |          |          |          |          |          |
++---------------------+----------+----------+----------+----------+----------+----------+
+| DR                  | 9%       | 5%       | 5%       | 4%       | 5%       | 4%       |
++---------------------+----------+----------+----------+----------+----------+----------+
+| Hydro               | 74%      | 43%      | 81%      | 60%      | 71%      | 61%      |
++---------------------+----------+----------+----------+----------+----------+----------+
+| Thermal             | 18%      |  52%     | 12%      | 34%      | 8%       | 19%      |
++---------------------+----------+----------+----------+----------+----------+----------+
 
-\begin{table}
-  \centering
-  \begin{tabular}{|l|l|l|l|l|l|l|}
-    \hline
-    \multirow{2}{*}{SA Resources} &
-      \multicolumn{2}{c}{2020} &
-      \multicolumn{2}{c}{2025 Central} &
-      \multicolumn{2}{c|}{2025 Step Change} \\
-    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
-    \hline
-    BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
-    \hline
-    DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
-    \hline
-    Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
-    \hline
-  \end{tabular}
-  \caption{\label{tab:sa_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
-\end{table}
+:Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%). []{#tbl:nsw_stel short-caption="NSW short-term energy limited reserves"}
+
++---------------------+----------+----------+----------+----------+----------+----------+
+|    SA resources     | 2020                | 2025 Central        | 2025 Step Change    |
+|                     |                     |                     |                     |
++                     +----------+----------+----------+----------+----------+----------+
+|                     | 5 min    | 30 min   | 5 min    | 30 min   | 5 min    | 30 min   |
++:===================:+:========:+:========:+:========:+:========:+:=========+:========:+
+|    BESS (15 min)    | 14%      | 6%       | 24%      | 10%      | 40%      | 20%      |
+|                     |          |          |          |          |          |          |
++---------------------+----------+----------+----------+----------+----------+----------+
+| DR                  | 7%       | 3%       | 7%       | 3%       | 5%       | 3%       |
++---------------------+----------+----------+----------+----------+----------+----------+
+| Thermal             | 71%      |  88%     | 61%      | 84%      | 45%      | 73%      |
++---------------------+----------+----------+----------+----------+----------+----------+
+
+: Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%). []{#tbl:sa_stel short-caption="SA short-term energy limited reserves"}
 
 [^16]: In reality, conventional resources are also susceptible to fuel constraints, as highlighted by the events preceding the 2022 NEM suspension [@australianenergymarketoperatorNEMMarketSuspension2022]. More sophisticated modelling of thermal coal availability, the gas system and hydro schemes, including their operation under different climate conditions, would be required to better understand the potential duration of available reserve provided by conventional generation.
 
