@@ -6,7 +6,7 @@
   <meta name="generator" content="pandoc-markdown-css-theme" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Abhijith Prakash" />
-  <meta name="dcterms.date" content="2023-04-28" />
+  <meta name="dcterms.date" content="2023-04-30" />
   <title>Thesis - Abhijith Prakash</title>
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/skylighting-paper-theme.css" />
@@ -36,7 +36,7 @@
 <p class="author">
       Abhijith Prakash
   </p>
-<p class="date before-toc"><time datetime="April 28, 2023">April 28, 2023</time></p>
+<p class="date before-toc"><time datetime="April 30, 2023">April 30, 2023</time></p>
 </blockquote>
 </header>
 
@@ -542,7 +542,7 @@ For bold and italic, add _** on either side of the text
 <h3 data-number="7.4.3" id="sec:reserves-nemreserves"><span class="header-section-number">7.4.3</span> Reserve products</h3>
 <p>Formal reserves arrangements in the NEM consist of eight FCAS and the Reliability and Emergency Reserve Trader (RERT). In each dispatch interval, FCAS are procured by AEMO from markets for raise (headroom) and lower (footroom) regulation FCAS, which are used to provide frequency control during normal operation, and three raise and lower contingency FCAS, which deliver their full response within 6 seconds, 60 seconds or 5 minutes following a major imbalance event. The volumes of FCAS procured for each dispatch interval are dynamically determined, with regulation FCAS procurement volumes dictated by power system time error and contingency FCAS procurement volumes typically corresponding to an N-1 contingency. In the absence of regional constraints, FCAS are procured for and from all regions of the NEM. While FCAS provides balancing flexibility through frequency-responsive headroom and footroom, they predominantly respond to intra-dispatch variability and uncertainty with the expectation that deployed resources will be relieved by 5-minute dispatch <span class="citation" data-cites="rieszFrequencyControlAncillary2015 prakashInsightsDesigningEffective2022">(<a href="#ref-prakashInsightsDesigningEffective2022" role="doc-biblioref">Prakash et al., 2022</a>; <a href="#ref-rieszFrequencyControlAncillary2015" role="doc-biblioref">Riesz et al., 2015</a>)</span>. 5 minute contingency FCAS is an exception, given that its response may be called upon for up to 10 minutes. 5 minute contingency FCAS is currently provided by a diverse range of resources (see Figure 8).</p>
 <figure id="fig:raise_delayed_supply">
-<img src="source/figures/raise5minq42020.png" alt="Q4 2020 global supply curves by resource type for the raise 5 minute contingency FCAS market. Each of the supply curves are truncated to the volumes of 5 minute contingency FCAS procured by AEMO across the NEM in that dispatch interval (NEM-wide mean of ~420 MW for Q4 2020). Providers include conventional steam and hydropower generators, an aluminium smelter, demand response (DR) aggregators, VPPs and BESS. As each supply curve is constructed from the offers of resources across the NEM (i.e. global), they do not reflect dispatch outcomes in the presence of regional constraints. Offer and dispatch data were obtained using NEMOSIS (Gorman et al. (2018))." />
+<img src="source/figures/raise5minq42020.png" data-short-caption="Q4 2020 5-minute contingency FCAS global supply curve by resource type" alt="Q4 2020 global supply curves by resource type for the raise 5 minute contingency FCAS market. Each of the supply curves are truncated to the volumes of 5 minute contingency FCAS procured by AEMO across the NEM in that dispatch interval (NEM-wide mean of ~420 MW for Q4 2020). Providers include conventional steam and hydropower generators, an aluminium smelter, demand response (DR) aggregators, VPPs and BESS. As each supply curve is constructed from the offers of resources across the NEM (i.e. global), they do not reflect dispatch outcomes in the presence of regional constraints. Offer and dispatch data were obtained using NEMOSIS (Gorman et al. (2018))." />
 <figcaption>Figure 8: Q4 2020 global supply curves by resource type for the raise 5 minute contingency FCAS market. Each of the supply curves are truncated to the volumes of 5 minute contingency FCAS procured by AEMO across the NEM in that dispatch interval (NEM-wide mean of ~420 MW for Q4 2020). Providers include conventional steam and hydropower generators, an aluminium smelter, demand response (DR) aggregators, VPPs and BESS. As each supply curve is constructed from the offers of resources across the NEM (i.e. global), they do not reflect dispatch outcomes in the presence of regional constraints. Offer and dispatch data were obtained using NEMOSIS (<span class="citation" data-cites="gormanNEMOSISNEMOpen2018">Gorman et al. (<a href="#ref-gormanNEMOSISNEMOpen2018" role="doc-biblioref">2018</a>)</span>).</figcaption>
 </figure>
 <p>Through the RERT, AEMO can obtain last-resort reserves given between 1 week to 1 year of notice of forecasted in-market reserves shortfalls. While procurement practices vary depending on the notice time, RERT procurement consists of AEMO contracting with out-of-market resources. Following forecast or actual LOR2 or LOR3 conditions and an insufficient market response, AEMO is able to activate RERT reserves <span class="citation" data-cites="australianenergymarketcommissionreliabilitypanelReliabilityEmergencyReserve2020 australianenergymarketoperatorProcedureExerciseReliability2021">(<a href="#ref-australianenergymarketcommissionreliabilitypanelReliabilityEmergencyReserve2020" role="doc-biblioref">Australian Energy Market Commission Reliability Panel, 2020</a>; <a href="#ref-australianenergymarketoperatorProcedureExerciseReliability2021" role="doc-biblioref">Australian Energy Market Operator, 2021o</a>)</span>. The RERT provides AEMO with a last-resort mechanism to procure balancing flexibility prior to any potential load shedding. However, resources that provide reserves through the RERT are unable to participate in the real-time market for the duration of their contract. After RERT reserves are activated, market participants are remunerated based on counterfactual pricing (i.e. dispatch without RERT), thus maintaining scarcity pricing and potential signals for investment.</p>
@@ -613,19 +613,19 @@ For bold and italic, add _** on either side of the text
 <table>
 <caption>Table 1: Scenarios simulated for NSW and SA.</caption>
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 81%" />
+<col style="width: 20%" />
+<col style="width: 79%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Scenario</th>
-<th style="text-align: left;"><pre><code>                                Description</code></pre></th>
+<th style="text-align: center;">Scenario</th>
+<th style="text-align: center;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;"><ul>
+<td style="text-align: center;">2020</td>
+<td style="text-align: center;"><ul>
 <li>Modelled using historical demand and existing resources
 <ul>
 <li>Synchronous units (gas-fired) must run for system strength in SA</li>
@@ -633,8 +633,8 @@ For bold and italic, add _** on either side of the text
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2025 Central</td>
-<td style="text-align: left;"><ul>
+<td style="text-align: center;">2025 Central</td>
+<td style="text-align: center;"><ul>
 <li>Based on existing policy settings at the time of 2020 ISP:
 <ul>
 <li>Moderate deployment of VRE and BESS</li>
@@ -646,8 +646,8 @@ For bold and italic, add _** on either side of the text
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2025 Step Change</td>
-<td style="text-align: left;"><ul>
+<td style="text-align: center;">2025 Step Change</td>
+<td style="text-align: center;"><ul>
 <li>More aggressive transition:
 <ul>
 <li>Large deployments of VRE and BESS</li>
@@ -679,7 +679,7 @@ For bold and italic, add _** on either side of the text
 <p>Both NSW and SA were modelled assuming a copper-plate network with no interconnection to other regions (i.e. single bus with no network constraints). The Short Term Schedule mixed-integer linear program was solved using the CPLEX Optimizer <span class="citation" data-cites="ibmCPLEXOptimizer2021">(<a href="#ref-ibmCPLEXOptimizer2021" role="doc-biblioref">IBM, 2021</a>)</span> with a relative mixed-integer program gap tolerance of 0.07%. The generation and synchronisation status of each resource was obtained from the solution and used to calculate the available reserves and footroom for each 5-minute interval using the equations outlined in Section 5.5. A process flow diagram of the study methodology is shown in Figure 10.</p>
 <p>In Appendix A, we outline our sources for key input data and assumptions (top row of Figure 10) and provide further details regarding how these data were used in the market simulation and/or the calculation of available reserves and footroom.</p>
 <figure id="fig:method_diagram">
-<img src="source/figures/modelling_diagram.png" style="width:100.0%" alt="Process flow for modelling available reserves and footroom for each scenario in this case study." />
+<img src="source/figures/modelling_diagram.png" style="width:100.0%" data-short-caption="Process flow diagram for modelling available reserves and footroom for each scenario" alt="Process flow for modelling available reserves and footroom for each scenario in this case study." />
 <figcaption>Figure 10: Process flow for modelling available reserves and footroom for each scenario in this case study.</figcaption>
 </figure>
 <h3 data-number="7.7.1" id="limitations-1"><span class="header-section-number">7.7.1</span> Limitations</h3>
@@ -707,11 +707,11 @@ For bold and italic, add _** on either side of the text
 </ol>
 <p>Furthermore, with additional BESS and flexible gas resources expected to be deployed, the mean 5+ minute reserve margins of both regions are higher for most parts of the day in the 2025 Step Change scenario. Though the market simulation relied on perfect foresight (additional uncertainty may reduce reserve margins), these results suggest that reasonable quantities of reserves are available in each region within a 5+ minute horizon.</p>
 <figure id="fig:nswreserves">
-<img src="./source/figures/NSW_reserves_all_profiles_by_di.png" style="width:100.0%" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
+<img src="./source/figures/NSW_reserves_all_profiles_by_di.png" style="width:100.0%" data-short-caption="NSW available reserves SDPs" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
 <figcaption>Figure 11: Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns).</figcaption>
 </figure>
 <figure id="fig:sareserves">
-<img src="./source/figures/SA_reserves_all_profiles_by_di.png" style="width:100.0%" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in SA in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
+<img src="./source/figures/SA_reserves_all_profiles_by_di.png" style="width:100.0%" data-short-caption="SA available reserves SDPs" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in SA in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
 <figcaption>Figure 12: Mean (top row) and bottom 1% (bottom row) SDPs for available reserves in SA in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns).</figcaption>
 </figure>
 <p>Across scenarios, the following trends are apparent in the SDPs:</p>
@@ -723,17 +723,140 @@ For bold and italic, add _** on either side of the text
 <h4 data-number="7.7.2.3" id="sec:reserves-footroomSDPs"><span class="header-section-number">7.7.2.3</span> Available footroom synthetic days</h4>
 <p>Two types of SDPs were constructed for available footroom: one for <em>firm</em> footroom and the other for total footroom. The former refers to potential footroom provision from conventional resources and BESS, whereas the latter also includes footroom that can be provided by curtailing VRE. Figures 13, 14 show mean and bottom 1% SDPs across NSW scenarios for firm footroom and total footroom, respectively. From the bottom 1% SDPs in Figure 13, it is clear that firm system footroom can become very low in NSW in 2025 as remaining baseload conventional generators are driven to operate closer to their MSLs. However, such concerns could be alleviated if VRE provide footroom (Figure 14). A similar result was observed for the SA region.</p>
 <figure id="fig:nswfirmfoot">
-<img src="./source/figures/NSW_firmfootroom_all_profiles_by_di.png" style="width:100.0%" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available firm footroom (i.e. footroom provided only by “firm” resources: conventional and BESS) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
+<img src="./source/figures/NSW_firmfootroom_all_profiles_by_di.png" style="width:100.0%" data-short-caption="NSW firm footroom SDPs" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available firm footroom (i.e. footroom provided only by “firm” resources: conventional and BESS) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
 <figcaption>Figure 13: Mean (top row) and bottom 1% (bottom row) SDPs for available firm footroom (i.e. footroom provided only by “firm” resources: conventional and BESS) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns).</figcaption>
 </figure>
 <figure id="fig:nswfoot">
-<img src="./source/figures/NSW_footroom_all_profiles_by_di.png" style="width:100.0%" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available total footroom (including footroom that would be provided by curtailing VRE) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
+<img src="./source/figures/NSW_footroom_all_profiles_by_di.png" style="width:100.0%" data-short-caption="NSW footroom SDPs" alt="Mean (top row) and bottom 1% (bottom row) SDPs for available total footroom (including footroom that would be provided by curtailing VRE) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns)." />
 <figcaption>Figure 14: Mean (top row) and bottom 1% (bottom row) SDPs for available total footroom (including footroom that would be provided by curtailing VRE) in NSW in 2020 (leftmost column) and the two 2025 scenarios (rightmost columns).</figcaption>
 </figure>
 <p>The available footroom in the system is likely sensitive to extent of conventional generation retirements. Further retirements may enable remaining conventional resources to operate at a higher loading, thereby increasing the available footroom in the system. Regardless, given that each region appears to suffer a lack of <em>firm</em> footroom for several hours during the day in the 2025 scenarios explored in this case study, mechanisms for procuring sustained downwards balancing flexibility should be considered alongside those for procuring sustained upwards balancing flexibility. One simple option would be to implement an operating <em>footroom</em> product, which, if VRE are permitted to provide this service, can enable conventional generation to operate closer to their MSL and thus reduce system operating costs and carbon emissions <span class="citation" data-cites="nelsonInvestigatingEconomicValue2018">(<a href="#ref-nelsonInvestigatingEconomicValue2018" role="doc-biblioref">Nelson et al., 2018</a>)</span>.</p>
 <h4 data-number="7.7.2.4" id="sec:reserves-stelr"><span class="header-section-number">7.7.2.4</span> Short-term energy-limited reserves</h4>
 <p>While the available reserves metric does not consider the duration for which reserve deployment can be sustained, we can infer whether reserves are short-term energy-limited (i.e. with a duration no more than a few hours) based on their resource type. For this analysis, BESS reserve power was calculated based on the BESS’s state of charge at the end of each dispatch interval and the requirement to sustain provision for 15 minutes. This duration is consistent with the BESS power and capacity that is reserved in SA for the possibility of loss of interconnection <span class="citation" data-cites="australianenergymarketoperator2020SystemStrength2020">(<a href="#ref-australianenergymarketoperator2020SystemStrength2020" role="doc-biblioref">Australian Energy Market Operator, 2020o</a>)</span>. In addition, the maximum available price-responsive demand available in each state was added to the available reserves in each dispatch interval (assuming an emergency response time of 5 minutes) to gain a better understanding of the maximum potential contribution of demand response. This corresponded to ~60 MW in SA and ~290 MW in NSW, based on AEMO analysis and forecasts in <span class="citation" data-cites="australianenergymarketoperator2020InputsAssumptions2020">Australian Energy Market Operator (<a href="#ref-australianenergymarketoperator2020InputsAssumptions2020" role="doc-biblioref">2020a</a>)</span>. Both BESS and DR can be considered to be short-term energy-limited reserve providers. Though conventional generation fuel constraints (e.g reservoir schemes and the gas system) were not modelled in this market simulation, the contribution of conventional resources was separated into those of thermal and hydro to assess the importance of the energy constraints on each resource type to available reserves in NSW.</p>
-<p>Tables and show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions <span class="citation" data-cites="prakashInsightsDesigningEffective2022">(<a href="#ref-prakashInsightsDesigningEffective2022" role="doc-biblioref">Prakash et al., 2022</a>)</span>. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.</p>
+<p>Tables <strong>¿tbl:nsw_stel?</strong> and <strong>¿tbl:sa_stel?</strong> show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions <span class="citation" data-cites="prakashInsightsDesigningEffective2022">(<a href="#ref-prakashInsightsDesigningEffective2022" role="doc-biblioref">Prakash et al., 2022</a>)</span>. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.</p>
+<table style="width:95%;">
+<caption>Median of the percentage of each resource type’s contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0%). <span id="tbl:nsw_stel" data-short-caption="NSW short-term energy limited reserves"></span></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th rowspan="2" style="text-align: center;">NSW resources</th>
+<th colspan="2" style="text-align: center;">2020</th>
+<th colspan="2" style="text-align: center;">2025 Central</th>
+<th colspan="2" style="text-align: center;">2025 Step Change</th>
+</tr>
+<tr class="odd">
+<th style="text-align: center;">5 min</th>
+<th style="text-align: center;">30 min</th>
+<th style="text-align: center;">5 min</th>
+<th style="text-align: center;">30 min</th>
+<th style="text-align: center;">5 min</th>
+<th style="text-align: center;">30 min</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">BESS (15 min)</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">2%</td>
+<td style="text-align: center;">1%</td>
+<td style="text-align: center;">16%</td>
+<td style="text-align: center;">14%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DR</td>
+<td style="text-align: center;">9%</td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;">4%</td>
+<td style="text-align: center;">5%</td>
+<td style="text-align: center;">4%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hydro</td>
+<td style="text-align: center;">74%</td>
+<td style="text-align: center;">43%</td>
+<td style="text-align: center;">81%</td>
+<td style="text-align: center;">60%</td>
+<td style="text-align: center;">71%</td>
+<td style="text-align: center;">61%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Thermal</td>
+<td style="text-align: center;">18%</td>
+<td style="text-align: center;">52%</td>
+<td style="text-align: center;">12%</td>
+<td style="text-align: center;">34%</td>
+<td style="text-align: center;">8%</td>
+<td style="text-align: center;">19%</td>
+</tr>
+</tbody>
+</table>
+<table style="width:95%;">
+<caption>Median of the percentage of each resource type’s contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0%). <span id="tbl:sa_stel" data-short-caption="SA short-term energy limited reserves"></span></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th rowspan="2" style="text-align: center;">SA resources</th>
+<th colspan="2" style="text-align: center;">2020</th>
+<th colspan="2" style="text-align: center;">2025 Central</th>
+<th colspan="2" style="text-align: left;">2025 Step Change</th>
+</tr>
+<tr class="odd">
+<th style="text-align: center;">5 min</th>
+<th style="text-align: center;">30 min</th>
+<th style="text-align: center;">5 min</th>
+<th style="text-align: center;">30 min</th>
+<th style="text-align: left;">5 min</th>
+<th style="text-align: center;">30 min</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">BESS (15 min)</td>
+<td style="text-align: center;">14%</td>
+<td style="text-align: center;">6%</td>
+<td style="text-align: center;">24%</td>
+<td style="text-align: center;">10%</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: center;">20%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DR</td>
+<td style="text-align: center;">7%</td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: center;">7%</td>
+<td style="text-align: center;">3%</td>
+<td style="text-align: left;">5%</td>
+<td style="text-align: center;">3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thermal</td>
+<td style="text-align: center;">71%</td>
+<td style="text-align: center;">88%</td>
+<td style="text-align: center;">61%</td>
+<td style="text-align: center;">84%</td>
+<td style="text-align: left;">45%</td>
+<td style="text-align: center;">73%</td>
+</tr>
+</tbody>
+</table>
 <h3 data-number="7.7.3" id="the-role-of-balancing-products"><span class="header-section-number">7.7.3</span> The role of balancing products</h3>
 <p>It is unclear whether introducing an operating reserve product will deliver material operational benefits to the NEM in light of the revenue risks, complexity, and implementation and ongoing costs associated with a new market. Instead, existing mechanisms may be able to deliver sufficient upwards flexibility, particularly if they can be augmented:</p>
 <ol type="1">

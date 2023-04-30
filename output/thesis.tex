@@ -321,7 +321,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        April 28, 2023
+        April 30, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -416,6 +416,7 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \textbf{BESS} & Battery energy storage systems \\
 \textbf{BRP} & Balancing responsible party \\
 \textbf{BSP} & Balancing service provider \\
+\textbf{CCGT} & Combined-cycle gas turbine \\
 \textbf{DC} & Direct current \\
 \textbf{DR} & Demand response \\
 \textbf{ENSTO-E} & European Network of Transmission System Operators for Electricity \\
@@ -426,30 +427,40 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \textbf{FCAS} & Frequency Control Ancillary Services \\
 \textbf{FERC} & Federal Energy Regulatory Commission \\
 \textbf{FFR} & Fast frequency response \\
+\textbf{Gas-Steam} & Gas-powered steam turbine \\
 \textbf{Hz} & Hertz \\
 \textbf{mHz} & Millihertz \\
+\textbf{ISP} & Integrated System Plan \\
+\textbf{LOR} & Lack of reserves \\
+\textbf{MSL} & Minimum stable level \\
 \textbf{MW} & Megawatts \\
 \textbf{NEM} & National Electricity Market \\
 \textbf{NER} & National Electricity Rules \\
 \textbf{NOFB} & Normal operating frequency band \\
 \textbf{NSW} & New South Wales \\
+\textbf{OCGT} & Open-cycle gas turbine \\
 \textbf{OFGS} & Over-frequency generation shedding \\
+\textbf{PASA} & Projected Assessment of System Adequacy \\
 \textbf{PFR} & Primary frequency response \\
 \textbf{PV} & Photovoltaic \\
 \textbf{QLD} & Queensland \\
+\textbf{RERT} & Reliability and Emergency Reserve Trader \\
 \textbf{RoCoF} & Rate of change of frequency \\
 \textbf{SA} &  South Australia \\
+\textbf{SDP} & Synthetic daily profile \\
 \textbf{SFR} & Secondary frequency response \\
 \textbf{SO} & System operator \\
 \textbf{TAS} & Tasmania \\
 \textbf{TFR} & Tertiary frequency response \\
 \textbf{TNSP} & Transmission Network Service Provider \\
-\textbf{SO} & Transmission System Operator \\
+\textbf{TSO} & Transmission System Operator \\
+\textbf{UC-ED} & Unit commitment and economic dispatch \\
 \textbf{UFLS} & Under-frequency load shedding \\
 \textbf{UK} & United Kingdom \\
 \textbf{US} & United States \\
 \textbf{UFLS} & Under-frequency load shedding \\
 \textbf{VIC} & Victoria \\
+\textbf{VPP} & Virtual power plant \\
 \textbf{VRE} & Variable renewable energy \\
 \end{longtable}
 
@@ -3142,16 +3153,17 @@ Figure~\ref{fig:raise_delayed_supply}).
 \hypertarget{fig:raise_delayed_supply}{%
 \centering
 \includegraphics{source/figures/raise5minq42020.png}
-\caption{Q4 2020 global supply curves by resource type for the raise 5
-minute contingency FCAS market. Each of the supply curves are truncated
-to the volumes of 5 minute contingency FCAS procured by AEMO across the
-NEM in that dispatch interval (NEM-wide mean of \textasciitilde420 MW
-for Q4 2020). Providers include conventional steam and hydropower
-generators, an aluminium smelter, demand response (DR) aggregators, VPPs
-and BESS. As each supply curve is constructed from the offers of
-resources across the NEM (i.e.~global), they do not reflect dispatch
-outcomes in the presence of regional constraints. Offer and dispatch
-data were obtained using NEMOSIS (Gorman et al.
+\caption[Q4 2020 5-minute contingency FCAS global supply curve by
+resource type]{Q4 2020 global supply curves by resource type for the
+raise 5 minute contingency FCAS market. Each of the supply curves are
+truncated to the volumes of 5 minute contingency FCAS procured by AEMO
+across the NEM in that dispatch interval (NEM-wide mean of
+\textasciitilde420 MW for Q4 2020). Providers include conventional steam
+and hydropower generators, an aluminium smelter, demand response (DR)
+aggregators, VPPs and BESS. As each supply curve is constructed from the
+offers of resources across the NEM (i.e.~global), they do not reflect
+dispatch outcomes in the presence of regional constraints. Offer and
+dispatch data were obtained using NEMOSIS (Gorman et al.
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{2018})).}\label{fig:raise_delayed_supply}
 }
 \end{figure}
@@ -3487,33 +3499,29 @@ Energy Market Operator, 2020d}) \footnote{The 2022 ISP was recently
 
 \hypertarget{tbl:scenariodesc}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}m{(\columnwidth - 2\tabcolsep) * \real{0.1810}}
-  >{\raggedright\arraybackslash}m{(\columnwidth - 2\tabcolsep) * \real{0.8190}}@{}}
+  >{\centering\arraybackslash}m{(\columnwidth - 2\tabcolsep) * \real{0.2043}}
+  >{\centering\arraybackslash}m{(\columnwidth - 2\tabcolsep) * \real{0.7957}}@{}}
 \caption{\label{tbl:scenariodesc}Scenarios simulated for NSW and
 SA.}\tabularnewline
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
+\begin{minipage}[b]{\linewidth}\centering
 Scenario
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\begin{verbatim}
-                                Description
-\end{verbatim}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Description
 \end{minipage} \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
+\begin{minipage}[b]{\linewidth}\centering
 Scenario
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\begin{verbatim}
-                                Description
-\end{verbatim}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Description
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2020 & \begin{minipage}[t]{\linewidth}\raggedright
+2020 & \begin{minipage}[t]{\linewidth}\centering
 \begin{itemize}
 \tightlist
 \item
@@ -3526,7 +3534,7 @@ Scenario
   \end{itemize}
 \end{itemize}
 \end{minipage} \\
-2025 Central & \begin{minipage}[t]{\linewidth}\raggedright
+2025 Central & \begin{minipage}[t]{\linewidth}\centering
 \begin{itemize}
 \tightlist
 \item
@@ -3547,7 +3555,7 @@ Scenario
   \end{itemize}
 \end{itemize}
 \end{minipage} \\
-2025 Step Change & \begin{minipage}[t]{\linewidth}\raggedright
+2025 Step Change & \begin{minipage}[t]{\linewidth}\centering
 \begin{itemize}
 \tightlist
 \item
@@ -3715,8 +3723,10 @@ calculation of available reserves and footroom.
 \hypertarget{fig:method_diagram}{%
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{source/figures/modelling_diagram.png}
-\caption{Process flow for modelling available reserves and footroom for
-each scenario in this case study.}\label{fig:method_diagram}
+\caption[Process flow diagram for modelling available reserves and
+footroom for each scenario]{Process flow for modelling available
+reserves and footroom for each scenario in this case
+study.}\label{fig:method_diagram}
 }
 \end{figure}
 
@@ -3880,9 +3890,10 @@ reasonable quantities of reserves are available in each region within a
 \hypertarget{fig:nswreserves}{%
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./source/figures/NSW_reserves_all_profiles_by_di.png}
-\caption{Mean (top row) and bottom 1\% (bottom row) SDPs for available
-reserves in NSW in 2020 (leftmost column) and the two 2025 scenarios
-(rightmost columns).}\label{fig:nswreserves}
+\caption[NSW available reserves SDPs]{Mean (top row) and bottom 1\%
+(bottom row) SDPs for available reserves in NSW in 2020 (leftmost
+column) and the two 2025 scenarios (rightmost
+columns).}\label{fig:nswreserves}
 }
 \end{figure}
 
@@ -3890,9 +3901,9 @@ reserves in NSW in 2020 (leftmost column) and the two 2025 scenarios
 \hypertarget{fig:sareserves}{%
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./source/figures/SA_reserves_all_profiles_by_di.png}
-\caption{Mean (top row) and bottom 1\% (bottom row) SDPs for available
-reserves in SA in 2020 (leftmost column) and the two 2025 scenarios
-(rightmost columns).}\label{fig:sareserves}
+\caption[SA available reserves SDPs]{Mean (top row) and bottom 1\%
+(bottom row) SDPs for available reserves in SA in 2020 (leftmost column)
+and the two 2025 scenarios (rightmost columns).}\label{fig:sareserves}
 }
 \end{figure}
 
@@ -3970,10 +3981,11 @@ region.
 \hypertarget{fig:nswfirmfoot}{%
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./source/figures/NSW_firmfootroom_all_profiles_by_di.png}
-\caption{Mean (top row) and bottom 1\% (bottom row) SDPs for available
-firm footroom (i.e.~footroom provided only by ``firm'' resources:
-conventional and BESS) in NSW in 2020 (leftmost column) and the two 2025
-scenarios (rightmost columns).}\label{fig:nswfirmfoot}
+\caption[NSW firm footroom SDPs]{Mean (top row) and bottom 1\% (bottom
+row) SDPs for available firm footroom (i.e.~footroom provided only by
+``firm'' resources: conventional and BESS) in NSW in 2020 (leftmost
+column) and the two 2025 scenarios (rightmost
+columns).}\label{fig:nswfirmfoot}
 }
 \end{figure}
 
@@ -3981,10 +3993,10 @@ scenarios (rightmost columns).}\label{fig:nswfirmfoot}
 \hypertarget{fig:nswfoot}{%
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{./source/figures/NSW_footroom_all_profiles_by_di.png}
-\caption{Mean (top row) and bottom 1\% (bottom row) SDPs for available
-total footroom (including footroom that would be provided by curtailing
-VRE) in NSW in 2020 (leftmost column) and the two 2025 scenarios
-(rightmost columns).}\label{fig:nswfoot}
+\caption[NSW footroom SDPs]{Mean (top row) and bottom 1\% (bottom row)
+SDPs for available total footroom (including footroom that would be
+provided by curtailing VRE) in NSW in 2020 (leftmost column) and the two
+2025 scenarios (rightmost columns).}\label{fig:nswfoot}
 }
 \end{figure}
 
@@ -4032,7 +4044,7 @@ simulation, the contribution of conventional resources was separated
 into those of thermal and hydro to assess the importance of the energy
 constraints on each resource type to available reserves in NSW.
 
-Tables \ref{tab:nsw_stel} and \ref{tab:sa_stel} show the median
+Tables \ref{tbl:nsw_stel} and \ref{tbl:sa_stel} show the median
 percentage across dispatch intervals in a scenario year of available
 reserves provided by a resources type for NSW and SA, respectively.
 Whilst hydro and thermal resources dominate 5 minute horizon reserve
@@ -4062,47 +4074,188 @@ mechanisms for procuring balancing flexibility, reserve services and
 products can specify duration/energy requirements and thus ensure that
 flexibility provision is sustained.
 
-\begin{table}
-  \centering
-  \begin{tabular}{|l|l|l|l|l|l|l|}
-    \hline
-    \multirow{2}{=}{NSW Resources} &
-      \multicolumn{2}{c}{2020} &
-      \multicolumn{2}{c}{2025 Central} &
-      \multicolumn{2}{c|}{2025 Step Change} \\
-    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
-    \hline
-    BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
-    \hline
-    DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
-    \hline
-    Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
-    \hline
-    Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
-    \hline
-  \end{tabular}
-  \caption{\label{tab:nsw_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
-\end{table}
+\def\pandoctableshortcapt{NSW short-term energy limited reserves}
 
-\begin{table}
-  \centering
-  \begin{tabular}{|l|l|l|l|l|l|l|}
-    \hline
-    \multirow{2}{=}{SA Resources} &
-      \multicolumn{2}{c}{2020} &
-      \multicolumn{2}{c}{2025 Central} &
-      \multicolumn{2}{c|}{2025 Step Change} \\
-    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
-    \hline
-    BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
-    \hline
-    DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
-    \hline
-    Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
-    \hline
-  \end{tabular}
-  \caption{\label{tab:sa_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
-\end{table}
+\hypertarget{tbl:nsw_stel}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}@{}}
+\caption[NSW short-term energy limited
+reserves]{\label{tbl:nsw_stel}Median of the percentage of each resource
+type's contribution to reserves available within 5 minutes and 30
+minutes in every dispatch interval for each NSW scenario year. The
+median percentages are not necessarily coincident (i.e.~from the same
+dispatch interval) and therefore may not sum to 100\%. Furthermore, some
+distributions are long-tailed, so a median does not capture occasional
+reserve provision by a resource type (e.g.~VRE, for which all medians
+are 0\%).}\tabularnewline
+\toprule\noalign{}
+\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
+NSW resources
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2020
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Central
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Step Change
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
+NSW resources
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2020
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Central
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Step Change
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
+DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
+Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
+Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
+\end{longtable}
+
+\let\pandoctableshortcapt\relax
+
+\def\pandoctableshortcapt{SA short-term energy limited reserves}
+
+\hypertarget{tbl:sa_stel}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}@{}}
+\caption[SA short-term energy limited
+reserves]{\label{tbl:sa_stel}Median of the percentage of each resource
+type's contribution to reserves available within 5 minutes and 30
+minutes in every dispatch interval for each SA scenario year. The median
+percentages are not necessarily coincident (i.e.~from the same dispatch
+interval) and therefore may not sum to 100\%. Furthermore, some
+distributions are long-tailed, so a median does not capture occasional
+reserve provision by a resource type (e.g.~VRE, for which all medians
+are 0\%).}\tabularnewline
+\toprule\noalign{}
+\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
+SA resources
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2020
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Central
+\end{minipage}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+2025 Step Change
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
+SA resources
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2020
+\end{minipage}} &
+\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\centering
+2025 Central
+\end{minipage}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+2025 Step Change
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5 min
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+30 min
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
+DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
+Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
+\end{longtable}
+
+\let\pandoctableshortcapt\relax
 
 \hypertarget{the-role-of-balancing-products}{%
 \subsection{The role of balancing
