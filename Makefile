@@ -101,11 +101,13 @@ tex: copy_bib
 		--verbose \
 		-f markdown+raw_tex+grid_tables \
 		2>pandoc.tex.log
+	## My very ungraceful hacks
+	## If you remove the sed call below, you can use pandoc to compile straight to PDF
+	# SED HACKS:
 	# Change multirow{*} to multirow{=} - ensures multirow text wrapped
-	sed -i 's/{\*}/{=}/g' output/thesis.tex;
 	# Change p columns to m columns for multirow centering
-	sed -i 's/}p{/}m{/g' output/thesis.tex;
-
+	# Fix reserves subfigure short caption
+	sed -i -f filters/postprocesstex.sed output/thesis.tex
 ## Create HTML
 html: copy_bib
 	pandoc  \
