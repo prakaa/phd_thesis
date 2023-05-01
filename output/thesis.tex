@@ -130,12 +130,6 @@
 % or use \extrafloats{100}
 % add some \clearpage
 
-% % Chapter header
-% \usepackage{titlesec, blindtext, color}
-% \definecolor{gray75}{gray}{0.75}
-% \newcommand{\hsp}{\hspace{20pt}}
-% \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
-
 % % Fonts and typesetting
 % \setmainfont[Scale=1.1]{Helvetica}
 % \setsansfont[Scale=1.1]{Verdana}
@@ -167,12 +161,18 @@
 % HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
-\sectionfont{\rmfamily\mdseries\Large}
-\subsectionfont{\rmfamily\mdseries\scshape\large}
-\subsubsectionfont{\rmfamily\bfseries\upshape\large}
+\sectionfont{\rmfamily\mdseries\large}
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
 % \sectionfont{\rmfamily\mdseries\Large}
 % \subsectionfont{\rmfamily\mdseries\scshape\normalsize}
 % \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+% Chapter header
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Large\bfseries}
 
 % Set figure legends and captions to be smaller sized sans serif font
 \usepackage[font={footnotesize,sf}]{caption}
@@ -321,7 +321,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        April 30, 2023
+        May 1, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -2033,12 +2033,13 @@ Since the implementation of the mandatory PFR, settings specified by
 AEMO have been applied to a majority of large synchronous generators
 (\(>\) 200MW) and some smaller synchronous generators. Despite the
 absence of requirements for maintaining headroom and/or footroom,
-preliminary analysis by AEMO\footnote{We note that AEMO has yet to
-  complete mandatory PFR implementation. In particular, settings have
-  yet to be changed for many VRE plant as inverter control system
-  software changes are being trialled.} suggests that mandatory PFR has
-delivered better control of frequency within the NOFB (see
-Figure~\ref{fig:mpfr_dist}) and reduced excursions beyond the NOFB
+preliminary analysis by AEMO\footnote{The ramp rate used in dispatch by
+  AEMO is the lesser of a telemetered rate or a ramp rate submitted in a
+  resource's offer for energy, and was obtained using NEMOSIS
+  (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+  2018}).} suggests that mandatory PFR has delivered better control of
+frequency within the NOFB (see Figure~\ref{fig:mpfr_dist}) and reduced
+excursions beyond the NOFB
 (\protect\hyperlink{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{Australian
 Energy Market Operator, 2021f}). As a result of this initial success and
 further technical advice provided by AEMO, the AEMC has indicated that
@@ -2962,8 +2963,15 @@ provision from a variety of resources:
 \item
   In 2021, a wholesale demand response mechanism was implemented to
   enable larger loads (aggregated or otherwise) and virtual power plants
-  (VPPs) to directly participate in the energy market\footnote{Many of
-    these resources were previously restricted to FCAS provision.}
+  (VPPs) to directly participate in the energy market\footnote{For all
+    conventional resources, the distribution of offer prices resembles
+    ``hockey-stick'' offer curves that are common in the NEM
+    (\protect\hyperlink{ref-energysynapseDemandResponseNational2020}{Energy
+    Synapse, 2020}) and in other electricity markets
+    (\protect\hyperlink{ref-hurlbutProtectingMarketHockey2004}{Hurlbut
+    et al., 2004}). Moreover, for most peaking conventional resources,
+    energy is offered at or just above the strike price of cap
+    options/futures (300 AUD/MWh).}
   (\protect\hyperlink{ref-australianenergymarketoperatorWholesaleDemandReponse2020}{Australian
   Energy Market Operator, 2020k}).
 \end{itemize}
@@ -4442,20 +4450,376 @@ pharetra sed. In dapibus magna convallis lectus sodales, a consequat sem
 euismod. Curabitur in interdum purus. Integer ultrices laoreet aliquet.
 Nulla vel dapibus urna. Nunc efficitur erat ac nisi auctor sodales.
 
-\hypertarget{appendix-1-some-extra-stuff}{%
-\chapter*{Appendix 1: Some extra
-stuff}\label{appendix-1-some-extra-stuff}}
-\addcontentsline{toc}{chapter}{Appendix 1: Some extra stuff}
+\appendix
 
-Add appendix 1 here. Vivamus hendrerit rhoncus interdum. Sed ullamcorper
-et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque
-purus suscipit in. Integer dignissim mattis ex aliquam blandit.
-Curabitur lobortis quam varius turpis ultrices egestas.
+\#
 
-\hypertarget{appendix-2-some-more-extra-stuff}{%
-\chapter*{Appendix 2: Some more extra
-stuff}\label{appendix-2-some-more-extra-stuff}}
-\addcontentsline{toc}{chapter}{Appendix 2: Some more extra stuff}
+\renewcommand\thefigure{\thesection.\arabic{figure}} 
+\renewcommand\thetable{\thesection.\arabic{table}}
+
+\hypertarget{data-and-assumptions-used-in-market-simulation}{%
+\chapter{Data and assumptions used in market
+simulation}\label{data-and-assumptions-used-in-market-simulation}}
+
+\hypertarget{resource-ramp-rates}{%
+\section{Resource ramp rates}\label{resource-ramp-rates}}
+
+Separate upwards and downwards ramp rates were modelled for most
+resource types. For hydro generation and reciprocating engines, maximum
+upwards and downwards ramp rates were sourced from GHD
+(\protect\hyperlink{ref-ghd2018AEMOCost2018}{2018}). For other
+conventional resources (coal-fired generation, Gas-Steam, CCGT and
+OCGT), ramp rates in each direction were further separated into a
+\emph{market} ramp rate, which was used in the PLEXOS market simulation,
+and an \emph{upper} ramp rate, which was used to calculate available
+reserves/footroom. For these resources, the market ramp rate was
+calculated using the unit ramp rates used most frequently in NEM
+dispatch\footnote{AEMO is currently investigating appropriate regional
+  requirements for FCAS, particularly for contingency FCAS in the
+  terminal regions of QLD and SA
+  (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020b}{Australian
+  Energy Market Operator, 2020h},
+  \protect\hyperlink{ref-australianenergymarketoperatorElectricityRuleChange2019a}{2019d}).}
+in 2020, and the upper ramp rate was calculated using resources' assumed
+maximum ramp rates in AEMO's 2020 Inputs and Assumptions workbook (for
+an example of a comparison, see Figure~\ref{fig:ramp_rate_comparison})
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}). Additional resources in 2025 were
+assumed to have the same ramp rate characteristics as newer existing
+resources of the same technology type.
+
+\begin{figure}
+\hypertarget{fig:ramp_rate_comparison}{%
+\centering
+\includegraphics{source/figures/coal_market_upper_ramps.png}
+\caption{Ramp rates observed (red) and used in dispatch by AEMO (blue)
+for a coal-fired unit in NSW in 2020. The green line denotes the ramp
+rate assumed by AEMO in its 2020 Inputs and Assumptions workbook and the
+2020 ISP.}\label{fig:ramp_rate_comparison}
+}
+\end{figure}
+
+\hypertarget{unit-commitment-and-cycling-constraints}{%
+\section{Unit commitment and cycling
+constraints}\label{unit-commitment-and-cycling-constraints}}
+
+Many existing flexible conventional resources (OCGT, reciprocating
+engines and hydro generation) submit dispatch inflexibility profiles to
+AEMO that contain the resource's time to start up and reach MSL, the MSL
+itself, the time required at minimum loading and the time taken to shut
+down
+(\protect\hyperlink{ref-australianenergymarketoperatorFastStartInflexibilityProfile2021}{Australian
+Energy Market Operator, 2021q}). The most frequently offered fast start
+inflexibility profile of a resource in 2020 was obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018})
+and used to calculate its start-up rate, minimum up-time, MSL and
+shutdown rate. The minimum down-time for these resources was chosen to
+be equal to the minimum up-time.
+
+For the other conventional resources (CCGT, coal-fired generation and
+Gas-Steam), minimum up-times, minimum down-times and MSLs were obtained
+from AEMO's 2020 Inputs and Assumptions workbook
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}) and start-up rates were calculated based
+on hot or warm start times (i.e.~depending on the start state of the
+resource after being offline for its minimum down-time) obtained from
+GHD (\protect\hyperlink{ref-ghd2018AEMOCost2018}{2018}) or Aurecon
+Australasia
+(\protect\hyperlink{ref-aureconaustralasiaGeneratorTechnicalCost2020}{2020}).
+The shut-down rates for these resources were calculated based on actual
+shutdowns, or those of similar technology types, observed in AEMO
+dispatch data that was obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
+
+BESS were dispatched by PLEXOS's arbitrage algorithm subject to charging
+and discharging efficiencies and maximum and minimum state of charge
+constraints that corresponded to those assumed within AEMO's 2020 Inputs
+and Assumptions workbook
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}). Given an assumed economic lifetime of
+10 years
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}) and 3000 cycles
+(\protect\hyperlink{ref-dasilvalimaLifeCycleAssessment2021}{da Silva
+Lima et al., 2021}) for lithium-ion BESS, a constraint of 300 cycles per
+year was applied to BESS in each scenario.
+
+\hypertarget{partial-and-forced-outages}{%
+\section{Partial and forced outages}\label{partial-and-forced-outages}}
+
+Maintenance rates, forced outage rates (partial and full) and the
+corresponding mean time taken to repair were modelled for all
+conventional generation and were sourced from AEMO's 2020 Inputs and
+Assumptions workbook
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}).
+
+\hypertarget{sa-synchronous-generation-requirement}{%
+\section{SA synchronous generation
+requirement}\label{sa-synchronous-generation-requirement}}
+
+At present, certain combinations of synchronous generators are required
+to remain online for power system security in SA. Should ahead processes
+indicate that the synchronous generation expected to be online and
+dispatched is inadequate to provide sufficient system strength in SA,
+AEMO will intervene in the market and direct additional synchronous
+generation online (\protect\hyperlink{ref-guReviewSystemStrength2019}{Gu
+et al., 2019}). The various sufficient combinations of synchronous
+generation in SA are outlined in Australian Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022d}),
+with a decrease in requirements/increase in the allowable asynchronous
+generation level following the installation of 4 synchronous condensers
+(completed in 2021). To model these requirements, a must-run condition
+was imposed on 3 CCGT units and 1 Gas-Steam unit in 2020, and on 2 CCGT
+units and 1 Gas-Steam unit in the 2025 scenarios. These combinations
+reflect a subset of the sufficient combinations outlined in Australian
+Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022d}).
+
+\hypertarget{hydro-generation-monthly-energy-constraints}{%
+\section{Hydro generation monthly energy
+constraints}\label{hydro-generation-monthly-energy-constraints}}
+
+Run-of-river hydro generation and pumped hydro storage in NSW were
+aggregated and modelled as dispatchable generation with monthly energy
+constraints. These monthly energy constraints correspond to the average
+monthly inflows for the Snowy scheme (NSW and Australia's largest hydro
+scheme) across financial years 2011 to 2018 (obtained from Australian
+Energy Market Operator
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{2020n})).
+Though this model for hydro does not account for the additional
+generation that could be extracted from pumped storage, the application
+of monthly energy constraints could be interpreted as modelling one
+pattern of run-of-river hydro operation and/or enforcing the same
+reservoir level at the start and end of each month (and thus at the
+start and end of each year). Explicitly modelling reservoir schemes,
+inflows for individual hydro generators and pumping opportunities for
+pumped hydro storage are likely to improve the accuracy of the
+methodology proposed in this work for systems with significant shares of
+hydropower capacity.
+
+\hypertarget{demand-and-vre-traces}{%
+\section{Demand and VRE traces}\label{demand-and-vre-traces}}
+
+Chronological demand traces at 5-minute resolution were used in the
+market simulation. For each region, historical operational demand for
+2020 at 5-minute resolution was obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018})
+and used as the demand trace for the 2020 scenario. AEMO ISP demand
+traces were available for each 2025 scenario at half-hourly resolution
+(\protect\hyperlink{ref-australianenergymarketoperator2020DraftISP2019a}{Australian
+Energy Market Operator, 2019f}); 5-minute resolution demand traces for
+each 2025 scenario were produced by scaling 5-minute historical
+operational demand by a corresponding half-hourly scaling factor, which
+was calculated as the ratio of the ISP scenario's 2025 demand trace to
+the ISP scenario's 2020 demand trace.
+
+Half-hourly chronological solar PV and wind capacity factor traces were
+obtained from AEMO's ISP database for each 2020 scenario
+(\protect\hyperlink{ref-australianenergymarketoperator2020DraftISP2019}{Australian
+Energy Market Operator, 2019g}) and for each 2025 scenario
+(\protect\hyperlink{ref-australianenergymarketoperator2020ISPSolar2020}{Australian
+Energy Market Operator, 2020p}). Generation traces were obtained by
+multiplying the capacity factor trace of a resource by its nameplate
+capacity. Capacities for existing and committed VRE plants were obtained
+from AEMO's 2020 Inputs and Assumptions workbook
+(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
+Energy Market Operator, 2020n}) and any additional VRE capacity that was
+built out in the 2025 scenarios was assigned to AEMO-designated
+Renewable Energy Zones (for which capacity factor traces are available)
+based on the ISP's generation capacity outlook. The half-hourly
+generation traces for each resource and Renewable Energy Zone in a
+region were than aggregated and linearly interpolated for use in the
+5-minute resolution market simulation.
+
+\hypertarget{resource-market-offers}{%
+\section{Resource market offers}\label{resource-market-offers}}
+
+For all scenarios for a given region, one set of four static
+price-quantity pairs were used to represent each resource's offer in the
+market simulation. Except for hydro generation, offers were priced
+\emph{a priori}. The type of the resource determined how each band was
+priced (price bands for each resource type are outlined in
+Table~\ref{tbl:resourceoffers}) \footnote{The ramp rate used in dispatch
+  by AEMO is the lesser of a telemetered rate or a ramp rate submitted
+  in a resource's offer for energy, and was obtained using NEMOSIS
+  (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+  2018}).}:
+
+\begin{itemize}
+\tightlist
+\item
+  For wind and solar PV generators, the entire available forecasted
+  energy was offered at the market floor price to ensure preferential
+  dispatch of VRE where possible.
+\item
+  For baseload conventional resources (coal-fired generation and
+  Gas-Steam), the first band was priced at or close to the market floor
+  price to ensure the resource's MSL would clear the market. The second
+  band was priced close to the short-run marginal cost (SRMC) of the
+  resource. The SRMC was calculated using the average heat rate, fuel
+  price and variable operating and maintenance cost of each resource
+  type obtained from Australian Energy Market Operator
+  (\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{2020n}).
+  The third band was priced at a premium relative to the resource's SRMC
+  and the fourth band was offered at the market cap price.
+\item
+  For peaking generation (OCGT and reciprocating engines), the first
+  band was priced close to the SRMC of each resource, which was
+  calculated in the same manner as for baseload conventional resources.
+  The second and third band were offered at a moderate and higher
+  premium relative to the resource's SRMC, respectively. The fourth band
+  was offered at the market cap price.
+\item
+  Hydro generation offers were adjusted iteratively to align the
+  proportions of annual generation and average market prices of the NSW
+  2020 scenario with those calculated from historical data.
+\end{itemize}
+
+\hypertarget{tbl:resourceoffers}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.1864}}
+  >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}
+  >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}
+  >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}
+  >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}@{}}
+\caption{\label{tbl:resourceoffers}Offers by resources type for NSW and
+SA across all scenarios. The market floor and cap prices used were -1000
+AUD/MW/hr and 15,000 AUD/MW/hr, respectively.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Generator Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 1 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 2 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 3 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 4 (AUD/MWh)
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Generator Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 1 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 2 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 3 (AUD/MWh)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Price Band 4 (AUD/MWh)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Coal & Floor & 30 & 50 & Cap \\
+CCGT & 40/Floor (NSW/SA) & 70 & 170 & - \\
+OCGT & 100/175 (NSW/SA) & 200/300 (NSW/SA) & 500 & Cap \\
+Reciprocating Engine & 175 & 300 & 500 & Cap \\
+Gas-Steam & Floor & 90 & 190 & Cap \\
+Wind & Floor & - & - & - \\
+Solar PV & Floor & - & - & - \\
+Hydro & 35 & 60 & 300 & Cap \\
+\end{longtable}
+
+\hypertarget{sec:calibration}{%
+\subsection*{Calibration}\label{sec:calibration}}
+\addcontentsline{toc}{subsection}{Calibration}
+
+Resource offer quantities were used to calibrate the 2020 simulation
+with historical generation patterns in each state. The quantity of
+energy in each price band was adjusted in an iterative process of offer
+adjustment and market simulation to ensure that the proportion of annual
+generation of a particular resource type in the simulated 2020 scenario
+was similar to the actual proportion of annual generation for that
+resource type in 2020. The combination of offer quantities that produced
+the closest proportions were retained and used for each state's 2020 and
+2025 scenarios. The results of the calibration for NSW and SA are
+outlined in Table~\ref{tbl:nswcalibration} and
+Table~\ref{tbl:sacalibration}, respectively.
+
+\hypertarget{tbl:nswcalibration}{}
+\begin{longtable}[]{@{}lcccccc@{}}
+\caption{\label{tbl:nswcalibration}Percentage of annual generation by
+resource type for the simulated NSW 2020 scenario and for NSW in 2020
+(calculated based on historical data obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018})).}\tabularnewline
+\toprule\noalign{}
+& Coal & Wind & Hydro & Solar PV & CCGT & OCGT \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+& Coal & Wind & Hydro & Solar PV & CCGT & OCGT \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+NSW 2020 & 82.9\% & 6.4\% & 4.5\% & 3.2\% & 2.4\% & 0.6\% \\
+Historical 2020 & 84.5\% & 6.6\% & 3.8\% & 3.3\% & 1.5\% & 0.3\% \\
+\end{longtable}
+
+\hypertarget{tbl:sacalibration}{}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2125}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.0875}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.0875}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1375}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.0750}}
+  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2750}}@{}}
+\caption{\label{tbl:sacalibration}Percentage of annual generation by
+resource type for the simulated SA 2020 scenario and for SA in 2020
+(calculated based on historical data obtained using NEMOSIS
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018})). Note that percentages may not sum to a total of 100\% due to
+net storage in BESS.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Wind
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+CCGT
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Gas-Steam
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Solar PV
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+OCGT
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Reciprocating Engine
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Wind
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+CCGT
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Gas-Steam
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Solar PV
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+OCGT
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Reciprocating Engine
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Historical 2020 & 43.7\% & 29.7\% & 15.1\% & 5.1\% & 2.3\% & 3.5\% \\
+SA 2020 & 45.6\% & 25.6\% & 16.8\% & 8.0\% & 2.3\% & 1.6\% \\
+\end{longtable}
+
+\hypertarget{some-more-extra-stuff}{%
+\chapter{Some more extra stuff}\label{some-more-extra-stuff}}
 
 Add appendix 2 here. Aliquam rhoncus mauris ac neque imperdiet, in
 mattis eros aliquam. Etiam sed massa et risus posuere rutrum vel et
@@ -4501,6 +4865,10 @@ Derivatives}.
 \leavevmode\vadjust pre{\hypertarget{ref-aureconLargeScaleBatteryStorage2019}{}}%
 Aurecon, 2019. Large-{Scale Battery Storage Knowledge Sharing Report}.
 {ARENA}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-aureconaustralasiaGeneratorTechnicalCost2020}{}}%
+Aurecon Australasia, 2020. Generator {Technical} and {Cost Parameters} -
+{ElectraNet}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionElectricitySupplyChain}{}}%
 Australian Energy Market Commission, n.d.b. Electricity supply chain.
@@ -4592,6 +4960,10 @@ Australian Energy Market Operator, 2022b. Generation information.
 Australian Energy Market Operator, 2022c. {NEM} market suspension and
 operational challenges in {June} 2022.
 
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorTransferLimitAdvice2022}{}}%
+Australian Energy Market Operator, 2022d. Transfer {Limit Advice} -
+{System Strength} in {SA} and {Victoria}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAEMOVirtualPower2021}{}}%
 Australian Energy Market Operator, 2021d. {AEMO Virtual Power Plant
 Demonstrations}, {Knowledge Sharing Report} \#3.
@@ -4616,6 +4988,10 @@ response requirements for the {NEM}.
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastFrequencyResponse2021}{}}%
 Australian Energy Market Operator, 2021h. Fast {Frequency Response
 Implementation Options}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastStartInflexibilityProfile2021}{}}%
+Australian Energy Market Operator, 2021q. Fast-{Start Inflexibility
+Profile}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFrequencyControlWork2021}{}}%
 Australian Energy Market Operator, 2021g. Frequency {Control Work Plan}.
@@ -4666,6 +5042,10 @@ Australian Energy Market Operator, 2020d. 2020 {Integrated System Plan}
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020ISPGeneration2020}{}}%
 Australian Energy Market Operator, 2020m. 2020 {ISP Generation Outlook}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020ISPSolar2020}{}}%
+Australian Energy Market Operator, 2020p. 2020 {ISP}: {Solar} and {Wind
+Traces}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020SystemStrength2020}{}}%
 Australian Energy Market Operator, 2020o. 2020 {System Strength} and
 {Inertia Report}.
@@ -4712,6 +5092,14 @@ explained.
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorWholesaleDemandReponse2020}{}}%
 Australian Energy Market Operator, 2020k. Wholesale {Demand Reponse}:
 {High-level Design}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020DraftISP2019}{}}%
+Australian Energy Market Operator, 2019g. 2020 {Draft ISP}: 2019 {Draft
+Demand Traces}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020DraftISP2019a}{}}%
+Australian Energy Market Operator, 2019f. 2020 {Draft ISP}: 2019 {Solar}
+and {Wind Traces}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorElectricityRuleChange2019}{}}%
 Australian Energy Market Operator, 2019b. Electricity {Rule Change
@@ -4863,6 +5251,14 @@ Probabilistic Forecasts}. IEEE Transactions on Power Systems 38,
 Cramton, P., 2017. Electricity market design. Oxford Review of Economic
 Policy 33, 589--612. \url{https://doi.org/10.1093/oxrep/grx041}
 
+\leavevmode\vadjust pre{\hypertarget{ref-dasilvalimaLifeCycleAssessment2021}{}}%
+da Silva Lima, L., Quartier, M., Buchmayr, A., Sanjuan-Delmás, D.,
+Laget, H., Corbisier, D., Mertens, J., Dewulf, J., 2021. Life cycle
+assessment of lithium-ion batteries and vanadium redox flow
+batteries-based renewable energy storage systems. Sustainable Energy
+Technologies and Assessments 46, 101286.
+\url{https://doi.org/10.1016/j.seta.2021.101286}
+
 \leavevmode\vadjust pre{\hypertarget{ref-devosDynamicDimensioningApproach2019}{}}%
 De Vos, K., Stevens, N., Devolder, O., Papavasiliou, A., Hebb, B.,
 Matthys-Donnadieu, J., 2019. Dynamic dimensioning approach for operating
@@ -4981,6 +5377,10 @@ Energy Security Board, 2021. Post 2025 {Market Design Options}
 Energy Security Board, 2020. Post 2025 {Market Design Consultation
 Paper}. {COAG Energy Council}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-energysynapseDemandResponseNational2020}{}}%
+Energy Synapse, 2020. Demand response in the {National Electricity
+Market}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-entso-ewgasSurveyAncillaryServices2021}{}}%
 ENTSO-E WGAS, 2021. Survey on {Ancillary Services Procurement},
 {Balancing Market Design} 2020.
@@ -5049,6 +5449,9 @@ Margolis, R., 2021b. The curtailment paradox in the transition to high
 solar power systems. Joule 5, 1143--1167.
 \url{https://doi.org/10.1016/j.joule.2021.03.021}
 
+\leavevmode\vadjust pre{\hypertarget{ref-ghd2018AEMOCost2018}{}}%
+GHD, 2018. 2018 {AEMO} cost and technical parameter review databook.
+
 \leavevmode\vadjust pre{\hypertarget{ref-ghdadvisoryGHDReportTasNetworks2019}{}}%
 GHD Advisory, 2019. {GHD Report} for {TasNetworks} - {Ancillary Service
 Benefits} for {Marinus Link}.
@@ -5072,6 +5475,12 @@ Research Conference.
 
 \leavevmode\vadjust pre{\hypertarget{ref-graingerPowerSystemAnalysis1994}{}}%
 Grainger, J.J., 1994. Power system analysis. {McGraw-Hill}, {New York}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-guReviewSystemStrength2019}{}}%
+Gu, H., Yan, R., Saha, T., Member, S., Yan, R., Saha, T., 2019. Review
+of system strength and inertia requirements for the national electricity
+market of {Australia}. CSEE Journal of Power and Energy Systems 5,
+295--306. \url{https://doi.org/10.17775/cseejpes.2019.00230}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hainesEnvironmentalNormsElectricity2016}{}}%
 Haines, F., McConnell, D., 2016. Environmental norms and electricity
@@ -5138,6 +5547,12 @@ The Electricity Journal 30, 1--8.
 Hummon, M., Denholm, P., Jorgenson, J., Palchak, D., Kirby, B., Ma, O.,
 2013. Fundamental {Drivers} of the {Cost} and {Price} of {Operating
 Reserves}. {National Renewable Energy Laboratory}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hurlbutProtectingMarketHockey2004}{}}%
+Hurlbut, D., Rogas, K., Oren, S., 2004. Protecting the {Market} from
+{``{Hockey Stick}''} {Pricing}: {How} the {Public Utility Commission} of
+{Texas} is {Dealing} with {Potential Price Gouging}. The Electricity
+Journal 17, 26--33. \url{https://doi.org/10.1016/j.tej.2004.03.001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ibmCPLEXOptimizer2021}{}}%
 IBM, 2021. {CPLEX Optimizer}.
