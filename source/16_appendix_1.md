@@ -9,7 +9,7 @@ Separate upwards and downwards ramp rates were modelled for most resource types.
 
 [^7]: The ramp rate used in dispatch by AEMO is the lesser of a telemetered rate or a ramp rate submitted in a resource's offer for energy, and was obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018].
 
-![Ramp rates observed (red) and used in dispatch by AEMO (blue) for a coal-fired unit in NSW in 2020. The green line denotes the ramp rate assumed by AEMO in its 2020 Inputs and Assumptions workbook and the 2020 ISP.](source/figures/coal_market_upper_ramps.png){#fig:ramp_rate_comparison}
+![Ramp rates observed (red) and used in dispatch by AEMO (blue) for a coal-fired unit in NSW in 2020. The green line denotes the ramp rate assumed by AEMO in its 2020 Inputs and Assumptions workbook and the 2020 ISP.](source/figures/coal_market_upper_ramps.png){#fig:ramp_rate_comparison short-caption="Observed, submitted and ISP ramp rates for a NSW coal-fired unit"}
 
 ## Unit commitment and cycling constraints
 
@@ -57,7 +57,7 @@ For all scenarios for a given region, one set of four static price-quantity pair
 |       Solar PV       |         Floor          |           -            |           -            |           -            |
 |        Hydro         |           35           |           60           |          300           |          Cap           |
 
-: Offers by resources type for NSW and SA across all scenarios. The market floor and cap prices used were -1000 AUD/MW/hr and 15,000 AUD/MW/hr, respectively.  {#tbl:resourceoffers}
+: Offers by resources type for NSW and SA across all scenarios. The market floor and cap prices used were -1000 AUD/MW/hr and 15,000 AUD/MW/hr, respectively.  []{#tbl:resourceoffers short-caption="Offers by resource type for NSW and SA across all scenarios"}
 
 [^8]: For all conventional resources, the distribution of offer prices resembles "hockey-stick" offer curves that are common in the NEM [@energysynapseDemandResponseNational2020] and in other electricity markets [@hurlbutProtectingMarketHockey2004]. Moreover, for most peaking conventional resources, energy is offered at or just above the strike price of cap options/futures (300 AUD/MWh).
 
@@ -70,11 +70,11 @@ Resource offer quantities were used to calibrate the 2020 simulation with histor
 | NSW 2020        | 82.9%| 6.4% | 4.5%  |   3.2%   | 2.4% | 0.6% |
 | Historical 2020 | 84.5%| 6.6% | 3.8%  |   3.3%   | 1.5% | 0.3% |
 
-: Percentage of annual generation by resource type for the simulated NSW 2020 scenario and for NSW in 2020 (calculated based on historical data obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018]).   {#tbl:nswcalibration}
+: Percentage of annual generation by resource type for the simulated NSW 2020 scenario and for NSW in 2020 (calculated based on historical data obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018]).   []{#tbl:nswcalibration short-caption="NSW 2020 calibration results (by resource type)"}
 
 |                 | Wind  | CCGT  | Gas-Steam | Solar PV | OCGT | Reciprocating Engine |
 |:----------------|:-----:|:-----:|:---------:|:--------:|:----:|:--------------------:|
 | Historical 2020 | 43.7% | 29.7% |   15.1%   |   5.1%   | 2.3% |         3.5%         |
 | SA 2020         | 45.6% | 25.6% |   16.8%   |   8.0%   | 2.3% |         1.6%         |
 
-: Percentage of annual generation by resource type for the simulated SA 2020 scenario and for SA in 2020 (calculated based on historical data obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018]). Note that percentages may not sum to a total of 100% due to net storage in BESS.   {#tbl:sacalibration}
+: Percentage of annual generation by resource type for the simulated SA 2020 scenario and for SA in 2020 (calculated based on historical data obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018]). Note that percentages may not sum to a total of 100% due to net storage in BESS.   []{#tbl:sacalibration short-caption="SA 2020 calibration results (by resource type)"}

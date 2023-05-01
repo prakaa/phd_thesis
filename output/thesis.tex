@@ -3637,20 +3637,7 @@ sensitivities to be explored:
 
 \subfloat[]{\includegraphics{source/figures/sa_capacities.png}\label{fig:sa_capacities}}
 
-\caption[{Capacity mix in NSW (a) and SA (b) in 2020, and additional
-deployments and retirements in 2025 Central and 2025 Step Change. 2020
-resource mixes were adapted from AEMO's 2020 Inputs and Assumptions
-workbook
-(\protect\hyperlink{ref-australianenergymarketoperator2020InputsAssumptions2020}{Australian
-Energy Market Operator, 2020n}). 2025 scenario resource mixes were
-aligned with their namesake ISP scenarios
-(\protect\hyperlink{ref-australianenergymarketoperator2020ISPGeneration2020}{Australian
-Energy Market Operator, 2020m}) and include committed generation
-(projects that are highly likely to proceed as they have acquired land,
-secured financing, set a firm construction commencement date and either
-finalised contracts for components or been granted planning approval)
-(\protect\hyperlink{ref-australianenergymarketoperatorGenerationInformation2022}{Australian
-Energy Market Operator, 2022b}).}]{Capacity mix in NSW (a) and SA (b) in
+\caption[Capacity mix in NSW and SA in 2020 and the two 2025 scenarios]{Capacity mix in NSW (a) and SA (b) in
 2020, and additional deployments and retirements in 2025 Central and
 2025 Step Change. 2020 resource mixes were adapted from AEMO's 2020
 Inputs and Assumptions workbook
@@ -4492,10 +4479,11 @@ resources of the same technology type.
 \hypertarget{fig:ramp_rate_comparison}{%
 \centering
 \includegraphics{source/figures/coal_market_upper_ramps.png}
-\caption{Ramp rates observed (red) and used in dispatch by AEMO (blue)
-for a coal-fired unit in NSW in 2020. The green line denotes the ramp
-rate assumed by AEMO in its 2020 Inputs and Assumptions workbook and the
-2020 ISP.}\label{fig:ramp_rate_comparison}
+\caption[Observed, submitted and ISP ramp rates for a NSW coal-fired
+unit]{Ramp rates observed (red) and used in dispatch by AEMO (blue) for
+a coal-fired unit in NSW in 2020. The green line denotes the ramp rate
+assumed by AEMO in its 2020 Inputs and Assumptions workbook and the 2020
+ISP.}\label{fig:ramp_rate_comparison}
 }
 \end{figure}
 
@@ -4676,6 +4664,9 @@ Table~\ref{tbl:resourceoffers}) \footnote{The ramp rate used in dispatch
   2020 scenario with those calculated from historical data.
 \end{itemize}
 
+\def\pandoctableshortcapt{Offers by resource type for NSW and SA across
+all scenarios}
+
 \hypertarget{tbl:resourceoffers}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.1864}}
@@ -4683,9 +4674,10 @@ Table~\ref{tbl:resourceoffers}) \footnote{The ramp rate used in dispatch
   >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}
   >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}
   >{\centering\arraybackslash}m{(\columnwidth - 8\tabcolsep) * \real{0.2034}}@{}}
-\caption{\label{tbl:resourceoffers}Offers by resources type for NSW and
-SA across all scenarios. The market floor and cap prices used were -1000
-AUD/MW/hr and 15,000 AUD/MW/hr, respectively.}\tabularnewline
+\caption[Offers by resource type for NSW and SA across all
+scenarios]{\label{tbl:resourceoffers}Offers by resources type for NSW
+and SA across all scenarios. The market floor and cap prices used were
+-1000 AUD/MW/hr and 15,000 AUD/MW/hr, respectively.}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Generator Type
@@ -4726,6 +4718,8 @@ Solar PV & Floor & - & - & - \\
 Hydro & 35 & 60 & 300 & Cap \\
 \end{longtable}
 
+\let\pandoctableshortcapt\relax
+
 \hypertarget{sec:calibration}{%
 \subsection*{Calibration}\label{sec:calibration}}
 \addcontentsline{toc}{subsection}{Calibration}
@@ -4742,9 +4736,13 @@ the closest proportions were retained and used for each state's 2020 and
 outlined in Table~\ref{tbl:nswcalibration} and
 Table~\ref{tbl:sacalibration}, respectively.
 
+\def\pandoctableshortcapt{NSW 2020 calibration results (by resource
+type)}
+
 \hypertarget{tbl:nswcalibration}{}
 \begin{longtable}[]{@{}lcccccc@{}}
-\caption{\label{tbl:nswcalibration}Percentage of annual generation by
+\caption[NSW 2020 calibration results (by resource
+type)]{\label{tbl:nswcalibration}Percentage of annual generation by
 resource type for the simulated NSW 2020 scenario and for NSW in 2020
 (calculated based on historical data obtained using NEMOSIS
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
@@ -4763,6 +4761,11 @@ NSW 2020 & 82.9\% & 6.4\% & 4.5\% & 3.2\% & 2.4\% & 0.6\% \\
 Historical 2020 & 84.5\% & 6.6\% & 3.8\% & 3.3\% & 1.5\% & 0.3\% \\
 \end{longtable}
 
+\let\pandoctableshortcapt\relax
+
+\def\pandoctableshortcapt{SA 2020 calibration results (by resource
+type)}
+
 \hypertarget{tbl:sacalibration}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2125}}
@@ -4772,7 +4775,8 @@ Historical 2020 & 84.5\% & 6.6\% & 3.8\% & 3.3\% & 1.5\% & 0.3\% \\
   >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.0750}}
   >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2750}}@{}}
-\caption{\label{tbl:sacalibration}Percentage of annual generation by
+\caption[SA 2020 calibration results (by resource
+type)]{\label{tbl:sacalibration}Percentage of annual generation by
 resource type for the simulated SA 2020 scenario and for SA in 2020
 (calculated based on historical data obtained using NEMOSIS
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
@@ -4817,6 +4821,8 @@ Reciprocating Engine
 Historical 2020 & 43.7\% & 29.7\% & 15.1\% & 5.1\% & 2.3\% & 3.5\% \\
 SA 2020 & 45.6\% & 25.6\% & 16.8\% & 8.0\% & 2.3\% & 1.6\% \\
 \end{longtable}
+
+\let\pandoctableshortcapt\relax
 
 \hypertarget{some-more-extra-stuff}{%
 \chapter{Some more extra stuff}\label{some-more-extra-stuff}}
