@@ -19,13 +19,15 @@ This repository contains my PhD thesis.
 
 ## How to use
 
-1. The Makefile contains commands to build outputs.
+1. Install pandoc 3.0+
+2. Install `pandoc-crossref`. You can build it from source by installing `stack` (`make stack`) and then by running `make install_pandoc_filters`
+3. The Makefile contains commands to build outputs.
     - Ensure GNU Make is installed
     - Rewrite the `copy_bib` command as need be (based on my file system), or remove altogether
     - Run `make pdf`, `make html`, `make docx` or `make tex` to generate the appropriate output. Prior to running `pandoc`, these commands will run `copy_bib` to ensure the local `.bib` file is up to date.
     - Alternatively, you can run `make all` to make all outputs
 
-2. A GitHub action (`static.yml`) hosts the HTML output (`index.html`) on the repository page
+4. A GitHub action (`static.yml`) hosts the HTML output (`index.html`) on the repository page
     - Pages must be enabled for the repository
     - The `pandoc` HTML template enables a [`hypothes.is`](https://web.hypothes.is/) toolbar which can be used for annotations/commenting
     - This URL cannot be made private unless you are a GitHub Enterprise member
