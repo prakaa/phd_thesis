@@ -51,9 +51,6 @@ install_pandoc_filters:
 	git clone "https://github.com/lierdakil/pandoc-crossref.git"
 	cd pandoc-crossref && git checkout master && stack install
 	sudo rm -r pandoc-crossref
-	@echo ">>> Installing pandoc-sidenote"
-	git clone "https://github.com/jez/pandoc-sidenote" && cd pandoc-sidenote && stack build && stack install
-	sudo rm -r pandoc-sidenote
 
 ## Clean auxiliary LaTeX files
 clean:
