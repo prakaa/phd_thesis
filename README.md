@@ -20,7 +20,7 @@ This repository contains my PhD thesis.
 ## How to use
 
 1. Install pandoc 3.0+
-2. Install `pandoc-crossref`. You can build it from source by installing `stack` (`make stack`) and then by running `make install_pandoc_filters`
+2. Install `pandoc-crossref`. You can build it from source by installing `stack` (`make install_stack`) and then by running `make install_pandoc_filters`
 3. The Makefile contains commands to build outputs.
     - Ensure GNU Make is installed
     - Rewrite the `copy_bib` command as need be (based on my file system), or remove altogether
