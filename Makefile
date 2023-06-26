@@ -34,8 +34,6 @@ install_latex:
 	sudo apt install chktex
 	@echo ">>> Installing latexdiff"
 	sudo apt install latexdiff
-	@echo ">>> Get TeX and LaTeX docs"
-	sudo apt install texlive-latex-recommended-doc texlive-latex-extra-doc
 
 ## Install stack (for compiling pandoc filters)
 install_stack:
