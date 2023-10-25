@@ -113,7 +113,7 @@
 
 % Table of contents formatting
 \renewcommand{\contentsname}{Table of Contents}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 
 % Headers and page numbering
 \usepackage{fancyhdr}
@@ -225,7 +225,6 @@
 \usepackage{rotating}
 
 % Custom math
-\usepackage{bbold}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 
 % pandoc-crossref definitions
@@ -273,8 +272,6 @@
 \begin{titlepage}
     \begin{center}
 
-    % Delete the following line
-    % to remove the UCL header logo
     \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
 
         \vspace*{2.5cm}
@@ -321,7 +318,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        May 1, 2023
+        October 25, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -544,7 +541,7 @@ rendered in \texttt{thesis.pdf}
 
 \begin{equation}\protect\hypertarget{eq:my_complicated_equation}{}{
 \begin{aligned}
-    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\
+    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\
     &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
 \end{aligned}
 }\label{eq:my_complicated_equation}\end{equation}
@@ -2417,64 +2414,6 @@ energy transition:
   relies on sequential and hierarchical control actions.
 \end{enumerate}
 
-\hypertarget{sec:second}{%
-\chapter{Research containing a figure}\label{sec:second}}
-
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
-
-This is the introduction. Sed vulputate tortor at nisl blandit interdum.
-Cras sagittis massa ex, quis eleifend purus condimentum congue. Maecenas
-tristique, justo vitae efficitur mollis, mi nulla varius elit, in
-consequat ligula nulla ut augue. Phasellus diam sapien, placerat sit
-amet tempor non, lobortis tempus ante.
-
-\hypertarget{method}{%
-\section{Method}\label{method}}
-
-Donec imperdiet, lectus vestibulum sagittis tempus, turpis dolor euismod
-justo, vel tempus neque libero sit amet tortor. Nam cursus commodo
-tincidunt.
-
-\hypertarget{subsection-1}{%
-\subsection{Subsection 1}\label{subsection-1}}
-
-This is the first part of the methodology. Duis tempor sapien sed tellus
-ultrices blandit. Sed porta mauris tortor, eu vulputate arcu dapibus ac.
-Curabitur sodales at felis efficitur sollicitudin. Quisque at neque
-sollicitudin, mollis arcu vitae, faucibus tellus.
-
-\hypertarget{subsection-2}{%
-\subsection{Subsection 2}\label{subsection-2}}
-
-This is the second part of the methodology. Sed ut ipsum ultrices,
-interdum ipsum vel, lobortis diam. Curabitur sit amet massa quis tortor
-molestie dapibus a at libero. Mauris mollis magna quis ante vulputate
-consequat. Integer leo turpis, suscipit ac venenatis pellentesque,
-efficitur non sem. Pellentesque eget vulputate turpis. Etiam id nibh at
-elit fermentum interdum.
-
-\hypertarget{results}{%
-\section{Results}\label{results}}
-
-These are the results. In vitae odio at libero elementum fermentum vel
-iaculis enim. Nullam finibus sapien in congue condimentum. Curabitur et
-ligula et ipsum mollis fringilla.
-
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
-
-\hypertarget{conclusion-2}{%
-\section{Conclusion}\label{conclusion-2}}
-
-This is the conclusion to the chapter. Quisque nec purus a quam
-consectetur volutpat. Cum sociis natoque penatibus et magnis dis
-parturient montes, nascetur ridiculus mus. In lorem justo, convallis
-quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus.
-Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus
-lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in
-faucibus.
-
 \hypertarget{sec:reserves}{%
 \chapter{Quantifying reserve capabilities: an Australian case study with
 increasing penetrations of renewables}\label{sec:reserves}}
@@ -2509,8 +2448,8 @@ operational practices can be augmented to elicit upwards flexibility
 provision, and that duration specifications and sustained footroom
 procurement be considered for reserve products.
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 The reliable and secure operation of power systems is contingent upon
 locational and temporal balancing of active power supply and demand. As
@@ -2920,8 +2859,8 @@ McArdle, 2021}). In 2021, the market settlement period was changed from
 30 minutes (the average of prices of the preceding six 5-minute
 intervals) to 5 minutes to better align settlement with dispatch and
 pricing
-(\protect\hyperlink{ref-australianenergymarketoperator5MSCommencement}{Australian
-Energy Market Operator, n.d.a}). Since resources are expected to
+(\protect\hyperlink{ref-australianenergymarketoperator5MSCommencement2022}{Australian
+Energy Market Operator, 2022a}). Since resources are expected to
 linearly ramp between one dispatch target and the next, the dispatch
 process implicitly ``procures'' some flexibility to manage variability
 (\protect\hyperlink{ref-australianenergymarketoperatorDispatchStandardOperating2019}{Australian
@@ -3089,7 +3028,7 @@ Assessment of System Adequacy (PASA) and pre-dispatch simulations:
   the end of the next trading day (pre-dispatch) and at 5 minute
   resolution for the next hour (5 minute pre-dispatch)
   (\protect\hyperlink{ref-australianenergymarketoperatorPreDispatch}{Australian
-  Energy Market Operator, n.d.b},
+  Energy Market Operator, n.d.},
   \protect\hyperlink{ref-australianenergymarketoperatorPredispatchOperatingProcedure2021}{2021k}).
   The potential impacts of demand forecast error on regional energy
   prices and interconnector flows are explored through a sensitivity
@@ -3499,7 +3438,7 @@ study that incorporates scenario-based capacity expansion modelling
 Energy Market Operator, 2020d}) \footnote{The 2022 ISP was recently
   released
   (\protect\hyperlink{ref-australianenergymarketoperator2022IntegratedSystem2022}{Australian
-  Energy Market Operator, 2022a}). For the planning horizon relevant to
+  Energy Market Operator, 2022b}). For the planning horizon relevant to
   this study (i.e.~to 2025), the 2022 ISP broadly reflects the outlook
   of its predecessor, with the exception that it draws on extensive
   consultation with electricity industry stakeholders in determining the
@@ -3650,14 +3589,14 @@ Energy Market Operator, 2020m}) and include committed generation
 secured financing, set a firm construction commencement date and either
 finalised contracts for components or been granted planning approval)
 (\protect\hyperlink{ref-australianenergymarketoperatorGenerationInformation2022}{Australian
-Energy Market Operator, 2022b}).}
+Energy Market Operator, 2022c}).}
 
 \label{fig:capacities}
 
 \end{pandoccrossrefsubfigures}
 
 \hypertarget{sec:reserves-method}{%
-\section{Methodology}\label{sec:reserves-method}}
+\subsection{Methodology}\label{sec:reserves-method}}
 
 For each region and scenario, the available reserves and footroom in the
 system were calculated from the results of a year-long time-sequential
@@ -3870,7 +3809,7 @@ of reserves:
   level declared in the last run of Pre-Dispatch PASA prior to delivery
   --- see Section~\ref{sec:reserves-ahead_soint}) by approximately 225\%
   in NSW and 170\% in SA
-  (\protect\hyperlink{ref-prakashNEMSEER2022}{Prakash, 2022}).
+  (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023}).
 \end{enumerate}
 
 Furthermore, with additional BESS and flexible gas resources expected to
@@ -4039,7 +3978,7 @@ simulation, the contribution of conventional resources was separated
 into those of thermal and hydro to assess the importance of the energy
 constraints on each resource type to available reserves in NSW.
 
-Tables \ref{tbl:nsw_stel} and \ref{tbl:sa_stel} show the median
+Tables \ref{tab:nsw_stel} and \ref{tab:sa_stel} show the median
 percentage across dispatch intervals in a scenario year of available
 reserves provided by a resources type for NSW and SA, respectively.
 Whilst hydro and thermal resources dominate 5 minute horizon reserve
@@ -4054,7 +3993,7 @@ short-term\footnote{In reality, conventional resources are also
   susceptible to fuel constraints, as highlighted by the events
   preceding the 2022 NEM suspension
   (\protect\hyperlink{ref-australianenergymarketoperatorNEMMarketSuspension2022}{Australian
-  Energy Market Operator, 2022c}). More sophisticated modelling of
+  Energy Market Operator, 2022d}). More sophisticated modelling of
   thermal coal availability, the gas system and hydro schemes, including
   their operation under different climate conditions, would be required
   to better understand the potential duration of available reserve
@@ -4069,188 +4008,47 @@ mechanisms for procuring balancing flexibility, reserve services and
 products can specify duration/energy requirements and thus ensure that
 flexibility provision is sustained.
 
-\def\pandoctableshortcapt{NSW short-term energy limited reserves}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    \multirow{2}{*}{NSW Resources} &
+      \multicolumn{2}{c}{2020} &
+      \multicolumn{2}{c}{2025 Central} &
+      \multicolumn{2}{c|}{2025 Step Change} \\
+    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
+    \hline
+    BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
+    \hline
+    DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
+    \hline
+    Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
+    \hline
+    Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
+    \hline
+  \end{tabular}
+  \caption[NSW short-term energy limited reserves]{\label{tab:nsw_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
+\end{table}
 
-\hypertarget{tbl:nsw_stel}{}
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}@{}}
-\caption[NSW short-term energy limited
-reserves]{\label{tbl:nsw_stel}Median of the percentage of each resource
-type's contribution to reserves available within 5 minutes and 30
-minutes in every dispatch interval for each NSW scenario year. The
-median percentages are not necessarily coincident (i.e.~from the same
-dispatch interval) and therefore may not sum to 100\%. Furthermore, some
-distributions are long-tailed, so a median does not capture occasional
-reserve provision by a resource type (e.g.~VRE, for which all medians
-are 0\%).}\tabularnewline
-\toprule\noalign{}
-\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
-NSW resources
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2020
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Central
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Step Change
-\end{minipage}} \\
-& \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
-NSW resources
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2020
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Central
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Step Change
-\end{minipage}} \\
-& \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
-DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
-Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
-Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
-\end{longtable}
-
-\let\pandoctableshortcapt\relax
-
-\def\pandoctableshortcapt{SA short-term energy limited reserves}
-
-\hypertarget{tbl:sa_stel}{}
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}
-  >{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.1183}}@{}}
-\caption[SA short-term energy limited
-reserves]{\label{tbl:sa_stel}Median of the percentage of each resource
-type's contribution to reserves available within 5 minutes and 30
-minutes in every dispatch interval for each SA scenario year. The median
-percentages are not necessarily coincident (i.e.~from the same dispatch
-interval) and therefore may not sum to 100\%. Furthermore, some
-distributions are long-tailed, so a median does not capture occasional
-reserve provision by a resource type (e.g.~VRE, for which all medians
-are 0\%).}\tabularnewline
-\toprule\noalign{}
-\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
-SA resources
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2020
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Central
-\end{minipage}} &
-\multicolumn{2}{>{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-2025 Step Change
-\end{minipage}} \\
-& \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\multirow{2}{=}{\begin{minipage}[b]{\linewidth}\centering
-SA resources
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2020
-\end{minipage}} &
-\multicolumn{2}{>{\centering\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\centering
-2025 Central
-\end{minipage}} &
-\multicolumn{2}{>{\raggedright\arraybackslash}m{(\columnwidth - 12\tabcolsep) * \real{0.2366} + 2\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-2025 Step Change
-\end{minipage}} \\
-& \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-5 min
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-30 min
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
-DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
-Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
-\end{longtable}
-
-\let\pandoctableshortcapt\relax
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    \multirow{2}{*}{SA Resources} &
+      \multicolumn{2}{c}{2020} &
+      \multicolumn{2}{c}{2025 Central} &
+      \multicolumn{2}{c|}{2025 Step Change} \\
+    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
+    \hline
+    BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
+    \hline
+    DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
+    \hline
+    Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
+    \hline
+  \end{tabular}
+  \caption[SA short-term energy limited reserves]{\label{tab:sa_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
+\end{table}
 
 \hypertarget{the-role-of-balancing-products}{%
 \subsection{The role of balancing
@@ -4369,23 +4167,23 @@ reserve product specifications.
 \hypertarget{sec:fourth}{%
 \chapter{Final research study}\label{sec:fourth}}
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
 
 This is the introduction. Nunc lorem odio, laoreet eu turpis at,
 condimentum sagittis diam. Phasellus metus ligula, auctor ac nunc vel,
 molestie mattis libero. Praesent id posuere ex, vel efficitur nibh.
 Quisque vestibulum accumsan lacus vitae mattis.
 
-\hypertarget{method-1}{%
-\section{Method}\label{method-1}}
+\hypertarget{method}{%
+\section{Method}\label{method}}
 
 In tincidunt viverra dolor, ac pharetra tellus faucibus eget.
 Pellentesque tempor a enim nec venenatis. Morbi blandit magna imperdiet
 posuere auctor. Maecenas in maximus est.
 
-\hypertarget{results-1}{%
-\section{Results}\label{results-1}}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 These are the results. Curabitur vulputate nisl non ante tincidunt
 tempor. Aenean porta nisi quam, sed ornare urna congue sed. Curabitur in
@@ -4393,8 +4191,8 @@ sapien justo. Quisque pulvinar ullamcorper metus, eu varius mauris
 pellentesque et. In hac habitasse platea dictumst. Pellentesque nec
 porttitor libero. Duis et magna a massa lacinia cursus.
 
-\hypertarget{discussion-1}{%
-\section{Discussion}\label{discussion-1}}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 This is the discussion. Curabitur gravida nisl id gravida congue. Duis
 est nisi, sagittis eget accumsan ullamcorper, semper quis turpis. Mauris
@@ -4402,8 +4200,8 @@ ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut
 egestas vehicula enim, porta molestie neque consectetur placerat.
 Integer iaculis sapien dolor, non porta nibh condimentum ut.
 
-\hypertarget{conclusion-3}{%
-\section{Conclusion}\label{conclusion-3}}
+\hypertarget{conclusion-2}{%
+\section{Conclusion}\label{conclusion-2}}
 
 This is the conclusion to the chapter. Nulla sed condimentum lectus.
 Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id
@@ -4554,7 +4352,7 @@ AEMO will intervene in the market and direct additional synchronous
 generation online (\protect\hyperlink{ref-guReviewSystemStrength2019}{Gu
 et al., 2019}). The various sufficient combinations of synchronous
 generation in SA are outlined in Australian Energy Market Operator
-(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022d}),
+(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022e}),
 with a decrease in requirements/increase in the allowable asynchronous
 generation level following the installation of 4 synchronous condensers
 (completed in 2021). To model these requirements, a must-run condition
@@ -4562,7 +4360,7 @@ was imposed on 3 CCGT units and 1 Gas-Steam unit in 2020, and on 2 CCGT
 units and 1 Gas-Steam unit in the 2025 scenarios. These combinations
 reflect a subset of the sufficient combinations outlined in Australian
 Energy Market Operator
-(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022d}).
+(\protect\hyperlink{ref-australianenergymarketoperatorTransferLimitAdvice2022}{2022e}).
 
 \hypertarget{hydro-generation-monthly-energy-constraints}{%
 \section{Hydro generation monthly energy
@@ -4834,6 +4632,16 @@ hendrerit purus, sed cursus nunc. Pellentesque ac luctus magna. Aenean
 non posuere enim, nec hendrerit lacus. Etiam lacinia facilisis tempor.
 Aenean dictum nunc id felis rhoncus aliquam.
 
+\hypertarget{some-more-extra-stuff-1}{%
+\chapter{Some more extra stuff}\label{some-more-extra-stuff-1}}
+
+Add appendix 2 here. Aliquam rhoncus mauris ac neque imperdiet, in
+mattis eros aliquam. Etiam sed massa et risus posuere rutrum vel et
+mauris. Integer id mauris sed arcu venenatis finibus. Etiam nec
+hendrerit purus, sed cursus nunc. Pellentesque ac luctus magna. Aenean
+non posuere enim, nec hendrerit lacus. Etiam lacinia facilisis tempor.
+Aenean dictum nunc id felis rhoncus aliquam.
+
 \footnotesize
 \singlespacing
 \setlength{\parindent}{0in}
@@ -4846,12 +4654,13 @@ Aenean dictum nunc id felis rhoncus aliquam.
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-50hzamprionapgeliartetennetConsultationDesignPlatform2017}{}}%
 50hz, A., Amprion, 2017. Consultation on the design of the platform for
-automatic {Frequency Restoration Reserve} ({aFRR}) of {PICASSO} region
-(No. November).
+automatic {Frequency Restoration Reserve} ({aFRR}) of {PICASSO} region.
 
 \leavevmode\vadjust pre{\hypertarget{ref-abbasyNationalDesignMultinational2012}{}}%
-Abbasy, A., 2012. National {Design} and {Multinational Integration} of
-{Balancing Services Markets} (PhD thesis). TU Delft.
+Abbasy, A., 2012.
+\href{https://doi.org/10.4233/uuid:71f7138f-3af2-4bc3-b035-a3e42b3cafaf}{National
+{Design} and {Multinational Integration} of {Balancing Services
+Markets}}. {TU Delft}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ahlqvistCentralSelfDispatchElectricity2018}{}}%
 Ahlqvist, V., Holmberg, P., Tangerås, T., 2018. Central- versus
@@ -4859,34 +4668,43 @@ Ahlqvist, V., Holmberg, P., Tangerås, T., 2018. Central- versus
 \url{https://doi.org/10.2139/ssrn.3302569}
 
 \leavevmode\vadjust pre{\hypertarget{ref-akramEnergyStorageShortTerm2020}{}}%
-Akram, U., Mithulananthan, N., Shah, R., Basit, S.A., 2020. Energy
+Akram, U., Mithulananthan, N., Shah, R., Basit, S.A., 2020.
+\href{https://www.semanticscholar.org/paper/Energy-Storage-for-Short-Term-Frequency-Stability-Akram-Mithulananthan/b74131f080c15125436fe65784135492fa318b02}{Energy
 {Storage} for {Short-Term Frequency Stability Enhancement} in
-{Low-Inertia Power Systems}. 2020 Australasian Universities Power
+{Low-Inertia Power Systems}}. 2020 Australasian Universities Power
 Engineering Conference (AUPEC).
 
 \leavevmode\vadjust pre{\hypertarget{ref-asxenergyAustralianElectricityMarket2021}{}}%
-ASX Energy, 2021. Australian {Electricity Market Overview} - {Energy
-Derivatives}.
+ASX Energy, 2021.
+\href{https://www.asxenergy.com.au/products/electricity_futures}{Australian
+{Electricity Market Overview} - {Energy Derivatives}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-aureconLargeScaleBatteryStorage2019}{}}%
-Aurecon, 2019. Large-{Scale Battery Storage Knowledge Sharing Report}.
-{ARENA}.
+Aurecon, 2019.
+\href{https://arena.gov.au/knowledge-bank/large-scale-battery-storage-knowledge-sharing-report/}{Large-{Scale
+Battery Storage Knowledge Sharing Report}}. {ARENA}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-aureconaustralasiaGeneratorTechnicalCost2020}{}}%
-Aurecon Australasia, 2020. Generator {Technical} and {Cost Parameters} -
-{ElectraNet}.
+Aurecon Australasia, 2020.
+\href{https://www.electranet.com.au/wp-content/uploads/projects/2016/11/508986-REP-ElectraNet-Generator-Technical-And-Cost-Parameters-23July2020.pdf}{Generator
+{Technical} and {Cost Parameters} - {ElectraNet}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionElectricitySupplyChain}{}}%
-Australian Energy Market Commission, n.d.b. Electricity supply chain.
-AEMC.
+Australian Energy Market Commission, n.d.b. Electricity supply chain
+{[}WWW Document{]}. URL
+\url{http://www.aemc.gov.au/energy-system/electricity/electricity-system/electricity-supply-chain}
+(accessed 5.20.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNationalElectricityMarket}{}}%
 Australian Energy Market Commission, n.d.a. National {Electricity
-Market}.
+Market} {[}WWW Document{]}. URL
+\url{https://www.aemc.gov.au/energy-system/electricity/electricity-system/NEM}
+(accessed 3.23.2021).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionUpdatingShortTerm2022}{}}%
-Australian Energy Market Commission, 2022. Updating {Short Term PASA},
-{Rule} determination.
+Australian Energy Market Commission, 2022.
+\href{https://www.aemc.gov.au/sites/default/files/2022-05/ERC0332\%20-\%20Updating\%20Short\%20Term\%20PASA\%20-\%20Final\%20determination.pdf}{Updating
+{Short Term PASA}, {Rule} determination}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFastFrequencyResponse2021}{}}%
 Australian Energy Market Commission, 2021b. Fast frequency response
@@ -4897,12 +4715,15 @@ Australian Energy Market Commission, 2021a. Primary frequency response
 incentive arrangements, {Draft} rule determination.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionReserveServicesNational2021}{}}%
-Australian Energy Market Commission, 2021c. Reserve services in the
-{National Electricity Market}, {Directions Paper}.
+Australian Energy Market Commission, 2021c.
+\href{https://www.aemc.gov.au/sites/default/files/2021-01/Reserve\%20services\%20directions\%20paper\%20-\%205.01.2021\%20-\%20FINAL.pdf}{Reserve
+services in the {National Electricity Market}, {Directions Paper}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionAnnualMarketPerformance2020}{}}%
 Australian Energy Market Commission, 2020a. Annual {Market Performance
-Review} 2020.
+Review} 2020 {[}WWW Document{]}. URL
+\url{https://www.aemc.gov.au/news-centre/data-portal/annual-market-performance-review/2020}
+(accessed 10.27.2021).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFrequencyControlRule2020}{}}%
 Australian Energy Market Commission, 2020c. Frequency control rule
@@ -4913,8 +4734,9 @@ Australian Energy Market Commission, 2020b. Mandatory primary frequency
 response, {Rule} determination.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionShortTermForward2020}{}}%
-Australian Energy Market Commission, 2020d. Short {Term Forward Market},
-{Rule} determination.
+Australian Energy Market Commission, 2020d.
+\href{https://www.aemc.gov.au/sites/default/files/documents/final_determination_-_short_term_forward_market_-_clean.pdf}{Short
+{Term Forward Market}, {Rule} determination}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionFrequencyControlFrameworks2018}{}}%
 Australian Energy Market Commission, 2018b. Frequency {Control
@@ -4925,50 +4747,67 @@ Australian Energy Market Commission, 2018a. Generator technical
 performance standards, {Rule} determination.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNonscheduledGenerationLoad2017}{}}%
-Australian Energy Market Commission, 2017. Non-scheduled generation and
-load in central dispatch, {Rule Determination}.
+Australian Energy Market Commission, 2017.
+\href{https://www.aemc.gov.au/sites/default/files/content/0bcaf68c-8449-4ce0-aaa6-da223ca6e01c/Final-Determination-ERC0203-Non-scheduled-generation-and-load.pdf}{Non-scheduled
+generation and load in central dispatch, {Rule Determination}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNationalElectricityAmendment2016}{}}%
-Australian Energy Market Commission, 2016. National {Electricity
-Amendment} ({Demand Response Mechanism} and {Ancillary Services
-Unbundling}) {Rule} 2016 - {Final} rule determination.
+Australian Energy Market Commission, 2016.
+\href{https://www.aemc.gov.au/sites/default/files/content/68cb8114-113d-4d96-91dc-5cb4b0f9e0ae/ERC0186-DRM-and-ASU-Final-rule-determination-FINAL.PDF}{National
+{Electricity Amendment} ({Demand Response Mechanism} and {Ancillary
+Services Unbundling}) {Rule} 2016 - {Final} rule determination}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionBiddingGoodFaith2015}{}}%
-Australian Energy Market Commission, 2015. Bidding in {Good Faith},
-{Final Rule Determination}.
+Australian Energy Market Commission, 2015.
+\href{https://www.aemc.gov.au/sites/default/files/content/815f277c-a015-47d0-bc13-ce3d5faaf96d/Final-Determination.pdf}{Bidding
+in {Good Faith}, {Final Rule Determination}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionreliabilitypanel2022ReviewReliability2022}{}}%
-Australian Energy Market Commission Reliability Panel, 2022. 2022
-{Review} of the {Reliability Standard} and {Settings}.
+Australian Energy Market Commission Reliability Panel, 2022.
+\href{https://www.aemc.gov.au/sites/default/files/2022-09/2022\%20RSS\%20Review\%20Final\%20Report\%20\%281\%29.pdf}{2022
+{Review} of the {Reliability Standard} and {Settings}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionreliabilitypanelReliabilityEmergencyReserve2020}{}}%
-Australian Energy Market Commission Reliability Panel, 2020. Reliability
-and {Emergency Reserve Trader Guidelines}, {Final} guidelines.
+Australian Energy Market Commission Reliability Panel, 2020.
+\href{https://www.aemc.gov.au/sites/default/files/2020-08/Updated\%20Amended\%20Panel\%20RERT\%20Guidelines\%20-\%2018\%20August\%202020\%20-\%20Final\%20for\%20publication_0.pdf}{Reliability
+and {Emergency Reserve Trader Guidelines}, {Final} guidelines}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionreliabilitypanelStageOneFinal2017}{}}%
 Australian Energy Market Commission Reliability Panel, 2017. Stage {One
-Final Determination}: {Review} of the {Frequency Operating Standard}
-(No. November).
-
-\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator5MSCommencement}{}}%
-Australian Energy Market Operator, n.d.a. {5MS Commencement}.
+Final Determination}: {Review} of the {Frequency Operating Standard}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorPreDispatch}{}}%
-Australian Energy Market Operator, n.d.b. Pre dispatch.
+Australian Energy Market Operator, n.d. Pre dispatch {[}WWW Document{]}.
+URL
+\url{https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/data-nem/market-management-system-mms-data/pre-dispatch}
+(accessed 5.24.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2022IntegratedSystem2022}{}}%
-Australian Energy Market Operator, 2022a. 2022 {Integrated System Plan}.
+Australian Energy Market Operator, 2022b.
+\href{https://aemo.com.au/-/media/files/major-publications/isp/2022/2022-documents/2022-integrated-system-plan-isp.pdf?la=en}{2022
+{Integrated System Plan}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator5MSCommencement2022}{}}%
+Australian Energy Market Operator, 2022a. {5MS Commencement} {[}WWW
+Document{]}. URL
+\url{https://aemo.com.au/initiatives/major-programs/past-major-programs/five-minute-settlement/5ms-program-management/5ms-commencement}
+(accessed 5.23.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorGenerationInformation2022}{}}%
-Australian Energy Market Operator, 2022b. Generation information.
+Australian Energy Market Operator, 2022c. Generation information {[}WWW
+Document{]}. URL
+\url{https://aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information}
+(accessed 4.14.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorNEMMarketSuspension2022}{}}%
-Australian Energy Market Operator, 2022c. {NEM} market suspension and
-operational challenges in {June} 2022.
+Australian Energy Market Operator, 2022d.
+\href{https://aemo.com.au/-/media/files/electricity/nem/market_notices_and_events/market_event_reports/2022/nem-market-suspension-and-operational-challenges-in-june-2022.pdf?la=en}{{NEM}
+market suspension and operational challenges in {June} 2022}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorTransferLimitAdvice2022}{}}%
-Australian Energy Market Operator, 2022d. Transfer {Limit Advice} -
-{System Strength} in {SA} and {Victoria}.
+Australian Energy Market Operator, 2022e.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/congestion-information/transfer-limit-advice-system-strength.pdf?la=en}{Transfer
+{Limit Advice} - {System Strength} in {SA} and {Victoria}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAEMOVirtualPower2021}{}}%
 Australian Energy Market Operator, 2021d. {AEMO Virtual Power Plant
@@ -4980,8 +4819,10 @@ Ancillary Service Specification} - {DER} and {General Consultation},
 {Draft} report and determination.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorBehaviourDistributedResources2021}{}}%
-Australian Energy Market Operator, 2021e. Behaviour of distributed
-resources during power system disturbances {Overview} of key findings.
+Australian Energy Market Operator, 2021e.
+\href{https://aemo.com.au/en/initiatives/major-programs/nem-distributed-energy-resources-der-program/operations/der-behaviour-during-disturbances}{Behaviour
+of distributed resources during power system disturbances {Overview} of
+key findings}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorDispatchStandardOperating2019}{}}%
 Australian Energy Market Operator, 2021c. Dispatch {Standard Operating
@@ -4996,8 +4837,9 @@ Australian Energy Market Operator, 2021h. Fast {Frequency Response
 Implementation Options}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFastStartInflexibilityProfile2021}{}}%
-Australian Energy Market Operator, 2021q. Fast-{Start Inflexibility
-Profile}.
+Australian Energy Market Operator, 2021q.
+\href{https://aemo.com.au/-/media/files/electricity/nem/security_and_reliability/dispatch/policy_and_process/fast-start-unit-inflexibility-profile.pdf}{Fast-{Start
+Inflexibility Profile}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFrequencyControlWork2021}{}}%
 Australian Energy Market Operator, 2021g. Frequency {Control Work Plan}.
@@ -5011,15 +4853,19 @@ Response}) {Rule} 2020: {Status} as at 20 {Jan} 2021.
 Australian Energy Market Operator, 2021a. {NEM Engineering Framework}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorOperatingGridHigh2021}{}}%
-Australian Energy Market Operator, 2021l. Operating the grid with high
-roof-top solar generation.
+Australian Energy Market Operator, 2021l.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/power_system_ops/consumer-fact-sheet.pdf}{Operating
+the grid with high roof-top solar generation}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorPredispatchOperatingProcedure2021}{}}%
-Australian Energy Market Operator, 2021k. Pre-dispatch operating
-procedure.
+Australian Energy Market Operator, 2021k.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/power_system_ops/procedures/so_op_3704-predispatch.pdf?la=en}{Pre-dispatch
+operating procedure}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorPreDispatchSensitivities2021}{}}%
-Australian Energy Market Operator, 2021m. Pre-{Dispatch Sensitivities}.
+Australian Energy Market Operator, 2021m.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/dispatch/policy_and_process/pre-dispatch-sensitivities.pdf}{Pre-{Dispatch
+Sensitivities}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorProcedureExerciseReliability2021}{}}%
 Australian Energy Market Operator, 2021o. Procedure for the {Exercise}
@@ -5030,31 +4876,38 @@ Australian Energy Market Operator, 2021b. Quarterly {Energy Dynamics Q3}
 2021.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorShortTermReserve2021}{}}%
-Australian Energy Market Operator, 2021n. Short {Term Reserve
-Management}.
+Australian Energy Market Operator, 2021n.
+\href{https://aemo.com.au/-/media/files/electricity/nem/security_and_reliability/power_system_ops/procedures/so_op_3703-short-term-reserve-management.pdf?la=en}{Short
+{Term Reserve Management}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorSubmissionAEMCDirections2021}{}}%
 Australian Energy Market Operator, 2021p. Submission to the {AEMC}'s
-{Directions Paper} \textendash{} {Reserve Products} in the {NEM}.
+{Directions Paper} -- {Reserve Products} in the {NEM}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020InputsAssumptions2020}{}}%
-Australian Energy Market Operator, 2020n. 2020 {Inputs}, assumptions and
-scenarios.
+Australian Energy Market Operator, 2020n.
+\href{https://aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/inputs-assumptions-methodologies/2020/2020-inputs-and-assumptions-workbook-dec20.xlsx?la=en}{2020
+{Inputs}, assumptions and scenarios}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020IntegratedSystem2020}{}}%
-Australian Energy Market Operator, 2020d. 2020 {Integrated System Plan}
-(No. December), Clean Energy Council.
+Australian Energy Market Operator, 2020d.
+\href{https://aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2020-integrated-system-plan-isp}{2020
+{Integrated System Plan}}, Clean Energy Council.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020ISPGeneration2020}{}}%
-Australian Energy Market Operator, 2020m. 2020 {ISP Generation Outlook}.
+Australian Energy Market Operator, 2020m.
+\href{https://aemo.com.au/-/media/files/major-publications/isp/2020/final-2020-isp-generation-outlook.zip?la=en}{2020
+{ISP Generation Outlook}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020ISPSolar2020}{}}%
 Australian Energy Market Operator, 2020p. 2020 {ISP}: {Solar} and {Wind
-Traces}.
+Traces} {[}WWW Document{]}. URL
+\url{https://aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2020-integrated-system-plan-isp}
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020SystemStrength2020}{}}%
-Australian Energy Market Operator, 2020o. 2020 {System Strength} and
-{Inertia Report}.
+Australian Energy Market Operator, 2020o.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/Operability/2020/2020-System-Strength-and-Inertia-Report\#:~:text=previously\%20declared\%20system\%20strength\%20and\%20inertia\%20shortfalls&text=The\%20inertia\%20requirements\%20include\%20the,when\%20a\%20reg}{2020
+{System Strength} and {Inertia Report}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorInterimPrimaryFrequency2020}{}}%
 Australian Energy Market Operator, 2020i. Interim {Primary Frequency
@@ -5076,8 +4929,9 @@ Australian Energy Market Operator, 2020j. Quarterly {Energy Dynamics Q1}
 2020.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorReliabilityStandardImplementation2020}{}}%
-Australian Energy Market Operator, 2020l. Reliability {Standard
-Implementation Guidelines}.
+Australian Energy Market Operator, 2020l.
+\href{https://aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/rsig/reliability-standard-implementation-guidelines.pdf?la=en}{Reliability
+{Standard Implementation Guidelines}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{}}%
 Australian Energy Market Operator, 2020a. Renewable {Integration Study
@@ -5096,16 +4950,19 @@ Australian Energy Market Operator, 2020f. System strength in the {NEM}
 explained.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorWholesaleDemandReponse2020}{}}%
-Australian Energy Market Operator, 2020k. Wholesale {Demand Reponse}:
-{High-level Design}.
+Australian Energy Market Operator, 2020k.
+\href{https://www.aemo.com.au/-/media/files/initiatives/submissions/2020/wdrm/wdrm-high-level-design-june-2020.pdf}{Wholesale
+{Demand Reponse}: {High-level Design}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020DraftISP2019}{}}%
 Australian Energy Market Operator, 2019g. 2020 {Draft ISP}: 2019 {Draft
-Demand Traces}.
+Demand Traces} {[}WWW Document{]}. URL
+\url{https://aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2020-integrated-system-plan-isp/2019-isp-database}
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperator2020DraftISP2019a}{}}%
 Australian Energy Market Operator, 2019f. 2020 {Draft ISP}: 2019 {Solar}
-and {Wind Traces}.
+and {Wind Traces} {[}WWW Document{]}. URL
+\url{https://aemo.com.au/energy-systems/major-publications/integrated-system-plan-isp/2020-integrated-system-plan-isp/2019-isp-database}
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorElectricityRuleChange2019}{}}%
 Australian Energy Market Operator, 2019b. Electricity {Rule Change
@@ -5117,9 +4974,8 @@ Proposal} - {Removal} of disincentives to the provision of primary
 frequency response under normal operating conditions.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorFinalReportQueensland2019}{}}%
-Australian Energy Market Operator, 2019c. Final {Report} \textendash{}
-{Queensland} and {South Australia} system separation on 25 {August}
-2018.
+Australian Energy Market Operator, 2019c. Final {Report} -- {Queensland}
+and {South Australia} system separation on 25 {August} 2018.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorMaintainingPowerSystem2019}{}}%
 Australian Energy Market Operator, 2019a. Maintaining {Power System
@@ -5130,8 +4986,9 @@ Security} with {High Penetrations} of {Wind} and {Solar Generation}:
 Australian Energy Market Operator, 2019e. Review of {NEM} load relief.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorAEMCFrequencyControl2018}{}}%
-Australian Energy Market Operator, 2018a. {AEMC Frequency Control
-Frameworks Review} - {AEMO Advice}.
+Australian Energy Market Operator, 2018a.
+\href{https://www.aemc.gov.au/sites/default/files/2018-03/Advice\%20from\%20AEMO\%20-\%20Primary\%20frequency\%20control.PDF}{{AEMC
+Frequency Control Frameworks Review} - {AEMO Advice}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorHornsdaleWindFarm2018}{}}%
 Australian Energy Market Operator, 2018e. Hornsdale {Wind Farm} 2 {FCAS}
@@ -5150,8 +5007,9 @@ Australian Energy Market Operator, 2018b. Regulation {FCAS Contribution
 Factor Procedure}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorReserveLevelDeclaration2018}{}}%
-Australian Energy Market Operator, 2018g. Reserve {Level Declaration
-Guidelines}.
+Australian Energy Market Operator, 2018g.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/power_system_ops/reserve-level-declaration-guidelines.pdf?la=en}{Reserve
+{Level Declaration Guidelines}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorSemiScheduledGenerationDispatch2018}{}}%
 Australian Energy Market Operator, 2018f. Semi-{Scheduled Generation
@@ -5182,15 +5040,18 @@ Australian Energy Market Operator, 2015b. Guide {To Ancillary Services}
 in the {National Electricity Market}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorShortTermPASA2012}{}}%
-Australian Energy Market Operator, 2012. Short {Term PASA Process
-Description}.
+Australian Energy Market Operator, 2012.
+\href{https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/pasa/stpasa-process-description.pdf}{Short
+{Term PASA Process Description}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketoperatorConstraintFormulationGuidelines2010}{}}%
 Australian Energy Market Operator, 2010. Constraint {Formulation
 Guidelines}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergyregulatorStateEnergyMarket2022}{}}%
-Australian Energy Regulator, 2022. State of the energy market 2022.
+Australian Energy Regulator, 2022.
+\href{https://www.aer.gov.au/system/files/State\%20of\%20the\%20energy\%20market\%202022\%20-\%20Full\%20report.pdf}{State
+of the energy market 2022}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergyregulatorStateEnergyMarket2021}{}}%
 Australian Energy Regulator, 2021. State of the {Energy Market} 2021.
@@ -5200,11 +5061,14 @@ Australian Energy Regulator, 2020. Issues paper - {Semi} scheduled
 generator rule change(s).
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergyregulatorValuesCustomerReliability2019}{}}%
-Australian Energy Regulator, 2019. Values of {Customer Reliability}.
+Australian Energy Regulator, 2019.
+\href{https://www.aer.gov.au/system/files/AER\%20-\%20Values\%20of\%20Customer\%20Reliability\%20Review\%20-\%20Final\%20Report\%20-\%20December\%202019.pdf}{Values
+of {Customer Reliability}: {Final} report on {VCR} values}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianpvinstituteInstalledPVGeneration}{}}%
 Australian PV Institute, n.d. Installed {PV} generation capacity by
-{State}/{Territory}.
+{State}/{Territory} {[}WWW Document{]}. URL
+\url{https://pv-map.apvi.org.au} (accessed 5.23.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-banshwarInternationalExperienceTechnical2018}{}}%
 Banshwar, A., Sharma, N.K., Sood, Y.R., Shrivastava, R., 2018. An
@@ -5233,9 +5097,11 @@ markets in three {U}.{S}. {ISO}/{RTOs}. Electricity Journal 32, 106668.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cherevatskiyGridFormingEnergy2020}{}}%
 Cherevatskiy, S., Sproul, S., Zabihi, S., Korte, R., Klingenberg, H.,
-Buchholz, B., Oudalov, A., 2020. Grid {Forming Energy Storage System}
-addresses challenges of grids with high penetration of renewables ({A}
-case study), in: 48th {CIGRE Session} 2020, {Paris}.
+Buchholz, B., Oudalov, A., 2020.
+\href{https://e-cigre.org/publication/SESSION2020_C2-C6-322}{Grid
+{Forming Energy Storage System} addresses challenges of grids with high
+penetration of renewables ({A} case study)}, in: 48th {CIGRE Session}
+2020, {Paris}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-chowElectricityMarketDesign2005}{}}%
 Chow, J.H., De Mello, R.W., Cheung, K.W., 2005. Electricity market
@@ -5290,8 +5156,7 @@ integration. Energy Policy 115, 249--257.
 
 \leavevmode\vadjust pre{\hypertarget{ref-denholmInertiaPowerGrid2020}{}}%
 Denholm, P., Mai, T., Kenyon, R.W., Kroposki, B., Malley, M.O., 2020.
-Inertia and the {Power Grid} : {A Guide Without} the {Spin} (No. May).
-{NREL}.
+Inertia and the {Power Grid} : {A Guide Without} the {Spin}. {NREL}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-dgaconsultingInternationalReviewFrequency2016}{}}%
 DGA Consulting, 2016. International {Review} of {Frequency Control
@@ -5323,9 +5188,10 @@ auctions: An integrated market model approach. Journal of Regulatory
 Economics 60, 55--73. \url{https://doi.org/10.1007/s11149-021-09430-7}
 
 \leavevmode\vadjust pre{\hypertarget{ref-elaAncillaryServicesUnited2019}{}}%
-Ela, E., Hytowitz, R.B., 2019. Ancillary {Services} in the {United
-States}: {Technical Requirements}, {Market Designs} and {Price Trends}.
-{Electric Power Research Institute}.
+Ela, E., Hytowitz, R.B., 2019.
+\href{https://www.epri.com/research/products/000000003002015670}{Ancillary
+{Services} in the {United States}: {Technical Requirements}, {Market
+Designs} and {Price Trends}}. {Electric Power Research Institute}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-elaEffectiveAncillaryServices2012}{}}%
 Ela, E., Kirby, B., Navid, N., Smith, J.C., 2012a. Effective ancillary
@@ -5365,19 +5231,23 @@ Reserve Ancillary Service}. Electricity Journal 25, 88--102.
 \url{https://doi.org/10.1016/j.tej.2012.04.015}
 
 \leavevmode\vadjust pre{\hypertarget{ref-electranettransgridProjectEnergyConnect}{}}%
-ElectraNet, Transgrid, n.d. Project {EnergyConnect}.
+ElectraNet, Transgrid, n.d. Project {EnergyConnect} {[}WWW Document{]}.
+URL \url{https://www.projectenergyconnect.com.au/index.html} (accessed
+4.12.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-electricitysectorclimateinformationprojectESCIProjectFinal2021}{}}%
-Electricity Sector Climate Information Project, 2021. {ESCI Project
-Final Report}.
+Electricity Sector Climate Information Project, 2021.
+\href{https://www.climatechangeinaustralia.gov.au/media/ccia/2.2/cms_page_media/799/ESCI\%20Project\%20final\%20report_210721.pdf}{{ESCI
+Project Final Report}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-energyexemplarPLEXOSEnergyMarket2021}{}}%
 Energy Exemplar, 2021. {PLEXOS} \textbar{} {Energy Market Simulation
-Software}.
+Software} {[}WWW Document{]}. URL
+\url{https://www.energyexemplar.com/plexos} (accessed 4.13.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardPost2025Market2021}{}}%
-Energy Security Board, 2021. Post 2025 {Market Design Options}
-\textendash{} {A} paper for consultation: {Part B}.
+Energy Security Board, 2021. Post 2025 {Market Design Options} -- {A}
+paper for consultation: {Part B}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardPost2025Market2020}{}}%
 Energy Security Board, 2020. Post 2025 {Market Design Consultation
@@ -5392,7 +5262,8 @@ ENTSO-E WGAS, 2021. Survey on {Ancillary Services Procurement},
 {Balancing Market Design} 2020.
 
 \leavevmode\vadjust pre{\hypertarget{ref-epexspotEuropeanMarketCoupling}{}}%
-EPEX Spot, n.d. European {Market Coupling}.
+EPEX Spot, n.d. European {Market Coupling} {[}WWW Document{]}. URL
+\url{https://www.epexspot.com/en/marketcoupling} (accessed 1.14.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-erikssonSyntheticInertiaFast2018}{}}%
 Eriksson, R., Modig, N., Elkington, K., 2018. Synthetic inertia versus
@@ -5406,16 +5277,18 @@ Response}. {Lawrence Berkeley National Laboratory}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-etoUseFrequencyResponse2010}{}}%
 Eto, J., Undrill, J., Mackin, P., Daschmans, R., Williams, B., Haney,
-B., Hunt, R., Ellis, J., Illian, H., Martinez, C., OMalley, M.,
+B., Hunt, R., Ellis, J., Illian, H., Martinez, C., O´Malley, M.,
 Coughlin, K., Hamachi-LaCommare, K., 2010. Use of {Frequency Response
 Metrics} to {Assess} the {Planning} and {Operating Requirements} for
 {Reliable Integration} of {Variable Renewable Generation}. {Lawrence
 Berkeley National Laboratory}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-europeancommissionCommissionRegulationEU2017}{}}%
-European Commission, 2017. Commission {Regulation} ({EU}) 2017/2195 of
-23 {November} 2017 establishing a guideline on electricity balancing.
-Official Journal of the European Union.
+European Commission, 2017.
+\href{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2017.312.01.0006.01.ENG&toc=OJ:L:2017:312:TOC\#d1e4442-6-1}{Commission
+{Regulation} ({EU}) 2017/2195 of 23 {November} 2017 establishing a
+guideline on electricity balancing}, Official Journal of the European
+Union.
 
 \leavevmode\vadjust pre{\hypertarget{ref-europeannetworkoftransmissionsystemoperatorsforelectricityentso-eENTSOEBalancingReport2020}{}}%
 European Network of Transmission System Operators for Electricity, 2020.
@@ -5429,13 +5302,15 @@ Network {Code} on {Load-Frequency Control} and {Reserves}.
 EU-SysFlex, 2019. Product {Definition} for {Innovative System Services}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-federalenergyregulatorycommissionEnergyAncillaryServices2021}{}}%
-Federal Energy Regulatory Commission, 2021. Energy and {Ancillary
-Services Market Reforms} to {Address Changing System Needs}.
+Federal Energy Regulatory Commission, 2021.
+\href{https://www.ferc.gov/news-events/news/ferc-staff-issues-report-energy-and-ancillary-services-market-reforms-address}{Energy
+and {Ancillary Services Market Reforms} to {Address Changing System
+Needs}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-federalenergyregulatorycommissionfercOrderNo8422018}{}}%
 Federal Energy Regulatory Commission, 2018. Order {No}. 842: {Essential
-Reliability Services} and the {Evolving Bulk-Power
-System}\textemdash{{Primary Frequency Response}}.
+Reliability Services} and the {Evolving Bulk-Power System}---{Primary
+Frequency Response}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fernandez-munozFastFrequencyControl2020}{}}%
 Fernández-Muñoz, D., Pérez-Díaz, J.I., Guisández, I., Chazarra, M.,
@@ -5456,15 +5331,19 @@ solar power systems. Joule 5, 1143--1167.
 \url{https://doi.org/10.1016/j.joule.2021.03.021}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ghd2018AEMOCost2018}{}}%
-GHD, 2018. 2018 {AEMO} cost and technical parameter review databook.
+GHD, 2018. 2018 {AEMO} cost and technical parameter review databook
+{[}WWW Document{]}. URL
+\url{https://www.aemo.com.au/-/media/Files/Electricity/NEM/Planning_and_Forecasting/Inputs-Assumptions-Methodologies/2019/GHD-AEMO-revised---2018-19-Costs_and_Technical_Parameter.xlsb}
+(accessed 4.13.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-ghdadvisoryGHDReportTasNetworks2019}{}}%
 GHD Advisory, 2019. {GHD Report} for {TasNetworks} - {Ancillary Service
 Benefits} for {Marinus Link}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gimonGridPhysicsMarkets2020}{}}%
-Gimon, E., 2020. Grid {Physics} and {Markets}: {A Non-Engineer}'s
-{Perspective}.
+Gimon, E., 2020.
+\href{https://www.esig.energy/download/plenary-1-grid-physics-and-markets-a-non-engineers-perspective-eric-gimon/}{Grid
+{Physics} and {Markets}: {A Non-Engineer}'s {Perspective}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gonzalez-salazarReviewOperationalFlexibility2018}{}}%
 Gonzalez-Salazar, M.A., Kirsten, T., Prchlik, L., 2018. Review of the
@@ -5474,10 +5353,11 @@ Energy Reviews 82, 1497--1513.
 \url{https://doi.org/10.1016/j.rser.2017.05.278}
 
 \leavevmode\vadjust pre{\hypertarget{ref-gormanNEMOSISNEMOpen2018}{}}%
-Gorman, N., Haghdadi, N., Bruce, A., MacGill, I., 2018. {NEMOSIS}
-\textendash{} {NEM Open Source Information Service}; open-source access
-to {Australian National Electricity Market Data}. Asia-Pacific Solar
-Research Conference.
+Gorman, N., Haghdadi, N., Bruce, A., MacGill, I., 2018.
+\href{https://www.researchgate.net/publication/329798805}{{NEMOSIS} --
+{NEM Open Source Information Service}; open-source access to {Australian
+National Electricity Market Data}.} Asia-Pacific Solar Research
+Conference.
 
 \leavevmode\vadjust pre{\hypertarget{ref-graingerPowerSystemAnalysis1994}{}}%
 Grainger, J.J., 1994. Power system analysis. {McGraw-Hill}, {New York}.
@@ -5496,10 +5376,9 @@ supply: An analysis of normative change and household solar {PV} in
 
 \leavevmode\vadjust pre{\hypertarget{ref-hartmannEffectsDecreasingSynchronous2019}{}}%
 Hartmann, B., Vokony, I., Táczi, I., 2019. Effects of decreasing
-synchronous inertia on power system dynamics\textemdash{{Overview}} of
-recent experiences and marketisation of services. International
-Transactions on Electrical Energy Systems 29.
-\url{https://doi.org/10.1002/2050-7038.12128}
+synchronous inertia on power system dynamics---{Overview} of recent
+experiences and marketisation of services. Int Trans Electr Energ Syst
+29. \url{https://doi.org/10.1002/2050-7038.12128}
 
 \leavevmode\vadjust pre{\hypertarget{ref-heggartyQuantifyingPowerSystem2020}{}}%
 Heggarty, T., Bourmaud, J.Y., Girard, R., Kariniotakis, G., 2020.
@@ -5541,8 +5420,10 @@ power. IEEE Power and Energy Society General Meeting 3, 713--723.
 \url{https://doi.org/10.1109/pesmg.2013.6673067}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hopwoodMandatoryPrimaryFrequency2019}{}}%
-Hopwood, C., 2019. Mandatory primary frequency response consultation
-paper submission - {TasNetworks}.
+Hopwood, C., 2019.
+\href{https://www.aemc.gov.au/sites/default/files/2019-11/Rule\%20Change\%20SubmissionERC0274\%20-\%20TasNetworks\%20-\%2020191031.PDF}{Mandatory
+primary frequency response consultation paper submission -
+{TasNetworks}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hsiehGridFlexibilityQuiet2017}{}}%
 Hsieh, E., Anderson, R., 2017. Grid flexibility: {The} quiet revolution.
@@ -5561,15 +5442,19 @@ Hurlbut, D., Rogas, K., Oren, S., 2004. Protecting the {Market} from
 Journal 17, 26--33. \url{https://doi.org/10.1016/j.tej.2004.03.001}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ibmCPLEXOptimizer2021}{}}%
-IBM, 2021. {CPLEX Optimizer}.
+IBM, 2021. {CPLEX Optimizer} {[}WWW Document{]}. URL
+\url{https://www.ibm.com/au-en/analytics/cplex-optimizer} (accessed
+4.13.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-internationalenergyagencyNetZero20502021}{}}%
-International Energy Agency, 2021. Net {Zero} by 2050 - {A Roadmap} for
-the {Global Energy Sector}.
+International Energy Agency, 2021.
+\href{https://iea.blob.core.windows.net/assets/deebef5d-0c34-4539-9d0c-10b13d840027/NetZeroby2050-ARoadmapfortheGlobalEnergySector_CORR.pdf}{Net
+{Zero} by 2050 - {A Roadmap} for the {Global Energy Sector}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-internationalenergyagencyStatusPowerSystem2019}{}}%
-International Energy Agency, 2019. Status of {Power System
-Transformation} 2019.
+International Energy Agency, 2019.
+\href{https://iea.blob.core.windows.net/assets/00dd2818-65f1-426c-8756-9cc0409d89a8/Status_of_Power_System_Transformation_2019.pdf}{Status
+of {Power System Transformation} 2019}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-isemongerEvolvingDesignRTO2009}{}}%
 Isemonger, A.G., 2009. The evolving design of {RTO} ancillary service
@@ -5619,9 +5504,11 @@ Renewable Energy}. IEEE Power and Energy Magazine 15, 61--73.
 \url{https://doi.org/10.1109/mpe.2016.2637122}
 
 \leavevmode\vadjust pre{\hypertarget{ref-kuiperWhatStateVirtual2022}{}}%
-Kuiper, G., 2022. What {Is} the {State} of {Virtual Power Plants} in
-{Australia}? {From Thin Margins} to a {Future} of {VPP-tailers}.
-{Institute for Energy Economics and Financial Analysis}.
+Kuiper, G., 2022.
+\href{https://ieefa.org/wp-content/uploads/2022/03/What-Is-the-State-of-Virtual-Power-Plants-in-Australia_March-2022_2.pdf}{What
+{Is} the {State} of {Virtual Power Plants} in {Australia}? {From Thin
+Margins} to a {Future} of {VPP-tailers}}. {Institute for Energy
+Economics and Financial Analysis}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kumarPowerPlantCycling2012}{}}%
 Kumar, N., Besuner, P., Lefton, S., Agan, D., Hilleman, D., 2012. Power
@@ -5727,7 +5614,7 @@ markets. Joule 6, 369--380.
 \leavevmode\vadjust pre{\hypertarget{ref-meegahapolaPowerSystemStability2021}{}}%
 Meegahapola, L., Mancarella, P., Flynn, D., Moreno, R., 2021. Power
 system stability in the transition to a low carbon grid: {A}
-techno-economic perspective on challenges and opportunities. WIREs
+techno‐economic perspective on challenges and opportunities. WIREs
 Energy and Environment 1--27. \url{https://doi.org/10.1002/wene.399}
 
 \leavevmode\vadjust pre{\hypertarget{ref-milanoFoundationsChallengesLowInertia2018}{}}%
@@ -5738,8 +5625,10 @@ in: 2018 {Power Systems Computation Conference} ({PSCC}). {IEEE}, pp.
 
 \leavevmode\vadjust pre{\hypertarget{ref-millerAdvisoryEquipmentLimits2017}{}}%
 Miller, N., Lew, D., Barnes, S., Ren, W., Reichard, M., Alexander, M.,
-Freeman, L., Achilles, S., Adamiak, M., 2017a. Advisory on {Equipment
-Limits} associated with {High RoCoF}. {GE Energy Consulting}.
+Freeman, L., Achilles, S., Adamiak, M., 2017a.
+\href{https://www.aemo.com.au/-/media/Files/Electricity/NEM/Security_and_Reliability/Reports/2017/20170904-GE-RoCoF-Advisory}{Advisory
+on {Equipment Limits} associated with {High RoCoF}}. {GE Energy
+Consulting}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-millerTechnologyCapabilitiesFast2017}{}}%
 Miller, N., Lew, D., Piwko, R., 2017b. Technology {Capabilities} for
@@ -5763,9 +5652,10 @@ Mohandes, B., Moursi, M.S.E., Hatziargyriou, N., Khatib, S.E., 2019. A
 \url{https://doi.org/10.1109/tpwrs.2019.2897727}
 
 \leavevmode\vadjust pre{\hypertarget{ref-monitoringanalytics2021QuarterlyState2021}{}}%
-Monitoring Analytics, 2021. 2021 {Quarterly State} of the {Market
-Report} for {PJM}: {January} through {June} - {Section} 10: {Ancillary
-Services}.
+Monitoring Analytics, 2021.
+\href{https://www.monitoringanalytics.com/reports/PJM_State_of_the_Market/2021.shtml}{2021
+{Quarterly State} of the {Market Report} for {PJM}: {January} through
+{June} - {Section} 10: {Ancillary Services}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-musgensEconomicsDesignBalancing2014}{}}%
 Müsgens, F., Ockenfels, A., Peek, M., 2014. Economics and design of
@@ -5779,7 +5669,8 @@ Investigating the {Economic Value} of {Flexible Solar Power Plant
 Operation}. {Energy and Environmental Economics, Inc.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-nemocommitteeSingleIntradayCoupling}{}}%
-NEMO Committee, n.d. {Single Intraday Coupling (SIDC)}.
+NEMO Committee, n.d. Single Intraday Coupling (SIDC) {[}WWW Document{]}.
+URL \url{https://nemo-committee.eu/sidc} (accessed 1.14.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020}{}}%
 NERC Inverter-Based Resource Performance Task Force, 2020. Fast
@@ -5787,8 +5678,9 @@ NERC Inverter-Based Resource Performance Task Force, 2020. Fast
 {North American Electric Reliability Corporation}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-northamericanelectricreliabilitycorporation2022SummerReliability2022}{}}%
-North American Electric Reliability Corporation, 2022. 2022 {Summer
-Reliability Assessment}.
+North American Electric Reliability Corporation, 2022.
+\href{https://www.nerc.com/pa/RAPA/ra/Reliability\%20Assessments\%20DL/NERC_SRA_2022.pdf}{2022
+{Summer Reliability Assessment}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-nosairFlexibilityEnvelopesPower2015}{}}%
 Nosair, H., Bouffard, F., 2015. Flexibility {Envelopes} for {Power
@@ -5842,8 +5734,10 @@ market for real-time reserve capacity. Electricity Journal 33, 106863.
 
 \leavevmode\vadjust pre{\hypertarget{ref-paulmcardleTwoRecentImprovements2021}{}}%
 Paul McArdle, 2021. Two recent improvements (in late {November} 2021) by
-{AEMO} in the dispatch process - {Reduced Gate Closure} on {Rebids}.
-WattClarity.
+{AEMO} in the dispatch process - {Reduced Gate Closure} on {Rebids}
+{[}WWW Document{]}. URL
+\url{https://wattclarity.com.au/articles/2021/12/two-improvements-in-nemde-dispatch/}
+(accessed 5.23.2022).
 
 \leavevmode\vadjust pre{\hypertarget{ref-pollittCompetitionMarketsAncillary2019}{}}%
 Pollitt, M.G., Anaya, K.L., 2019. Competition in {Markets} for
@@ -5856,9 +5750,9 @@ the organized balancing market: {A} symbiosis yet? {Case} of three
 {European} balancing markets. Energy Policy 126, 264--276.
 \url{https://doi.org/10.1016/j.enpol.2018.11.009}
 
-\leavevmode\vadjust pre{\hypertarget{ref-prakashNEMSEER2022}{}}%
-Prakash, A., 2022. {NEMSEER}.
-\url{https://doi.org/10.5281/zenodo.7397527}
+\leavevmode\vadjust pre{\hypertarget{ref-prakashNEMSEER2023}{}}%
+Prakash, A., 2023.
+\href{https://doi.org/10.5281/zenodo.7397514}{{NEMSEER}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashInsightsDesigningEffective2022}{}}%
 Prakash, A., Bruce, A., MacGill, I., 2022. Insights on designing
@@ -5890,16 +5784,18 @@ Issues} in {Markets} for {Ancillary Services}. Electricity Journal 20,
 26--34. \url{https://doi.org/10.1016/j.tej.2007.06.003}
 
 \leavevmode\vadjust pre{\hypertarget{ref-redefiningresourceadequacytaskforceRedefiningResourceAdequacy2021}{}}%
-Redefining Resource Adequacy Task Force, 2021. Redefining {Resource
-Adequacy} for {Modern Power Systems}. {Energy Systems Integration
-Group}, {Reston, VA}.
+Redefining Resource Adequacy Task Force, 2021.
+\href{https://www.esig.energy/wp-content/uploads/2021/08/ESIG-Redefining-Resource-Adequacy-2021.pdf}{Redefining
+{Resource Adequacy} for {Modern Power Systems}}. {Energy Systems
+Integration Group}, {Reston, VA}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-reishusconsultingllcElectricityAncillaryServices2017}{}}%
 Reishus Consulting LLC, 2017. Electricity {Ancillary Services Primer}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-renewableenergyhubRenewableEnergyHub2021}{}}%
-Renewable Energy Hub, 2021. Renewable {Energy Hub}: {Final Knowledge
-Sharing Report}.
+Renewable Energy Hub, 2021.
+\href{https://arena.gov.au/assets/2021/04/renewable-energy-hub-final-report.pdf}{Renewable
+{Energy Hub}: {Final Knowledge Sharing Report}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-rieszAssessingViabilityEnergyonly2016}{}}%
 Riesz, J., Gilmore, J., MacGill, I., 2016. Assessing the viability of
@@ -5923,8 +5819,9 @@ Energy and Environment 4, 279--289.
 Roberts, C., 2018. Review of {International Grid Codes}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-robertsVPPUserResearch2020}{}}%
-Roberts, M., Adams, S., Kuch, D., 2020. {VPP User Research Final
-Report}. {Solar Analytics, UNSW Sydney, UsersTCP}.
+Roberts, M., Adams, S., Kuch, D., 2020.
+\href{https://www.ceem.unsw.edu.au/sites/default/files/uploads/publications/VPP\%20User\%20Research\%20-\%20Final\%20Report\%20-\%2020201127r.pdf}{{VPP
+User Research Final Report}}. {Solar Analytics, UNSW Sydney, UsersTCP}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-rolfeMandatoryPrimaryFrequency2019}{}}%
 Rolfe, R., 2019. Mandatory primary frequency response consultation paper
@@ -5944,7 +5841,7 @@ Ryan, J., Ela, E., Flynn, D., O'Malley, M., 2014. Variable {Generation},
 \leavevmode\vadjust pre{\hypertarget{ref-schererFrequencyControlEuropean2016}{}}%
 Scherer, M., 2016. Frequency {Control} in the {European Power System
 Considering} the {Organisational Structure} and {Division} of
-{Responsibilities} (PhD thesis). ETH Zurich.
+{Responsibilities}. {ETH Zurich}.
 \url{https://doi.org/10.3929/ethz-a-010692129}
 
 \leavevmode\vadjust pre{\hypertarget{ref-schererIntegratedPanEuropeanAncillary2013}{}}%
