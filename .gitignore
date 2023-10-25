@@ -60,3 +60,6 @@ target/
 
 # Node modules
 node_modules/
+
+# pdf view stuff
+*.pdf-view-restore
