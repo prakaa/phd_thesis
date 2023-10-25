@@ -20,7 +20,7 @@ The following raw text in markdown behind @eq:my_complicated_equation shows that
 
 $$
 \begin{aligned}
-    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\
+    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\
     &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
 \end{aligned}
 $$ {#eq:my_complicated_equation}

@@ -56,7 +56,7 @@ In the subsections that follow, we describe the operation of the NEM with a focu
 
 The NEM is a central dispatch market that is operated by the Australian Energy Market Operator (AEMO). On the day ahead of delivery, market participants are required to submit non-binding offers for each resource consisting of price-quantity pairs for energy and, optionally, Frequency Control Ancillary Services (FCAS) (described in Section @sec:reserves-nemreserves) [@australianenergymarketoperatorPredispatchOperatingProcedure2021]. Energy offers can be priced as high as the market price cap (15,000 AUD/MW/hour during the Australian financial year of 2020-2021) or as low as the market floor (-1000 AUD/MW/hour). Negative pricing enables generators to express a preference to either remain online due to significant start-up/shut-down costs or to be dispatched as a price-taker when it is commercially favourable to do so (e.g. to receive remuneration from an offtake agreement). In theory, it also provides investment signals for flexible resources alongside a relatively high market price cap [@rieszAssessingViabilityEnergyonly2016;@orvisRefiningCompetitiveElectricity2018].
 
-On the day of delivery, co-optimised markets for energy and FCAS are cleared every 5 minutes through a security-constrained economic dispatch process, which produces zonal marginal prices for energy and FCAS. There is no formal gate closure in the NEM; participants are able to alter volumes (but not prices) in their offer up to tens of seconds before the delivery interval [@australianenergymarketcommissionBiddingGoodFaith2015;@paulmcardleTwoRecentImprovements2021]. In 2021, the market settlement period was changed from 30 minutes (the average of prices of the preceding six 5-minute intervals) to 5 minutes to better align settlement with dispatch and pricing [@australianenergymarketoperator5MSCommencement]. Since resources are expected to linearly ramp between one dispatch target and the next, the dispatch process implicitly "procures" some flexibility to manage variability [@ryanVariableGenerationReserves2014;@australianenergymarketoperatorDispatchStandardOperating2019]. As such, the NEM's dispatch is relatively fast and granular when compared to short-term electricity markets worldwide [@katzOpeningMarketsDesigning2019; @silva-rodriguezShortTermWholesale2022].
+On the day of delivery, co-optimised markets for energy and FCAS are cleared every 5 minutes through a security-constrained economic dispatch process, which produces zonal marginal prices for energy and FCAS. There is no formal gate closure in the NEM; participants are able to alter volumes (but not prices) in their offer up to tens of seconds before the delivery interval [@australianenergymarketcommissionBiddingGoodFaith2015;@paulmcardleTwoRecentImprovements2021]. In 2021, the market settlement period was changed from 30 minutes (the average of prices of the preceding six 5-minute intervals) to 5 minutes to better align settlement with dispatch and pricing [@australianenergymarketoperator5MSCommencement2022]. Since resources are expected to linearly ramp between one dispatch target and the next, the dispatch process implicitly "procures" some flexibility to manage variability [@ryanVariableGenerationReserves2014;@australianenergymarketoperatorDispatchStandardOperating2019]. As such, the NEM's dispatch is relatively fast and granular when compared to short-term electricity markets worldwide [@katzOpeningMarketsDesigning2019; @silva-rodriguezShortTermWholesale2022].
 
 The NEM's real-time market is also able to elicit balancing flexibility provision from a variety of resources:
 
@@ -273,7 +273,7 @@ Modelling SA and NSW across these three scenarios enables four sensitivities to 
 Capacity mix in NSW (a) and SA (b) in 2020, and additional deployments and retirements in 2025 Central and 2025 Step Change. 2020 resource mixes were adapted from AEMO's 2020 Inputs and Assumptions workbook [@australianenergymarketoperator2020InputsAssumptions2020]. 2025 scenario resource mixes were aligned with their namesake ISP scenarios [@australianenergymarketoperator2020ISPGeneration2020] and include committed generation (projects that are highly likely to proceed as they have acquired land, secured financing, set a firm construction commencement date and either finalised contracts for components or been granted planning approval) [@australianenergymarketoperatorGenerationInformation2022].
 </div>
 
-## Methodology {#sec:reserves-method}
+### Methodology {#sec:reserves-method}
 
 For each region and scenario, the available reserves and footroom in the system were calculated from the results of a year-long time-sequential market simulation implemented in the commercial electricity market modelling tool PLEXOS [@energyexemplarPLEXOSEnergyMarket2021]. The PLEXOS market simulation consisted of a PASA phase to model maintenance and forced outages for conventional generation across the year, a Medium Term Schedule phase in NSW to schedule hydro generation according to monthly energy constraints, and a Short Term Schedule phase that carries out unit commitment and economic dispatch (UC-ED) at 5-minute resolution in daily steps[^12].
 
@@ -321,7 +321,7 @@ In addition to an infinite horizon (which corresponds to the maximum availabilit
 Mean and bottom 1% available reserve SDPs were generated for the NSW scenarios and for the SA scenarios ([@fig:nswreserves; @fig:sareserves]). The mean SDPs across scenarios suggest that, on average, NSW has more than 2 GW and SA more than 600 MW of reserves available within 5+ minutes. These levels of reserves:
 
 1. Correspond to approximately 15% and 20% of peak demand in 2020 in NSW and SA, respectively. These 5+ minute "reserve margins" (i.e. 5+ minute reserves as a percentage of peak demand) are comparable to lower-end reserve margins anticipated for the summer of 2022 in North American jurisdictions [@northamericanelectricreliabilitycorporation2022SummerReliability2022].
-2. Exceed the highest N-1 contingency in 2020 (i.e. highest LOR2 trigger level declared in the last run of Pre-Dispatch PASA prior to delivery — see @sec:reserves-ahead_soint) by approximately 225% in NSW and 170% in SA [@prakashNEMSEER2022].
+2. Exceed the highest N-1 contingency in 2020 (i.e. highest LOR2 trigger level declared in the last run of Pre-Dispatch PASA prior to delivery — see @sec:reserves-ahead_soint) by approximately 225% in NSW and 170% in SA [@prakashNEMSEER2023].
 
 Furthermore, with additional BESS and flexible gas resources expected to be deployed, the mean 5+ minute reserve margins of both regions are higher for most parts of the day in the 2025 Step Change scenario. Though the market simulation relied on perfect foresight (additional uncertainty may reduce reserve margins), these results suggest that reasonable quantities of reserves are available in each region within a 5+ minute horizon.
 
@@ -350,41 +350,49 @@ The available footroom in the system is likely sensitive to extent of convention
 
 While the available reserves metric does not consider the duration for which reserve deployment can be sustained, we can infer whether reserves are short-term energy-limited (i.e. with a duration no more than a few hours) based on their resource type. For this analysis, BESS reserve power was calculated based on the BESS's state of charge at the end of each dispatch interval and the requirement to sustain provision for 15 minutes. This duration is consistent with the BESS power and capacity that is reserved in SA for the possibility of loss of interconnection [@australianenergymarketoperator2020SystemStrength2020]. In addition, the maximum available price-responsive demand available in each state was added to the available reserves in each dispatch interval (assuming an emergency response time of 5 minutes) to gain a better understanding of the maximum potential contribution of demand response. This corresponded to \~60 MW in SA and \~290 MW in NSW, based on AEMO analysis and forecasts in @australianenergymarketoperator2020InputsAssumptions2020. Both BESS and DR can be considered to be short-term energy-limited reserve providers. Though conventional generation fuel constraints (e.g reservoir schemes and the gas system) were not modelled in this market simulation, the contribution of conventional resources was separated into those of thermal and hydro to assess the importance of the energy constraints on each resource type to available reserves in NSW.
 
-Tables [-@tbl:nsw_stel] and [-@tbl:sa_stel] show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term[^16]. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions [@prakashInsightsDesigningEffective2022]. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.
+Tables \ref{tab:nsw_stel} and \ref{tab:sa_stel} show the median percentage across dispatch intervals in a scenario year of available reserves provided by a resources type for NSW and SA, respectively. Whilst hydro and thermal resources dominate 5 minute horizon reserve provision in 2020 in NSW and SA, respectively, short-term energy limited resources provide a greater proportion of reserves in this horizon in 2025. In particular, the median contribution of BESS to reserves available within 5 minutes is 16% for NSW and 40% for SA in the 2025 Step Change scenario. As the reserve horizon is extended to 30 minutes, a greater proportion of reserves are provided by conventional resources, which may be better positioned to sustain a response beyond the short-term[^16]. These results indicate that as energy transition progresses, a trade-off between reserve deployment speed and duration develops. This trend reaffirms the value of the sequential and hierarchical approach to reserve product design and deployment that has been adopted in many jurisdictions [@prakashInsightsDesigningEffective2022]. Moreover, it should be noted that unlike other mechanisms for procuring balancing flexibility, reserve services and products can specify duration/energy requirements and thus ensure that flexibility provision is sustained.
 
-+---------------------+----------+----------+----------+----------+----------+----------+
-|    NSW resources    | 2020                | 2025 Central        | 2025 Step Change    |
-|                     |                     |                     |                     |
-+                     +----------+----------+----------+----------+----------+----------+
-|                     | 5 min    | 30 min   | 5 min    | 30 min   | 5 min    | 30 min   |
-+:===================:+:========:+:========:+:========:+:========:+:========:+:========:+
-|    BESS (15 min)    | 0%       | 0%       | 2%       | 1%       | 16%      | 14%      |
-|                     |          |          |          |          |          |          |
-+---------------------+----------+----------+----------+----------+----------+----------+
-| DR                  | 9%       | 5%       | 5%       | 4%       | 5%       | 4%       |
-+---------------------+----------+----------+----------+----------+----------+----------+
-| Hydro               | 74%      | 43%      | 81%      | 60%      | 71%      | 61%      |
-+---------------------+----------+----------+----------+----------+----------+----------+
-| Thermal             | 18%      |  52%     | 12%      | 34%      | 8%       | 19%      |
-+---------------------+----------+----------+----------+----------+----------+----------+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    \multirow{2}{*}{NSW Resources} &
+      \multicolumn{2}{c}{2020} &
+      \multicolumn{2}{c}{2025 Central} &
+      \multicolumn{2}{c|}{2025 Step Change} \\
+    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
+    \hline
+    BESS (15 min) & 0\% & 0\% & 2\% & 1\% & 16\% & 14\% \\
+    \hline
+    DR & 9\% & 5\% & 5\% & 4\% & 5\% & 4\% \\
+    \hline
+    Hydro & 74\% & 43\% & 81\% & 60\% & 71\% & 61\% \\
+    \hline
+    Thermal & 18\% & 52\% & 12\% & 34\% & 8\% & 19\% \\
+    \hline
+  \end{tabular}
+  \caption[NSW short-term energy limited reserves]{\label{tab:nsw_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
+\end{table}
 
-:Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each NSW scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%). []{#tbl:nsw_stel short-caption="NSW short-term energy limited reserves"}
-
-+---------------------+----------+----------+----------+----------+----------+----------+
-|    SA resources     | 2020                | 2025 Central        | 2025 Step Change    |
-|                     |                     |                     |                     |
-+                     +----------+----------+----------+----------+----------+----------+
-|                     | 5 min    | 30 min   | 5 min    | 30 min   | 5 min    | 30 min   |
-+:===================:+:========:+:========:+:========:+:========:+:=========+:========:+
-|    BESS (15 min)    | 14%      | 6%       | 24%      | 10%      | 40%      | 20%      |
-|                     |          |          |          |          |          |          |
-+---------------------+----------+----------+----------+----------+----------+----------+
-| DR                  | 7%       | 3%       | 7%       | 3%       | 5%       | 3%       |
-+---------------------+----------+----------+----------+----------+----------+----------+
-| Thermal             | 71%      |  88%     | 61%      | 84%      | 45%      | 73%      |
-+---------------------+----------+----------+----------+----------+----------+----------+
-
-: Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%). []{#tbl:sa_stel short-caption="SA short-term energy limited reserves"}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|l|l|l|l|l|}
+    \hline
+    \multirow{2}{*}{SA Resources} &
+      \multicolumn{2}{c}{2020} &
+      \multicolumn{2}{c}{2025 Central} &
+      \multicolumn{2}{c|}{2025 Step Change} \\
+    & 5 min & 30 min & 5 min & 30 min & 5 min & 30 min \\
+    \hline
+    BESS (15 min) & 14\% & 6\% & 24\% & 10\% & 40\% & 20\% \\
+    \hline
+    DR & 7\% & 3\% & 7\% & 3\% & 5\% & 3\% \\
+    \hline
+    Thermal & 71\% & 88\% & 61\% & 84\% & 45\% & 73\% \\
+    \hline
+  \end{tabular}
+  \caption[SA short-term energy limited reserves]{\label{tab:sa_stel}Median of the percentage of each resource type's contribution to reserves available within 5 minutes and 30 minutes in every dispatch interval for each SA scenario year. The median percentages are not necessarily coincident (i.e. from the same dispatch interval) and therefore may not sum to 100\%. Furthermore, some distributions are long-tailed, so a median does not capture occasional reserve provision by a resource type (e.g. VRE, for which all medians are 0\%).}
+\end{table}
 
 [^16]: In reality, conventional resources are also susceptible to fuel constraints, as highlighted by the events preceding the 2022 NEM suspension [@australianenergymarketoperatorNEMMarketSuspension2022]. More sophisticated modelling of thermal coal availability, the gas system and hydro schemes, including their operation under different climate conditions, would be required to better understand the potential duration of available reserve provided by conventional generation.
 
