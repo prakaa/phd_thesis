@@ -587,16 +587,15 @@ system itself are operated within their respective technical envelopes
 operation and is a prerequisite for the former constraint, which
 more-or-less corresponds to \emph{reliable} operation\footnote{The term
   \emph{balancing services} is used in European systems, whereas the
-  term \emph{operating reserves} is widely used in North America.}:
+  term \emph{operating reserves} is widely used in North America.}.
 
 Noting that planning \& investment have a large bearing on the manner in
 which a power system is operated (and vice versa),
 Figure~\ref{fig:power_system_timeframes} presents a high-level overview
-of the power system concepts and phenomena that are particularly
-relevant within operational timeframes. It also outlines processes,
-services and markets that are relevant to active power balancing in
-operational timeframes, with those discussed in detail within this
-thesis highlighted in bold red text.
+of power system phenomena and processes, services \& markets that are
+most pertinent to active power balancing in operational timeframes, with
+those discussed in detail within this thesis highlighted in bold red
+text.
 
 \begin{figure}
 \hypertarget{fig:power_system_timeframes}{%
@@ -610,9 +609,10 @@ the red dashed box). All non-faded text in the bottom section indicates
 a process, service and/or market related to active power balancing. All
 bold red text in the bottom section indicates a process, service and/or
 market related to active power balancing that is discussed in detail in
-this thesis. Timeframes and phenomena were adapted from Machowski et al.
+this thesis. Timeframes, phenomena and stability categories were adapted
+from Machowski et al.
 (\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{2020}) and
-stability categories from Hatziargyriou et al.
+Hatziargyriou et al.
 (\protect\hyperlink{ref-hatziargyriouDefinitionClassificationPower2021}{2021}).
 The figure concept and layout was inspired by a similar figure presented
 in Wilson
@@ -625,48 +625,37 @@ in Wilson
 timeframes}\label{phenomena-in-operational-timeframes}}
 
 As shown in Figure~\ref{fig:power_system_timeframes}, power system
-operations is concerned with phenomena that dominate from millisecond
-
-The dynamic behaviour of a power system is primarily determined by its
-underlying energy conversion processes and the way in which components
-and resources are coupled to a synchronous area. \emph{Power system
-dynamics} can be classified based on their physical characteristics and
-on the timescales at which they dominate
-(\protect\hyperlink{fig:dynamics}{3}). In the context of power system
-frequency control, we are concerned with the following classifications
-of power system dynamics
-(\protect\hyperlink{ref-Machowski2020}{\textbf{Machowski2020?}}):
+operations is concerned with phenomena that dominate on timescales
+ranging from a few milliseconds to several months
+(\protect\hyperlink{ref-hatziargyriouDefinitionClassificationPower2021}{Hatziargyriou
+et al., 2021};
+\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{Machowski et
+al., 2020}):
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \emph{Electromagnetic} dynamics, which include millisecond-scale
-  phenomena that occur due to the coupling of electrical and magnetic
-  fields within synchronous machines, within the power electronics
-  devices of \emph{inverter-based resources} (IBR), and between
-  synchronous machines, IBR and the wider network.
+  \emph{Electromagnetic} phenomena arise from the coupling of electrical
+  and magnetic fields within \emph{synchronous machines} (generators and
+  motors that rotate at a speed proportional to AC frequency) and
+  between power system resources. They occur on the timescale of
+  milliseconds to seconds. Controls for \emph{inverter-based resources},
+  which have a power electronic inverter interface to the wider power
+  system, also operate in this timeframe.
 \item
-  \emph{Electromechanical} dynamics, which is a slower set of phenomena
-  (seconds timescale) that arise as a result of electromagnetic fields
-  interacting with rotating masses (e.g.~turbines and motors).
+  \emph{Electromechanical} phenomena are slower (seconds to minutes
+  timescale) and arise as a result of electromagnetic fields interacting
+  with rotating masses and mechanical forces. These typically occur in
+  motors and generators.
 \item
-  \emph{Thermodynamic} phenomena, which typically encompass chemical
-  fuel conversion processes (e.g.~boilers and their control) in
-  conventional power systems. We will extend this definition to include
-  the dynamic behaviour of primary energy sources for hydroelectricity
-  and \emph{variable renewable energy} (VRE), and the energy conversion
-  process for battery energy storage systems (BESS). These phenomena
-  occur multiple timeframes, from seconds to minutes to hours.
+  \emph{Thermodynamic} phenomena are slower still. They encompass
+  chemical fuel conversion \& heat transfer processes in boilers. These
+  phenomena occur over multiple timeframes, from seconds to minutes to
+  hours. I will also extend this category to include the dynamic
+  behaviour of the primary energy sources for hydroelectricity and
+  \emph{variable renewable energy} (VRE), which primarily refers to wind
+  and solar photovoltaic (PV) generation.
 \end{enumerate}
-
-\begin{figure}
-\hypertarget{fig:dynamics}{%
-\centering
-\includegraphics{source/figures/dynamics.png}
-\caption{Timeframes of power system dynamics. Source:
-(\protect\hyperlink{ref-Machowski2020}{\textbf{Machowski2020?}}).}\label{fig:dynamics}
-}
-\end{figure}
 
 \hypertarget{the-need-for-system-balance}{%
 \subsection{The need for system
