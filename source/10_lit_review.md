@@ -15,33 +15,83 @@ In this literature review, we lay a theoretical foundation for designing efficie
 
 ## Power systems {#sec:lit_review-power_systems}
 
-Given the welfare and economic benefits associated with electricity access, many 20^th^ century states constructed large bulk *power systems* to leverage investment & operational economies of scale. These systems sought to efficiently deliver active power (i.e. power that does work) to numerous electricity end-users (*demand* or *loads*) from electricity suppliers ( *generators*) across vast distances. A typical power system configuration is presented in [@fig:elec_supply_chain]. Generators supply the system with alternating current (AC) power either through a direct electromagnetic connection or through a power inverter interface (which converts the direct current, or DC, produced by the generator to AC). AC power is then efficiently transmitted over long distances through a high voltage *transmission* system. As transmission lines approach load centres, voltages are stepped down to make power delivery to the houses and businesses connected to the lower voltage *distribution system* safer [@mastersRenewableEfficientElectric2004].
+Given the welfare and economic benefits associated with electricity access, many 20^th^ century states constructed bulk *power systems* to leverage investment & operational economies of scale. These systems sought to efficiently deliver *active power* (i.e. power that does work) to numerous electricity end-users (*demand* or *loads*) from electricity suppliers (*generators*) across vast distances. A typical power system configuration is presented in [@fig:elec_supply_chain]. Generators supply the system with alternating current (AC) power either through a direct electromagnetic connection or, if they are *inverter-based resources* (IBRs), through a power electronic *inverter* interface that converts the direct current (DC) power produced by the generator to AC power. AC power is then efficiently transmitted over long distances through a high voltage *transmission* system. As transmission lines approach load centres, voltages are stepped down to make power delivery to the houses and businesses connected to the lower voltage *distribution system* safer [@mastersRenewableEfficientElectric2004].
 
-![Conventional bulk power system, including generation, transmission, distribution and industrial, commercial and residential end-users (loads). Source: @australianenergymarketoperatorIndustryOverview2023.](source/figures/electricity_supply_chain.pdf){#fig:elec_supply_chain width=100% short-caption="The bulk power system as an electricity supply chain"}
+![Conventional bulk power system, including generation, transmission, distribution and industrial, commercial and residential end-users (loads). Source: @australianenergymarketoperatorIndustryOverview2023.](source/figures/electricity_supply_chain.pdf){#fig:elec_supply_chain short-caption="The bulk power system as an electricity supply chain"}
 
 ### Synchronous and control areas
 
-A network area that is operated at a (constant) nominal AC frequency is known as a *synchronous area*. During stable operation, AC frequency should be close to the system's nominal value and more-or-less uniform across the synchronous area. A *control area*, on the other hand, is a network area in which a *system operator* (SO) is responsible for maintaining a balance between supply and demand for electrical power. Whether the term "power system" refers to a synchronous area or a control area is often dependent on context — in particular, the relationship between the two in the jurisdiction in question. In eastern and southern Australia, the National Electricity Market's (NEM) single control area consists of two synchronous areas (see [@sec:fcs-nem] for further detail). In contrast, other jurisdictions have a single synchronous area composed of several electrically-connected control areas demarcated by political rather than physical  boundaries. For example, continental Europe is a single synchronous area consisting of many national or trans-national control areas, and the continental United States has three synchronous areas (two of which extend into Canada) with over 60 control areas [@schittekatteDistributedEnergyResources2022; @northamericanelectricreliabilitycorporationNERCInterconnections2023]
+A network area that is operated at a (constant) nominal AC frequency is known as a *synchronous area*. During stable operation, AC frequency should be close to the system's nominal value and more-or-less uniform across the synchronous area (see @sec:lit_review-need_for_balancing). A *control area*, on the other hand, is a network area in which a particular *system operator* (SO) is responsible for operating the power system. Whether the term "power system" refers to a synchronous area or a control area is often dependent on context and the relationship between the two in the jurisdiction in question. In eastern and southern Australia, the National Electricity Market's (NEM) single control area consists of two synchronous areas (see [@sec:fcs-nem] for further detail). In contrast, other jurisdictions have a single synchronous area composed of several electrically-connected control areas demarcated by political rather than physical boundaries. For example, continental Europe is a single synchronous area consisting of many national or trans-national control areas, and the continental United States has three synchronous areas (two of which extend into Canada) with over 60 control areas [@schittekatteDistributedEnergyResources2022; @northamericanelectricreliabilitycorporationNERCInterconnections2023]
     
 ## Power system operations
 
-In broad terms, *operating* a power system involves the direction or control of *power system resources* — generators, loads, network elements and energy storage resources (which can act as both a generator and a load). In practice, however, power system operation is inseparable from the economic objective imposed upon SOs: minimise system costs (or under some market paradigms described in [@sec:lit_review-operational_paradigms], maximise the value of trade) whilst 1) continuously maintaining a balance between active power supply & demand and 2) ensuring that system resources & the system itself are operated within their respective technical envelopes [@woodPowerGenerationOperation2014]. The latter constraint implies *stable* & *secure* operation and is a prerequisite for the former constraint, which more-or-less corresponds to *reliable* operation[^1].
+In broad terms, *operating* a power system involves the direction or control of *power system resources* — generators, loads, network elements and energy storage resources (which can act as both a generator and a load). In practice, however, power system operation is inseparable from the economic objective imposed upon SOs: minimise system costs (or under some market paradigms described in [@sec:lit_review-operational_paradigms], maximise the value of trade) whilst 1) continuously maintaining a balance between active power supply & demand and 2) ensuring that system resources & the system itself are operated within their respective technical envelopes [@woodPowerGenerationOperation2014]. The latter constraint implies *stable* & *secure* operation and is a prerequisite for the former constraint, which more-or-less corresponds to *reliable* operation[^1]. Maintaining a stable, secure and reliable power system is vital; restarting the system after failure (*system restoration*) is a long & complex procedure, and power outages (*blackouts*), whether they be localised or across a wider area, can have devastating social & economic consequences [@kirschenFundamentalsPowerSystem2004].
 
 [^1]: Strictly speaking, reliability is typically defined as the ability of generation to supply load requirements to an administratively-set standard, which varies across jurisdictions.
 
 Noting that planning & investment have a large bearing on the manner in which a power system is operated (and vice versa), [@fig:power_system_timeframes] presents a high-level overview of power system phenomena and processes, services & markets that are most pertinent to active power balancing in operational timeframes, with those discussed in detail within this thesis highlighted in bold red text.
 
-![A high-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes (bounded by the red dashed box). All non-faded text in the bottom section indicates a process, service and/or market related to active power balancing. All bold red text in the bottom section indicates a process, service and/or market related to active power balancing that is discussed in detail in this thesis. Timeframes, phenomena and stability categories were adapted from @machowskiPowerSystemDynamics2020 and @hatziargyriouDefinitionClassificationPower2021. The figure concept and layout was inspired by a similar figure presented in @wilsonIntroductoryPresentation20202020.](source/figures/power_system_timeframes.pdf){#fig:power_system_timeframes width=100% short-caption="High-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes"}
+![A high-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes (bounded by the red dashed box). All non-faded text in the bottom section indicates a process, service and/or market related to active power balancing. All bold red text in the bottom section indicates a process, service and/or market related to active power balancing that is discussed in detail in this thesis. Timeframes, phenomena and stability categories were adapted from @machowskiPowerSystemDynamics2020, @hatziargyriouDefinitionClassificationPower2021 and @matevosyanFutureInverterBasedResources2021. The figure concept and layout was inspired by a similar figure presented in @wilsonIntroductoryPresentation20202020.](source/figures/power_system_timeframes.pdf){#fig:power_system_timeframes short-caption="High-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes"}
     
 ### Phenomena in operational timeframes
 
 As shown in @fig:power_system_timeframes, power system operations is concerned with phenomena that dominate on timescales ranging from a few milliseconds to several months [@hatziargyriouDefinitionClassificationPower2021; @machowskiPowerSystemDynamics2020]:
 
-1.  *Electromagnetic* phenomena arise from the coupling of electrical and magnetic fields within *synchronous machines* (generators and motors that rotate at a speed proportional to AC frequency) and between power system resources. They occur on the timescale of milliseconds to seconds. Controls for *inverter-based resources*, which have a power electronic inverter interface to the wider power system, also operate in this timeframe.
+1.  *Electromagnetic* phenomena arise from the coupling of electrical and magnetic fields within *synchronous machines* (generators and motors that rotate at a speed proportional to AC frequency) and between power system resources. They occur on the timescale of milliseconds to seconds. IBR controls also operate in this timeframe.
 
 2.  *Electromechanical* phenomena are slower (seconds to minutes timescale) and arise as a result of electromagnetic fields interacting with rotating masses and mechanical forces. These typically occur in motors and generators.
 
-3.  *Thermodynamic* phenomena are slower still. They encompass chemical fuel conversion & heat transfer processes in boilers. These phenomena occur over multiple timeframes, from seconds to minutes to hours. I will also extend this category to include the dynamic behaviour of the primary energy sources for hydroelectricity and *variable renewable energy* (VRE), which primarily refers to wind and solar photovoltaic (PV) generation.
+3.  *Thermodynamic* phenomena are slower still. They encompass chemical fuel conversion & heat transfer processes in boilers. These phenomena occur over multiple timeframes, from seconds to minutes to hours. The dynamics of the primary energy sources for hydroelectricity and *variable renewable energy* (VRE), which primarily refers to wind and solar *photovoltaic* (PV) generation, are also relevant in these timeframes [@keeratimahatAnalysisShorttermOperational2021].
+
+### Active power balancing
+
+In theory, *active power balancing* is simply a consequence of the law of conservation of energy: the energy supplied through primary energy conversion or by energy storage into a network node is equal to the sum of the energy dissipated, stored and consumed at the same network node at each and every moment. In practice, however, it involves the **_moment-to-moment control_ of generation and loads to balance active power supply and demand _across the power system_**. *Moment-to-moment* (i.e. real-time) control of supply & demand is required because it is still uneconomical in many jurisdictions to store electricity at scale (i.e. in the same order of magnitude as generation and demand) despite grid-scale storage cost reductions [@internationalenergyagencyGridScaleStorage2022]. Furthermore, though electricity can be transported close to the speed of light across the network, balancing requires coordination *across the power system* because of transmission losses and network constraints imposed by line thermal limits, stability requirements & Kirchoff's circuit laws [@kirschenFundamentalsPowerSystem2004; @hirthWhyWindNot2016a].
+
+#### Why is balancing required? {#sec:lit_review-need_for_balancing}
+
+Unlike the transportation networks of many other commodities, an imbalance between active power supply & demand can lead to deviations in technical parameters — voltage and AC frequency — that not only have the potential to damage equipment connected to the power system, but also to trigger a system collapse [@borensteinEconomicsElectricityReliability2023]. As such, maintaining active power balance is essential to proper resource and system functioning.
+
+##### The relationship between active power balance & AC frequency
+
+Because synchronous machines are present in most power systems, system active power balance is closely tied to the system's AC frequency. During steady state operation, synchronous machines rotate at a *synchronous speed* ($N_s$) that is proportional to the nominal system frequency ($f$) ([@eq:synch_speed]) [@chapmanElectricMachineryFundamentals2011]:
+
+$$N_s = \frac{120f}{P}$$ {#eq:synch_speed}
+
+where $N_s$ is the synchronous speed in revolutions per minute, $P$ is the number of (rotor) magnetic poles and $f$ is the electrical frequency in hertz.
+
+The link between active power imbalance and synchronous speed/system frequency can be elucidated by examining synchronous machine dynamics. In a synchronous generator (coal-fired, gas-fired and hydro generators), the interaction between the interacting magnetic fields of the rotor and stator produces an electromagnetic torque ($T_e$) on the rotor that opposes the mechanical torque ($T_m$) supplied by a prime mover (e.g. steam turbine) ([@fig:synch_torques]). [@eq:swing], which is an energy balance variation of what is known as the *swing equation*, shows that if there is a transient increase in the electrical load of the power system (equivalent to an increase in $P_e$ and thus $T_e$), the rotor of a synchronous generator will begin to decelerate as its stored kinetic energy is converted to electrical energy [@graingerPowerSystemAnalysis1994; @elgerdElectricEnergySystems1971]. 
+
+$$J\omega_{sm}\frac{d\omega_{sm}}{dt} = P_m - P_e$$ {#eq:swing}
+
+where $\omega_{sm}$ is the synchronous machine rotor shaft velocity, $J$ is moment of inertia of the rotor, $P_m$ is mechanical power, $T_m$ is mechanical torque, $P_e$ is electrical power and $T_e$ is electromagnetic torque.
+
+![Mechanical power applied to the prime mover results in a mechanical torque $T_m$ on the rotor of a synchronous generator. This is opposed by an electromagnetic torque $T_e$ that is produced from the interaction of the rotor and stator magnetic fields. Source: @reboursComprehensiveAssessmentMarkets2009](source/figures/swing.png){#fig:synch_torques short-caption="Mechanical and electromagnetic torques on a synchronous generator" width="60%"}
+
+The relationship between the active power imbalance in a power system ($P_{gen}-P_{load}$) and AC frequency is obtained by extending the dynamics of the swing equation from a single synchronous generator to all synchronous generators in a synchronous area ([@eq:swing_area]). [@eq:swing_area] shows that the rate of change of frequency (*RoCoF*) is proportional to the active power imbalance and inversely proportional to the system's inertia constant, $H$. This form of the swing equation only models the *inertial response* of synchronous generators, and not the *load damping* response offered by (frequency-dependent) induction motor loads. Generation inertial response typically plays a large role in electromechanical system dynamics as the high speed and mass of generator rotors mean that they store significant quantities of kinetic energy [@ulbigImpactLowRotational2014; @denholmInertiaPowerGrid2020].
+
+$$\frac{2H}{f}\frac{df}{dt} = \frac{P_{gen}-P_{load}}{S_{g, total}}$$ {#eq:swing_area}
+
+where $H$ is the inertia constant of the synchronous area ($H=\sum_{g} H_g$, where $H_g = \frac{J_g(2\pi f)^2}{2S_g}$), $f$ is the AC frequency, $\frac{df}{dt}$ is the rate of change of frequency or RoCoF, $S_{g,total}$ is the total apparent power of synchronous generators, and $P_{gen}$ and $P_{load}$ are the system's total power supply and total power demand (including losses), respectively.
+
+[@eq:swing_area] also shows that a power system's AC frequency is an indicator of active power balance [@bagginiHandbookPowerQuality2008]. Insufficient generation will lead to a *decrease* in system frequency (i.e. negative RoCoF) and oversupply will lead to an *increase* in system frequency (i.e. positive RoCoF).
+
+##### The consequences of frequency deviations
+
+Serious power system frequency deviations away from the nominal value can have harmful effects. Synchronous machines may experience equipment-damaging vibrations [@ulbigImpactLowRotational2014], and both synchronous machines and transformers can overheat and fail if they operate outside their rated voltage-frequency limits [@kirbyFrequencyControlConcerns2002]. Synchronous machines are also vulnerable to damage from high RoCoFs due to pole slipping [@dgaconsultingInternationalReviewFrequency2016]. For these reasons, frequency-sensitive relays are often used to protect power system resources from frequency excursions.
+
+However, these same protection measures can also trigger the complete collapse of the power system. Should the disconnection of a resource following a relay trip exacerbate an existing active power imbalance, the system frequency may deviate further and result in further disconnections. Situations such as these are known as *cascading failures* and can lead to the collapse of the entire power system. As such, SOs often employ emergency frequency control schemes that trip loads in the event of under-frequency (*under-frequency load shedding* or *UFLS*) or generation in the event of over-frequency (*over-frequency generation shedding* or *OFGS*) as a last line of defence against frequency-driven system collapse [@australianenergymarketoperatorEnduringPrimaryFrequency2021; @hartmannEffectsDecreasingSynchronous2019]. 
+
+#### Threats to active power balance
+
+Threats to active power balance can be broadly categorised as either power system *variability* or power system *uncertainty*.
+
+##### Power system variability
+
+Power system variability refers to **expected** or forecasted changes to active power supply and/or demand. Sources of variability include fluctuations in load, oscillatory active power output from synchronous generators, ramping solar PV generation during sunrise & sunset and ramping wind generation as wind speeds change [@elaOperatingReservesVariable2011; @australianenergymarketoperatorRenewableIntegrationStudy2020; @bloomItIndisputableFive2017].
+
+##### Power system uncertainty
+
+Power system uncertainty refers to **unexpected** changes to active power supply and/or demand. These include demand and VRE generation forecast errors (so-called "known unknowns"), and singular or widespread outage events ("unknown unknowns") triggered by the weather or unexpected system responses & interactions [@australianenergymarketoperatorRenewableIntegrationStudy2020; @elaOperatingReservesVariable2011; @egglestonSecurityResilienceTechnical2021].
 
 ### Operational paradigms{#sec:lit_review-operational_paradigms}
 
@@ -186,71 +236,6 @@ pool markets as it only has a single platform - the real-time spot
 market. This arrangement means that while dispatch is centralised,
 participants manage the commitment of their generation portfolio with
 the assistance of pre-dispatch forecasts provided by AEMO [@Riesz2016a].
-
-## Active power balancing
-
-In theory, *active power balancing* is simply a consequence of the law of conservation of energy: the energy supplied through primary energy conversion or by energy storage into a network node is equal to the sum of the energy dissipated, stored and consumed at the same network node at each and every moment. In practice, however, it involves the **_moment-to-moment control_ of generation and loads to balance active power supply and demand _across the power system_**. *Moment-to-moment control* is required because it is still uneconomical in many jurisdictions to store electricity at scale (i.e. in the same order of magnitude as generation and demand) despite grid-scale storage cost reductions [@internationalenergyagencyGridScaleStorage2022], and though electricity can be transported close to the speed of light across the network, balancing required coordination *across the power system* because of transmission losses and network constraints imposed by line thermal limits, stability requirements & Kirchoff's circuit laws [@kirschenFundamentalsPowerSystem2004; @hirthWhyWindNot2016a].
-
-### Why is it required?
-
-Unlike the transportation networks of many other commodities, an imbalance between active power supply & demand can lead to deviations in technical parameters — voltage and frequency —  that not only have the potential to damage equipment connected to the power system, but also to trigger a system collapse [@borensteinEconomicsElectricityReliability2023]. As such, maintaining active power balance is essential to proper resource and system functioning.
-
-#### The relationship between active power balance & AC frequency
-
-Because synchronous machines are present in most power systems, system active power balance is closely tied to the system's AC frequency. During steady state operation, synchronous machines rotate at a *synchronous speed* ($N_s$) that is proportional to the nominal system frequency ($f$) ([@eq:synch_speed]) [@chapmanElectricMachineryFundamentals2011]:
-
-$$N_s = \frac{120f}{P} \label{eq:synch_speed}$$
-
-where $N_s$ is the synchronous speed in revolutions per minute, $P$ is the number of (rotor) magnetic poles and $f$ is the electrical frequency in hertz.
-
-The link between active power imbalance and synchronous speed/system frequency can be elucidated by examining synchronous machine dynamics. In a synchronous generator (coal-fired, gas-fired and hydro generators), the interaction between the interacting magnetic fields of the rotor and stator produces an electromagnetic torque ($T_e$) on the rotor that opposes the mechanical torque ($T_m$) supplied by a prime mover (e.g. steam turbine) ([@fig:synch_torques]). [@eq:swing], which is an energy balance variation of what is known as the *swing equation*, shows that if there is a transient increase in the electrical load of the power system (equivalent to an increase in $P_e$ and thus $T_e$), the rotor of a synchronous generator will begin to decelerate as its stored kinetic energy is converted to electrical energy [@graingerPowerSystemAnalysis1994; @elgerdElectricEnergySystems1971]. 
-
-$$J\omega_{sm}\frac{d\omega_{sm}}{dt} = P_m - P_e \label{eq:swing}$$
-
-where $\omega_{sm}$ is the synchronous machine rotor shaft velocity, $J$ is moment of inertia of the rotor, $P_m$ is mechanical power, $T_m$ is mechanical torque, $P_e$ is electrical power and $T_e$ is electromagnetic torque.
-
-![Mechanical power applied to the prime mover results in a mechanical torque $T_m$ on the rotor of a synchronous generator. This is opposed by an electromagnetic torque $T_e$ that is produced from the interaction of the rotor and stator magnetic fields. Source: @reboursComprehensiveAssessmentMarkets2009](source/figures/swing.png){#fig:synch_torques short-caption="Mechanical and electromagnetic torques on a synchronous generator"}
-
-The relationship between the active power imbalance in a power system ($P_{gen}-P_{load}$) and AC frequency is obtained by extending the dynamics of the swing equation from a single synchronous generator to all synchronous generators in a synchronous area ([@eq:swing_area]). [@eq:swing_area] shows that the rate of change of frequency (*RoCoF*) is proportional to the active power imbalance and inversely proportional to the system's inertia constant, $H$. This form of the swing equation only models the *inertial response* of synchronous generators, and not the *load damping* response offered by (frequency-dependent) induction motor loads. Generation inertial response typically plays a large role in electromechanical system dynamics as the high speed and mass of generator rotors mean that they store significant quantities of kinetic energy [@ulbigImpactLowRotational2014; @denholmInertiaPowerGrid2020].
-
-$$\frac{2H}{f}\frac{df}{dt} = \frac{P_{gen}-P_{load}}{S_{g, total}} \label{eq:swing_area}$$
-
-where $H$ is the inertia constant of the synchronous area ($H=\sum_{g} H_g$, where $H_g = \frac{J_g(2\pi f)^2}{2S_g}$), $f$ is the AC frequency, $\frac{df}{dt}$ is the rate of change of frequency or RoCoF, $S_{g,total}$ is the total apparent power of synchronous generators, and $P_{gen}$ and $P_{load}$ are the system's total power supply and total power demand (including losses), respectively.
-
-[@eq:swing_area] also shows that a power system's AC frequency is an indicator of active power balance [@bagginiHandbookPowerQuality2008]. Insufficient generation will lead to a decrease in system frequency (i.e. negative RoCoF) and oversupply will lead to an increase in system frequency (i.e. positive RoCoF).
-
-#### The consequences of frequency deviations
-
-Serious power system frequency deviations away from the nominal value can have harmful effects. Synchronous machines may experience equipment-damaging vibrations [@ulbigImpactLowRotational2014], and both synchronous machines and transformers can overheat and fail if they operate outside their rated voltage-frequency limits [@kirbyFrequencyControlConcerns2002]. Synchronous machines are also vulnerable to damage from high RoCoFs due to pole slipping [@dgaconsultingInternationalReviewFrequency2016]. For these reasons, frequency-sensitive relays are often used to protect power system resources from frequency excursions.
-
-However, these same protection measures can also trigger the complete collapse of the power system. Should the disconnection of a resource following a relay trip exacerbate an existing active power imbalance, the system frequency may deviate further and result in further disconnections. Situations such as these are known as *cascading failures* and can lead to a total system collapse (a *blackout*). Blackouts can have devastating social & economic consequences and require long & complex system restoration procedures before the power system can be returned to normal operation [@kirschenFundamentalsPowerSystem2004]. As such, SOs often employ emergency frequency control schemes that trip loads in the event of under-frequency (*under-frequency load shedding* or *UFLS*) or generation in the event of over-frequency (*over-frequency generation shedding* or *OFGS*) as a last line of defence against frequency-driven system collapse [@australianenergymarketoperatorEnduringPrimaryFrequency2021; @hartmannEffectsDecreasingSynchronous2019]. 
-
-### Threats to system balance
-
-As highlighted in
-[\[eq:swing_area\]](#eq:swing_area){reference-type="ref"
-reference="eq:swing_area"}, the AC frequency of a power system can
-deviate from its nominal value when there is an imbalance between power
-supply and demand in the synchronous area. Active power imbalances are
-the result of power system *variability* and *uncertainty*.
-
-#### Variability
-
-Variability refers to expected or forecast fluctuations in the balance
-of active power supply and demand [@Ela2011]. Sources of variability
-include fluctuations in load, oscillatory active power output from
-synchronous generators and changing weather conditions (e.g. cloud
-cover, wind speed) that may affect the active power output of VRE
-[@Ela2011; @Bloom2017; @Riesz2015a].
-
-#### Uncertainty
-
-Uncertainty refers to unexpected fluctuations in the balance of active
-power supply and demand [@Ela2011]. Power system uncertainty encompasses
-the unanticipated behaviour of generators, loads and network elements.
-This includes unexpected outages (known as *contingency events*) and
-weather forecast errors that lead to VRE generation forecast error
-[@Ela2011; @Riesz2015a] 
 
 ## Balancing processes and mechanisms
 
