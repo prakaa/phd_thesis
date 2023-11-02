@@ -43,9 +43,9 @@ As shown in @fig:power_system_timeframes, power system operations is concerned w
 
 3.  *Thermodynamic* phenomena are slower still. They encompass chemical fuel conversion & heat transfer processes in boilers. These phenomena occur over multiple timeframes, from seconds to minutes to hours. The dynamics of the primary energy sources for hydroelectricity and *variable renewable energy* (VRE), which primarily refers to wind and solar *photovoltaic* (PV) generation, are also relevant in these timeframes [@keeratimahatAnalysisShorttermOperational2021].
 
-### Active power balancing
+### Active power balancing {#sec:lit_review-balancing}
 
-In theory, *active power balancing* is simply a consequence of the law of conservation of energy: the energy supplied through primary energy conversion or by energy storage into a network node is equal to the sum of the energy dissipated, stored and consumed at the same network node at each and every moment. In practice, however, it involves the **_moment-to-moment control_ of generation and loads to balance active power supply and demand _across the power system_**. *Moment-to-moment* (i.e. real-time) control of supply & demand is required because it is still uneconomical in many jurisdictions to store electricity at scale (i.e. in the same order of magnitude as generation and demand) despite grid-scale storage cost reductions [@internationalenergyagencyGridScaleStorage2022]. Furthermore, though electricity can be transported close to the speed of light across the network, balancing requires coordination *across the power system* because of transmission losses and network constraints imposed by line thermal limits, stability requirements & Kirchoff's circuit laws [@kirschenFundamentalsPowerSystem2004; @hirthWhyWindNot2016a].
+In theory, *active power balancing* is simply a consequence of the law of conservation of energy: the energy supplied through primary energy conversion or by energy storage into a network node is equal to the sum of the energy dissipated, stored and consumed at the same network node at each and every moment. In practice, however, it involves the **_moment-to-moment control_ of generation and loads to balance active power supply and demand _across the power system_**. *Moment-to-moment* (i.e. real-time) control of supply & demand is required because it is still uneconomical in many jurisdictions to store electricity at scale (i.e. in the same order of magnitude as generation and demand) despite grid-scale storage cost reductions [@internationalenergyagencyGridScaleStorage2022]. Furthermore, though electricity can be transported close to the speed of light across the network, balancing requires at least a degree of coordination *across the power system* because of transmission losses and various network constraints imposed by line thermal limits, stability requirements & Kirchoff's circuit laws [@kirschenFundamentalsPowerSystem2004; @hirthWhyWindNot2016a].
 
 #### Why is balancing required? {#sec:lit_review-need_for_balancing}
 
@@ -53,13 +53,13 @@ Unlike the transportation networks of many other commodities, an imbalance betwe
 
 ##### The relationship between active power balance & AC frequency
 
-Because synchronous machines are present in most power systems, system active power balance is closely tied to the system's AC frequency. During steady state operation, synchronous machines rotate at a *synchronous speed* ($N_s$) that is proportional to the nominal system frequency ($f$) ([@eq:synch_speed]) [@chapmanElectricMachineryFundamentals2011]:
+The presence of synchronous machines in most power systems means that system active power balance is closely tied to the system's AC frequency. During steady state operation, synchronous machines rotate at a *synchronous speed* ($N_s$) that is proportional to the nominal system frequency ($f$) ([@eq:synch_speed]) [@chapmanElectricMachineryFundamentals2011]:
 
 $$N_s = \frac{120f}{P}$$ {#eq:synch_speed}
 
 where $N_s$ is the synchronous speed in revolutions per minute, $P$ is the number of (rotor) magnetic poles and $f$ is the electrical frequency in hertz.
 
-The link between active power imbalance and synchronous speed/system frequency can be elucidated by examining synchronous machine dynamics. In a synchronous generator (coal-fired, gas-fired and hydro generators), the interaction between the interacting magnetic fields of the rotor and stator produces an electromagnetic torque ($T_e$) on the rotor that opposes the mechanical torque ($T_m$) supplied by a prime mover (e.g. steam turbine) ([@fig:synch_torques]). [@eq:swing], which is an energy balance variation of what is known as the *swing equation*, shows that if there is a transient increase in the electrical load of the power system (equivalent to an increase in $P_e$ and thus $T_e$), the rotor of a synchronous generator will begin to decelerate as its stored kinetic energy is converted to electrical energy [@graingerPowerSystemAnalysis1994; @elgerdElectricEnergySystems1971]. 
+The link between active power balance and synchronous speed/system frequency can be elucidated by examining synchronous machine dynamics. In a synchronous generator (coal-fired, gas-fired and hydro generators), the interaction between the interacting magnetic fields of the rotor and stator produces an electromagnetic torque ($T_e$) on the rotor that opposes the mechanical torque ($T_m$) supplied by a prime mover (e.g. steam turbine) ([@fig:synch_torques]). [@eq:swing], which is an energy balance variation of what is known as the *swing equation*, shows that if there is a transient increase in the electrical load of the power system (equivalent to an increase in $P_e$ and thus $T_e$), the rotor of a synchronous generator will begin to decelerate as its stored kinetic energy is converted to electrical energy [@graingerPowerSystemAnalysis1994; @elgerdElectricEnergySystems1971].
 
 $$J\omega_{sm}\frac{d\omega_{sm}}{dt} = P_m - P_e$$ {#eq:swing}
 
@@ -73,7 +73,7 @@ $$\frac{2H}{f}\frac{df}{dt} = \frac{P_{gen}-P_{load}}{S_{g, total}}$$ {#eq:swing
 
 where $H$ is the inertia constant of the synchronous area ($H=\sum_{g} H_g$, where $H_g = \frac{J_g(2\pi f)^2}{2S_g}$), $f$ is the AC frequency, $\frac{df}{dt}$ is the rate of change of frequency or RoCoF, $S_{g,total}$ is the total apparent power of synchronous generators, and $P_{gen}$ and $P_{load}$ are the system's total power supply and total power demand (including losses), respectively.
 
-[@eq:swing_area] also shows that a power system's AC frequency is an indicator of active power balance [@bagginiHandbookPowerQuality2008]. Insufficient generation will lead to a *decrease* in system frequency (i.e. negative RoCoF) and oversupply will lead to an *increase* in system frequency (i.e. positive RoCoF).
+[@eq:swing_area] shows that a power system's AC frequency is an indicator of active power balance [@bagginiHandbookPowerQuality2008]. Insufficient generation will lead to a *decrease* in system frequency (i.e. negative RoCoF) and oversupply will lead to an *increase* in system frequency (i.e. positive RoCoF).
 
 ##### The consequences of frequency deviations
 
@@ -93,155 +93,45 @@ Power system variability refers to **expected** or forecasted changes to active 
 
 Power system uncertainty refers to **unexpected** changes to active power supply and/or demand. These include demand and VRE generation forecast errors (so-called "known unknowns"), and singular or widespread outage events ("unknown unknowns") triggered by the weather or unexpected system responses & interactions [@australianenergymarketoperatorRenewableIntegrationStudy2020; @elaOperatingReservesVariable2011; @egglestonSecurityResilienceTechnical2021].
 
-### Operational paradigms{#sec:lit_review-operational_paradigms}
+### Operational paradigms {#sec:lit_review-operational_paradigms}
 
-Synchronous areas can be subdivided into *control areas*, which are typically demarcated by the network boundaries of separate electric utilities or electricity markets [@Grainger1994; @Elgerd1971]. Within a control area, the control of AC frequency is the responsibility of a system operator.
+Given the need for at least some degree of balancing coordination in a power system (@sec:lit_review-balancing), SOs, which are a feature of all control area jurisdictions, have ultimate responsibility in ensuring that the area is operated in a stable, secure and reliable manner [@roquesMarketDesignGeneration2008]. However, though the powers, responsibilities and degree of ring-fencing imposed upon the SO vary from jurisdiction to jurisdiction, these characteristics are first & foremost governed by the control area's *operational paradigm* [@chawlaGlobalTrendsElectricity2013]. Below, we discuss the two types of operational paradigms: where the SO is a *vertically-integrated utility*, and where the SO is, at the very least, responsible for operating a transmission system that forms the physical basis of a *wholesale electricity market*.
 
-#### Vertically-integrated
+#### Vertically-integrated utility
 
-Historically, this configuration enabled economies of scale in both
-asset investment and operation to be achieved by electric utilities,
-particularly regulated monopolies that owned and operated most, if not
-all, of the generation, transmission and distribution infrastructure
-within a power system and were responsible for the retail of electricity
-to the end-user (these regulated monopolies are known as
-vertically-integrated utilities) [@Masters2004].
+Under this paradigm, a single company (either state-owned or privately-owned but regulated) owns, operates & invests in generation, transmission & distribution infrastructure, as well as being responsible for the retail of electricity to the end-user. This was the sole operational paradigm prior to the 1980s. Having a single owner and operator of power system resources reduces complexity, eliminates transaction costs and enables economies of scale in both asset investment (particularly generation infrastructure) and operation  [@sioshansiElectricityMarketReform2006]. These benefits are accentuated by sustained load growth, which advanced economies experienced in the 20^th^ century and many emerging economies are still experiencing, from increasing access to electricity, industrialisation and electrification [@roquesAdaptingElectricityMarkets2017; @hoganElectricityMarketStructure2008].
 
-#### Restructuring and the emergence of wholesale electricity markets
+#### Wholesale electricity markets
 
-In mandatory pool markets, the system operator commits and dispatches
-individual generators (and, in some cases, loads) in the day-ahead and
-real-time markets, respectively, based on economic optimisation
-processes that incorporate transmission constraints and stability and
-reliability requirements. These processes are *security-constrained unit
-commitment* (SCUC), which is executed in the day-ahead market, and
-*security-constrained economic dispatch* (SCED), which is executed just
-prior to the relevant real-time market interval. In many mandatory pool
-markets, SCED and SCUC co-optimise the provision of energy and frequency
-control services
+Beginning in the late 1980s, some jurisdictions opted to *restructure* their electricity sector. To varying degrees across different jurisdictions, the impetus for restructuring was the result of advancements in small low-upfront cost gas turbine technologies, the promise of consumer choice, perceptions that vertically-integrated utilities were inefficient & politicised, and a political zeitgeist prevalent at the time that pursued economic efficiency through privatisation & competition [@sioshansiElectricityMarketReform2006; @macgillElectricityIndustryReform2013; @simshauserLessonsAustraliaNational2019; @chesterEnergyProblemRepresentation2019]. Two features common to electricity industry restructuring processes were the *unbundling* of vertically-integrated utilities and the introduction of competition for wholesale supply (and in some cases, demand) via an *electricity market*.
 
-It should be noted that these processes are not exclusive to mandatory
-pool markets and could be used by vertically-integrated utilities to
-efficiently schedule resources in the power system [@Grainger1994].
+##### Unbundling
 
-##### Electricity industry restructuring
+At the very least, the unbundling of a vertically-integrated utility divided generation ownership and created the SO, which was made responsible for the secure & reliable operation of the transmission network and often barred from owning generation assets. In some jurisdictions, SOs were given ownership of the transmission network (e.g. Transmission System Operators, or *TSOs*, in many European control areas) whereas others made their SOs "independent" of any asset ownership (e.g. Independent System Operators in North American control areas). Some SOs, such as those in North America and the Australian NEM, were also given market operation responsibilities [@chawlaGlobalTrendsElectricity2013].
 
-Beginning in the early 1990s, perceived inefficiencies and overspend by
-monopoly electric utilities, advancements in small low-upfront cost gas
-turbine technologies and the successful liberalisation of other
-industries such as airlines and telecommunications prompted many
-countries to restructure their electricity industries
-[@Weigt2009; @Miller2017]. A common feature of this process across power
-systems was the implementation of a wholesale market for electricity,
-where generators compete for the opportunity to supply electricity and
-earn revenue through an auction-based mechanism [@Milligan2017].
+##### Market models
 
-##### Electricity market structures and features
+Much like unbundling, the design and implementation of wholesale electricity markets (an auction-based mechanism for the sale and/or purchase of electricity) differed across jurisdictions engaged in restructuring. Despite these differences, electricity markets worldwide can broadly be categorised into two markets models[^2] that are distinguished by the degree of centralisation of system & market operations [@barrosoClassificationElectricityMarket2005; @cramtonElectricityMarketDesign2017; @ahlqvistSurveyComparingCentralized2022]:
 
-###### System operator
+[^2]: I note that my descriptions of central and self-dispatch electricity markets differ slightly to those of @ahlqvistSurveyComparingCentralized2022, who focus on the level of centralisation in day-ahead timeframes. They categorise the Australian NEM as a decentralised market as participants manage self-commitment; however, the SO still produces resource-specific production & consumption targets through a central dispatch process that constitutes the real-time market. Refer to TODO: (Ref to information context) for more detail.
 
-In restructured electricity industries, the implementation of wholesale
-markets was accompanied by the creation of an independent power system
-operator to operate the transmission network, manage and administer the
-electricity market, maintain short-term power system *reliability* (the
-ability to meet demand with supply) and *security* (the ability to
-operate the power system within a defined operating envelope), and carry
-out longer term planning functions [@Sioshansi2006; @Hogan2008]. These
-entities may own transmission infrastructure as a regulated monopoly, as
-is the case with the various Transmission System Operators (TSOs) in
-Europe, or be independent of any infrastructure ownership, such as the
-Independent System Operators (ISOs) and Regional Transmission Operators
-(RTOs) in North America and the Australian Energy Market Operator
-(AEMO).
+1.  *Central dispatch* markets, where decisions regarding *dispatch* (real-time production or consumption targets) and, in some cases, *unit commitment* (i.e. whether a resource should be online or offline) are made by the SO. System & market operations are often *integrated* (i.e. the SO is also the market operator) in central dispatch markets through the creation of a *mandatory power pool*, in which offers to generate are aggregated into a single supply curve and are cleared against a demand forecast (one-sided pool) or against an aggregated demand curve constructed from potential buyers (two-sided pool) [@Barroso2005]. In these markets, locational marginal prices for energy and *ancillary services* (services procured for security and reliability reasons) are produced by centralised optimisation processes run by the SO that consider the physical constraints of the transmission system. As outlined in @sec:fcs-NA, this market model has been adopted in Independent System Operator/Regional Transmission Operator (ISO/RTO) markets in North America and, as I discuss in TODO: (Ref to information context), the Australian NEM has many features of a central dispatch market.
 
-###### Market models
+2.  Decentralised or *self-dispatch* markets, where decisions regarding dispatch and unit commitment are made by market participants and in which system & market operations are more decoupled. These types of markets facilitate trade through *bilateral contracts* that enable suppliers to enter into contracts with buyers either directly or through intermediaries. Whilst scheduling and dispatch is managed by market participants, intended energy schedules (i.e. net contract positions) are submitted by market participants ahead of time to the SO. The SO is responsible for taking *redispatch* actions to ensure that transmission constraints are not violated, and for determining the requirement for and procuring *balancing services* (another name for frequency control services, which I discuss in greater detail in TODO:ref) that maintain system balance following market gate closure. As outlined in @sec:fcs-EU, this is the dominant market model in Europe.
 
-The restructuring process proceeded differently across jurisdictions,
-resulting in the implementation of different wholesale market
-mechanisms. However, at a higher level, electricity markets worldwide
-have generally converged towards two main market models which are
-distinguished by the degree of centralisation of market operations and
-the role of the system operator
-([2](#fig:market_models){reference-type="ref"
-reference="fig:market_models"}):
+@fig:market_models shows the primary and secondary commercial arrangements in each of these market models. Bilateral contracts (in the form of derivatives) are often used as hedging instruments in mandatory pool markets, and several bilateral markets, such as those in Europe, have associated voluntary power exchanges that are essentially power pools [@Barroso2005].
 
-1.  Decentralised *bilateral markets*, in which suppliers enter into
-    contracts with buyers either directly or through intermediaries
-    [@Barroso2005]. Whilst scheduling and dispatch is managed by market
-    participants, intended energy schedules (i.e. net contract
-    positions) are submitted by market participants ahead of time to the
-    system operator, who is responsible for determining the requirement
-    for and procuring frequency control services (known as balancing
-    services in bilateral markets) [@Hirth2015]. This model is the
-    dominant market model in Europe.
+![Commercial arrangements in central and self-dispatch electricity markets. Reproduced from @barrosoClassificationElectricityMarket2005.](source/figures/market_models.png) {#fig:market_models}
 
-2.  Centralised *mandatory power pool markets*, in which offers to
-    generate are aggregated into a single supply curve and are cleared
-    against a demand forecast (one-sided pool) or against an aggregated
-    demand curve constructed from potential buyers (two-sided pool) by
-    the system operator [@Barroso2005]. In these markets, locational
-    marginal prices for energy and frequency control services are
-    produced by centralised optimisation processes run by the system
-    operator that consider the physical constraints of the transmission
-    system [@Cramton2017]. The Australian National Electricity Market
-    (NEM) and the ISO/RTO markets in North America have adopted this
-    type of market model.
+##### Market platforms
 
-The difference between these mechanisms is whether real-time generation
-instructions (*dispatch*) or scheduling decisions (an outcome of *unit
-commitment* processes) are determined centrally by the system operator
-or are decentralised, with decisions made by market participants. It is
-important to note, however, that the adoption of one model does not
-preclude the integration of aspects of the other. Bilateral contracts
-(in the form of derivatives) are often used as hedging instruments in
-mandatory pool markets and several bilateral markets, such as those in
-Europe, have associated voluntary power exchanges that are essentially
-power pools [@Barroso2005].
+Power system resource inflexibilities and the desire for physical & financial risk management mechanisms close to power delivery have led market designers in many jurisdictions to implement electricity markets with multiple market *platforms* [@energysecurityboardSystemServicesAhead2020; @isemongerBenefitsRisksVirtual2006]. Platforms are formal sub-markets for energy (and sometimes ancillary services) that are settled at different times (mostly *ahead* of the delivery of electricity and/or ancillary services). The number of platforms implemented in a particular market is often related to its market model. Self-dispatch markets can maximise trade and better enable market participants to balance their positions by implementing multiple market platforms (typically *day-ahead* and several *intra-day*), whereas the number of platforms in central dispatch markets (typically *real-time* and in most cases, *day-ahead*) is limited by the computational complexity of the optimisation algorithm(s) used by the SO to clear the market [@ahlqvistCentralSelfDispatchElectricity2018]. We discuss the market platforms implemented in European markets in TODO:ref, North American ISO/RTO markets in TODO:ref and in the Australian NEM in TODO:ref-reserves.
 
-<figure id="fig:market_models">
-<img src="source/figures/market_models-01.png" />
-<p>. <span id="fig:market_models" label="fig:market_models"></span></p>
-<figcaption>Mandatory power pool and physical bilateral market models.
-Reproduced from <span class="citation"
-data-cites="Barroso2005"></span></figcaption>
-</figure>
-
-###### Market platforms
-
-Whilst other commodity markets are settled continuously or sequentially,
-reliability and security considerations and concerns have led to
-electricity markets being divided into discrete *platforms*
-[@Isemonger2006]. Platforms are formal sub-markets for energy that are
-settled at different times. A platform implemented by all electricity
-markets is a real-time, or spot, market. Where implemented, additional
-platforms involve trade for one or more real-time market intervals but
-are each settled at different times ahead of the spot market. These
-additional platforms can reduce uncertainty for the system operator and
-provide market participants with a formal market mechanism for managing
-risk [@Isemonger2006; @EnergySecurityBoard2020c].
-
-The number and type of platforms a particular market implements is often
-related to its market model. European bilateral markets often have a
-real-time market, a day-ahead market and intra-day markets, where
-day-ahead commitments may be traded continuously between market
-participants [@Ahlqvist2018Central-Markets]. In contrast, however, it is
-practical to limit the number of platforms in a mandatory pool market
-due to the inflexibility of commitment 'contracts' determined by
-computationally complex optimisation processes
-[@Isemonger2006; @Ahlqvist2018Central-Markets]. North American ISO/RTO
-markets have two platforms - a financially binding day-ahead market and
-a physically and financially binding real-time spot market
-[@Cramton2017]. The Australian NEM is rather unique amongst mandatory
-pool markets as it only has a single platform - the real-time spot
-market. This arrangement means that while dispatch is centralised,
-participants manage the commitment of their generation portfolio with
-the assistance of pre-dispatch forecasts provided by AEMO [@Riesz2016a].
-
-## Balancing processes and mechanisms
+## Balancing practices in operational timeframes
 
 Power system frequency control is required for the stable operation of a
 synchronous area. lianEnergyMarketCommission2019]. Trigger of emergency control schemes is undesirable as it affects reliability utcomes
-
+    
 ### The role of frequency control services
 
 As discussed in [2.4](#sec:scuc_sced){reference-type="ref"
@@ -355,6 +245,20 @@ frequently executed [@Billimoria2020].
 
 #### Dispatch and unit commitment
 
+In mandatory pool markets, the system operator commits and dispatches
+individual generators (and, in some cases, loads) in the day-ahead and
+real-time markets, respectively, based on economic optimisation
+processes that incorporate transmission constraints and stability and
+reliability requirements. These processes are *security-constrained unit
+commitment* (SCUC), which is executed in the day-ahead market, and
+*security-constrained economic dispatch* (SCED), which is executed just
+prior to the relevant real-time market interval. In many mandatory pool
+markets, SCED and SCUC co-optimise the provision of energy and frequency
+control services
+
+It should be noted that these processes are not exclusive to mandatory
+pool markets and could be used by vertically-integrated utilities to
+efficiently schedule resources in the power system [@Grainger1994].
 #### Security-constrained economic dispatch
 
 SCED aims to determine the minimum cost operating configuration for
@@ -402,72 +306,6 @@ hydroelectric power plants, battery energy storage systems)
 
 #### Longer-term scheduling
 
-### Emerging challenges
-#### Inverter-based resources and frequency control {#sec:ibr_freq}
-
-Inverter-based resources (IBR) include variable IBR (solar PV and Type
-III and Type IV wind turbines [@Wu2018]), BESS and high voltage direct
-current (HVDC) links that connect to a power system through power
-electronic devices. The impacts of variable IBR on frequency control are
-of particular interest to system operators and market designers as many
-power systems are currently experiencing high instantaneous penetrations
-of variable IBR (in excess of 50%) and because many more are expected to
-do so in the future [@AustralianEnergyMarketOperator2019; @IRENA2020].
-    
-##### Challenges posed by inverter-based resources
-
-High penetrations of IBR in power systems pose challenges to frequency
-control due to their characteristics, particularly in islanded power
-systems or weakly-interconnected control areas that cannot rely on a
-wider synchronous area for frequency control services [@Hodge2020].
-These include [@Kroposki2019]:
-
-###### Interface to power system
-
-As IBR interface to a synchronous area through inverters, they are not
-electromagnetically coupled to the power system and therefore do not
-exhibit the inherent inertial response of synchronous generators. This
-has two main implications. The first is that reduced inertial response
-may affect power system stability during transients (e.g. rotor angle
-stability) [@Tielens2016], and the second is that a lack of inertia in
-the power system can lead to higher RoCoF and therefore more severe
-frequency nadirs or zeniths and the tripping of emergency protection
-schemes that would otherwise not occur in high inertia systems
-[@Machowski2020; @Ulbig2014; @Hartmann2019; @Dreidy2017].
-
-###### Variability and uncertainty
-
-The aggregate degree of power system variability and uncertainty is
-likely to increase with higher penetrations of variable IBR
-[@Riesz2015a; @AustralianEnergyMarketOperator2020b]. Variability not
-only encompasses active power output variability during a dispatch
-interval, which depends on the primary energy source and plant location
-and configuration, but also includes large ramps due to the correlated
-active power output of variable IBR over longer timeframes
-[@Keeratimahat2019a; @AustralianEnergyMarketOperator2020d]. Power system
-uncertainty will depend on the accuracy of weather and generation
-forecasting, generator reliability and may also be a function of the
-degree of visibility and control a system operator has over IBR,
-particularly distributed energy resources such as rooftop solar PV and
-electric vehicles
-[@AustralianEnergyMarketOperator2020d; @Wurth2019; @AustralianEnergyMarketOperator2020m].
-
-##### Provision of frequency control services
-
-The presence of synchronous machines and grid-following inverters makes
-inertial response and frequency control necessary for secure and stable
-operation of a power system. At high instantaneous penetrations, low
-short-run marginal cost IBR may displace synchronous generators that
-have traditionally provided inertial response and frequency control
-services, and the load damping response may be minimal
-[@Riesz2015a; @Tielens2012]. In these cases, the instantaneous inertia
-constant of the system may be low and IBR may be needed to assist in
-frequency control [@Hartmann2019; @Tielens2012]. Through their inverter
-control system, IBR are able exercise rapid and precise control of their
-active power, within the constraints of primary or stored energy, to
-provide what is known as *fast frequency response* (FFR)
-[@Machowski2020; @Hodge2020].
-
 ###### Fast frequency response
 
 FFR can generally be provided within a matter of milliseconds to provide
@@ -495,7 +333,8 @@ synchronous machine to some degree within an inverter control system
 measurement and is not inherent, it cannot be considered to be a direct
 substitute for inertial response [@Miller2017; @AEMO2017a].
 
-### Designing operational practices
+
+## Designing operational practices
 #### Procurement of frequency control services {#sec:procurement}
 
 As highlighted by @Ela2012b and @Billimoria2020, frequency control
@@ -736,105 +575,104 @@ may play, how they interact with market-based mechanisms and the
 relative benefits and costs of further frequency control services
 marketisation, both now and into the future.
 
-### Designing frequency control arrangements {#sec:designing_arrangements}
 
 Designing frequency control arrangements is a control, regulatory and
 market design problem which has become more complex in recent years due
 to electricity industry restructuring and growing penetrations of IBR
 [@VanderVeen2016].
 
-#### Outcomes of good design
+### Outcomes of good design
 
-It is important to define desired outcomes of the design process. Below,
-we present three outcomes that have previously been proposed for
-designing ancillary/system services arrangements (including frequency
-control arrangements) by @Rebours2007b and the
-@AustralianEnergyMarketCommission2020a.
+t is important to define desired outcomes of the design process. Below,
+e present three outcomes that have previously been proposed for
+esigning ancillary/system services arrangements (including frequency
+ontrol arrangements) by @Rebours2007b and the
+AustralianEnergyMarketCommission2020a.
 
-1.  **Effectiveness**. This entails both sufficient quantity and
-    performance of procured frequency control services to ensure that
-    power system security requirements are met.
+.  **Effectiveness**. This entails both sufficient quantity and
+   performance of procured frequency control services to ensure that
+   power system security requirements are met.
 
-2.  **Efficiency**. Efficient frequency control arrangements will
-    procure services at the lowest cost to the system, both now
-    (productive efficiency) and into the future (dynamic efficiency).
-    Furthermore, efficient arrangements should also procure the right
-    mix of services according to user and/or system needs (*allocative
-    efficiency*).
+.  **Efficiency**. Efficient frequency control arrangements will
+   procure services at the lowest cost to the system, both now
+   (productive efficiency) and into the future (dynamic efficiency).
+   Furthermore, efficient arrangements should also procure the right
+   mix of services according to user and/or system needs (*allocative
+   efficiency*).
 
-3.  **Minimising procurement costs and complexity**. Procurement and
-    verification of delivery of frequency control services may involve
-    significant costs associated with facilitation and monitoring. This
-    could include metering equipment, IT systems and additional staffing
-    costs. Complex procurement arrangements may also have unintended and
-    unforeseen consequences on processes and markets that interface with
-    these arrangements, such as the energy market and other ancillary
-    services markets.
+.  **Minimising procurement costs and complexity**. Procurement and
+   verification of delivery of frequency control services may involve
+   significant costs associated with facilitation and monitoring. This
+   could include metering equipment, IT systems and additional staffing
+   costs. Complex procurement arrangements may also have unintended and
+   unforeseen consequences on processes and markets that interface with
+   these arrangements, such as the energy market and other ancillary
+   services markets.
 
-#### Complexity of the design process
+### Complexity of the design process
 
-Designing frequency control arrangements is a complex exercise in
-managing interrelated and interacting capabilities, mechanisms and
-objectives ([7](#fig:design_complexity){reference-type="ref"
-reference="fig:design_complexity"}). The frequency control *capability*
-of a power system is distinct from its *performance*, with a *control
-strategy* defining how the former translates to the latter. The
-frequency control capability of a power system is determined by the
-physical characteristics and configuration of generators, loads and
-network elements within a synchronous area.
+esigning frequency control arrangements is a complex exercise in
+anaging interrelated and interacting capabilities, mechanisms and
+bjectives ([7](#fig:design_complexity){reference-type="ref"
+eference="fig:design_complexity"}). The frequency control *capability*
+f a power system is distinct from its *performance*, with a *control
+trategy* defining how the former translates to the latter. The
+requency control capability of a power system is determined by the
+hysical characteristics and configuration of generators, loads and
+etwork elements within a synchronous area.
 
-![A diagrammatic depiction of the complexity involved in designing power
-system frequency control
-arrangements.](source/figures/capability_performance-04.png){#fig:design_complexity
-width="\\textwidth"}
+[A diagrammatic depiction of the complexity involved in designing power
+ystem frequency control
+rrangements.](source/figures/capability_performance-04.png){#fig:design_complexity
+idth="\\textwidth"}
 
-Frequency control services from capable resources are often mandated
-through connection requirements or power system operator intervention
-(see [6.2](#sec:regulatory_mech){reference-type="ref"
-reference="sec:regulatory_mech"}), incentivised through remunerative
-schemes, or procured through a contract or spot market (see
-[6.1](#sec:market_mech){reference-type="ref"
-reference="sec:market_mech"}) [@Billimoria2020]. Together with the
-control specification of frequency control products, these mechanisms
-define a power system *control strategy* that dictates how capable
-system resources respond to deviations, and therefore determine the
-frequency control *performance* of a power system. The outcomes that
-define frequency control performance can be divided into physical
-performance criteria, which describe the effectiveness of frequency
-control services provided, and economic objectives, which relate to the
-productive, dynamic and price and cost-allocation efficiency of the
-arrangements.
+requency control services from capable resources are often mandated
+hrough connection requirements or power system operator intervention
+see [6.2](#sec:regulatory_mech){reference-type="ref"
+eference="sec:regulatory_mech"}), incentivised through remunerative
+chemes, or procured through a contract or spot market (see
+6.1](#sec:market_mech){reference-type="ref"
+eference="sec:market_mech"}) [@Billimoria2020]. Together with the
+ontrol specification of frequency control products, these mechanisms
+efine a power system *control strategy* that dictates how capable
+ystem resources respond to deviations, and therefore determine the
+requency control *performance* of a power system. The outcomes that
+efine frequency control performance can be divided into physical
+erformance criteria, which describe the effectiveness of frequency
+ontrol services provided, and economic objectives, which relate to the
+roductive, dynamic and price and cost-allocation efficiency of the
+rrangements.
 
-##### Interactions between capability, strategy and performance
+#### Interactions between capability, strategy and performance
 
-These three design layers often interact. Technical capabilities may
-guide the design of the control strategy, and therefore the mechanisms
-that define frequency control performance. An example of such a process
-is the PJM Interconnection (an RTO) implementing a high frequency AGC
-signal designed for BESS providing fast regulation frequency control
-services [@Benner2015; @Brooks2019]. Similarly, deficiencies in
-performance can be addressed through modifying the control strategy to
-procure additional or more suitable frequency control capability. The
-California and Midcontinent ISOs have introduced ramping products to
-address increasing variability and uncertainty in their power systems
-[@Ela2016; @Ela2017].
+hese three design layers often interact. Technical capabilities may
+uide the design of the control strategy, and therefore the mechanisms
+hat define frequency control performance. An example of such a process
+s the PJM Interconnection (an RTO) implementing a high frequency AGC
+ignal designed for BESS providing fast regulation frequency control
+ervices [@Benner2015; @Brooks2019]. Similarly, deficiencies in
+erformance can be addressed through modifying the control strategy to
+rocure additional or more suitable frequency control capability. The
+alifornia and Midcontinent ISOs have introduced ramping products to
+ddress increasing variability and uncertainty in their power systems
+@Ela2016; @Ela2017].
 
-#### Diversity of design outcomes
+### Diversity of design outcomes
 
-The design process has and will most likely continue to proceed
-differently across jurisdictions due to the diversity of both the
-technical capabilities of resources within power systems (see
-[4](#sec:freq_dev_control){reference-type="ref"
-reference="sec:freq_dev_control"} and
-[5](#sec:ibr_freq){reference-type="ref" reference="sec:ibr_freq"}) and
-the different structures and features of various electricity markets
-(see [2](#sec:elec_markets){reference-type="ref"
-reference="sec:elec_markets"}) [@Rebours2007b]. Existing frequency
-control arrangements across the world have been reviewed and compared
-extensively in the literature
-[@Rebours2009; @Ela2011; @DGAConsulting2016; @Hewicker2020; @Rebours2007a; @Rebours2007; @Zhou2016; @ReishusConsultingLLC2017; @Banshwar2018].
+he design process has and will most likely continue to proceed
+ifferently across jurisdictions due to the diversity of both the
+echnical capabilities of resources within power systems (see
+4](#sec:freq_dev_control){reference-type="ref"
+eference="sec:freq_dev_control"} and
+5](#sec:ibr_freq){reference-type="ref" reference="sec:ibr_freq"}) and
+he different structures and features of various electricity markets
+see [2](#sec:elec_markets){reference-type="ref"
+eference="sec:elec_markets"}) [@Rebours2007b]. Existing frequency
+ontrol arrangements across the world have been reviewed and compared
+xtensively in the literature
+@Rebours2009; @Ela2011; @DGAConsulting2016; @Hewicker2020; @Rebours2007a; @Rebours2007; @Zhou2016; @ReishusConsultingLLC2017; @Banshwar2018].
 
-#### Design principles and considerations
+### Design principles and considerations
 
 Previous literature has explored the key design considerations for
 frequency control arrangements. @Rebours2007b outline design principles
@@ -940,8 +778,75 @@ understand how these procurement models might interface with and
 integrate into existing and emerging market processes if an optimum for
 the entire system is to be achieved [@MacGill2020].
 
-## Emerging challenges in power system operations
 
+## Challenges to good design
+### Inverter-based resources
+
+Inverter-based resources (IBR) include variable IBR (solar PV and Type
+III and Type IV wind turbines [@Wu2018]), BESS and high voltage direct
+current (HVDC) links that connect to a power system through power
+electronic devices. The impacts of variable IBR on frequency control are
+of particular interest to system operators and market designers as many
+power systems are currently experiencing high instantaneous penetrations
+of variable IBR (in excess of 50%) and because many more are expected to
+do so in the future [@AustralianEnergyMarketOperator2019; @IRENA2020].
+    
+#### Challenges posed by inverter-based resources
+
+High penetrations of IBR in power systems pose challenges to frequency
+control due to their characteristics, particularly in islanded power
+systems or weakly-interconnected control areas that cannot rely on a
+wider synchronous area for frequency control services [@Hodge2020].
+These include [@Kroposki2019]:
+
+##### Interface to power system
+
+As IBR interface to a synchronous area through inverters, they are not
+electromagnetically coupled to the power system and therefore do not
+exhibit the inherent inertial response of synchronous generators. This
+has two main implications. The first is that reduced inertial response
+may affect power system stability during transients (e.g. rotor angle
+stability) [@Tielens2016], and the second is that a lack of inertia in
+the power system can lead to higher RoCoF and therefore more severe
+frequency nadirs or zeniths and the tripping of emergency protection
+schemes that would otherwise not occur in high inertia systems
+[@Machowski2020; @Ulbig2014; @Hartmann2019; @Dreidy2017].
+
+##### Variability and uncertainty
+
+The aggregate degree of power system variability and uncertainty is
+likely to increase with higher penetrations of variable IBR
+[@Riesz2015a; @AustralianEnergyMarketOperator2020b]. Variability not
+only encompasses active power output variability during a dispatch
+interval, which depends on the primary energy source and plant location
+and configuration, but also includes large ramps due to the correlated
+active power output of variable IBR over longer timeframes
+[@Keeratimahat2019a; @AustralianEnergyMarketOperator2020d]. Power system
+uncertainty will depend on the accuracy of weather and generation
+forecasting, generator reliability and may also be a function of the
+degree of visibility and control a system operator has over IBR,
+particularly distributed energy resources such as rooftop solar PV and
+electric vehicles
+[@AustralianEnergyMarketOperator2020d; @Wurth2019; @AustralianEnergyMarketOperator2020m].
+
+##### Provision of frequency control services
+
+The presence of synchronous machines and grid-following inverters makes
+inertial response and frequency control necessary for secure and stable
+operation of a power system. At high instantaneous penetrations, low
+short-run marginal cost IBR may displace synchronous generators that
+have traditionally provided inertial response and frequency control
+services, and the load damping response may be minimal
+[@Riesz2015a; @Tielens2012]. In these cases, the instantaneous inertia
+constant of the system may be low and IBR may be needed to assist in
+frequency control [@Hartmann2019; @Tielens2012]. Through their inverter
+control system, IBR are able exercise rapid and precise control of their
+active power, within the constraints of primary or stored energy, to
+provide what is known as *fast frequency response* (FFR)
+[@Machowski2020; @Hodge2020].
+
+### The role of the SO
+### Grid architectures
 ## Conclusion
 
 Frequency control is vital to the secure operation of a power system.
