@@ -21,11 +21,11 @@ Given the welfare and economic benefits associated with electricity access, many
 
 ### Synchronous and control areas
 
-A network area that is operated at a (constant) nominal AC frequency is known as a *synchronous area*. During stable operation, AC frequency should be close to the system's nominal value and more-or-less uniform across the synchronous area (see @sec:lit_review-need_for_balancing). A *control area*, on the other hand, is a network area in which a particular *system operator* (SO) is responsible for operating the power system. Whether the term "power system" refers to a synchronous area or a control area is often dependent on context and the relationship between the two in the jurisdiction in question. In eastern and southern Australia, the National Electricity Market's (NEM) single control area consists of two synchronous areas (see [@sec:fcs-nem] for further detail). In contrast, other jurisdictions have a single synchronous area composed of several electrically-connected control areas demarcated by political rather than physical boundaries. For example, continental Europe is a single synchronous area consisting of many national or trans-national control areas, and the continental United States has three synchronous areas (two of which extend into Canada) with over 60 control areas [@schittekatteDistributedEnergyResources2022; @northamericanelectricreliabilitycorporationNERCInterconnections2023]
+A network area that is operated at a (constant) nominal AC frequency is known as a *synchronous area*. During normal operation, AC frequency should be close to the system's nominal value and more-or-less uniform across the synchronous area (see @sec:lit_review-balancing_need). A *control area*, on the other hand, is a network area in which a particular *system operator* (SO) is responsible for operating the power system. Whether the term "power system" refers to a synchronous area or a control area is often dependent on context and the relationship between the two in the jurisdiction in question. In eastern and southern Australia, the National Electricity Market's (NEM) single control area consists of two synchronous areas (see [@sec:fcs-nem] for further detail). In contrast, other jurisdictions have a single synchronous area composed of several electrically-connected control areas demarcated by political rather than physical boundaries. For example, continental Europe is a single synchronous area consisting of many national or trans-national control areas, and the continental United States has three synchronous areas (two of which extend into Canada) with over 60 control areas [@schittekatteDistributedEnergyResources2022; @northamericanelectricreliabilitycorporationNERCInterconnections2023]
     
-## Power system operations
+## Power system operations {#sec:lit_review-operations}
 
-In broad terms, *operating* a power system involves the direction or control of *power system resources* — generators, loads, network elements and energy storage resources (which can act as both a generator and a load). In practice, however, power system operation is inseparable from the economic objective imposed upon SOs: minimise system costs (or under some market paradigms described in [@sec:lit_review-operational_paradigms], maximise the value of trade) whilst 1) continuously maintaining a balance between active power supply & demand and 2) ensuring that system resources & the system itself are operated within their respective technical envelopes [@woodPowerGenerationOperation2014]. The latter constraint implies *stable* & *secure* operation and is a prerequisite for the former constraint, which more-or-less corresponds to *reliable* operation[^1]. Maintaining a stable, secure and reliable power system is vital; restarting the system after failure (*system restoration*) is a long & complex procedure, and power outages (*blackouts*), whether they be localised or across a wider area, can have devastating social & economic consequences [@kirschenFundamentalsPowerSystem2004].
+In broad terms, *operating* a power system involves the direction or control of *power system resources* — generators, loads, network elements and energy storage resources (which can act as both a generator and a load). In practice, however, power system operation is inseparable from the economic objective imposed upon SOs: minimise system costs (or under some market paradigms described in [@sec:lit_review-operational_paradigms], maximise the value of trade) whilst 1) continuously maintaining a balance between active power supply & demand and 2) ensuring that system resources & the system itself are operated within their respective technical envelopes [@woodPowerGenerationOperation2014]. The latter constraint implies *secure* operation (which include *stability*) and is a prerequisite for the former constraint, which more-or-less corresponds to *reliable* operation[^1] [@anderssonPowerSystemSecurity2021]. Maintaining a secure and reliable power system is vital; restarting the system after failure (*system restoration*) is a long & complex procedure, and power outages (*blackouts*), whether they be localised or across a wider area, can have devastating social & economic consequences [@kirschenFundamentalsPowerSystem2004].
 
 [^1]: Strictly speaking, reliability is typically defined as the ability of generation to supply load requirements to an administratively-set standard, which varies across jurisdictions.
 
@@ -47,11 +47,11 @@ As shown in @fig:power_system_timeframes, power system operations is concerned w
 
 In theory, *active power balancing* is simply a consequence of the law of conservation of energy: the energy supplied through primary energy conversion or by energy storage into a network node is equal to the sum of the energy dissipated, stored and consumed at the same network node at each and every moment. In practice, however, it involves the **_moment-to-moment control_ of generation and loads to balance active power supply and demand _across the power system_**. *Moment-to-moment* (i.e. real-time) control of supply & demand is required because it is still uneconomical in many jurisdictions to store electricity at scale (i.e. in the same order of magnitude as generation and demand) despite grid-scale storage cost reductions [@internationalenergyagencyGridScaleStorage2022]. Furthermore, though electricity can be transported close to the speed of light across the network, balancing requires at least a degree of coordination *across the power system* because of transmission losses and various network constraints imposed by line thermal limits, stability requirements & Kirchoff's circuit laws [@kirschenFundamentalsPowerSystem2004; @hirthWhyWindNot2016a].
 
-#### Why is balancing required? {#sec:lit_review-need_for_balancing}
+#### Why is balancing required? {#sec:lit_review-balancing_need}
 
 Unlike the transportation networks of many other commodities, an imbalance between active power supply & demand can lead to deviations in technical parameters — voltage and AC frequency — that not only have the potential to damage equipment connected to the power system, but also to trigger a system collapse [@borensteinEconomicsElectricityReliability2023]. As such, maintaining active power balance is essential to proper resource and system functioning.
 
-##### The relationship between active power balance & AC frequency
+##### The relationship between active power balance & AC frequency {#sec:lit_review-balancing_need-frequency}
 
 The presence of synchronous machines in most power systems means that system active power balance is closely tied to the system's AC frequency. During steady state operation, synchronous machines rotate at a *synchronous speed* ($N_s$) that is proportional to the nominal system frequency ($f$) ([@eq:synch_speed]) [@chapmanElectricMachineryFundamentals2011]:
 
@@ -75,13 +75,13 @@ where $H$ is the inertia constant of the synchronous area ($H=\sum_{g} H_g$, whe
 
 [@eq:swing_area] shows that a power system's AC frequency is an indicator of active power balance [@bagginiHandbookPowerQuality2008]. Insufficient generation will lead to a *decrease* in system frequency (i.e. negative RoCoF) and oversupply will lead to an *increase* in system frequency (i.e. positive RoCoF).
 
-##### The consequences of frequency deviations
+##### The consequences of frequency deviations {#sec:lit_review-balancing_need-consequences}
 
 Serious power system frequency deviations away from the nominal value can have harmful effects. Synchronous machines may experience equipment-damaging vibrations [@ulbigImpactLowRotational2014], and both synchronous machines and transformers can overheat and fail if they operate outside their rated voltage-frequency limits [@kirbyFrequencyControlConcerns2002]. Synchronous machines are also vulnerable to damage from high RoCoFs due to pole slipping [@dgaconsultingInternationalReviewFrequency2016]. For these reasons, frequency-sensitive relays are often used to protect power system resources from frequency excursions.
 
-However, these same protection measures can also trigger the complete collapse of the power system. Should the disconnection of a resource following a relay trip exacerbate an existing active power imbalance, the system frequency may deviate further and result in further disconnections. Situations such as these are known as *cascading failures* and can lead to the collapse of the entire power system. As such, SOs often employ emergency frequency control schemes that trip loads in the event of under-frequency (*under-frequency load shedding* or *UFLS*) or generation in the event of over-frequency (*over-frequency generation shedding* or *OFGS*) as a last line of defence against frequency-driven system collapse [@australianenergymarketoperatorEnduringPrimaryFrequency2021; @hartmannEffectsDecreasingSynchronous2019]. 
+However, these same protection measures can also trigger the complete collapse of the power system. Should the disconnection of a resource following a relay trip exacerbate an existing active power imbalance, the system frequency may deviate further and result in further disconnections. Situations such as these are known as *cascading failures* and can lead to the collapse of the entire power system. As such, SOs often employ emergency frequency control schemes to arrest imbalances by tripping loads in the event of under-frequency (*under-frequency load shedding* or *UFLS*) or generation in the event of over-frequency (*over-frequency generation shedding* or *OFGS*) [@australianenergymarketoperatorEnduringPrimaryFrequency2021; @hartmannEffectsDecreasingSynchronous2019]. The activation of these schemes is undesirable; UFLS adversely affects power system reliability and both are intended to be a last line of defence against frequency-driven system collapse.
 
-#### Threats to active power balance
+#### Threats to active power balance {#sec:lit_review-balancing_threats}
 
 Threats to active power balance can be broadly categorised as either power system *variability* or power system *uncertainty*.
 
@@ -95,7 +95,7 @@ Power system uncertainty refers to **unexpected** changes to active power supply
 
 ### Operational paradigms {#sec:lit_review-operational_paradigms}
 
-Given the need for at least some degree of balancing coordination in a power system (@sec:lit_review-balancing), SOs, which are a feature of all control area jurisdictions, have ultimate responsibility in ensuring that the area is operated in a stable, secure and reliable manner [@roquesMarketDesignGeneration2008]. However, though the powers, responsibilities and degree of ring-fencing imposed upon the SO vary from jurisdiction to jurisdiction, these characteristics are first & foremost governed by the control area's *operational paradigm* [@chawlaGlobalTrendsElectricity2013]. Below, we discuss the two types of operational paradigms: where the SO is a *vertically-integrated utility*, and where the SO is, at the very least, responsible for operating a transmission system that forms the physical basis of a *wholesale electricity market*.
+Given the need for at least some degree of balancing coordination in a power system (@sec:lit_review-balancing), SOs, which are a feature of all control area jurisdictions, have ultimate responsibility in ensuring that the area is operated in a secure and reliable manner [@roquesMarketDesignGeneration2008]. However, though the powers, responsibilities and degree of ring-fencing imposed upon the SO vary from jurisdiction to jurisdiction, these characteristics are first & foremost governed by the control area's *operational paradigm* [@chawlaGlobalTrendsElectricity2013]. Below, I discuss the two types of operational paradigms: where the SO is a *vertically-integrated utility*, and where the SO is, at the very least, responsible for operating a transmission system that forms the physical basis of a *wholesale electricity market*.
 
 #### Vertically-integrated utility
 
@@ -115,136 +115,75 @@ Much like unbundling, the design and implementation of wholesale electricity mar
 
 [^2]: I note that my descriptions of central and self-dispatch electricity markets differ slightly to those of @ahlqvistSurveyComparingCentralized2022, who focus on the level of centralisation in day-ahead timeframes. They categorise the Australian NEM as a decentralised market as participants manage self-commitment; however, the SO still produces resource-specific production & consumption targets through a central dispatch process that constitutes the real-time market. Refer to TODO: (Ref to information context) for more detail.
 
-1.  *Central dispatch* markets, where decisions regarding *dispatch* (real-time production or consumption targets) and, in some cases, *unit commitment* (i.e. whether a resource should be online or offline) are made by the SO. System & market operations are often *integrated* (i.e. the SO is also the market operator) in central dispatch markets through the creation of a *mandatory power pool*, in which offers to generate are aggregated into a single supply curve and are cleared against a demand forecast (one-sided pool) or against an aggregated demand curve constructed from potential buyers (two-sided pool) [@Barroso2005]. In these markets, locational marginal prices for energy and *ancillary services* (services procured for security and reliability reasons) are produced by centralised optimisation processes run by the SO that consider the physical constraints of the transmission system. As outlined in @sec:fcs-NA, this market model has been adopted in Independent System Operator/Regional Transmission Operator (ISO/RTO) markets in North America and, as I discuss in TODO: (Ref to information context), the Australian NEM has many features of a central dispatch market.
+1.  *Central dispatch* markets, where decisions regarding *dispatch* (real-time production or consumption targets) and, in some cases, *unit commitment* (i.e. whether a resource should be online or offline) are made by the SO. System & market operations are often *integrated* (i.e. the SO is also the market operator) in central dispatch markets through the creation of a *mandatory power pool*, in which offers to generate are aggregated into a single supply curve and are cleared against a demand forecast (one-sided pool) or against an aggregated demand curve constructed from potential buyers (two-sided pool) [@barrosoClassificationElectricityMarket2005]. In these markets, locational marginal prices for energy and *ancillary services* (services procured for security and reliability reasons) are produced by centralised optimisation processes run by the SO that consider the physical constraints of the transmission system. As outlined in @sec:fcs-NA, this market model has been adopted in Independent System Operator/Regional Transmission Operator (ISO/RTO) markets in North America and, as I discuss in TODO: (Ref to information context), the Australian NEM has many features of a central dispatch market.
 
 2.  Decentralised or *self-dispatch* markets, where decisions regarding dispatch and unit commitment are made by market participants and in which system & market operations are more decoupled. These types of markets facilitate trade through *bilateral contracts* that enable suppliers to enter into contracts with buyers either directly or through intermediaries. Whilst scheduling and dispatch is managed by market participants, intended energy schedules (i.e. net contract positions) are submitted by market participants ahead of time to the SO. The SO is responsible for taking *redispatch* actions to ensure that transmission constraints are not violated, and for determining the requirement for and procuring *balancing services* (another name for frequency control services, which I discuss in greater detail in TODO:ref) that maintain system balance following market gate closure. As outlined in @sec:fcs-EU, this is the dominant market model in Europe.
 
-@fig:market_models shows the primary and secondary commercial arrangements in each of these market models. Bilateral contracts (in the form of derivatives) are often used as hedging instruments in mandatory pool markets, and several bilateral markets, such as those in Europe, have associated voluntary power exchanges that are essentially power pools [@Barroso2005].
+@fig:market_models shows the primary and secondary commercial arrangements in each of these market models. Bilateral contracts (in the form of derivatives) are often used as hedging instruments in mandatory pool markets, and several bilateral markets, such as those in Europe, have associated voluntary power exchanges that are essentially power pools [@barrosoClassificationElectricityMarket2005].
 
-![Commercial arrangements in central and self-dispatch electricity markets. Reproduced from @barrosoClassificationElectricityMarket2005.](source/figures/market_models.png) {#fig:market_models}
+![Commercial arrangements in central and self-dispatch electricity markets. Reproduced from @barrosoClassificationElectricityMarket2005.](source/figures/market_models.png){#fig:market_models}
 
 ##### Market platforms
 
-Power system resource inflexibilities and the desire for physical & financial risk management mechanisms close to power delivery have led market designers in many jurisdictions to implement electricity markets with multiple market *platforms* [@energysecurityboardSystemServicesAhead2020; @isemongerBenefitsRisksVirtual2006]. Platforms are formal sub-markets for energy (and sometimes ancillary services) that are settled at different times (mostly *ahead* of the delivery of electricity and/or ancillary services). The number of platforms implemented in a particular market is often related to its market model. Self-dispatch markets can maximise trade and better enable market participants to balance their positions by implementing multiple market platforms (typically *day-ahead* and several *intra-day*), whereas the number of platforms in central dispatch markets (typically *real-time* and in most cases, *day-ahead*) is limited by the computational complexity of the optimisation algorithm(s) used by the SO to clear the market [@ahlqvistCentralSelfDispatchElectricity2018]. We discuss the market platforms implemented in European markets in TODO:ref, North American ISO/RTO markets in TODO:ref and in the Australian NEM in TODO:ref-reserves.
+Power system resource inflexibilities and the desire for physical & financial risk management mechanisms in operational timeframes have led market designers in many jurisdictions to implement electricity markets with multiple market *platforms* [@energysecurityboardSystemServicesAhead2020; @isemongerBenefitsRisksVirtual2006]. Platforms are formal sub-markets for energy (and sometimes ancillary services) that are settled at different times (mostly *ahead* of the delivery of electricity and/or ancillary services). The number of platforms implemented in a particular market is often related to its market model. Self-dispatch markets can maximise trade and better enable market participants to balance their positions by implementing multiple market platforms (typically *day-ahead* and several *intra-day*), whereas the number of platforms in central dispatch markets (typically *real-time* and in most cases, *day-ahead*) is limited by the computational complexity of the optimisation algorithm(s) used by the SO to clear the market [@ahlqvistCentralSelfDispatchElectricity2018]. I discuss the market platforms implemented in European markets in TODO:ref, North American ISO/RTO markets in TODO:ref and in the Australian NEM in TODO:ref-reserves.
 
-## Balancing practices in operational timeframes
+## Balancing practices in operational timeframes {#sec:lit_review-balancing_practices}
 
-Power system frequency control is required for the stable operation of a
-synchronous area. lianEnergyMarketCommission2019]. Trigger of emergency control schemes is undesirable as it affects reliability utcomes
+SOs employ *balancing practices* in operational timeframes (which include the processes, services & markets shown in @fig:power_system_timeframes) to address variability & uncertainty and thus maintain power system security & reliability. Though the particularities of these practices vary between jurisdictions, they are almost always organised in a hierarchical and sequential fashion to ensure that active power supply & demand are continuously balanced across different timeframes (see @sec:lit_review-balancing). Furthermore, in jurisdictions that have restructured their electricity industries, balancing practices that were previously administered by a vertically-integrated utility have been adapted into or integrated with market-based mechanisms.
+
+### Conventional balancing practices
     
-### The role of frequency control services
+In the subsections that follow, I describe conventional balancing practices in the order of their timeframe of relevance (i.e. from milliseconds to years, as shown in @fig:power_system_timeframes).
 
-As discussed in [2.4](#sec:scuc_sced){reference-type="ref"
-reference="sec:scuc_sced"}, SCED is executed by vertically-integrated
-utilities and in mandatory pool electricity markets to ensure that
-active power supply and demand is efficiently balanced subject to
-network constraints and system security and reliability requirements.
-Between, and potentially across consecutive SCED processes (dispatch
-intervals) and unit commitment schedules, *frequency control services*
-are used by the system operator to manage both small and large
-instantaneous active power imbalances that may arise due to variability
-and uncertainty.
+#### Frequency control services
 
-### Conventional frequency control scheme and services {#sec:conventional_freq_control}
+*Frequency control services* are used by the SO to contain AC frequency within as narrow a band as possible during normal operation and following *contingency events* (sudden disturbances) [@etoFrequencyControlRequirements2018]. These services are provided by power system resources with 1) the appropriate control system configurations and 2) capacity flexibility in the form of *headroom* (the ability to increase active power output) to respond to an under-frequency event and/or *footroom* (the ability to decrease active power output) to respond to an over-frequency event [@etoUseFrequencyResponse2010]. Whereas vertically-integrated utilities must schedule resources to provide frequency control services, SOs in restructured electricity industries through regulatory and market-based mechanisms (see @sec:fcs-context-procurement).
 
-Power system operators typically employ a hierarchical and sequential
-control scheme to contain AC frequency within as narrow a band as
-possible, particularly during contingency events
-[@Undrill2018; @Ela2011]. This control scheme involves the use of
-generation or load units with reserve capacity that provide frequency
-control services [@Ela2011]. For these units to mitigate power system
-frequency deviations, they must have reserve capacity in the form of
-*headroom* (the ability to increase active power output) to respond to
-an under-frequency event, *footroom* (the ability to decrease active
-power output) to respond to an over-frequency event, or both
-[@Eto2010a]. Under-frequency events are generally of greater concern to
-the system operator (e.g. loss of large generator). The various
-frequency control services differ based on their purpose, activation
-method, response time and control method
-([5](#fig:freq_control){reference-type="ref"
-reference="fig:freq_control"}). In the following subsections, we outline
-frequency control services that are common in many power systems.
+As shown in @fig:freq_control and discussed further in @sec:fcs, the conventional frequency control services described below differ based on their purpose, response time and activation & control methods.
 
-![(a) A trace of power system frequency with corresponding frequency
-control services following a loss-of-generation contingency event. (b)
-The timeframes over which the various frequency control services are
-provided. Source:
-@AustralianEnergyMarketOperator2020l.](source/figures/freq_control-03.png){#fig:freq_control
-width="\\textwidth"}
+![(a) A trace of power system frequency with corresponding frequency control services following a loss-of-generation contingency event. (b) The timeframes over which the various frequency control services are provided. Source: @australianenergymarketoperatorPowerSystemRequirements2020](source/figures/freq_control_timeframes.png){#fig:freq_control}
 
-#### Inertial response
+##### Inertial response
 
-As discussed in [3.3.1](#sec:electromech){reference-type="ref"
-reference="sec:electromech"}, synchronous machines have an inherent
-inertial response to AC frequency deviations that must be considered in
-the frequency control strategy of a power system. For a a given active
-power imbalance, the inertia constant of the synchronous area, $H$,
-determines the magnitude of the initial RoCoF following a contingency
-event (see [\[eq:swing_area\]](#eq:swing_area){reference-type="ref"
-reference="eq:swing_area"}) and the speed at which the power system can
-be returned to the nominal frequency [@Ulbig2014; @Hartmann2019].
+As discussed in @sec:lit_review-balancing_need-frequency, synchronous machines have an *inherent* inertial response to AC frequency deviations that must be considered in the frequency control strategy of a power system. For a a given active power imbalance, the inertia constant of the synchronous area, $H$, determines the magnitude of the initial RoCoF following an imbalance event (see @eq:swing_area) and the speed at which the power system can be returned to the nominal frequency [@ulbigImpactLowRotational2014; @tielensRelevanceInertiaPower2016]. As I briefly discuss in @sec:fcs-ibr-challenges, IBRs, which lack a spinning mass, can provide an inherent response that resembles the inertial response of synchronous machines.
 
-#### Primary frequency control
+##### Primary frequency response
 
-The aim of primary frequency control (PFC) is to arrest the frequency
-deviation through the autonomous response of generators and
-frequency-responsive demand-response to locally-measured frequency
-deviations that exceed a certain control dead-band
-[@Ela2012b; @Wang2003; @AustralianEnergyMarketOperator2019e]. For
-generators, this is achieved through *droop control*, in which a
-deviation from synchronous speed corresponds to a change in the active
-power output of a generator according to its droop characteristic
-([6](#fig:droop){reference-type="ref" reference="fig:droop"}, from A to
-B along $L_0$) [@Eto2018; @Ela2012b]. Droop control is implemented
-through the turbine governors of synchronous generators or the inverter
-control system for IBR [@Undrill2018]. Provided there is a sufficient
-amount of PFC reserve to arrest the system frequency, the speed of PFC
-determines the *frequency zenith* or *frequency nadir*, which are the
-maximum or minimum system frequency, respectively, following an active
-power imbalance event [@Eto2010a]. PFC can be activated in response to
-small (tight dead-band) or contingency (wide dead-band) imbalance events
-and should ideally be sustained until secondary frequency control can
-take over [@Eto2018].
+The aim of primary frequency response (PFR) is to arrest a frequency deviation. This is achieved through resource-level control systems, which provide a response to locally-measured frequency deviations that exceed a certain control dead-band [@wangReviewAGCImplementation2003; @elaAlternativeApproachesIncentivizing2012]. For generators, this is achieved through *droop control*, in which a deviation from synchronous speed corresponds to a change in the active power output of a generator according to its droop characteristic ([@fig:droop], from A to B along $L_0$) . Droop control is implemented through the turbine governors of synchronous generators or the inverter control system for IBRs. Provided there is a sufficient amount of PFR reserve to arrest the system frequency, the speed of PFR determines the *frequency zenith* or *frequency nadir*, which are the maximum or minimum system frequency, respectively, following an active power imbalance event. PFR should ideally be sustained until secondary frequency control can take over [@etoUseFrequencyResponse2010; @etoFrequencyControlRequirements2018; @undrillPrimaryFrequencyResponse2018; @undrillNotesFrequencyControl2019].
 
 #### Secondary frequency control
 
-Secondary frequency control (SFC) replaces PFC and can consist of either
-or both of a synchronous area secondary control system known as an
-*Automatic Generation Control* (AGC) or unit-level load controllers (the
-latter is illustrated in [6](#fig:droop){reference-type="ref"
-reference="fig:droop"}) [@Undrill2018; @Eto2018; @Undrill2019]. The most
-common strategy is for a synchronous area AGC to implement
-proportional-integral control on the Area Control Error (ACE) with a
-tie-line bias [@Machowski2020; @Ela2011]. To minimise ACE and return the
-power system to its nominal frequency, the AGC sends signals to SFC
-units every 4 to 10 seconds to adjust their active power output in
-response to a frequency deviation [@Eto2018]. When used to respond to
-smaller imbalance events, SFC is typically known as *regulation*
-[@Ela2011; @Hewicker2020].
+Secondary frequency control (SFR) replaces PFR and consists of resource-level load controllers and, in most power systems, a control area control system known as *Automatic Generation Control* (AGC) that coordinates resource-level load controllers (the former is illustrated in @fig:droop) [@undrillPrimaryFrequencyResponse2018; @undrillNotesFrequencyControl2019; @etoFrequencyControlRequirements2018]. SOs typically implement AGCs with proportional-integral control on the Area Control Error (ACE) with a tie-line bias [@machowskiPowerSystemDynamics2020]. Under this control configuration, the AGC aims to minimise ACE and return the power system to its nominal frequency by sending signals to SFR-enabled resources to adjust their active power output. When SFR is used to not only respond to imbalance events following contingencies but also during normal operation, it is typically referred to as *regulation* [@elaOperatingReservesVariable2011; @hewickerDimensioningControlReserves2020].
 
 ![Behaviour of a synchronous generator with a turbine governor providing
-PFC and responding to SFC. $L_0$ is the initial droop characteristic.
+PFR and responding to SFR. $L_0$ is the initial droop characteristic.
 The generator is initially operating at point A with an active power
 output of $P_{M0}$. System frequency (and hence the synchronous sped of
 the turbine) decreases from $\omega_0$ to $\omega_1$ and the turbine
 governor responds by moving the turbine along the droop characteristic
 to point B, thus increasing its active power output to $P_{M1}$.
-Following this, SFC changes the reference speed setpoint of the
+Following this, SFR changes the reference speed setpoint of the
 governor, moving the droop characteristic to $L_1$ and returning the
 system to frequency $\omega_0$. Source:
 @Wang2003.](source/figures/droop.png){#fig:droop width="75%"}
 
 #### Tertiary frequency control
 
-Tertiary frequency control (TFC) is intended to replace PFC and SFC. TFC
+Tertiary frequency control (TFR) is intended to replace PFR and SFR. TFR
 is typically used as a margin of safety in systems where relatively
 infrequent unit commitment or rescheduling processes may be required to
 correct an active power imbalance [@Hewicker2020]. Some systems, such as
 the NEM, do not procure TFR and instead rely solely upon a SCED that is
 frequently executed [@Billimoria2020].
 
+##### Ramping products
+
 #### Dispatch and unit commitment
 
+ SCED is executed by vertically-integrated
+utilities and in mandatory pool electricity markets to ensure that
+active power supply and demand is efficiently balanced subject to
+network constraints and system security and reliability requirements.
 In mandatory pool markets, the system operator commits and dispatches
 individual generators (and, in some cases, loads) in the day-ahead and
 real-time markets, respectively, based on economic optimisation
@@ -259,7 +198,8 @@ control services
 It should be noted that these processes are not exclusive to mandatory
 pool markets and could be used by vertically-integrated utilities to
 efficiently schedule resources in the power system [@Grainger1994].
-#### Security-constrained economic dispatch
+#### Scheduling {#sec:lit_review-balancing_practices-scheduling}
+##### Security-constrained economic dispatch
 
 SCED aims to determine the minimum cost operating configuration for
 committed generation such that a short-term forecast or actual demand
@@ -280,7 +220,7 @@ single-platform markets, such as the NEM, market participants manage
 their own unit commitment and SCED is the only market process that
 produces a binding schedule [@AustralianEnergyRegulator2016].
 
-#### Security-constrained unit commitment
+##### Security-constrained unit commitment
 
 The aim of SCUC is to determine the minimum cost subset of generation
 that should be committed (i.e. synchronised and ready to deliver power
@@ -304,7 +244,7 @@ determining whether it is profitable to provide energy (e.g.
 hydroelectric power plants, battery energy storage systems)
 [@Wood2014; @Cadwalader1998ReliabilityPricing].
 
-#### Longer-term scheduling
+##### Longer-term scheduling
 
 ###### Fast frequency response
 
@@ -423,7 +363,7 @@ jurisdictions have considered or created additional frequency control
 services. These include ramping products, which have been implemented in
 some ISO/RTO markets in response to increasing variability and
 uncertainty [@Ela2019; @Ela2017], FFR products to mitigate RoCoF
-[@Ela2019; @Fernandez-Munoz2020] and TFC or operating reserves where
+[@Ela2019; @Fernandez-Munoz2020] and TFR or operating reserves where
 operating reserve margins are a concern to the system operator
 [@EnergySecurityBoard2020].
 
@@ -779,8 +719,8 @@ integrate into existing and emerging market processes if an optimum for
 the entire system is to be achieved [@MacGill2020].
 
 
-## Challenges to good design
-### Inverter-based resources
+## Emerging challenges to balancing
+### Inverter-based variable renewable energy resources
 
 Inverter-based resources (IBR) include variable IBR (solar PV and Type
 III and Type IV wind turbines [@Wu2018]), BESS and high voltage direct
@@ -845,8 +785,11 @@ active power, within the constraints of primary or stored energy, to
 provide what is known as *fast frequency response* (FFR)
 [@Machowski2020; @Hodge2020].
 
-### The role of the SO
-### Grid architectures
+### Designing balancing practices
+#### The benefits and limits of markets
+#### The role of the SO
+#### Tradeoffs/overlap
+#### Grid architectures
 ## Conclusion
 
 Frequency control is vital to the secure operation of a power system.
