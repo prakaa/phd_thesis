@@ -1,6 +1,9 @@
 # Abbreviations and Nomenclature{.unnumbered}
 
 \begin{longtable}[l]{l l}
+\textbf{30MPD} & Thirty-minute pre-dispatch \\
+\textbf{5MPD} & Five-minute pre-dispatch \\
+\textbf{5MS} & Five minute settlement \\
 \textbf{AC} & Alternating Current \\
 \textbf{AEMC} & Australian Energy Market Commission \\ 
 \textbf{AEMO} & Australian Energy Market Operator \\
@@ -14,6 +17,7 @@
 \textbf{DR} & Demand response \\
 \textbf{ENSTO-E} & European Network of Transmission System Operators for Electricity \\
 \textbf{ESB} & Energy Security Board \\
+\textbf{ESR} & Energy storage resource \\
 \textbf{IBR} & Inverter-based resources \\
 \textbf{ISO/RTO} &  Independent System Operator/Regional Transmission Organisation \\
 \textbf{FCS} & Frequency control services \\
@@ -25,6 +29,9 @@
 \textbf{mHz} & Millihertz \\
 \textbf{ISP} & Integrated System Plan \\
 \textbf{LOR} & Lack of reserves \\
+\textbf{MASP} & Market ancillary service provider \\
+\textbf{MILP} & Mixed-integer linear program \\
+\textbf{MP} & Market participant \\
 \textbf{MSL} & Minimum stable level \\
 \textbf{MW} & Megawatts \\
 \textbf{NEM} & National Electricity Market \\
@@ -34,11 +41,13 @@
 \textbf{OCGT} & Open-cycle gas turbine \\
 \textbf{OFGS} & Over-frequency generation shedding \\
 \textbf{PASA} & Projected Assessment of System Adequacy \\
+\textbf{PD} & (30-minute) pre-dispatch \\
 \textbf{PFR} & Primary frequency response \\
 \textbf{PV} & Photovoltaic \\
 \textbf{QLD} & Queensland \\
 \textbf{RERT} & Reliability and Emergency Reserve Trader \\
 \textbf{RoCoF} & Rate of change of frequency \\
+\textbf{RHOC} & Receding horizon optimal control \\
 \textbf{SA} &  South Australia \\
 \textbf{SDP} & Synthetic daily profile \\
 \textbf{SFR} & Secondary frequency response \\
