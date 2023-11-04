@@ -320,7 +320,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        November 3, 2023
+        November 4, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -584,22 +584,28 @@ frequency should be close to the system's nominal value and more-or-less
 uniform across the synchronous area (see
 Section~\ref{sec:lit_review-balancing_need}). A \emph{control area}, on
 the other hand, is a network area in which a particular \emph{system
-operator} (SO) is responsible for operating the power system. Whether
-the term ``power system'' refers to a synchronous area or a control area
-is often dependent on context and the relationship between the two in
-the jurisdiction in question. In eastern and southern Australia, the
-National Electricity Market's (NEM) single control area consists of two
-synchronous areas (see Section~\ref{sec:fcs-nem} for further detail). In
-contrast, other jurisdictions have a single synchronous area composed of
-several electrically-connected control areas demarcated by political
-rather than physical boundaries. For example, continental Europe is a
-single synchronous area consisting of many national or trans-national
-control areas, and the continental United States has three synchronous
-areas (two of which extend into Canada) with over 60 control areas
+operator} (SO) is responsible for operating the power system. In this
+thesis, I use the term \emph{jurisdiction} interchangeably with
+\emph{control area}, with a preference for the former when referring to
+a control area with an associated wholesale electricity market (see
+Section~\ref{sec:lit_review-operational_paradigms}).
+
+Whether the term ``power system'' refers to a synchronous area or a
+control area is often dependent on context and the relationship between
+the two in the jurisdiction in question. In eastern and southern
+Australia, the National Electricity Market's (NEM) single control area
+consists of two synchronous areas (see Section~\ref{sec:fcs-nem} for
+further detail). In contrast, other jurisdictions have a single
+synchronous area composed of several electrically-connected control
+areas demarcated by political rather than physical boundaries. For
+example, continental Europe is a single synchronous area consisting of
+many national or trans-national control areas, and the continental
+United States has three synchronous areas (two of which extend into
+Canada) with over 60 control areas
 (\protect\hyperlink{ref-northamericanelectricreliabilitycorporationNERCInterconnections2023}{North
 American Electric Reliability Corporation, 2023};
 \protect\hyperlink{ref-schittekatteDistributedEnergyResources2022}{Schittekatte
-and Pototschnig, 2022})
+and Pototschnig, 2022}).
 
 \hypertarget{sec:lit_review-operations}{%
 \section{Power system operations}\label{sec:lit_review-operations}}
@@ -641,10 +647,12 @@ most pertinent to active power balancing in operational timeframes, with
 those discussed in detail within this thesis highlighted in bold red
 text.
 
+\blandscape
+
 \begin{figure}
 \hypertarget{fig:power_system_timeframes}{%
 \centering
-\includegraphics{source/figures/power_system_timeframes.pdf}
+\includegraphics[width=1.35\textwidth,height=\textheight]{source/figures/power_system_timeframes.pdf}
 \caption[High-level overview of power system concepts, phenomena and
 processes, services \& markets relevant within operational timeframes]{A
 high-level overview of power system concepts, phenomena and processes,
@@ -665,6 +673,8 @@ in Wilson
 (\protect\hyperlink{ref-wilsonIntroductoryPresentation20202020}{2020}).}\label{fig:power_system_timeframes}
 }
 \end{figure}
+
+\elandscape
 
 \hypertarget{phenomena-in-operational-timeframes}{%
 \subsection{Phenomena in operational
@@ -1065,7 +1075,8 @@ et al., 2005}).
 \includegraphics{source/figures/market_models.png}
 \caption{Commercial arrangements in central and self-dispatch
 electricity markets. Reproduced from Barroso et al.
-(\protect\hyperlink{ref-barrosoClassificationElectricityMarket2005}{2005}).}\label{fig:market_models}
+(\protect\hyperlink{ref-barrosoClassificationElectricityMarket2005}{2005}).
+TODO: Fix up figure.}\label{fig:market_models}
 }
 \end{figure}
 
@@ -1101,9 +1112,10 @@ timeframes}\label{sec:lit_review-balancing_practices}}
 
 SOs employ \emph{balancing practices} in operational timeframes (which
 include the processes, services \& markets shown in
-Figure~\ref{fig:power_system_timeframes}) to address variability \&
-uncertainty and thus maintain power system security \& reliability.
-Though the particularities of these practices vary between
+Figure~\ref{fig:power_system_timeframes}) for the purpose of obtaining
+\emph{balancing flexibility} to address variability \& uncertainty
+(\protect\hyperlink{ref-heggartyQuantifyingPowerSystem2020}{Heggarty et
+al., 2020}). Though the particularities of these practices vary between
 jurisdictions, they are almost always organised in a hierarchical and
 sequential fashion to ensure that active power supply \& demand are
 continuously balanced across different timeframes (see
@@ -1129,12 +1141,15 @@ services}\label{frequency-control-services}}
 frequency within as narrow a band as possible during normal operation
 and following \emph{contingency events} (sudden disturbances)
 (\protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto et al.,
-2018}). These services are provided by power system resources with 1)
-the appropriate control system configurations and 2) capacity
-flexibility in the form of \emph{headroom} (the ability to increase
-active power output) to respond to an under-frequency event and/or
-\emph{footroom} (the ability to decrease active power output) to respond
-to an over-frequency event
+2018}). With the exception of inertial response from synchronous
+machines
+(Section~\ref{sec:lit_review-balancing_practices-inertial_response}),
+these services are provided by power system resources with 1) the
+appropriate control system configurations and 2) capacity flexibility in
+the form of \emph{headroom} (the ability to increase active power
+output) to respond to an under-frequency event and/or \emph{footroom}
+(the ability to decrease active power output) to respond to an
+over-frequency event
 (\protect\hyperlink{ref-etoUseFrequencyResponse2010}{Eto et al., 2010}).
 Whereas vertically-integrated utilities must schedule resources to
 provide frequency control services, SOs in restructured electricity
@@ -1158,8 +1173,9 @@ services are provided. Source: Australian Energy Market Operator
 }
 \end{figure}
 
-\hypertarget{inertial-response}{%
-\paragraph{Inertial response}\label{inertial-response}}
+\hypertarget{sec:lit_review-balancing_practices-inertial_response}{%
+\paragraph{Inertial
+response}\label{sec:lit_review-balancing_practices-inertial_response}}
 
 As discussed in Section~\ref{sec:lit_review-balancing_need-frequency},
 synchronous machines have an \emph{inherent} inertial response to AC
@@ -1181,9 +1197,9 @@ resembles the inertial response of synchronous machines.
 response}\label{primary-frequency-response}}
 
 The aim of primary frequency response (PFR) is to arrest a frequency
-deviation. This is achieved through resource-level control systems,
-which provide a response to locally-measured frequency deviations that
-exceed a certain control dead-band
+deviation. PFR is implemented in resource-level control systems such
+that each enabled resource provides a response to locally-measured
+frequency deviations that exceed a certain control dead-band
 (\protect\hyperlink{ref-elaAlternativeApproachesIncentivizing2012}{Ela
 et al., 2012b};
 \protect\hyperlink{ref-wangReviewAGCImplementation2003}{Wang and
@@ -1191,61 +1207,78 @@ Hiskens, 2003}). For generators, this is achieved through \emph{droop
 control}, in which a deviation from synchronous speed corresponds to a
 change in the active power output of a generator according to its droop
 characteristic (Figure~\ref{fig:droop}, from A to B along \(L_0\)) .
-Droop control is implemented through the turbine governors of
-synchronous generators or the inverter control system for IBRs. Provided
-there is a sufficient amount of PFR reserve to arrest the system
-frequency, the speed of PFR determines the \emph{frequency zenith} or
-\emph{frequency nadir}, which are the maximum or minimum system
-frequency, respectively, following an active power imbalance event. PFR
-should ideally be sustained until secondary frequency control can take
-over (\protect\hyperlink{ref-etoUseFrequencyResponse2010}{Eto et al.,
-2010}; \protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto
-et al., 2018};
-\protect\hyperlink{ref-undrillNotesFrequencyControl2019}{Undrill, 2019},
+Droop control is implemented in the turbine governors of synchronous
+generators and the inverter control systems of IBRs
+(\protect\hyperlink{ref-fernandez-guillamonPowerSystemsHigh2019}{Fernández-Guillamón
+et al., 2019};
+\protect\hyperlink{ref-linResearchRoadmapGridForming2020}{Lin et al.,
+2020}). Provided there is a sufficient amount of PFR reserve to arrest
+the system frequency, the frequency \emph{zenith}/\emph{nadir}
+(maximum/minimum system frequency following an active power imbalance
+event) is determined by the size of the imbalance event, the inertia
+constant of the synchronous area, the droop characteristics of power
+system resources and the speed of PFR
+(\protect\hyperlink{ref-nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020}{NERC
+Inverter-Based Resource Performance Task Force, 2020}). PFR should
+ideally be sustained until secondary frequency control can take over
+(\protect\hyperlink{ref-etoUseFrequencyResponse2010}{Eto et al., 2010};
+\protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto et al.,
+2018}; \protect\hyperlink{ref-undrillNotesFrequencyControl2019}{Undrill,
+2019},
 \protect\hyperlink{ref-undrillPrimaryFrequencyResponse2018}{2018}).
 
 \hypertarget{secondary-frequency-control}{%
 \subsubsection{Secondary frequency
 control}\label{secondary-frequency-control}}
 
-Secondary frequency control (SFR) replaces PFR and consists of
-resource-level load controllers and, in most power systems, a control
-area control system known as \emph{Automatic Generation Control} (AGC)
-that coordinates resource-level load controllers (the former is
-illustrated in Figure~\ref{fig:droop})
+Secondary frequency response (SFR) is designed to take over from and
+``relieve'' fast-acting PFR. SFR is implemented in resource-level load
+controllers, which can
 (\protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto et al.,
 2018}; \protect\hyperlink{ref-undrillNotesFrequencyControl2019}{Undrill,
-2019},
-\protect\hyperlink{ref-undrillPrimaryFrequencyResponse2018}{2018}). SOs
-typically implement AGCs with proportional-integral control on the Area
-Control Error (ACE) with a tie-line bias
-(\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{Machowski et
-al., 2020}). Under this control configuration, the AGC aims to minimise
-ACE and return the power system to its nominal frequency by sending
-signals to SFR-enabled resources to adjust their active power output.
-When SFR is used to not only respond to imbalance events following
-contingencies but also during normal operation, it is typically referred
-to as \emph{regulation}
-(\protect\hyperlink{ref-elaOperatingReservesVariable2011}{Ela et al.,
-2011};
-\protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
-et al., 2020}).
+2019}).:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Be pre-configured to respond (including sustaining already-delivered
+  PFR) following a frequency deviation through a \emph{frequency bias}
+  setting (as shown in Figure~\ref{fig:droop}); or
+\item
+  Receive control signals from \emph{Automatic Generation Control}
+  (AGC), a control system used by the SO to coordinate SFR across the
+  control area. The AGC aims to minimise Area Control Error (ACE)
+  subject to a tie-line bias, and thus return the power system to its
+  nominal frequency, by communicating with enabled resources to make
+  them adjust their active power output
+  (\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{Machowski et
+  al., 2020}). The service provided by these enabled resources is
+  referred to as \emph{regulation} in many jurisdictions
+  (\protect\hyperlink{ref-elaOperatingReservesVariable2011}{Ela et al.,
+  2011};
+  \protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
+  et al., 2020}).
+\end{enumerate}
 
 \begin{figure}
 \hypertarget{fig:droop}{%
 \centering
 \includegraphics[width=0.75\textwidth,height=\textheight]{source/figures/droop.png}
-\caption{Behaviour of a synchronous generator with a turbine governor
-providing PFR and responding to SFR. \(L_0\) is the initial droop
-characteristic. The generator is initially operating at point A with an
-active power output of \(P_{M0}\). System frequency (and hence the
-synchronous sped of the turbine) decreases from \(\omega_0\) to
-\(\omega_1\) and the turbine governor responds by moving the turbine
-along the droop characteristic to point B, thus increasing its active
-power output to \(P_{M1}\). Following this, SFR changes the reference
-speed setpoint of the governor, moving the droop characteristic to
-\(L_1\) and returning the system to frequency \(\omega_0\). Source:
-(\protect\hyperlink{ref-Wang2003}{\textbf{Wang2003?}}).}\label{fig:droop}
+\caption{Behaviour of a synchronous generator providing PFR and SFR in
+an isolated system. \(L_0\) is the initial droop characteristic of the
+turbine governor. The generator is initially operating at point A with
+an active power output of \(P_{M0}\). Following an imbalance event,
+system frequency (and hence the synchronous speed of the turbine)
+decreases from \(\omega_0\) to \(\omega_1\). The turbine governor then
+responds by moving the turbine along the droop characteristic to point
+B, thus increasing the generator's active power output to \(P_{M1}\).
+This constitutes the provision of PFR. Following this, the generator
+load controller changes the reference speed setpoint of the governor and
+thus shifts the droop characteristic to \(L_1\). This subsequent control
+action sustains PFR and returns the system to frequency \(\omega_0\).
+This constitutes the provision of SFR. Source: Wang and Hiskens
+(\protect\hyperlink{ref-wangReviewAGCImplementation2003}{2003}).}\label{fig:droop}
 }
 \end{figure}
 
@@ -1253,21 +1286,33 @@ speed setpoint of the governor, moving the droop characteristic to
 \subsubsection{Tertiary frequency
 control}\label{tertiary-frequency-control}}
 
-Tertiary frequency control (TFR) is intended to replace PFR and SFR. TFR
-is typically used as a margin of safety in systems where relatively
-infrequent unit commitment or rescheduling processes may be required to
-correct an active power imbalance
-(\protect\hyperlink{ref-Hewicker2020}{\textbf{Hewicker2020?}}). Some
-systems, such as the NEM, do not procure TFR and instead rely solely
-upon a SCED that is frequently executed
-(\protect\hyperlink{ref-Billimoria2020}{\textbf{Billimoria2020?}}).
+In power systems where scheduling processes are infrequently run
+(e.g.~vertically-integrated utilities that historically produced hourly
+schedules) or in which a ``safety margin'' is desired to address active
+power imbalances that endure over multiple scheduling intervals,
+tertiary frequency response (TFR) is deployed to relieve PFR \& SFR
+(\protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
+et al., 2020}). Some jurisdictions, such as those operated by the
+California and Midcontinent ISOs, have introduced \emph{ramping
+reserves}, which are essentially a form of TFR intended to address
+increased variability and uncertainty in ramping timeframes (minutes to
+hours) due to growing penetrations of VRE
+(\protect\hyperlink{ref-elaElectricityMarketsRenewables2017}{Ela et al.,
+2017}; \protect\hyperlink{ref-elaWholesaleElectricityMarket2016}{Ela et
+al., 2016}). Others, such as the Australian NEM, rely on flexibility
+obtained through frequent scheduling processes (though implementing an
+\emph{operating reserve} service --- a form of ramping TFR --- had
+recently been proposed; see Section~\ref{sec:reserves-orcontext} )
+(\protect\hyperlink{ref-australianenergymarketoperatorPowerSystemRequirements2020}{Australian
+Energy Market Operator, 2020b};
+\protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et al.,
+2015}).
 
-\hypertarget{ramping-products}{%
-\paragraph{Ramping products}\label{ramping-products}}
+\hypertarget{sec:lit_review-balancing_practices-scheduling}{%
+\subsubsection{Scheduling}\label{sec:lit_review-balancing_practices-scheduling}}
 
-\hypertarget{dispatch-and-unit-commitment}{%
-\subsubsection{Dispatch and unit
-commitment}\label{dispatch-and-unit-commitment}}
+\hypertarget{dispatch}{%
+\paragraph{Dispatch}\label{dispatch}}
 
 SCED is executed by vertically-integrated utilities and in mandatory
 pool electricity markets to ensure that active power supply and demand
@@ -1286,9 +1331,7 @@ co-optimise the provision of energy and frequency control services
 It should be noted that these processes are not exclusive to mandatory
 pool markets and could be used by vertically-integrated utilities to
 efficiently schedule resources in the power system
-(\protect\hyperlink{ref-Grainger1994}{\textbf{Grainger1994?}}). \#\#\#\#
-Scheduling \{\#sec:lit\_review-balancing\_practices-scheduling\}
-\#\#\#\#\# Security-constrained economic dispatch
+(\protect\hyperlink{ref-Grainger1994}{\textbf{Grainger1994?}}).
 
 SCED aims to determine the minimum cost operating configuration for
 committed generation such that a short-term forecast or actual demand
@@ -1315,10 +1358,10 @@ In single-platform markets, such as the NEM, market participants manage
 their own unit commitment and SCED is the only market process that
 produces a binding schedule
 (\protect\hyperlink{ref-AustralianEnergyRegulator2016}{\textbf{AustralianEnergyRegulator2016?}}).
+\#\#\#\#\#\# Multi-period
 
-\hypertarget{security-constrained-unit-commitment}{%
-\paragraph{Security-constrained unit
-commitment}\label{security-constrained-unit-commitment}}
+\hypertarget{unit-commitment}{%
+\paragraph{Unit commitment}\label{unit-commitment}}
 
 The aim of SCUC is to determine the minimum cost subset of generation
 that should be committed (i.e.~synchronised and ready to deliver power
@@ -2075,14 +2118,11 @@ markets}\label{the-benefits-and-limits-of-markets}}
 \hypertarget{the-role-of-the-so}{%
 \subsubsection{The role of the SO}\label{the-role-of-the-so}}
 
-\hypertarget{tradeoffsoverlap}{%
-\subsubsection{Tradeoffs/overlap}\label{tradeoffsoverlap}}
+\hypertarget{design-in-a-world-of-second-best}{%
+\subsubsection{Design in a world of
+``second-best''}\label{design-in-a-world-of-second-best}}
 
-\hypertarget{grid-architectures}{%
-\subsubsection{Grid architectures}\label{grid-architectures}}
-
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+Tradeoffs/overlap \#\#\#\#\# Grid architectures \#\# Conclusion
 
 Frequency control is vital to the secure operation of a power system.
 The inherent characteristics and control systems of IBR differ from
@@ -3907,8 +3947,8 @@ Security Board, 2020b}). However, the shape of these system demand
 curves and how they account for interdependent or interchangeable FCAS
 will ultimately dictate their success.
 
-\hypertarget{conclusion-1}{%
-\section{Conclusion}\label{conclusion-1}}
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
 Whilst recent years have seen increasing participation from demand
 response and IBR, energy transition and a pervasive competition norm
@@ -4007,8 +4047,8 @@ operational practices can be augmented to elicit upwards flexibility
 provision, and that duration specifications and sustained footroom
 procurement be considered for reserve products.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\hypertarget{sec:reserves-intro}{%
+\section{Introduction}\label{sec:reserves-intro}}
 
 The reliable and secure operation of power systems is contingent upon
 locational and temporal balancing of active power supply and demand. As
@@ -8929,6 +8969,13 @@ Alternative {Approaches} for {Incentivizing} the {Frequency Responsive
 Reserve Ancillary Service}. Electricity Journal 25, 88--102.
 \url{https://doi.org/10.1016/j.tej.2012.04.015}
 
+\leavevmode\vadjust pre{\hypertarget{ref-elaElectricityMarketsRenewables2017}{}}%
+Ela, E., Wang, C., Moorty, S., Ragsdale, K., O'Sullivan, J., Rothleder,
+M., Hobbs, B., 2017. Electricity {Markets} and {Renewables}: {A Survey}
+of {Potential Design Changes} and {Their Consequences}. IEEE Power and
+Energy Magazine 15, 70--82.
+\url{https://doi.org/10.1109/mpe.2017.2730827}
+
 \leavevmode\vadjust pre{\hypertarget{ref-electranettransgridProjectEnergyConnect}{}}%
 ElectraNet, Transgrid, n.d. Project {EnergyConnect} {[}WWW Document{]}.
 URL \url{https://www.projectenergyconnect.com.au/index.html} (accessed
@@ -9023,6 +9070,13 @@ Federal Energy Regulatory Commission, 2018b.
 \href{https://www.ferc.gov/media/order-no-841}{Order {No}. 841:
 {Electric Storage Participation} in {Markets Operated} by {Regional
 Transmission Organizations} and {Independent System Operators}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fernandez-guillamonPowerSystemsHigh2019}{}}%
+Fernández-Guillamón, A., Gómez-Lázaro, E., Muljadi, E., Molina-García,
+Á., 2019. Power systems with high renewable energy sources: {A} review
+of inertia and frequency control strategies over time. Renewable and
+Sustainable Energy Reviews 115, 109369.
+\url{https://doi.org/10.1016/j.rser.2019.109369}
 
 \leavevmode\vadjust pre{\hypertarget{ref-fernandez-munozFastFrequencyControl2020}{}}%
 Fernández-Muñoz, D., Pérez-Díaz, J.I., Guisández, I., Chazarra, M.,
@@ -9380,6 +9434,11 @@ B.-M., Hummon, M., Stark, G., King, J., Lefton, S.A., Kumar, N., Agan,
 D., Jordan, G., Venkataraman, S., 2013. The {Western Wind} and {Solar
 Integration Study Phase} 2 (No. NREL/TP--5500-55588, 1220243).
 \url{https://doi.org/10.2172/1220243}
+
+\leavevmode\vadjust pre{\hypertarget{ref-linResearchRoadmapGridForming2020}{}}%
+Lin, Y., Eto, J., Johnson, B., Flicker, J., Lasseter, R., Pico, H., Seo,
+G., Pierre, B., Ellis, A., Krishnaswami, H., Miller, J., Yuan, G., 2020.
+Research {Roadmap} on {Grid-Forming Inverters}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-littlechildHayekTexasBlackout2021}{}}%
 Littlechild, S., Kiesling, L., 2021. Hayek and the {Texas} blackout. The
