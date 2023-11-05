@@ -34,7 +34,7 @@ In broad terms, *operating* a power system involves the direction or control of 
 Noting that planning & investment have a large bearing on the manner in which a power system is operated (and vice versa), [@fig:power_system_timeframes] presents a high-level overview of power system phenomena and processes, services & markets that are most pertinent to active power balancing in operational timeframes, with those discussed in detail within this thesis highlighted in bold red text.
 
 \blandscape
-![A high-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes (bounded by the red dashed box). All non-faded text in the bottom section indicates a process, service and/or market related to active power balancing. All bold red text in the bottom section indicates a process, service and/or market related to active power balancing that is discussed in detail in this thesis. Timeframes, phenomena and stability categories were adapted from @machowskiPowerSystemDynamics2020, @hatziargyriouDefinitionClassificationPower2021 and @matevosyanFutureInverterBasedResources2021. The figure concept and layout was inspired by a similar figure presented in @wilsonIntroductoryPresentation20202020.](source/figures/power_system_timeframes.pdf){#fig:power_system_timeframes short-caption="High-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes" width="135%"}
+![A high-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes (bounded by the red dashed box). All non-faded text in the bottom section indicates a process, service and/or market related to active power balancing. All bold red text in the bottom section indicates a process, service and/or market related to active power balancing that is discussed in detail in this thesis. Processes, services & markets bounded by the blue dashed box occur within scheduling timeframes. Phenomena & stability categories, and their timeframes of relevance, are based on those discussed in @machowskiPowerSystemDynamics2020, @hatziargyriouDefinitionClassificationPower2021 and @matevosyanFutureInverterBasedResources2021. The figure concept and layout was inspired by a similar figure presented in @wilsonIntroductoryPresentation20202020.](source/figures/power_system_timeframes.pdf){#fig:power_system_timeframes short-caption="High-level overview of power system concepts, phenomena and processes, services & markets relevant within operational timeframes" width="135%"}
 
 \elandscape
     
@@ -92,7 +92,7 @@ Threats to active power balance can be broadly categorised as either power syste
 
 ##### Power system variability
 
-Power system variability refers to **expected** or forecasted changes to active power supply and/or demand. Sources of variability include fluctuations in load, oscillatory active power output from synchronous generators, ramping solar PV generation during sunrise & sunset and ramping wind generation as wind speeds change [@elaOperatingReservesVariable2011; @australianenergymarketoperatorRenewableIntegrationStudy2020; @bloomItIndisputableFive2017].
+Power system variability refers to **expected** or forecasted changes to active power supply and/or demand. Sources of variability include fluctuations in load, oscillatory active power output from synchronous generators and VRE generation *ramping* (i.e. a sustained increase or decrease in active power output), which includes changes in solar PV generation during sunrise & sunset and in wind generation with wind speed variations [@elaOperatingReservesVariable2011; @australianenergymarketoperatorRenewableIntegrationStudy2020; @bloomItIndisputableFive2017].
 
 ##### Power system uncertainty
 
@@ -104,7 +104,7 @@ Given the need for at least some degree of balancing coordination in a power sys
 
 #### Vertically-integrated utility
 
-Under this paradigm, a single company (either state-owned or privately-owned but regulated) owns, operates & invests in generation, transmission & distribution infrastructure, as well as being responsible for the retail of electricity to the end-user. This was the sole operational paradigm prior to the 1980s. Having a single owner and operator of power system resources reduces complexity, eliminates transaction costs and enables economies of scale in both asset investment (particularly generation infrastructure) and operation  [@sioshansiElectricityMarketReform2006]. These benefits are accentuated by sustained load growth, which advanced economies experienced in the 20^th^ century and many emerging economies are still experiencing, from increasing access to electricity, industrialisation and electrification [@roquesAdaptingElectricityMarkets2017; @hoganElectricityMarketStructure2008].
+Under this paradigm, a single company (either state-owned or privately-owned but regulated) owns, operates & invests in generation, transmission & distribution infrastructure, as well as being responsible for the retail of electricity to the end-user. This was the sole operational paradigm prior to the 1980s. Having a single owner and operator of power system resources reduces complexity, eliminates transaction costs and enables economies of scale in both asset investment (particularly generation infrastructure) and operation  [@sioshansiElectricityMarketReform2006]. These benefits are accentuated by industrialisation and electrification driving sustained load growth, which occurred in advanced economies in the 20^th^ century and which many emerging economies continue to experience [@roquesAdaptingElectricityMarkets2017; @hoganElectricityMarketStructure2008].
 
 #### Wholesale electricity markets
 
@@ -120,7 +120,7 @@ Much like unbundling, the design and implementation of wholesale electricity mar
 
 [^2]: I note that my descriptions of central and self-dispatch electricity markets differ slightly to those of @ahlqvistSurveyComparingCentralized2022, who focus on the level of centralisation in day-ahead timeframes. They categorise the Australian NEM as a decentralised market as participants manage self-commitment; however, the SO still produces resource-specific production & consumption targets through a central dispatch process that constitutes the real-time market. Refer to TODO: (Ref to information context) for more detail.
 
-1.  *Central dispatch* markets, where decisions regarding *dispatch* (real-time production or consumption targets) and, in some cases, *unit commitment* (i.e. whether a resource should be online or offline) are made by the SO. System & market operations are often *integrated* (i.e. the SO is also the market operator) in central dispatch markets through the creation of a *mandatory power pool*, in which offers to generate are aggregated into a single supply curve and are cleared against a demand forecast (one-sided pool) or against an aggregated demand curve constructed from potential buyers (two-sided pool) [@barrosoClassificationElectricityMarket2005]. In these markets, locational marginal prices for energy and *ancillary services* (services procured for security and reliability reasons) are produced by centralised optimisation processes run by the SO that consider the physical constraints of the transmission system. As outlined in @sec:fcs-NA, this market model has been adopted in Independent System Operator/Regional Transmission Operator (ISO/RTO) markets in North America and, as I discuss in TODO: (Ref to information context), the Australian NEM has many features of a central dispatch market.
+1.  *Central dispatch* markets, where decisions regarding *dispatch* and, in some cases, *unit commitment* (see [@sec:lit_review-balancing_practices-scheduling]) are made by the SO. System & market operations are often *integrated* (i.e. the SO is also the market operator) in central dispatch markets through the creation of a *mandatory power pool*, in which supply offers are aggregated and cleared against a demand forecast (one-sided pool) or against an aggregated demand curve constructed from potential buyers (two-sided pool) [@barrosoClassificationElectricityMarket2005]. In these markets, locational marginal prices for energy and *ancillary services* (services procured for to maintain security and reliability) are produced by centralised optimisation processes run by the SO that consider the physical constraints of the transmission system. As outlined in @sec:fcs-NA, this market model has been adopted in Independent System Operator/Regional Transmission Operator (ISO/RTO) markets in North America and, as I discuss in TODO: (Ref to information context), the Australian NEM has many features of a central dispatch market.
 
 2.  Decentralised or *self-dispatch* markets, where decisions regarding dispatch and unit commitment are made by market participants and in which system & market operations are more decoupled. These types of markets facilitate trade through *bilateral contracts* that enable suppliers to enter into contracts with buyers either directly or through intermediaries. Whilst scheduling and dispatch is managed by market participants, intended energy schedules (i.e. net contract positions) are submitted by market participants ahead of time to the SO. The SO is responsible for taking *redispatch* actions to ensure that transmission constraints are not violated, and for determining the requirement for and procuring *balancing services* (another name for frequency control services, which I discuss in greater detail in TODO:ref) that maintain system balance following market gate closure. As outlined in @sec:fcs-EU, this is the dominant market model in Europe.
 
@@ -128,7 +128,7 @@ Much like unbundling, the design and implementation of wholesale electricity mar
 
 ![Commercial arrangements in central and self-dispatch electricity markets. Reproduced from @barrosoClassificationElectricityMarket2005. TODO: Fix up figure.](source/figures/market_models.png){#fig:market_models}
 
-##### Market platforms
+##### Market platforms {#lit_review-operational_paradigms-markets-platforms}
 
 Power system resource inflexibilities and the desire for physical & financial risk management mechanisms in operational timeframes have led market designers in many jurisdictions to implement electricity markets with multiple market *platforms* [@energysecurityboardSystemServicesAhead2020; @isemongerBenefitsRisksVirtual2006]. Platforms are formal sub-markets for energy (and sometimes ancillary services) that are settled at different times (mostly *ahead* of the delivery of electricity and/or ancillary services). The number of platforms implemented in a particular market is often related to its market model. Self-dispatch markets can maximise trade and better enable market participants to balance their positions by implementing multiple market platforms (typically *day-ahead* and several *intra-day*), whereas the number of platforms in central dispatch markets (typically *real-time* and in most cases, *day-ahead*) is limited by the computational complexity of the optimisation algorithm(s) used by the SO to clear the market [@ahlqvistCentralSelfDispatchElectricity2018]. I discuss the market platforms implemented in European markets in TODO:ref, North American ISO/RTO markets in TODO:ref and in the Australian NEM in TODO:ref-reserves.
 
@@ -142,7 +142,7 @@ In the subsections that follow, I describe conventional balancing practices in t
 
 #### Frequency control services
 
-*Frequency control services* are used by the SO to contain AC frequency within as narrow a band as possible during normal operation and following *contingency events* (sudden disturbances) [@etoFrequencyControlRequirements2018]. With the exception of inertial response from synchronous machines ([@sec:lit_review-balancing_practices-inertial_response]), these services are provided by power system resources with 1) the appropriate control system configurations and 2) capacity flexibility in the form of *headroom* (the ability to increase active power output) to respond to an under-frequency event and/or *footroom* (the ability to decrease active power output) to respond to an over-frequency event [@etoUseFrequencyResponse2010]. Whereas vertically-integrated utilities must schedule resources to provide frequency control services, SOs in restructured electricity industries through regulatory and market-based mechanisms (see @sec:fcs-context-procurement).
+*Frequency control services* (leftmost section of the processes, services & markets shown in @fig:power_system_timeframes) are used by the SO to contain AC frequency within as narrow a band as possible during normal operation and following *contingency events* (sudden disturbances) [@etoFrequencyControlRequirements2018]. With the exception of inertial response from synchronous machines ([@sec:lit_review-balancing_practices-inertial_response]), these services are provided by power system resources with 1) the appropriate control system configurations and 2) capacity flexibility in the form of *headroom* (the ability to increase active power output) to respond to an under-frequency event and/or *footroom* (the ability to decrease active power output) to respond to an over-frequency event [@etoUseFrequencyResponse2010]. Whereas vertically-integrated utilities must schedule resources to provide frequency control services, SOs in restructured electricity industries through regulatory and market-based mechanisms (see @sec:fcs-context-procurement).
 
 As shown in @fig:freq_control and discussed further in @sec:fcs, the conventional frequency control services described below differ based on their purpose, response time and activation & control methods.
 
@@ -150,11 +150,19 @@ As shown in @fig:freq_control and discussed further in @sec:fcs, the conventiona
 
 ##### Inertial response {#sec:lit_review-balancing_practices-inertial_response}
 
-As discussed in @sec:lit_review-balancing_need-frequency, synchronous machines have an *inherent* inertial response to AC frequency deviations that must be considered in the frequency control strategy of a power system. For a a given active power imbalance, the inertia constant of the synchronous area, $H$, determines the magnitude of the initial RoCoF following an imbalance event (see @eq:swing_area) and the speed at which the power system can be returned to the nominal frequency [@ulbigImpactLowRotational2014; @tielensRelevanceInertiaPower2016]. As I briefly discuss in @sec:fcs-ibr-challenges, IBRs, which lack a spinning mass, can provide an inherent response that resembles the inertial response of synchronous machines.
+As discussed in @sec:lit_review-balancing_need-frequency, synchronous machines have an *inherent* inertial response to AC frequency deviations that must be considered in the frequency control strategy of a power system. For a given active power imbalance, the inertia constant of the synchronous area, $H$, determines the magnitude of the initial RoCoF following an imbalance event (see @eq:swing_area) and the speed at which the power system can be returned to the nominal frequency [@ulbigImpactLowRotational2014; @tielensRelevanceInertiaPower2016].
 
-##### Primary frequency response
+###### Fast frequency response
 
-The aim of primary frequency response (PFR) is to arrest a frequency deviation. PFR is implemented in  resource-level control systems such that each enabled resource provides a response to locally-measured frequency deviations that exceed a certain control dead-band [@wangReviewAGCImplementation2003; @elaAlternativeApproachesIncentivizing2012]. For generators, this is achieved through *droop control*, in which a deviation from synchronous speed corresponds to a change in the active power output of a generator according to its droop characteristic ([@fig:droop], from A to B along $L_0$) . Droop control is implemented in the turbine governors of synchronous generators and the inverter control systems of IBRs [@fernandez-guillamonPowerSystemsHigh2019; @linResearchRoadmapGridForming2020]. Provided there is a sufficient amount of PFR reserve to arrest the system frequency, the frequency *zenith*/*nadir* (maximum/minimum system frequency following an active power imbalance event) is determined by the size of the imbalance event, the inertia constant of the synchronous area, the droop characteristics of power system resources and the speed of PFR [@nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020]. PFR should ideally be sustained until secondary frequency control can take over [@etoUseFrequencyResponse2010; @etoFrequencyControlRequirements2018; @undrillPrimaryFrequencyResponse2018; @undrillNotesFrequencyControl2019].
+IBRs and loads on frequency-responsive relays can provide what is typically known as *fast frequency response* (FFR). The most widely discussed use-case for FFR is the mitigation of high RoCoFs (i.e. response delivery within a matter of milliseconds to a few seconds) following contingency events [@millerTechnologyCapabilitiesFast2017; @australianenergymarketoperatorFastFrequencyResponse2017]. In the electricity industry to date, the term FFR has been used rather loosely to refer to three distinct control configurations (I discuss this further in @sec-ibr-challenges):
+
+1. An **inherent** response delivered by IBRs that, though they lack a spinning mass, resembles the inertial response of synchronous machines (sometimes referred to as *virtual inertia*) [@linResearchRoadmapGridForming2020];
+2. A **controlled** response delivered by wind generation in which kinetic energy is extracted from a wind turbine rotor to rapidly inject active power (sometimes referred to as *synthetic inertia* or *inertia-based FFR*) [@erikssonSyntheticInertiaFast2018; @nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020];
+3. A **controlled and sustained** response delivered by IBRs & frequency-responsive loads that is more-or-less a faster version of primary frequency response ([@sec:lit_review-balancing_practices-pfr]) [@dreidyInertiaResponseFrequency2017; @fernandez-guillamonPowerSystemsHigh2019; @nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020].
+
+##### Primary frequency response {#sec:lit_review-balancing_practices-pfr}
+
+The aim of primary frequency response (PFR) is to arrest a frequency deviation. PFR is implemented in  resource-level control systems such that each enabled resource provides a response to locally-measured frequency deviations that exceed a certain control dead-band [@wangReviewAGCImplementation2003; @elaAlternativeApproachesIncentivizing2012]. For generators, this is achieved through *droop control*, in which a deviation from synchronous speed corresponds to a change in the active power output of a generator according to its droop characteristic ([@fig:droop], from A to B along $L_0$) . Droop control is implemented in the turbine governors of synchronous generators and the inverter control systems of IBRs [@fernandez-guillamonPowerSystemsHigh2019; @linResearchRoadmapGridForming2020]. Provided there is a sufficient amount of PFR reserve to arrest the system frequency, the frequency *zenith*/*nadir* (maximum/minimum system frequency following an active power imbalance event) is determined by the size of the imbalance event, the inertia constant of the synchronous area, the droop characteristics of power system resources and the speed of PFR [@nercinverter-basedresourceperformancetaskforceFastFrequencyResponse2020]. PFR should ideally be sustained until secondary frequency control can take over (i.e. several to tens of seconds) [@etoUseFrequencyResponse2010; @etoFrequencyControlRequirements2018; @undrillPrimaryFrequencyResponse2018; @undrillNotesFrequencyControl2019].
 
 #### Secondary frequency control
 
@@ -167,104 +175,27 @@ Secondary frequency response (SFR) is designed to take over from and "relieve" f
 
 #### Tertiary frequency control
 
-In power systems where scheduling processes are infrequently run (e.g. vertically-integrated utilities that historically produced hourly schedules) or in which a "safety margin" is desired to address active power imbalances that endure over multiple scheduling intervals, tertiary frequency response (TFR) is deployed to relieve PFR & SFR [@hewickerDimensioningControlReserves2020]. Some jurisdictions, such as those operated by the California and Midcontinent ISOs, have introduced *ramping reserves*, which are essentially a form of TFR intended to address increased variability and uncertainty in ramping timeframes (minutes to hours) due to growing penetrations of VRE [@elaWholesaleElectricityMarket2016; @elaElectricityMarketsRenewables2017]. Others, such as the Australian NEM, rely on flexibility obtained through frequent scheduling processes (though implementing an *operating reserve* service — a form of ramping TFR —  had recently been proposed; see @sec:reserves-orcontext) [@australianenergymarketoperatorPowerSystemRequirements2020; @rieszFrequencyControlAncillary2015].
+In power systems where scheduling processes are infrequently run (e.g. vertically-integrated utilities that historically produced hourly schedules) or in which a "safety margin" is desired to address active power imbalances that endure over multiple scheduling intervals, tertiary frequency response (TFR) is deployed to relieve PFR & SFR [@hewickerDimensioningControlReserves2020]. Some jurisdictions, such as those operated by the California and Midcontinent ISOs, have introduced *ramping reserves*, which are essentially a form of TFR intended to address increased variability and uncertainty across dispatch intervals (i.e. several minutes to an hour) due to growing penetrations of VRE [@elaWholesaleElectricityMarket2016; @elaElectricityMarketsRenewables2017]. Others, such as the Australian NEM, rely on flexibility obtained through frequent scheduling processes (though the implementation of an *operating reserve* service — a form of ramping TFR —  had been proposed; see @sec:reserves-orcontext) [@australianenergymarketoperatorPowerSystemRequirements2020; @rieszFrequencyControlAncillary2015].
 
 #### Scheduling {#sec:lit_review-balancing_practices-scheduling}
 
+The purpose of *scheduling* is to produce efficient (or *economic*) generation and consumption schedules ahead of delivery based on expected power system conditions (typically non-scheduled demand and VRE generation forecasts). I divide the scheduling problem into three phases: *dispatch*, *unit commitment* and *longer-term scheduling*.
+
 ##### Dispatch
 
- SCED is executed by vertically-integrated
-utilities and in mandatory pool electricity markets to ensure that
-active power supply and demand is efficiently balanced subject to
-network constraints and system security and reliability requirements.
-In mandatory pool markets, the system operator commits and dispatches
-individual generators (and, in some cases, loads) in the day-ahead and
-real-time markets, respectively, based on economic optimisation
-processes that incorporate transmission constraints and stability and
-reliability requirements. These processes are *security-constrained unit
-commitment* (SCUC), which is executed in the day-ahead market, and
-*security-constrained economic dispatch* (SCED), which is executed just
-prior to the relevant real-time market interval. In many mandatory pool
-markets, SCED and SCUC co-optimise the provision of energy and frequency
-control services
+Dispatch involves the assignment of real-time generation or consumption targets to already-committed (i.e. online) power system resources. Dispatch is carried out by each market participant in self-dispatch markets, or by the SO in systems with vertically-integrated utilities or central dispatch markets (see [@sec:lit_review-operations-operational_paradigms]). In the latter cases, the SO runs a process known as *security-constrained economic dispatch*, which typically seeks to find a minimum cost operating configuration for *committed* (see @sec:lit_review-balancing_practices-scheduling-uc) generation and loads such that a short-term forecast of non-scheduled demand can be met subject to network constraints and stability & reliability requirements[^3] [@graingerPowerSystemAnalysis1994]. Some SOs solve this problem for a single interval (e.g. as in the Australian NEM), whereas others, including the California and Midcontinent ISOs, solve a multi-period dispatch to procure and, to some extent, price capabilities to address expected non-scheduled demand ramps [@schiroProcurementPricingRamping2017; @elaSchedulingPricingExpected2016]. The dispatch solution for each dispatch interval (nowadays 5-15 minutes long [@irenaIncreasingTimeGranularity2019]) consists of generation & consumption setpoints, enablement quantities for resources providing frequency control services and, for power systems with central dispatch markets, locational marginal prices for energy & ancillary services in the real-time market [@cramtonElectricityMarketDesign2017]. With the requirement that piecewise linear functions be used by vertically-integrated utilities to model resource cost curves or by market participants as a bid format in real-time markets, the security-constrained economic dispatch problem can be efficiently solved using linear programming techniques [@woodPowerGenerationOperation2014].
 
-It should be noted that these processes are not exclusive to mandatory
-pool markets and could be used by vertically-integrated utilities to
-efficiently schedule resources in the power system [@Grainger1994].
+[^3]: This is a common variant of the generic problem description discussed in [@sec:lit_review-operations].
 
+##### Unit commitment {#sec:lit_review-balancing_practices-scheduling-uc}
 
-SCED aims to determine the minimum cost operating configuration for
-committed generation such that a short-term forecast or actual demand
-can be met subject to subject to network constraints and stability and
-reliability requirements [@Grainger1994; @Wood2014]. As generators
-typically submit offers for generation (and in some cases, frequency
-control) as piecewise linear cost functions, the SCED problem is less
-computationally complex than SCUC and can be solved using linear
-programming techniques [@Wood2014]. For a given real-time market
-interval, SCED produces a set of physically and financially binding
-dispatch instructions, which include generation setpoints and enablement
-for frequency control services, and locational marginal prices for
-energy and frequency control services [@Cramton2017]. In multi-platform
-markets such as the ISO/RTO markets, SCED is considered a sub-problem of
-unit commitment and is run for every real-time market interval ( 5-15
-minutes) [@Wood2014; @InternationalRenewableEnergyAgency2019]. In
-single-platform markets, such as the NEM, market participants manage
-their own unit commitment and SCED is the only market process that
-produces a binding schedule [@AustralianEnergyRegulator2016].
-###### Multi-period
+Conventional generation, which includes the thermal & hydroelectric synchronous generation that historically dominated supply in many power systems, have inflexibility constraints (minimum load, start-up time, ramping limits and minimum up & down times) that are material enough to warrant making efficient *unit commitment* decisions (whether a resource should be online or offline) ahead of real-time power delivery (anywhere from 10 minutes to several hours ahead of delivery, depending on a resource's start-up time) [@denholmHowLowCan2018; @agoraenergiewendeFlexibilityThermalPower2017]. Unit commitment is self-managed by market participants in self-dispatch markets & in single-platform semi-centralised markets such as the Australian NEM, built into the day-ahead market & intra-day reliability processes in central dispatch markets, and entirely managed by vertically-integrated utilities in jurisdictions that have not undergone restructuring. In the latter two cases, the SO runs a process known as *security-constrained unit commitment*, which typically seeks to determine the minimum cost subset of power system resources that should be committed to meet a non-scheduled demand forecast for a future horizon (usually 36-48 hours) subject to network constraints and stability & reliability requirements. Security-constrained unit commitment is often formulated as a mixed-integer linear program, which are computationally complex to solve due to the non-convexity of the integral solution space [@woodPowerGenerationOperation2014; @knuevenMixedintegerProgrammingFormulations2020]. 
 
-##### Unit commitment
-
-The aim of SCUC is to determine the minimum cost subset of generation
-that should be committed (i.e. synchronised and ready to deliver power
-to the power system) to meet a demand forecast for a set of future
-market intervals subject to network constraints and stability and
-reliability requirements [@Wood2014]. SCUC is a computationally complex
-non-linear problem in many electricity markets because it considers
-non-convexities such as start-up costs and minimum operating costs in
-addition to an offer for energy [@Cramton2017; @Isemonger2009]. The
-outcomes of solving this problem are an ahead schedule, which is often
-only financially binding, and locational marginal prices for energy and
-frequency control services for a future set of market intervals, such as
-the next day when SCUC is executed in day-ahead markets. SCUC can be
-beneficial for market participants that wish to hedge their production
-or consumption [@Isemonger2006]. Furthermore, it offers certainty around
-power system outcomes to the system operator, and around market outcomes
-to generators that have long lead times and significant costs associated
-with commitment (e.g. baseload coal power plant) or generators that
-primarily consider opportunity costs, rather than marginal costs, when
-determining whether it is profitable to provide energy (e.g.
-hydroelectric power plants, battery energy storage systems)
-[@Wood2014; @Cadwalader1998ReliabilityPricing].
+In the day-ahead platforms of central dispatch markets, market participants submit start-up and no-load (minimum load) costs in addition to a piecewise linear offer for energy [@herreroEvolvingBiddingFormats2020]. Solving the security-constrained unit commitment problem in the day-ahead market produces an ahead schedule, which is often hourly in resolution and only financially binding (i.e. deviations from this schedule are settled using real-time prices), and locational marginal prices for energy and ancillary services for the day-ahead horizon [@isemongerEvolvingDesignRTO2009; @cramtonElectricityMarketDesign2017]. As discussed in [@sec:lit_review-operational_paradigms-markets-platforms], the day-ahead market platform offers market participants an opportunity to hedge their real-time market position, and a degree of certainty around scheduling outcomes to both the SO and market participants.
 
 ##### Longer-term scheduling
 
-###### Fast frequency response
-
-FFR can generally be provided within a matter of milliseconds to provide
-a sustained active power response similar to PFC or to mitigate high
-RoCoF events [@AEMO2017a; @Miller2017]. In response to an
-under-frequency event, a sustained active power raise response, similar
-to PFC, can be achieved by implementing frequency droop control in the
-inverter of a BESS, or that of a variable IBR that has been *deloaded*
-to provide headroom. Wind turbines can be deloaded through pitch angle
-or over speed control, whereas solar PV is typically deloaded through
-over-voltage control
-[@Dreidy2017; @Tielens2012; @Fernandez-Guillamon2019a]. A sustained
-lower response can be delivered by operating an inverter control system
-at an off-maximum power point to reduce the IBR's active power output.
-
-High RoCoF can be mitigated by FFR that is delivered through processes
-and controls that mimic the inertial response of a synchronous generator
-[@Eriksson2018]. Inertia-based FFR (otherwise known as *synthetic
-inertia* in the literature) is provided by extracting the kinetic energy
-from a wind turbine rotor to rapidly inject active power [@Miller2017]
-into the power system. FFR from *virtual inertia*, on the other hand, is
-provided as the result of implementing the dynamic model of a
-synchronous machine to some degree within an inverter control system
-[@Tamrakar2017; @Anderson-Cook2013]. As FFR requires some form of
-measurement and is not inherent, it cannot be considered to be a direct
-substitute for inertial response [@Miller2017; @AEMO2017a].
+Longer-term scheduling involves resource maintenance scheduling, the management of *energy/fuel reserves* and ensuring that social/environmental obligations are met (e.g. regulated discharges from hydroelectric scheme dams) based on weather/climate, power system & market forecasts for periods a few days to even years ahead [@helistoIncludingOperationalAspects2019; @sucklingSeasonaltoDecadalClimateForecasting2018; @denholmHowLowCan2018]. Energy reserve management is a particularly important component of the longer-term scheduling of resources that face opportunity-costs due to limited energy/fuel storage capacity, seasonally-variable primary energy source availability (e.g. hydro storage) and/or degradation driven by participation (e.g. battery energy storage systems) [@xuRoleModelingBattery2022; @mcphersonImpactsStorageDispatch2020]. In restructured electricity industries, longer-term scheduling requires market participants to also consider (and potentially change) their forward market position, which is shaped by the potential revenues & liabilities associated with *electricity derivatives & contracts* [@macgillEndtoendElectricityMarket2020].  
 
 
 ## Designing operational practices
