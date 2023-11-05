@@ -174,7 +174,7 @@
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Large\bfseries}
+\titleformat{\chapter}[display]{\Large\bfseries}{Chapter \thechapter:}{0pt}{\Large\bfseries}
 
 % Set figure legends and captions to be smaller sized sans serif font
 \usepackage[font={footnotesize,sf}]{caption}
@@ -1084,9 +1084,9 @@ TODO: Fix up figure.}\label{fig:market_models}
 }
 \end{figure}
 
-\hypertarget{lit_review-operational_paradigms-markets-platforms}{%
+\hypertarget{sec:lit_review-operational_paradigms-markets-platforms}{%
 \paragraph{Market
-platforms}\label{lit_review-operational_paradigms-markets-platforms}}
+platforms}\label{sec:lit_review-operational_paradigms-markets-platforms}}
 
 Power system resource inflexibilities and the desire for physical \&
 financial risk management mechanisms in operational timeframes have led
@@ -1376,23 +1376,24 @@ into three phases: \emph{dispatch}, \emph{unit commitment} and
 \paragraph{Dispatch}\label{dispatch}}
 
 Dispatch involves the assignment of real-time generation or consumption
-targets to already-committed (i.e.~online) power system resources.
-Dispatch is carried out by each market participant in self-dispatch
-markets, or by the SO in systems with vertically-integrated utilities or
-central dispatch markets (see
-Section~\ref{sec:lit_review-operations-operational_paradigms}). In the
-latter cases, the SO runs a process known as \emph{security-constrained
-economic dispatch}, which typically seeks to find a minimum cost
-operating configuration for \emph{committed} (see
-Section~\ref{sec:lit_review-balancing_practices-scheduling-uc})
-generation and loads such that a short-term forecast of non-scheduled
-demand can be met subject to network constraints and stability \&
-reliability requirements\footnote{Hybrid generator-plus-storage systems
-  may be less exposed to market prices for charging due to their ability
-  to charge from AC or DC-coupled generation (e.g.~solar PV). However,
-  the operational objectives of the storage unit in these resources may
-  differ to those of standalone storage (a point we discuss more broadly
-  in Section~\ref{sec:context-esr-operation})
+targets to already-committed (see
+Section~\ref{sec:lit_review-balancing_practices-scheduling-uc}) power
+system resources. Dispatch is carried out by vertically-integrated
+utilities, the SO in central dispatch markets and self-managed by market
+participants in self-dispatch markets (see
+Section~\ref{sec:lit_review-operational_paradigms}). In the first two
+cases, the power system is dispatched by a central operator which runs a
+process known as \emph{security-constrained economic dispatch}.
+Security-constrained economic dispatch typically seeks to find a minimum
+cost operating configuration for committed generation and loads such
+that a short-term forecast of non-scheduled demand can be met subject to
+network constraints and stability \& reliability requirements\footnote{Hybrid
+  generator-plus-storage systems may be less exposed to market prices
+  for charging due to their ability to charge from AC or DC-coupled
+  generation (e.g.~solar PV). However, the operational objectives of the
+  storage unit in these resources may differ to those of standalone
+  storage (a point we discuss more broadly in
+  Section~\ref{sec:context-esr-operation})
   (\protect\hyperlink{ref-gormanMotivationsOptionsDeploying2020}{Gorman
   et al., 2020}).}
 (\protect\hyperlink{ref-graingerPowerSystemAnalysis1994}{Grainger,
@@ -1403,19 +1404,24 @@ extent, price capabilities to address expected non-scheduled demand
 ramps (\protect\hyperlink{ref-elaSchedulingPricingExpected2016}{Ela and
 O'Malley, 2016};
 \protect\hyperlink{ref-schiroProcurementPricingRamping2017}{Schiro,
-2017}). The dispatch solution for each dispatch interval (nowadays 5-15
-minutes long
+2017}). The dispatch solution for each dispatch interval (5-15 minutes
+long in many central dispatch markets
 (\protect\hyperlink{ref-irenaIncreasingTimeGranularity2019}{IRENA,
 2019})) consists of generation \& consumption setpoints, enablement
-quantities for resources providing frequency control services and, for
-power systems with central dispatch markets, locational marginal prices
-for energy \& ancillary services in the real-time market
+quantities for resources providing frequency control services and, in
+central dispatch markets that integrate power system operation \&
+markets, real-time market locational marginal prices for energy \&
+ancillary services
 (\protect\hyperlink{ref-cramtonElectricityMarketDesign2017}{Cramton,
-2017}). With the requirement that piecewise linear functions be used by
-vertically-integrated utilities to model resource cost curves or by
-market participants as a bid format in real-time markets, the
-security-constrained economic dispatch problem can be efficiently solved
-using linear programming techniques
+2017}). If piecewise linear functions are used by vertically-integrated
+utilities to model resource cost curves or are required by the real-time
+market bid format for a market participant's energy offer
+curve\footnote{We explain why this information cannot strictly be
+  considered a forecast in Section~\ref{sec:context-nem}, but for
+  simplicity and brevity, we will continue to use the term ``forecast''
+  for the remainder of the paper.}, the security-constrained economic
+dispatch problem can be efficiently solved using linear programming
+techniques
 (\protect\hyperlink{ref-woodPowerGenerationOperation2014}{Wood et al.,
 2014}).
 
@@ -1423,31 +1429,41 @@ using linear programming techniques
 \paragraph{Unit
 commitment}\label{sec:lit_review-balancing_practices-scheduling-uc}}
 
-Conventional generation, which includes the thermal \& hydroelectric
-synchronous generation that historically dominated supply in many power
-systems, have inflexibility constraints (minimum load, start-up time,
-ramping limits and minimum up \& down times) that are material enough to
-warrant making efficient \emph{unit commitment} decisions (whether a
-resource should be online or offline) ahead of real-time power delivery
-(anywhere from 10 minutes to several hours ahead of delivery, depending
-on a resource's start-up time)
+Thermal \& hydroelectric generation, which historically dominated supply
+in many power systems, have inflexibility constraints (minimum load,
+start-up time, ramping limits and minimum up \& down times) \& costs
+(those attached to resource start-up, shut-down and operation at minimum
+load) that require SOs and market participants to make non-trivial
+\emph{unit commitment} decisions (i.e.~whether a resource should be
+online or offline). Depending on the resource, these decisions are made
+anywhere from 5 minutes to several hours ahead of power delivery
 (\protect\hyperlink{ref-agoraenergiewendeFlexibilityThermalPower2017}{Agora
 Energiewende, 2017};
 \protect\hyperlink{ref-denholmHowLowCan2018}{Denholm et al., 2018}).
-Unit commitment is self-managed by market participants in self-dispatch
-markets \& in single-platform semi-centralised markets such as the
-Australian NEM, built into the day-ahead market \& intra-day reliability
-processes in central dispatch markets, and entirely managed by
-vertically-integrated utilities in jurisdictions that have not undergone
-restructuring. In the latter two cases, the SO runs a process known as
+Unit commitment is:
+
+\begin{itemize}
+\tightlist
+\item
+  Self-managed by market participants in self-dispatch markets \& in
+  single-platform semi-centralised markets such as the Australian NEM;
+\item
+  Built into the day-ahead market \& intra-day reliability processes in
+  central dispatch markets; and
+\item
+  Managed by vertically-integrated utilities for all resources in
+  jurisdictions that have not undergone restructuring.
+\end{itemize}
+
+In the latter two cases, the SO runs a process known as
 \emph{security-constrained unit commitment}, which typically seeks to
 determine the minimum cost subset of power system resources that should
 be committed to meet a non-scheduled demand forecast for a future
-horizon (usually 36-48 hours) subject to network constraints and
+horizon (usually 36-48 hours ahead) subject to network constraints and
 stability \& reliability requirements. Security-constrained unit
-commitment is often formulated as a mixed-integer linear program, which
-are computationally complex to solve due to the non-convexity of the
-integral solution space
+commitment is typically formulated as a mixed-integer linear program,
+which are computationally complex to solve due to the non-convexity of
+the integral solution space
 (\protect\hyperlink{ref-knuevenMixedintegerProgrammingFormulations2020}{Knueven
 et al., 2020};
 \protect\hyperlink{ref-woodPowerGenerationOperation2014}{Wood et al.,
@@ -1457,40 +1473,52 @@ In the day-ahead platforms of central dispatch markets, market
 participants submit start-up and no-load (minimum load) costs in
 addition to a piecewise linear offer for energy
 (\protect\hyperlink{ref-herreroEvolvingBiddingFormats2020}{Herrero et
-al., 2020}). Solving the security-constrained unit commitment problem in
-the day-ahead market produces an ahead schedule, which is often hourly
-in resolution and only financially binding (i.e.~deviations from this
-schedule are settled using real-time prices), and locational marginal
-prices for energy and ancillary services for the day-ahead horizon
+al., 2020}). The SO solves a security-constrained unit commitment
+problem to clear the day-ahead market and produce an ahead schedule,
+which is only financially binding (i.e.~deviations from this schedule
+are settled using real-time prices), in addition to locational prices
+for energy and ancillary services for each market interval (usually each
+hour) in the day-ahead horizon
 (\protect\hyperlink{ref-cramtonElectricityMarketDesign2017}{Cramton,
 2017}; \protect\hyperlink{ref-isemongerEvolvingDesignRTO2009}{Isemonger,
 2009}). As discussed in
 Section~\ref{sec:lit_review-operational_paradigms-markets-platforms},
-the day-ahead market platform offers market participants an opportunity
-to hedge their real-time market position, and a degree of certainty
-around scheduling outcomes to both the SO and market participants.
+the day-ahead market platform provides market participants with an
+opportunity to hedge their real-time market position, and gives both
+market participants \& the SO a degree of certainty in schedules well
+before power delivery.
 
 \hypertarget{longer-term-scheduling}{%
 \paragraph{Longer-term scheduling}\label{longer-term-scheduling}}
 
-Longer-term scheduling involves resource maintenance scheduling and the
-management of energy limitations \& reserves (e.g.~maximum storage
-capacity or fuel reserves) based on weather/climate, power system \&
-market forecasts for periods a few days to even years ahead
-(\protect\hyperlink{ref-helistoIncludingOperationalAspects2019}{Helistö
+Operational planning actions taken in longer-term scheduling timeframes
+(a day ahead to a few years ahead) include resource maintenance
+scheduling, the management of \emph{energy/fuel reserves} and ensuring
+that social \& environmental obligations on resources are met
+(e.g.~regulated discharges from hydroelectric scheme dams)
+(\protect\hyperlink{ref-denholmHowLowCan2018}{Denholm et al., 2018};
+\protect\hyperlink{ref-helistoIncludingOperationalAspects2019}{Helistö
 et al., 2019};
 \protect\hyperlink{ref-sucklingSeasonaltoDecadalClimateForecasting2018}{Suckling,
-2018}). In restructured electricity industries, longer-term scheduling
-requires market participants to also consider (and potentially change)
-their forward market position, which is shaped by the potential revenues
-\& liabilities associated with \emph{electricity derivatives \&
-contracts}
+2018}). Many of these activities are conducted on the basis of
+information supplied by longer-term weather/climate, power system \&
+market forecasts. Energy reserve management is a particularly important
+aspect of longer-term scheduling for power system resources that face
+material opportunity-costs due to limited energy/fuel storage capacity,
+seasonally-variable primary energy source availability and/or
+degradation from operation
+(\protect\hyperlink{ref-mcphersonImpactsStorageDispatch2020}{McPherson
+et al., 2020}; \protect\hyperlink{ref-xuRoleModelingBattery2022}{Xu,
+2022}). In restructured electricity industries, longer-term scheduling
+requires market participants to also consider, and potentially change,
+their forward market position, which is defined by the \emph{electricity
+derivatives \& contracts} they hold
 (\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill
 and Esplin, 2020}).
 
-\hypertarget{designing-operational-practices}{%
-\section{Designing operational
-practices}\label{designing-operational-practices}}
+\hypertarget{designing-balancing-practices-in-operational-timeframes}{%
+\section{Designing balancing practices in operational
+timeframes}\label{designing-balancing-practices-in-operational-timeframes}}
 
 \hypertarget{sec:procurement}{%
 \subsubsection{Procurement of frequency control
