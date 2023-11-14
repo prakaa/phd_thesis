@@ -1,13 +1,13 @@
 \appendix
-#\renewcommand\thefigure{\thesection.\arabic{figure}} 
+\renewcommand\thefigure{\thesection.\arabic{figure}}
 \renewcommand\thetable{\thesection.\arabic{table}}
-# Data and assumptions used in market simulation
+# Data and assumptions used in market simulation {#sec:appendix-reserves_assumptions}
 
 ## Resource ramp rates
 
-Separate upwards and downwards ramp rates were modelled for most resource types. For hydro generation and reciprocating engines, maximum upwards and downwards ramp rates were sourced from @ghd2018AEMOCost2018. For other conventional resources (coal-fired generation, Gas-Steam, CCGT and OCGT), ramp rates in each direction were further separated into a *market* ramp rate, which was used in the PLEXOS market simulation, and an *upper* ramp rate, which was used to calculate available reserves/footroom. For these resources, the market ramp rate was calculated using the unit ramp rates used most frequently in NEM dispatch[^6] in 2020, and the upper ramp rate was calculated using resources' assumed maximum ramp rates in AEMO's 2020 Inputs and Assumptions workbook (for an example of a comparison, see @fig:ramp_rate_comparison) [@australianenergymarketoperator2020InputsAssumptions2020]. Additional resources in 2025 were assumed to have the same ramp rate characteristics as newer existing resources of the same technology type.
+Separate upwards and downwards ramp rates were modelled for most resource types. For hydro generation and reciprocating engines, maximum upwards and downwards ramp rates were sourced from @ghd2018AEMOCost2018. For other conventional resources (coal-fired generation, Gas-Steam, CCGT and OCGT), ramp rates in each direction were further separated into a *market* ramp rate, which was used in the PLEXOS market simulation, and an *upper* ramp rate, which was used to calculate available reserves/footroom. For these resources, the market ramp rate was calculated using the unit ramp rates used most frequently in NEM dispatch[^36] in 2020, and the upper ramp rate was calculated using resources' assumed maximum ramp rates in AEMO's 2020 Inputs and Assumptions workbook (for an example of a comparison, see @fig:ramp_rate_comparison) [@australianenergymarketoperator2020InputsAssumptions2020]. Additional resources in 2025 were assumed to have the same ramp rate characteristics as newer existing resources of the same technology type.
 
-[^7]: The ramp rate used in dispatch by AEMO is the lesser of a telemetered rate or a ramp rate submitted in a resource's offer for energy, and was obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018].
+[^36]: The ramp rate used in dispatch by AEMO is the lesser of a telemetered rate or a ramp rate submitted in a resource's offer for energy, and was obtained using NEMOSIS [@gormanNEMOSISNEMOpen2018].
 
 ![Ramp rates observed (red) and used in dispatch by AEMO (blue) for a coal-fired unit in NSW in 2020. The green line denotes the ramp rate assumed by AEMO in its 2020 Inputs and Assumptions workbook and the 2020 ISP.](source/figures/coal_market_upper_ramps.png){#fig:ramp_rate_comparison short-caption="Observed, submitted and ISP ramp rates for a NSW coal-fired unit"}
 
@@ -39,7 +39,7 @@ Half-hourly chronological solar PV and wind capacity factor traces were obtained
 
 ## Resource market offers
 
-For all scenarios for a given region, one set of four static price-quantity pairs were used to represent each resource's offer in the market simulation. Except for hydro generation, offers were priced *a priori*. The type of the resource determined how each band was priced (price bands for each resource type are outlined in @tbl:resourceoffers) [^7]:
+For all scenarios for a given region, one set of four static price-quantity pairs were used to represent each resource's offer in the market simulation. Except for hydro generation, offers were priced *a priori*. The type of the resource determined how each band was priced (price bands for each resource type are outlined in @tbl:resourceoffers) [^37]:
 
 - For wind and solar PV generators, the entire available forecasted energy was offered at the market floor price to ensure preferential dispatch of VRE where possible.
 - For baseload conventional resources (coal-fired generation and Gas-Steam), the first band was priced at or close to the market floor price to ensure the resource's MSL would clear the market. The second band was priced close to the short-run marginal cost (SRMC) of the resource. The SRMC was calculated using the average heat rate, fuel price and variable operating and maintenance cost of each resource type obtained from @australianenergymarketoperator2020InputsAssumptions2020. The third band was priced at a premium relative to the resource's SRMC and the fourth band was offered at the market cap price.
@@ -59,7 +59,7 @@ For all scenarios for a given region, one set of four static price-quantity pair
 
 : Offers by resources type for NSW and SA across all scenarios. The market floor and cap prices used were -1000 AUD/MW/hr and 15,000 AUD/MW/hr, respectively.  []{#tbl:resourceoffers short-caption="Offers by resource type for NSW and SA across all scenarios"}
 
-[^8]: For all conventional resources, the distribution of offer prices resembles "hockey-stick" offer curves that are common in the NEM [@energysynapseDemandResponseNational2020] and in other electricity markets [@hurlbutProtectingMarketHockey2004]. Moreover, for most peaking conventional resources, energy is offered at or just above the strike price of cap options/futures (300 AUD/MWh).
+[^37]: For all conventional resources, the distribution of offer prices resembles "hockey-stick" offer curves that are common in the NEM [@energysynapseDemandResponseNational2020] and in other electricity markets [@hurlbutProtectingMarketHockey2004]. Moreover, for most peaking conventional resources, energy is offered at or just above the strike price of cap options/futures (300 AUD/MWh).
 
 ### Calibration {#sec:calibration .unnumbered}
 
