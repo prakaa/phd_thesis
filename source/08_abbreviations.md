@@ -4,7 +4,7 @@
 \textbf{30MPD} & Thirty-minute pre-dispatch \\
 \textbf{5MPD} & Five-minute pre-dispatch \\
 \textbf{5MS} & Five minute settlement \\
-\textbf{AC} & Alternating Current \\
+\textbf{AC} & Alternating current \\
 \textbf{AEMC} & Australian Energy Market Commission \\ 
 \textbf{AEMO} & Australian Energy Market Operator \\
 \textbf{AER} & Australian Energy Regulator \\
