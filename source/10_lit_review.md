@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this chapter, I provide useful context and a brief overview of the literature that tackles the challenge of design of designing operational practices in power systems as precursor for the research framework presented in {@sec:research-framework}.
+In this chapter, I provide useful context and a brief overview of the literature that tackles the challenge of designing operational practices in power systems. This chapter serves as precursor to the research framework presented in {@sec:research-framework}.
 
 Firstly, I present a brief overview of power systems in [@sec:lit_review-power_systems], and in [@sec:lit_review-operations], I discuss the importance of active power balancing in operational timeframes and provide a summary of the main paradigms under which power systems are operated. Then, in [@sec:lit_review-balancing_practices], I describe existing and emerging balancing practices in operational timeframes, and in [@sec:lit_review-design], I propose good design outcomes and discuss the challenges involved in operational practice design. Finally, in [@sec:lit_review-gap], I summarise the motivation for the studies contained within this thesis.
 
