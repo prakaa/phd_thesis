@@ -320,7 +320,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        November 16, 2023
+        November 23, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -540,16 +540,16 @@ in power systems. This chapter serves as precursor to the research
 framework presented in \{Section~\ref{sec:research-framework}\}.
 
 Firstly, I present a brief overview of power systems in
-Section~\ref{sec:lit_review-power_systems}, and in
-Section~\ref{sec:lit_review-operations}, I discuss the importance of
-active power balancing in operational timeframes and provide a summary
-of the main paradigms under which power systems are operated. Then, in
+Section~\ref{sec:lit_review-power_systems}. I then discuss the
+importance of active power balancing in operational timeframes and
+provide a summary of the main paradigms under which power systems are
+operated in Section~\ref{sec:lit_review-operations}. Following this, in
 Section~\ref{sec:lit_review-balancing_practices}, I describe existing
 and emerging balancing practices in operational timeframes, and in
 Section~\ref{sec:lit_review-design}, I propose good design outcomes and
 discuss the challenges involved in operational practice design. Finally,
 in Section~\ref{sec:lit_review-gap}, I summarise the motivation for the
-studies contained within this thesis.
+work contained within this thesis.
 
 \hypertarget{sec:lit_review-power_systems}{%
 \section{Power systems}\label{sec:lit_review-power_systems}}
@@ -607,7 +607,7 @@ area}, on the other hand, is a network area which a particular
 \emph{system operator} (SO) is responsible for operating. In this
 thesis, I use the term \emph{jurisdiction} interchangeably with
 \emph{control area}, with a preference for the former when referring to
-a control area with a wholesale electricity market.
+a control area with a wholesale electricity market overlay.
 
 Whether the term ``power system'' refers to a synchronous area or a
 control area is dependent on context and the relationship between the
@@ -734,23 +734,27 @@ al., 2020}):
 
 \emph{Active power balancing} can be described in simple terms using the
 law of conservation of energy: the energy supplied into a network node
-through primary energy conversion or by energy storage is equal to the
-sum of the energy dissipated, stored and consumed at the same network
-node at each and every moment. However, the engineering reality is that
-active power balancing requires \textbf{\emph{moment-to-moment control}
-of generation and loads to balance active power supply and demand
-\emph{across the power system}}. \emph{Moment-to-moment}
-(i.e.~real-time) control of supply \& demand is required because it is
-still uneconomical in many jurisdictions to store electricity at scale
-despite grid-scale storage cost reductions
+through primary energy conversion, energy storage or transmission is
+equal to the sum of the energy dissipated, stored and consumed at the
+same network node at each and every moment. However, the engineering
+reality is that active power balancing requires \textbf{\emph{real-time
+control} of generation and loads to balance active power supply and
+demand \emph{across the power system}}. \emph{Real-time}
+(i.e.~\emph{moment-to-moment}) control of supply \& demand is required
+because it is still uneconomical in many jurisdictions to store
+electricity at scale despite grid-scale storage cost reductions
 (\protect\hyperlink{ref-internationalenergyagencyGridScaleStorage2022}{International
 Energy Agency, 2022}). In other words, many power systems have small
 balancing buffers and thus require real-time balancing. Furthermore,
 though electricity can be transported close to the speed of light across
-a network, balancing requires at least a degree of coordination
-\emph{across the power system} because of transmission losses and
-various network constraints imposed by line thermal limits, stability
-requirements \& Kirchoff's circuit laws
+a synchronous area, balancing requires at least some degree of
+coordination \emph{across the power system}. There are two reasons
+behind this. Firstly, as I discuss further in
+Section~\ref{sec:lit_review-balancing_need}, active power imbalances can
+have system-wide consequences. Secondly, transmission losses and various
+network constraints imposed by line thermal limits, stability
+requirements \& Kirchoff's circuit laws necessitate the coordination of
+power flows required for system balancing
 (\protect\hyperlink{ref-hirthWhyWindNot2016a}{Hirth et al., 2016};
 \protect\hyperlink{ref-kirschenFundamentalsPowerSystem2004}{Kirschen and
 Strbac, 2004}).
@@ -875,7 +879,7 @@ RoCoFs due to pole slipping
 Consulting, 2016}). For these reasons, frequency-sensitive relays are
 often used to protect power system resources from frequency excursions.
 
-However, the same equipment protection measures can also trigger the
+However, these equipment protection measures can also trigger the
 complete collapse of the power system. Should the disconnection of a
 resource following a relay trip exacerbate an existing active power
 imbalance, the system frequency may deviate further and result in
@@ -937,10 +941,9 @@ et al., 2021};
 paradigms}\label{sec:lit_review-operational_paradigms}}
 
 Given the need for at least some degree of balancing coordination in a
-power system (which I briefly alluded to in
-Section~\ref{sec:lit_review-balancing}), SOs are ultimately responsible
-for ensuring that their control area is operated in a secure \& reliable
-manner (\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
+power system, SOs are ultimately responsible for ensuring that their
+control area is operated in a secure \& reliable manner
+(\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
 2008}). Though the powers, responsibilities and degree of ring-fencing
 imposed upon the SO vary from jurisdiction to jurisdiction, these are
 largely dictated by the control area's \emph{operational paradigm}
@@ -965,11 +968,11 @@ reduces complexity \& transaction costs, and enables economies of scale
 in both asset investment (particularly generation infrastructure) and
 operation
 (\protect\hyperlink{ref-sioshansiElectricityMarketReform2006}{Sioshansi,
-2006}). The benefits from economies of scale are material in the context
-of industrialisation and electrification driving sustained load growth,
-a phenomenon which occurred in advanced economies in the
-20\textsuperscript{th} century and which many emerging economies
-continue to experience
+2006}). The benefits from economies of scale are material where
+industrialisation and/or electrification are driving sustained load
+growth. This was the case in advanced economies in the
+20\textsuperscript{th} century and is still the case in many emerging
+economies
 (\protect\hyperlink{ref-hoganElectricityMarketStructure2008}{Hogan,
 2008};
 \protect\hyperlink{ref-roquesAdaptingElectricityMarkets2017}{Roques and
@@ -1019,12 +1022,13 @@ Pollitt, 2013}).
 \hypertarget{market-models}{%
 \paragraph{Market models}\label{market-models}}
 
-Much like unbundling, the design and implementation of wholesale
-electricity markets differs across jurisdictions that engaged in
-restructuring. Despite these differences, electricity markets worldwide
-can broadly be categorised into two markets models\footnote{I note that
-  my descriptions of central and self-dispatch electricity markets
-  differ slightly to those of Ahlqvist et al.
+Much like the diverse outcomes of unbundling, the design and
+implementation of wholesale electricity markets differs across
+jurisdictions that undertook electricity industry restructuring. Despite
+these differences, electricity markets worldwide can broadly be
+categorised into two markets models\footnote{I note that my descriptions
+  of central and self-dispatch electricity markets differ slightly to
+  those of Ahlqvist et al.
   (\protect\hyperlink{ref-ahlqvistSurveyComparingCentralized2022}{2022}),
   who focus on the level of centralisation in day-ahead timeframes. They
   categorise the Australian NEM as a decentralised market as
@@ -1054,16 +1058,16 @@ et al., 2005};
   aggregated demand curve constructed from potential buyers (two-sided
   pool)
   (\protect\hyperlink{ref-barrosoClassificationElectricityMarket2005}{Barroso
-  et al., 2005}). In these markets, locational marginal prices for
-  energy and \emph{ancillary services} (services procured to maintain
-  security and reliability) are produced by SO-run centralised
-  optimisation processes that consider the physical constraints of the
-  transmission system. This market model has been adopted in Independent
-  System Operator/Regional Transmission Operator (ISO/RTO) markets in
-  North America (refer to Section~\ref{sec:fcs-NA} for more detail) and,
-  as I discuss further in Section~\ref{sec:info-context-nem}, the
-  Australian NEM's design is predominantly based on this model (though
-  it does incorporate some features of more decentralised markets).
+  et al., 2005}). In these markets, locational prices for energy and
+  \emph{ancillary services} (services procured to maintain security and
+  reliability) are produced by SO-run centralised optimisation processes
+  that consider the physical constraints of the transmission system.
+  This market model has been adopted in Independent System
+  Operator/Regional Transmission Operator (ISO/RTO) markets in North
+  America (refer to Section~\ref{sec:fcs-NA} for more detail) and, as I
+  discuss further in Section~\ref{sec:info-context-nem}, the Australian
+  NEM's design is predominantly based on this model (though it does
+  incorporate some features of more decentralised markets).
 \item
   Decentralised or \emph{self-dispatch} markets, where decisions
   regarding dispatch \& unit commitment are made by market participants,
@@ -1224,8 +1228,8 @@ Van Hertem, 2016};
 \subsubsection{Fast frequency response}\label{fast-frequency-response}}
 
 IBRs and loads on frequency-responsive relays can provide what is
-typically known as \emph{fast frequency response} (FFR). The most widely
-discussed use-case for FFR is the mitigation of high RoCoFs through a
+typically known as \emph{fast frequency response} (FFR). The most
+prominent use-case for FFR is the mitigation of high RoCoFs through a
 response delivered within a matter of milliseconds to a few seconds
 following a contingency event
 (\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2017}{Australian
@@ -1233,7 +1237,7 @@ Energy Market Operator, 2017a};
 \protect\hyperlink{ref-millerTechnologyCapabilitiesFast2017}{Miller et
 al., 2017b}). As I also touch upon in
 Section~\ref{sec:fcs-ibr-challenges}, the term FFR has been used rather
-loosely, to date, to refer to three distinct control configurations:
+loosely to date to refer to three distinct control configurations:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1411,7 +1415,7 @@ system resources in \emph{real-time} (i.e.~several minutes ahead of
 delivery). Dispatch is carried out by vertically-integrated utilities,
 the SO in central dispatch markets and self-managed by market
 participants in self-dispatch markets. In the first two cases, the power
-system is dispatched by a central operator which runs a process known as
+system is dispatched by a SO running a process known as
 \emph{security-constrained economic dispatch}. Security-constrained
 economic dispatch typically seeks to find a minimum cost operating
 configuration for committed generation and loads such that a short-term
@@ -1554,10 +1558,9 @@ al., 2021};
 \protect\hyperlink{ref-papaefthymiou100RenewableEnergy2016}{Papaefthymiou
 and Dragoon, 2016};
 \protect\hyperlink{ref-rieszDesigningElectricityMarkets2015}{Riesz and
-Milligan, 2015}), various barriers and complexities (I discuss the most
-pertinent of these in Section~\ref{sec:lit_review-design_challenges})
-pose challenges to the design \& implementation of specific mechanisms
-and contribute to the contested nature of the design process
+Milligan, 2015}), various barriers and complexities pose challenges to
+the design and implementation of specific mechanisms and contribute to
+the contested nature of the design process
 (\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill
 and Esplin, 2020};
 \protect\hyperlink{ref-papaefthymiouPowerSystemFlexibility2018}{Papaefthymiou
@@ -1565,11 +1568,8 @@ et al., 2018};
 \protect\hyperlink{ref-schittekatteFlexibilityMarketsProject2020}{Schittekatte
 and Meeus, 2020};
 \protect\hyperlink{ref-silva-rodriguezShortTermWholesale2022}{Silva-Rodriguez
-et al., 2022}). To broadly summarise the design problem, ``operating
-power systems primarily relying on {[}VRE{]} is technologically
-possible, but institutionally complex''
-(\protect\hyperlink{ref-papaefthymiou100RenewableEnergy2016}{Papaefthymiou
-and Dragoon, 2016, p. 81}).
+et al., 2022}). I discuss the most pertinent of these in
+Section~\ref{sec:lit_review-design_challenges}.
 
 \hypertarget{sec:lit_review-design_outcomes}{%
 \subsection{Outcomes of good
@@ -1640,10 +1640,10 @@ IBRs do not provide an inherent or controlled response to frequency
 deviations unless they are explicitly configured to do so. I elaborate
 on these challenges in Section~\ref{sec:fcs-intro},
 Section~\ref{sec:fcs-ibr-challenges} and
-Section~\ref{sec:reserves-intro}. These issues are of particular concern
-to islanded power systems and weakly-interconnected control areas that
-have limited to no assistance from a wider synchronous area for
-balancing assistance
+Section~\ref{sec:reserves-intro}. These challenges are of greater
+concern to islanded power systems and weakly-interconnected control
+areas that have limited to no assistance from a wider synchronous area
+for balancing assistance
 (\protect\hyperlink{ref-hodgeAddressingTechnicalChallenges2020}{Hodge et
 al., 2020}).
 
@@ -1789,12 +1789,13 @@ Section~\ref{sec:fcs}.
 
 Secondly, because unbundled SOs have neither direct control nor
 ownership of generation or demand-side resources (see
-Section~\ref{sec:lit_review-operational_paradigms}), policy-makers are
-constrained in the design problem because SOs must \emph{procure} rather
-than provide balancing flexibility. In the absence of such a constraint,
-it might be more effective and/or efficient for the SO itself to provide
-balancing flexibility. Referring to ancillary services (of which
-frequency control services are a subset), Pollitt and Anaya
+Section~\ref{sec:lit_review-operational_paradigms}), policy-makers in
+restructured jurisdictions are constrained in the design problem because
+SOs must \emph{procure} rather than provide balancing flexibility. In
+the absence of such a constraint, it might be more effective and/or
+efficient for the SO itself to provide balancing flexibility. Referring
+to ancillary services (of which frequency control services are a
+subset), Pollitt and Anaya
 (\protect\hyperlink{ref-pollittCompetitionMarketsAncillary2019}{2019})
 argue that in the absence of limits on SO ownership, Coase's insights on
 the nature of the firm suggest that transaction costs would determine
@@ -1911,39 +1912,56 @@ do not transfer straightforwardly to another.
 \hypertarget{sec:lit_review-gap}{%
 \section{Conclusion: the knowledge gap}\label{sec:lit_review-gap}}
 
-In light of increasing penetrations of VRE \& storage resources,
-policy-makers worldwide are contemplating redesigning operational
-balancing practices in their jurisdictions. This task requires them to
-build an understanding of several facets of the design problem,
-including the technical capabilities \& constraints of power system
-resources \& system control strategies, the socioeconomic objectives of
-the power system, the institutional arrangements of a jurisdiction, and
-the broader cultural \& political factors that have influenced the
-organisation of the electricity industry. Though developing this
-understanding is a significant undertaking in and of itself, the design
-problem is made even more complex by the presence of existing tensions
-\& challenges and a changing resource mix. The latter, in particular,
-conduces new perspectives on challenges and solutions. For example,
-proponents of stronger price formation in real-time markets now not only
-argue that it is essential for efficient operation of and investment in
-utility-scale resources, but also that it is necessary so that the
-market can serve as a means to co-ordinate distributed consumer-owned
-energy resources (see
+In light of increasing penetrations of VRE, policy-makers worldwide are
+contemplating redesigning operational balancing practices in their
+jurisdictions. The task of designing effective and efficient operational
+practices requires them to build an understanding of several facets of
+the design problem, including:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The technical capabilities and constraints of power system resources
+  and system control strategies;
+\item
+  The socioeconomic objectives of the power system;
+\item
+  The institutional arrangements of a jurisdiction; and
+\item
+  The broader cultural \& political factors that have influenced the
+  organisation of the electricity industry.
+\end{enumerate}
+
+Though developing this understanding is a significant undertaking in and
+of itself, the design problem is made even more complex by 1) the
+presence of existing tensions and challenges and a changing resource
+mix. The former means that whilst ``operating power systems primarily
+relying on {[}VRE{]} is technologically possible'', the design process
+is ``institutionally complex''
+(\protect\hyperlink{ref-papaefthymiou100RenewableEnergy2016}{Papaefthymiou
+and Dragoon, 2016, p. 81}). The latter invites new perspectives on
+challenges and solutions --- for example, proponents of stronger price
+formation in real-time markets now not only argue that it is essential
+for efficient operation of and investment in utility-scale resources,
+but also that it is necessary so that the market can serve as a means to
+co-ordinate distributed consumer-owned energy resources (see
 (\protect\hyperlink{ref-hoganMarketDesignPractices2019}{Hogan, 2019})).
 
-Though the literature has identified high-level design outcomes and the
+Whilst the literature has identified high-level design outcomes and the
 design areas that deserve the most attention, there is, as Mays
 (\protect\hyperlink{ref-maysMissingIncentivesFlexibility2021}{2021})
 indicates, a role for empirical work that identifies ``second-best'' \&
 flexible design solutions given the specific context of each power
 system and jurisdiction. Such an approach recognises that effective,
 efficient and streamlined balancing practices arise not from ``optimal''
-settings, but from solutions that combine and compromise between
-centralised (i.e.~SO-mediated) \& decentralised (i.e.~market-mediated)
+settings, but from solutions that combine and compromise, e.g.~between
+centralised (i.e.~SO-mediated) an decentralised (i.e.~market-mediated)
 decision-making. Chapters \ref{sec:fcs},
 Sections~\ref{sec:reserves}, \ref{sec:info} attempt to take such an
-approach when assessing how to operate power systems and electricity
-markets with increasing penetrations of variable renewable energy.
+approach when assessing how best to balance power systems and
+electricity markets with increasing penetrations of variable renewable
+energy in operational timeframes.
 
 \hypertarget{sec:research_framework}{%
 \chapter{Research framework}\label{sec:research_framework}}
@@ -1955,12 +1973,15 @@ thesis
 \section{Research aim and
 objectives}\label{research-aim-and-objectives}}
 
-The broad aim of this thesis is to better understand:
+The broad aim of this thesis is outlined below:
 
-\textbf{\textbf{How might we design effective and efficient operational
-practices for balancing power systems, given the existing design
-challenges and changes to system resource mixes as energy transition
-proceeds?}}
+\textbf{\textbf{Given existing design challenges and growing
+penetrations of variable renewable energy resources as energy transition
+proceeds, how should we design or, at the very least, approach the
+design of operational practices for balancing power systems and
+electricity markets?}}
+
+I
 
 \hypertarget{sec:fcs}{%
 \chapter{Frequency control arrangements: insights from the National
