@@ -284,9 +284,8 @@
                 \vspace{.5cm}
 
         \Large
-        Designing operational practices for balancing power systems and
-        electricity markets with growing penetrations of renewable
-        energy
+        Designing operational practices for balancing electricity
+        markets with growing penetrations of renewable energy
         
 
         \vspace{1.5cm}
@@ -320,7 +319,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        November 23, 2023
+        November 27, 2023
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -1395,7 +1394,7 @@ Energy Market Operator, 2020b};
 2015}).
 
 \hypertarget{sec:lit_review-balancing_practices-scheduling}{%
-\subsubsection{Scheduling}\label{sec:lit_review-balancing_practices-scheduling}}
+\subsection{Scheduling}\label{sec:lit_review-balancing_practices-scheduling}}
 
 The purpose of \emph{scheduling} is to produce efficient (or
 \emph{economic}) generation and consumption schedules for the minutes to
@@ -1406,7 +1405,7 @@ divide the scheduling problem into three phases: \emph{dispatch},
 \emph{unit commitment} and \emph{longer-term scheduling}.
 
 \hypertarget{dispatch}{%
-\paragraph{Dispatch}\label{dispatch}}
+\subsubsection{Dispatch}\label{dispatch}}
 
 Dispatch involves the assignment of generation or consumption targets to
 already-committed (see
@@ -1452,7 +1451,7 @@ techniques
 2014}).
 
 \hypertarget{sec:lit_review-balancing_practices-scheduling-uc}{%
-\paragraph{Unit
+\subsubsection{Unit
 commitment}\label{sec:lit_review-balancing_practices-scheduling-uc}}
 
 Thermal \& hydroelectric generation, which historically dominated supply
@@ -1515,7 +1514,7 @@ market participants \& the SO a degree of certainty in schedules well
 before power delivery.
 
 \hypertarget{longer-term-scheduling}{%
-\paragraph{Longer-term scheduling}\label{longer-term-scheduling}}
+\subsubsection{Longer-term scheduling}\label{longer-term-scheduling}}
 
 Operational planning actions taken in longer-term scheduling timeframes
 (i.e.~a day ahead to a few years ahead) include resource maintenance
@@ -1600,7 +1599,7 @@ another.
   \protect\hyperlink{ref-prakashResponseFrequencyControl2021}{Prakash et
   al., 2021}).
 \item
-  . \textbf{Efficiency}. Efficient balancing practices procure balancing
+  \textbf{Efficiency}. Efficient balancing practices procure balancing
   flexibility at the lowest cost to the system, both now
   (\emph{productive efficiency}) and into the future (\emph{dynamic
   efficiency}). Furthermore, efficient arrangements should also procure
@@ -1673,13 +1672,15 @@ that the {[}SO{]} passes to participants via grid management charges''
 (\protect\hyperlink{ref-chaoInterfaceEngineeringMarket2005}{Chao et al.,
 2005, p. 1984}).
 
-The tension between effectiveness \& efficiency is interwoven with the
-problem of specifying which types of balancing flexibility should be
-procured through \emph{decentralised} markets for services \& products,
-and what should otherwise be directly managed or co-ordinated by the SO
-through \emph{centralised} processes \& practices. I draw on this
-problem specification in outlining the research objectives of this
-thesis in Chapter \ref{sec:research_framework}.
+The tension between effectiveness and efficiency can be reframed as the
+problem of specifying the degree to which balancing flexibility
+procurement arrangements are \emph{centralised}. Typically, the
+procurement of specialised and system-critical frequency control
+services is more closely managed by the SO whereas the provision of some
+forms of balancing flexibility in scheduling timeframes is largely left
+to market participants to manage. I draw on this problem framing when
+outlining the research objectives of this thesis in Chapter
+\ref{sec:research_framework}.
 
 \hypertarget{sec:lit_review-design-challenges-secondbest}{%
 \subsubsection{The requirement for ``second-best''
@@ -1824,8 +1825,8 @@ products ignore interdependencies and the wide technical capability
 ``spectrum'' of power system resources
 (\protect\hyperlink{ref-gimonGridPhysicsMarkets2020}{Gimon, 2020}). The
 question here is whether the potential benefits of spot market
-competition \& transparency outweigh those of SO co-ordination \& a more
-nuanced or layered approach. Co-ordination is particularly desirable for
+competition \& transparency outweigh those of SO coordination \& a more
+nuanced or layered approach. Coordination is particularly desirable for
 balancing flexibility services that are ``lumpy'' and/or inseparable
 from other services. For example, mechanical inertia provision requires
 the commitment of synchronous generation, which in turn augments rotor
@@ -1879,8 +1880,8 @@ real-time markets
 2016};
 \protect\hyperlink{ref-schittekatteDistributedEnergyResources2022}{Schittekatte
 and Pototschnig, 2022}). Transitioning to any one grid architecture
-requires forward-looking balancing practice design; however, given that
-deep uncertainties complicate long-term planning
+requires forward-looking balancing practice design; however, given
+long-term planning involves deep uncertainties
 (\protect\hyperlink{ref-lambertChallengeLongTermPolicy2003}{Lambert et
 al., 2003}), policy-makers must maximise \emph{design} flexibility (or
 alternatively, reduce the number of design \& system constraints imposed
@@ -1935,7 +1936,7 @@ the design problem, including:
 
 Though developing this understanding is a significant undertaking in and
 of itself, the design problem is made even more complex by 1) the
-presence of existing tensions and challenges and a changing resource
+presence of existing tensions and challenges and 2) a changing resource
 mix. The former means that whilst ``operating power systems primarily
 relying on {[}VRE{]} is technologically possible'', the design process
 is ``institutionally complex''
@@ -1945,8 +1946,8 @@ challenges and solutions --- for example, proponents of stronger price
 formation in real-time markets now not only argue that it is essential
 for efficient operation of and investment in utility-scale resources,
 but also that it is necessary so that the market can serve as a means to
-co-ordinate distributed consumer-owned energy resources (see
-(\protect\hyperlink{ref-hoganMarketDesignPractices2019}{Hogan, 2019})).
+coordinate distributed consumer-owned energy resources
+(\protect\hyperlink{ref-hoganMarketDesignPractices2019}{Hogan, 2019}).
 
 Whilst the literature has identified high-level design outcomes and the
 design areas that deserve the most attention, there is, as Mays
@@ -1955,33 +1956,206 @@ indicates, a role for empirical work that identifies ``second-best'' \&
 flexible design solutions given the specific context of each power
 system and jurisdiction. Such an approach recognises that effective,
 efficient and streamlined balancing practices arise not from ``optimal''
-settings, but from solutions that combine and compromise, e.g.~between
-centralised (i.e.~SO-mediated) an decentralised (i.e.~market-mediated)
-decision-making. Chapters \ref{sec:fcs},
-Sections~\ref{sec:reserves}, \ref{sec:info} attempt to take such an
-approach when assessing how best to balance power systems and
-electricity markets with increasing penetrations of variable renewable
-energy in operational timeframes.
+settings, but from solutions that combine and compromise. Chapters
+\ref{sec:fcs}, \ref{sec:reserves} and \ref{sec:info} attempt to take
+such an approach when assessing how best to balance electricity markets
+with increasing penetrations of variable renewable energy in operational
+timeframes.
 
 \hypertarget{sec:research_framework}{%
 \chapter{Research framework}\label{sec:research_framework}}
 
-This chapter outlines the research aim, objectives and methods of this
-thesis
+This chapter outlines the motivating research question of this thesis,
+the objectives within the scope of this thesis and the research methods
+used to achieve these objectives. The research framework of this thesis
+is shown in Figure~\ref{fig:research_framework}.
 
-\hypertarget{research-aim-and-objectives}{%
-\section{Research aim and
-objectives}\label{research-aim-and-objectives}}
+\begin{figure}
+\hypertarget{fig:research_framework}{%
+\centering
+\includegraphics{source/figures/research_framework.pdf}
+\caption{Research framework of this
+thesis.}\label{fig:research_framework}
+}
+\end{figure}
 
-The broad aim of this thesis is outlined below:
+\hypertarget{research-question-and-objectives}{%
+\section{Research question and
+objectives}\label{research-question-and-objectives}}
 
-\textbf{\textbf{Given existing design challenges and growing
-penetrations of variable renewable energy resources as energy transition
-proceeds, how should we design or, at the very least, approach the
-design of operational practices for balancing power systems and
-electricity markets?}}
+The research question that this thesis aims to address is outlined
+below:
 
-I
+\begin{quote}
+\textbf{Given existing design challenges and increasing penetrations of
+variable renewable energy resources as energy transition proceeds, how
+should we design or, at the very least, approach the design of
+operational practices for balancing electricity markets?}
+\end{quote}
+
+As the full scope of this research question is not possible to address
+within a single doctoral thesis, I focus on aspects of the design
+problem that are encompassed by the two following research objectives:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{RO1}: To determine what features are needed in
+  centrally-coordinated arrangements for procuring frequency control
+  services during energy transition.
+\item
+  \textbf{RO2}: To better understand how the \textbf{capabilities} and
+  \textbf{deployability} of balancing flexibility in scheduling
+  timeframes are changing during energy transition, and whether these
+  changes impact the suitability of more decentralised operational
+  balancing practices.
+\end{itemize}
+
+Whilst this thesis aims to achieve these research objectives and thus
+produce insights for policy-makers worldwide, I draw on experiences from
+the Australian NEM and use its resource configurations and market
+arrangements in the case studies contained within this thesis. Research
+from the NEM should be interesting and applicable to electricity market
+designers elsewhere for several reasons:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Relative to other jurisdictions, it regularly experiences high
+  instantaneous penetrations of renewable energy (a maximum of 72.9\% in
+  November 2023\footnote{Maximum as of the time of writing. Figure
+    obtained using GPE NEMLog
+    (\protect\hyperlink{ref-globalpowerenergyWelcomeGPENEMLog22023}{Global
+    Power Energy, 2023}).}) and variable renewable energy (a maximum of
+  71.9\% in November 2023\footnote{Maximum as of the time of writing.
+    Figure obtained using GPE NEMLog
+    (\protect\hyperlink{ref-globalpowerenergyWelcomeGPENEMLog22023}{Global
+    Power Energy, 2023}).}). As such, the changes in balancing
+  flexibility capabilities and requirements in the NEM that are
+  discussed in this thesis foreshadow those that are likely to occur in
+  other jurisdictions as they decarbonise their electricity supply.
+\item
+  Since rooftop solar PV and other consumer-owned energy resources
+  constitute a significant part of the resource mix (as high as 48\% in
+  a single market interval in October 2023\footnote{Maximum as of the
+    time of writing. Figure obtained using GPE NEMLog
+    (\protect\hyperlink{ref-globalpowerenergyWelcomeGPENEMLog22023}{Global
+    Power Energy, 2023}).}), electricity market designers must, at the
+  very least, consider their impact on system balancing and, ideally,
+  facilitate the provision of balancing flexibility from these resources
+  to the benefit of both the system and consumers. I touch on both of
+  these aspects in this thesis; however, operational practice design for
+  distributed and consumer-owned energy resources is not a focus of this
+  thesis.
+\item
+  Many of the world's electricity markets are considering or adopting
+  design features, such as short market intervals and faster frequency
+  control service markets, that have long been a part of the NEM's
+  design. As such, the experience from the NEM outlined in this thesis
+  can inform how or whether certain design features should be
+  implemented elsewhere.
+\end{enumerate}
+
+\hypertarget{mapping-chapters-to-objectives}{%
+\subsection{Mapping chapters to
+objectives}\label{mapping-chapters-to-objectives}}
+
+Chapter \ref{sec:fcs} aims to address RO1, Chapter \ref{sec:reserves}
+explores the \textbf{capabilities} component of RO2 and Chapter
+\ref{sec:info} builds on this by exploring two aspects of the
+\textbf{deployability} component of RO2 --- market information and
+resource operational objectives.
+
+\hypertarget{research-methods}{%
+\section{Research methods}\label{research-methods}}
+
+To achieve the objectives outlined in the previous subsection, I use the
+following research methods:
+
+\hypertarget{literature-review}{%
+\subsection{Literature review}\label{literature-review}}
+
+The broader literature on balancing, from industry and academia and from
+the NEM and other jurisdictions, was reviewed to better understand the
+nature of the design problem and the success of, as well as remaining
+challenges with the implementation of various balancing practices.
+Though a detailed literature review was completed in each A large
+portion of the output from the review included in Chapter \ref{sec:fcs}.
+The review demonstrated that though some challenges are universal,
+operational practice design and, more broadly, solutions must be
+tailored to each context given the diverse system outcomes and
+operational practice configurations across jurisdictions worldwide (a
+challenge which I briefly describe in
+Section~\ref{sec:lit_review-design_challenges}).
+
+\hypertarget{system-and-market-data-analysis}{%
+\subsection{System and market data
+analysis}\label{system-and-market-data-analysis}}
+
+Various analyses of system and market data from the Australian NEM were
+completed in Chapters \ref{sec:fcs}, \ref{sec:reserves} and
+\ref{sec:info} to measure system and market outcomes, and to provide
+empirical evidence for market modelling assumptions (next subsection)
+and policy discussion in this thesis. Data was obtained using
+NEM-specific open-source packages including \texttt{NEMOSIS}
+(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}),
+\texttt{NEMSEER} (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash,
+2023a}), the \texttt{AEMO\ Monthly\ Data\ Archive} tool
+(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023b}) and
+\texttt{nem-bidding-dashboard}
+(\protect\hyperlink{ref-gormanNembiddingdashboard2023}{Gorman and
+Chambers, 2023}), and analysed in Python and Julia
+(\protect\hyperlink{ref-bezansonJuliaFreshApproach2017}{Bezanson et al.,
+2017}) using \texttt{pandas}
+(\protect\hyperlink{ref-reback2020pandas}{The pandas development team,
+2020}) and \texttt{DataFrames.jl}
+(\protect\hyperlink{ref-juliadataDataFramesJl2023}{JuliaData, 2023}) ,
+respectively. Plots were generated using \texttt{matplotlib}
+(\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter, 2007}),
+\texttt{plotly}
+(\protect\hyperlink{ref-plotlytechnologiesinc.CollaborativeDataScience2015}{Plotly
+Technologies Inc., 2015}) or \texttt{Makie.jl}
+(\protect\hyperlink{ref-danischMakieJlFlexible2021}{Danisch and
+Krumbiegel, 2021}).
+
+\hypertarget{techno-economic-market-modelling}{%
+\subsection{Techno-economic (market)
+modelling}\label{techno-economic-market-modelling}}
+
+Techno-economic optimisation modelling was completed as a part of the
+work presented in Chapters \ref{sec:reserves} and \ref{sec:info}. In
+Chapter \ref{sec:reserves}, two market regions of the Australian NEM
+were modelled using PLEXOS, a commercial power system and electricity
+market modelling tool
+(\protect\hyperlink{ref-energyexemplarPLEXOSEnergyMarket2021}{Energy
+Exemplar, 2021}). It enables scheduling processes and bid-based
+electricity markets to be modelled. The longer-term scheduling and
+market modelling problems formulated by PLEXOS were solved using the
+CPLEX solver (\protect\hyperlink{ref-ibmCPLEXOptimizer2021}{IBM, 2021}).
+In Chapter \ref{sec:info}, an open-source Julia optimisation package
+(\texttt{JuMP}) was used to formulate mixed-integer linear programs that
+were then solved to produce market participation schedules for energy
+storage resources with different storage durations and operational
+objectives
+(\protect\hyperlink{ref-lubinJuMPRecentImprovements2023}{Lubin et al.,
+2023}). Each of the optimisation problems was solved using the
+open-source HiGHs solver
+(\protect\hyperlink{ref-huangfuParallelizingDualRevised2018}{Huangfu and
+Hall, 2018}) on Katana, a high-performance computational cluster
+supported by UNSW Research Technology Services
+(\protect\hyperlink{ref-unswresearchtechnologyservicesKatana2023}{UNSW
+Research Technology Services, 2023}). Results from Chapter
+\ref{sec:reserves} were analysed using \texttt{pandas}
+(\protect\hyperlink{ref-reback2020pandas}{The pandas development team,
+2020}) and plotted using \texttt{matplotlib}
+(\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter, 2007}),
+and results from Chapter \ref{sec:info} were analysed using
+\texttt{DataFrames.jl}
+(\protect\hyperlink{ref-juliadataDataFramesJl2023}{JuliaData, 2023}) and
+plotted using \texttt{Makie.jl}
+(\protect\hyperlink{ref-danischMakieJlFlexible2021}{Danisch and
+Krumbiegel, 2021}).
 
 \hypertarget{sec:fcs}{%
 \chapter{Frequency control arrangements: insights from the National
@@ -6335,7 +6509,7 @@ published between 4 minutes \& 30 seconds and 3 minutes prior to
 delivery (\protect\hyperlink{ref-mcardleFileCreationTimes2022}{McArdle,
 2022})). Source: \texttt{NEMSEER} documentation
 (\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{Prakash,
-2023b}), using data obtained using \texttt{NEMSEER}
+2023c}), using data obtained using \texttt{NEMSEER}
 (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}) and
 \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
@@ -6385,7 +6559,7 @@ we calculated the percentage of rebids from each technology type in June
 of every year from 2013 to 2021\footnote{Only June, a month with a large
   number of absolute price errors in NSW in 2021
   (\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{Prakash,
-  2023b}), was analysed due to the sheer volume of rebid data from 2019
+  2023c}), was analysed due to the sheer volume of rebid data from 2019
   onwards.}. Figure~\ref{fig:share_rebids_june_2013_2021} shows that
 rebids in June have grown considerably; there were 1-2 million rebids in
 June in 2013-2017, but this increased to approximately 2.5 million
@@ -6437,7 +6611,7 @@ number of rebids made in June of that year. June was selected because it
 was this month in 2021 that saw the highest occurrence of significant
 price forecast errors in several NEM regions across a range of ahead
 times for half-hourly dispatch intervals (see Prakash
-(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023b})).
+(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023c})).
 OCGT refers to open cycle gas turbines, CCGT refers to combined cycle
 gas turbines and DR/VPP includes demand response \& virtual power
 plants, the latter of which has predominantly referred to aggregated
@@ -6448,7 +6622,7 @@ obtained from Nemweb
 (\protect\hyperlink{ref-australianenergymarketoperatorNemwebMarketData2023}{Australian
 Energy Market Operator, 2023f}) using the open-source
 \texttt{AEMO\ Monthly\ Data\ Archive\ Tool}
-(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023c}).
+(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023b}).
 This plot was generated using \texttt{matplotlib}
 (\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter,
 2007}).}\label{fig:share_rebids_june_2013_2021}
@@ -6467,7 +6641,7 @@ which provides an interesting case study given its relatively low price
 volatility historically (Figure~\ref{fig:nem_daily_price_spreads}) yet
 recent experience with sudden \& significant price forecast swings
 (refer to Prakash
-(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023b}) and
+(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023c}) and
 Figure~\ref{fig:nsw_5min_price_demand_errors_2021}).
 
 \hypertarget{sec:info-case_study-bess_simulations-method}{%
@@ -6504,15 +6678,9 @@ this study:
   delivery were removed in favour of 5MPD price forecasts at 5-minute
   resolution. Together, these processing steps produced forecasts (or
   \emph{imperfect information}) for each dispatch interval with 5-minute
-  resolution up to 15 hours out from delivery\footnote{30MPD produces
-    forecasts until the end of the latest trading day for which offer \&
-    bid price band submission has closed. For example, the 1300 run on
-    day D, the 0800 run on day D+1 and the 1200 run on day D+1 will all
-    forecast out until 0400 on day D+2 (trading days in the NEM commence
-    at 0400). The longest lookahead for which all dispatch intervals
-    have a 30MPD forecast is 16 hours
-    (\protect\hyperlink{ref-prakashLookingPredispatchDemand2023}{Prakash,
-    2023d}).}.
+  resolution up to 15 hours out from delivery\footnote{See
+    Section~\ref{sec:info-case_study-price_forecast_errors} for a
+    definition of ``significant''.}.
 \end{enumerate}
 
 \hypertarget{schedules}{%
@@ -6578,7 +6746,7 @@ would not be prohibitive. Source/Figures were generated using
 Krumbiegel, 2021}). All of the aforementioned packages and this study's
 source code
 (\protect\hyperlink{ref-prakashNEMStorageUnderUncertainty2023}{Prakash,
-2023e}) are open-source and freely-available.
+2023d}) are open-source and freely-available.
 
 \hypertarget{sec:info-case_study-bess_simulations-method-sensitivity_analysis}{%
 \paragraph{Sensitivity
@@ -6743,9 +6911,8 @@ volumes). Nevertheless, more than half of the aggregate in-market BESS
 capacity was at times offered into the market for at least 10,000
 AUD/MW/hr on June 4 2023. Final offers were obtained and processed using
 \texttt{nem-bidding-dashboard}
-(\protect\hyperlink{ref-nicholasgormanNembiddingdashboard2023}{Nicholas
-Gorman and Patrick Chambers, 2023}). This plot was generated using
-\texttt{plotly}
+(\protect\hyperlink{ref-nicholasgormanNembiddingdashboard2023}{\textbf{nicholasgormanNembiddingdashboard2023?}}).
+This plot was generated using \texttt{plotly}
 (\protect\hyperlink{ref-plotlytechnologiesinc.CollaborativeDataScience2015}{Plotly
 Technologies Inc., 2015}).}\label{fig:nem_bess_bidding}
 }
@@ -7137,12 +7304,12 @@ repositories:
   and the battery energy storage system modelling, please refer to this
   repository: https://github.com/prakaa/NEMStorageUnderUncertainty
   (\protect\hyperlink{ref-prakashNEMStorageUnderUncertainty2023}{Prakash,
-  2023e}).
+  2023d}).
 \item
   For material related to the analysis of market participant
   (re)bidding, please refer to this repository:
   https://github.com/prakaa/nem-rebidding-analysis-2012-2021
-  (\protect\hyperlink{ref-prakashNEMReBidding2023}{Prakash, 2023f}).
+  (\protect\hyperlink{ref-prakashNEMReBidding2023}{Prakash, 2023e}).
 \end{itemize}
 
 \hypertarget{sec:conclusion}{%
@@ -7841,7 +8008,7 @@ explained by the latter forecasting periods late at night or early in
 the morning --- periods when supply \& demand conditions are typically
 more stable and thus predictable
 (\protect\hyperlink{ref-prakashLookingPredispatchDemand2023}{Prakash,
-2023d}). Pre-dispatch price forecast data were obtained using
+2023f}). Pre-dispatch price forecast data were obtained using
 \texttt{NEMSEER} (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash,
 2023a}), and actual market price data were obtained using
 \texttt{NEMOSIS}
@@ -8989,12 +9156,21 @@ Gimon, E., 2020.
 \href{https://www.esig.energy/download/plenary-1-grid-physics-and-markets-a-non-engineers-perspective-eric-gimon/}{Grid
 {Physics} and {Markets}: {A Non-Engineer}'s {Perspective}}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-globalpowerenergyWelcomeGPENEMLog22023}{}}%
+Global Power Energy, 2023. Welcome to {GPE NEMLog2} {[}WWW Document{]}.
+URL \url{https://nemlog.com.au/nlog/welcome-to-gpe-nemlog2/} (accessed
+11.27.2023).
+
 \leavevmode\vadjust pre{\hypertarget{ref-gonzalez-salazarReviewOperationalFlexibility2018}{}}%
 Gonzalez-Salazar, M.A., Kirsten, T., Prchlik, L., 2018. Review of the
 operational flexibility and emissions of gas- and coal-fired power
 plants in a future with growing renewables. Renewable and Sustainable
 Energy Reviews 82, 1497--1513.
 \url{https://doi.org/10.1016/j.rser.2017.05.278}
+
+\leavevmode\vadjust pre{\hypertarget{ref-gormanNembiddingdashboard2023}{}}%
+Gorman, N., Chambers, P., 2023.
+\href{https://github.com/UNSW-CEEM/nem-bidding-dashboard}{Nem-bidding-dashboard}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gormanNEMOSISNEMOpen2018}{}}%
 Gorman, N., Haghdadi, N., Bruce, A., MacGill, I., 2018.
@@ -9207,6 +9383,10 @@ markets. Energy Policy 37, 150--157.
 Isemonger, A.G., 2006. The {Benefits} and {Risks} of {Virtual Bidding}
 in {Multi-Settlement Markets}. Electricity Journal 19, 26--36.
 \url{https://doi.org/10.1016/j.tej.2006.09.010}
+
+\leavevmode\vadjust pre{\hypertarget{ref-juliadataDataFramesJl2023}{}}%
+JuliaData, 2023. {DataFrames}.jl {[}WWW Document{]}. URL
+\url{https://dataframes.juliadata.org/stable/} (accessed 11.27.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-katonaPriceMechanismSurvey2023}{}}%
 Katona, K., Sklibosios Nikitopoulos, C., Schloegl, E., 2023. A {Price
@@ -9548,10 +9728,6 @@ NERC Inverter-Based Resource Performance Task Force, 2020. Fast
 {Frequency Response Concepts} and {Bulk Power System Reliability Needs}.
 {North American Electric Reliability Corporation}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-nicholasgormanNembiddingdashboard2023}{}}%
-Nicholas Gorman, Patrick Chambers, 2023.
-\href{https://github.com/UNSW-CEEM/nem-bidding-dashboard}{Nem-bidding-dashboard}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-northamericanelectricreliabilitycorporationNERCInterconnections2023}{}}%
 North American Electric Reliability Corporation, 2023. {NERC
 Interconnections} {[}WWW Document{]}. URL
@@ -9647,24 +9823,24 @@ the organized balancing market: {A} symbiosis yet? {Case} of three
 \url{https://doi.org/10.1016/j.enpol.2018.11.009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashAEMOMonthlyData2023}{}}%
-Prakash, A., 2023c.
+Prakash, A., 2023b.
 \href{https://github.com/prakaa/mms-monthly-cli}{{AEMO Monthly Data
 Archive Tool}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashEnergyPriceConvergence2023}{}}%
-Prakash, A., 2023b. Energy price convergence in 2021 - {NEMSEER}
+Prakash, A., 2023c. Energy price convergence in 2021 - {NEMSEER}
 documentation {[}WWW Document{]}. URL
 \url{https://nemseer.readthedocs.io/en/latest/examples/price_convergence_2021.html\#absolute-price-error-for-each-region-by-dispatch-interval-and-ahead-time}
 (accessed 8.11.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashLookingPredispatchDemand2023}{}}%
-Prakash, A., 2023d. Looking at pre-dispatch demand forecast errors in
+Prakash, A., 2023f. Looking at pre-dispatch demand forecast errors in
 2021 - {NEMSEER} documentation {[}WWW Document{]}. URL
 \url{https://nemseer.readthedocs.io/en/latest/examples/pd_demand_forecast_error_2021.html}
 (accessed 8.18.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashNEMReBidding2023}{}}%
-Prakash, A., 2023f.
+Prakash, A., 2023e.
 \href{https://github.com/prakaa/nem-rebidding-analysis-2012-2021}{{NEM}
 ({Re}){Bidding Analysis}, 2012-2021}.
 
@@ -9673,7 +9849,7 @@ Prakash, A., 2023a.
 \href{https://doi.org/10.5281/zenodo.7397514}{{NEMSEER}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashNEMStorageUnderUncertainty2023}{}}%
-Prakash, A., 2023e. {NEMStorageUnderUncertainty}.
+Prakash, A., 2023d. {NEMStorageUnderUncertainty}.
 \url{https://doi.org/10.5281/ZENODO.8118850}
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashQuantifyingReserveCapabilities2023}{}}%
@@ -9926,6 +10102,10 @@ operating reserves in electricity generation expansion planning. The
 Electricity Journal 34, 106934.
 \url{https://doi.org/10.1016/j.tej.2021.106934}
 
+\leavevmode\vadjust pre{\hypertarget{ref-reback2020pandas}{}}%
+The pandas development team, 2020. Pandas-dev/pandas: {Pandas}.
+\url{https://doi.org/10.5281/zenodo.3509134}
+
 \leavevmode\vadjust pre{\hypertarget{ref-thorncraftExperienceMarketbasedAncillary2007}{}}%
 Thorncraft, S.R., Outhred, H.R., 2007. Experience with market-based
 ancillary services in the {Australian National Electricity Market}. 2007
@@ -9969,6 +10149,10 @@ Energy Market Operator}. {John Undrill LLC}.
 Undrill, J., 2018. Primary {Frequency Response} and {Control} of {Power
 System Frequency}. Energy Analysis and Environmental Impacts Division
 Lawrence Berkeley National Laboratory.
+
+\leavevmode\vadjust pre{\hypertarget{ref-unswresearchtechnologyservicesKatana2023}{}}%
+UNSW Research Technology Services, 2023. Katana {[}WWW Document{]}. URL
+\url{https://researchdata.edu.au/katana/1733007} (accessed 11.27.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-vanderveenElectricityBalancingMarket2016}{}}%
 van der Veen, R.A.C., Hakvoort, R.A., 2016. The electricity balancing
