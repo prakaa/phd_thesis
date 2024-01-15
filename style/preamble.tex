@@ -48,18 +48,26 @@
 % HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
-\sectionfont{\rmfamily\mdseries\large}
-\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
-\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
-% \sectionfont{\rmfamily\mdseries\Large}
+% \sectionfont{\rmfamily\mdseries\large}
 % \subsectionfont{\rmfamily\mdseries\scshape\normalsize}
 % \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\large}
+\subsubsectionfont{\rmfamily\bfseries\normalsize}
 
 % Chapter header
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[display]{\Large\bfseries}{Chapter \thechapter}{0pt}{\Large\bfseries}
+\titleformat{\chapter}[display]
+{\bfseries\huge}
+{\filleft\MakeUppercase{\chaptertitlename} \thechapter}
+{4ex}
+{\titlerule
+  \vspace{2ex}%
+  \LARGE\filright}
+[\vspace{2ex}%
+\titlerule]
 
 % Set figure legends and captions to be smaller sized sans serif font
 \usepackage[font={footnotesize,sf}]{caption}
