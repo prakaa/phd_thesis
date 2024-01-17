@@ -1,15 +1,13 @@
 # Abbreviations and Nomenclature{.unnumbered}
 
 \begin{longtable}[l]{l l}
-\textbf{30MPD} & Thirty-minute pre-dispatch \\
-\textbf{5MPD} & Five-minute pre-dispatch \\
 \textbf{5MS} & Five minute settlement \\
 \textbf{AC} & Alternating current \\
 \textbf{AEMC} & Australian Energy Market Commission \\ 
 \textbf{AEMO} & Australian Energy Market Operator \\
 \textbf{AER} & Australian Energy Regulator \\
 \textbf{AGC} & Automatic generation control \\
-\textbf{BESS} & Battery energy storage systems \\
+\textbf{BESS} & Battery energy storage system \\
 \textbf{BRP} & Balancing responsible party \\
 \textbf{BSP} & Balancing service provider \\
 \textbf{CCGT} & Combined-cycle gas turbine \\
@@ -24,6 +22,7 @@
 \textbf{FCAS} & Frequency Control Ancillary Services \\
 \textbf{FERC} & Federal Energy Regulatory Commission \\
 \textbf{FFR} & Fast frequency response \\
+\textbf{5MPD} & Five minute pre-dispatch \\
 \textbf{Gas-Steam} & Gas-powered steam turbine \\
 \textbf{Hz} & Hertz \\
 \textbf{mHz} & Millihertz \\
@@ -41,7 +40,6 @@
 \textbf{OCGT} & Open-cycle gas turbine \\
 \textbf{OFGS} & Over-frequency generation shedding \\
 \textbf{PASA} & Projected Assessment of System Adequacy \\
-\textbf{PD} & (30-minute) pre-dispatch \\
 \textbf{PFR} & Primary frequency response \\
 \textbf{PV} & Photovoltaic \\
 \textbf{QLD} & Queensland \\
@@ -54,6 +52,7 @@
 \textbf{SO} & System operator \\
 \textbf{TAS} & Tasmania \\
 \textbf{TFR} & Tertiary frequency response \\
+\textbf{30MPD} & Thirty minute pre-dispatch \\
 \textbf{TNSP} & Transmission Network Service Provider \\
 \textbf{TSO} & Transmission System Operator \\
 \textbf{UC-ED} & Unit commitment and economic dispatch \\
