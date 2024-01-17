@@ -163,18 +163,26 @@
 % HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
-\sectionfont{\rmfamily\mdseries\large}
-\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
-\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
-% \sectionfont{\rmfamily\mdseries\Large}
+% \sectionfont{\rmfamily\mdseries\large}
 % \subsectionfont{\rmfamily\mdseries\scshape\normalsize}
 % \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\large}
+\subsubsectionfont{\rmfamily\bfseries\normalsize}
 
 % Chapter header
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[display]{\Large\bfseries}{Chapter \thechapter}{0pt}{\Large\bfseries}
+\titleformat{\chapter}[display]
+{\bfseries\huge}
+{\filleft\MakeUppercase{\chaptertitlename} \thechapter}
+{4ex}
+{\titlerule
+  \vspace{2ex}%
+  \LARGE\filright}
+[\vspace{2ex}%
+\titlerule]
 
 % Set figure legends and captions to be smaller sized sans serif font
 \usepackage[font={footnotesize,sf}]{caption}
@@ -319,7 +327,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        December 24, 2023
+        January 17, 2024
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -425,15 +433,13 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \addcontentsline{toc}{chapter}{Abbreviations and Nomenclature}
 
 \begin{longtable}[l]{l l}
-\textbf{30MPD} & Thirty-minute pre-dispatch \\
-\textbf{5MPD} & Five-minute pre-dispatch \\
 \textbf{5MS} & Five minute settlement \\
 \textbf{AC} & Alternating current \\
 \textbf{AEMC} & Australian Energy Market Commission \\ 
 \textbf{AEMO} & Australian Energy Market Operator \\
 \textbf{AER} & Australian Energy Regulator \\
 \textbf{AGC} & Automatic generation control \\
-\textbf{BESS} & Battery energy storage systems \\
+\textbf{BESS} & Battery energy storage system \\
 \textbf{BRP} & Balancing responsible party \\
 \textbf{BSP} & Balancing service provider \\
 \textbf{CCGT} & Combined-cycle gas turbine \\
@@ -448,6 +454,7 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \textbf{FCAS} & Frequency Control Ancillary Services \\
 \textbf{FERC} & Federal Energy Regulatory Commission \\
 \textbf{FFR} & Fast frequency response \\
+\textbf{5MPD} & Five minute pre-dispatch \\
 \textbf{Gas-Steam} & Gas-powered steam turbine \\
 \textbf{Hz} & Hertz \\
 \textbf{mHz} & Millihertz \\
@@ -465,7 +472,6 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \textbf{OCGT} & Open-cycle gas turbine \\
 \textbf{OFGS} & Over-frequency generation shedding \\
 \textbf{PASA} & Projected Assessment of System Adequacy \\
-\textbf{PD} & (30-minute) pre-dispatch \\
 \textbf{PFR} & Primary frequency response \\
 \textbf{PV} & Photovoltaic \\
 \textbf{QLD} & Queensland \\
@@ -478,6 +484,7 @@ Nomenclature}\label{abbreviations-and-nomenclature}}
 \textbf{SO} & System operator \\
 \textbf{TAS} & Tasmania \\
 \textbf{TFR} & Tertiary frequency response \\
+\textbf{30MPD} & Thirty minute pre-dispatch \\
 \textbf{TNSP} & Transmission Network Service Provider \\
 \textbf{TSO} & Transmission System Operator \\
 \textbf{UC-ED} & Unit commitment and economic dispatch \\
@@ -533,27 +540,31 @@ Chapter \ref{sec:info} and described in Appendix
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-In this chapter, I provide useful context and a brief overview of the
+In this chapter, I provide relevant context and a brief overview of the
 literature that tackles the challenge of designing operational practices
 in electricity markets with growing penetrations of variable renewable
-energy (VRE). Whilst the literature has identified high-level design
-outcomes and the design areas that deserve the most attention as energy
-transition proceeds, the review highlights a role for empirical work
-that identifies ``second-best'' and flexible design solutions given the
+energy (VRE).
+
+Whilst the literature has identified high-level design outcomes and the
+design areas that deserve the most attention as energy transition
+proceeds, the review highlights a role for empirical work that
+identifies ``second-best'' and flexible design solutions given the
 specific context of each power system and jurisdiction. This approach to
 designing operational balancing practices constitutes a knowledge gap
-that we aim to address in the Australian context within this thesis (see
+that I aim to address in the Australian context within this thesis (see
 Section~\ref{sec:research_framework}, the research framework for this
 thesis).
 
-The rest of the chapter is structured as follows. Firstly, I present a
-brief overview of power systems in
-Section~\ref{sec:lit_review-power_systems}. I then discuss the
-importance of active power balancing in operational timeframes and
-provide a summary of the main paradigms under which power systems are
-operated in Section~\ref{sec:lit_review-operations}. Following this, in
+The rest of the chapter is structured as follows. Firstly, I provide a
+brief description of power systems in
+Section~\ref{sec:lit_review-power_systems}. Then, in
+Section~\ref{sec:lit_review-operations}, I present a high-level overview
+of power system phenomena and practices in operational timeframes,
+highlight the importance of active power balancing and discuss power
+system operational paradigms with a focus on restructured electricity
+markets. Following this, in
 Section~\ref{sec:lit_review-balancing_practices}, I describe existing
-and emerging balancing practices in operational timeframes, and in
+and emerging balancing practices in operational timeframes and, in
 Section~\ref{sec:lit_review-design}, I propose good design outcomes and
 discuss the challenges involved in operational practice design. Finally,
 in Section~\ref{sec:lit_review-gap}, I summarise the motivation for the
@@ -610,14 +621,14 @@ areas}\label{synchronous-and-control-areas}}
 
 A network area that is operated at a (constant) nominal AC frequency is
 known as a \textbf{synchronous area}. During normal operation, AC
-frequency should be close to the system's nominal value and more or less
-uniform across the synchronous area (see
-Section~\ref{sec:lit_review-balancing_need} as to why). A
-\textbf{control area}, on the other hand, is a network area which a
-particular \textbf{system operator} (SO) is responsible for operating.
-In this thesis, I use the term \textbf{jurisdiction} interchangeably
-with control area, with a preference for the former when referring to a
-control area with a wholesale electricity market overlay.
+frequency should be close to the system's nominal value (see
+Section~\ref{sec:lit_review-balancing_need} as to why) and more or less
+uniform across the synchronous area. A \textbf{control area}, on the
+other hand, is a network area which a particular \textbf{system
+operator} (SO) is responsible for operating. In this thesis, I use the
+term \textbf{jurisdiction} interchangeably with control area, with a
+preference for the former when referring to a control area with a
+wholesale electricity market overlay.
 
 Whether the term ``power system'' refers to a synchronous area or a
 control area is dependent on context and the relationship between the
@@ -639,20 +650,20 @@ and Pototschnig, 2022}).
 \hypertarget{sec:lit_review-operations}{%
 \section{Power system operations}\label{sec:lit_review-operations}}
 
-In broad terms, operating a power system involves the direction or
-control of \textbf{power system resources} --- generators, loads,
-network elements and energy storage resources. In practice, power system
-operation is an economic optimisation problem that aims to minimise
-system costs (or under some market paradigms, maximise the value of
-trade) whilst 1) continuously maintaining a balance between active power
-supply and demand, and 2) ensuring that system resources and the system
-itself are operated within their respective technical envelopes
+Operating a power system involves the direction or control of
+\textbf{power system resources} -- generators, loads, network elements
+and energy storage resources. In most cases, power system operation is
+an economic optimisation problem that aims to minimise system costs (or
+under some market paradigms, maximise the value of trade) whilst 1)
+continuously maintaining a balance between active power supply and
+demand and 2) ensuring that system resources and the system itself are
+operated within their respective technical envelopes
 (\protect\hyperlink{ref-woodPowerGenerationOperation2014}{Wood et al.,
 2014}). The former constraint more or less corresponds to
 \textbf{reliable} operation\footnote{In many jurisdictions, reliability
   is actually defined as the ability of generation to supply load
   requirements to an administratively-set standard. This standard varies
-  from jurisdiction to jurisdiction.}, and the latter constraint implies
+  from jurisdiction to jurisdiction.}, and the latter implies
 \textbf{secure} (or \textbf{stable}) operation and is a prerequisite for
 reliable operation
 (\protect\hyperlink{ref-anderssonPowerSystemSecurity2021}{Andersson,
@@ -668,11 +679,10 @@ Figure~\ref{fig:power_system_timeframes} presents a high-level overview
 of power system phenomena in operational timeframes and common
 operational practices (i.e.~processes, services and markets in
 operational timeframes). The processes, services and markets discussed
-in detail within this thesis are highlighted in bold red text. Though I
-do not discuss processes, services and markets in investment and
-planning timeframes in great detail in this thesis, it is worth
-acknowledging that they have a bearing on the manner in which a power
-system is operated. In some cases, the inverse is also true.
+in detail within this thesis are highlighted in bold red text. Though
+processes, services and markets in investment and planning timeframes
+are not within the scope of this thesis, it is important to acknowledge
+that they can influence the manner in which a power system is operated.
 
 \blandscape
 
@@ -683,7 +693,7 @@ system is operated. In some cases, the inverse is also true.
 \caption[High-level overview of power system concepts, phenomena and
 processes, services and markets relevant within operational
 timeframes]{A high-level overview of power system concepts, phenomena
-and processes, services and markets relevant within operational
+and the processes, services and markets relevant within operational
 timeframes (bounded by the red dashed box). All non-faded text in the
 bottom section indicates a process, service and/or market
 (i.e.~operational practice) related to active power balancing. All bold
@@ -710,11 +720,12 @@ in Wilson
 \subsection{Phenomena in operational
 timeframes}\label{phenomena-in-operational-timeframes}}
 
-A knowledge of power system phenomena and the timescales in which they
-occur is crucial to the successful operation of a power system. As shown
-in Figure~\ref{fig:power_system_timeframes}, power system operations is
-concerned with phenomena that dominate on timescales ranging from a few
-milliseconds to several months
+A knowledge of physical power system phenomena and the timescales in
+which they occur is an important prerequisite to achieving good outcomes
+when designing operational practices for power systems. As shown in
+Figure~\ref{fig:power_system_timeframes}, power system operations is
+concerned with three phenomena that dominate on timescales ranging from
+a few milliseconds to several months
 (\protect\hyperlink{ref-hatziargyriouDefinitionClassificationPower2021}{Hatziargyriou
 et al., 2021};
 \protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{Machowski et
@@ -729,16 +740,16 @@ al., 2020}):
   between power system resources. They occur on the timescale of
   milliseconds to seconds. IBR controls also operate in this timeframe.
 \item
-  \emph{Electromechanical} phenomena are slower (seconds to minutes
-  timescale) and arise as a result of electromagnetic fields interacting
-  with rotating masses and mechanical forces. These typically occur in
+  \emph{Electromechanical} phenomena are slower (seconds to minutes )
+  and arise as a result of electromagnetic fields interacting with
+  rotating masses and mechanical forces. These typically occur in
   generators and motors.
 \item
   \emph{Thermodynamic} phenomena are slower still. They encompass
   chemical fuel conversion and heat transfer processes in boilers. These
-  phenomena occur over multiple timescales, from seconds to minutes to
-  hours. The dynamics of the primary energy sources for hydroelectricity
-  and VRE are also relevant in these timescales
+  phenomena occur over seconds to minutes to hours. The dynamics of the
+  primary energy sources for hydroelectricity and VRE are also studied
+  across these timescales
   (\protect\hyperlink{ref-keeratimahatAnalysisShorttermOperational2021}{Keeratimahat
   et al., 2021}).
 \end{enumerate}
@@ -749,39 +760,45 @@ al., 2020}):
 \textbf{Active power balancing} can be described in simple terms using
 the law of conservation of energy: the energy supplied into a network
 node through primary energy conversion, energy storage or transmission
-is equal to the sum of the energy dissipated, stored and consumed at the
-same network node at each and every moment. However, the engineering
-reality is that active power balancing requires \emph{real-time} control
-of generation and loads to balance active power supply and demand
-\emph{across the power system}. \emph{Real-time} (i.e.~moment-to-moment)
-control of supply and demand is required because it is still
-uneconomical in many jurisdictions to store electricity at scale despite
-grid-scale storage cost reductions
-(\protect\hyperlink{ref-internationalenergyagencyGridScaleStorage2022}{International
-Energy Agency, 2022}). In other words, many power systems have small
-balancing buffers and thus require real-time balancing. Furthermore,
-though electricity can be transported close to the speed of light across
-a synchronous area, balancing requires at least some degree of
-coordination \emph{across the power system}. There are two reasons
-behind this. Firstly, active power imbalances can have system-wide
-consequences (see Section~\ref{sec:lit_review-balancing_need}).
-Secondly, transmission losses and various network constraints imposed by
-line thermal limits, stability requirements and Kirchoff's circuit laws
-necessitate the coordination of power flows required for system
-balancing (\protect\hyperlink{ref-hirthWhyWindNot2016a}{Hirth et al.,
-2016};
-\protect\hyperlink{ref-kirschenFundamentalsPowerSystem2004}{Kirschen and
-Strbac, 2004}).
+is equal to the sum of the energy dissipated, stored, consumed and
+transmitted away from the same network node at each and every moment. A
+more practical definition that encompasses the key concerns of power
+system engineers is that active power balancing requires
+\emph{real-time} control of generation and loads to balance active power
+supply and demand \emph{across the power system}:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Real-time} (i.e.~moment-to-moment) control of supply and demand
+  is required because it is still uneconomical in many jurisdictions to
+  store electricity at scale despite grid-scale storage cost reductions
+  (\protect\hyperlink{ref-internationalenergyagencyGridScaleStorage2022}{International
+  Energy Agency, 2022}). In other words, many power systems have small
+  balancing buffers and thus require real-time balancing.
+\item
+  Whilst electricity can be transported close to the speed to light
+  across a synchronous area, some degree of balancing coordination
+  \emph{across the power system} is required because of transmission
+  losses and constraints on network flows imposed by line thermal
+  limits, stability requirements and Kirchoff's circuit laws
+  (\protect\hyperlink{ref-hirthWhyWindNot2016a}{Hirth et al., 2016};
+  \protect\hyperlink{ref-kirschenFundamentalsPowerSystem2004}{Kirschen
+  and Strbac, 2004}). A whole-of-system approach is also necessary
+  because active power imbalances in network sub-regions can have
+  system-wide consequences (see
+  Section~\ref{sec:lit_review-balancing_need}).
+\end{itemize}
 
 \hypertarget{sec:lit_review-balancing_need}{%
 \subsubsection{Why is balancing
 required?}\label{sec:lit_review-balancing_need}}
 
-Unlike the transportation networks of many other commodities, an active
-power supply-demand imbalance can lead to deviations in technical
-parameters -- voltage and AC frequency -- that not only have the
-potential to damage equipment connected to the power system, but also to
-trigger a system collapse
+Unlike many other commodity transportation networks, an active power
+supply-demand imbalance can lead to deviations in technical parameters
+-- voltage and AC frequency -- that not only have the potential to
+damage equipment connected to the power system, but also to trigger a
+system collapse
 (\protect\hyperlink{ref-borensteinEconomicsElectricityReliability2023}{Borenstein
 et al., 2023}).
 
@@ -803,18 +820,22 @@ where \(N_s\) is the synchronous speed in revolutions per minute, \(P\)
 is the number of (rotor) magnetic poles and \(f\) is the electrical
 frequency in Hertz (Hz).
 
-We can see the link between active power balance and power system
-frequency by examining synchronous machine dynamics. In a synchronous
-generator (coal-fired, gas-fired and hydro generators), the interaction
-between the magnetic fields of the rotor and stator produces an
+Equation~\ref{eq:synch_speed} describes an important characteristic of
+synchronous machines during stable operation, but the link between
+active power balance and power system frequency requires examining
+synchronous machine \emph{dynamics}. As shown in
+Figure~\ref{fig:synch_torques}, the interaction between the magnetic
+fields of the rotor and stator of a synchronous generator
+(e.g.~coal-fired, gas-fired and hydro generation) produces an
 electromagnetic torque (\(T_e\)) on the rotor that opposes the
 mechanical torque (\(T_m\)) supplied by a prime mover (e.g.~steam
-turbine) (Figure~\ref{fig:synch_torques}). Equation~\ref{eq:swing},
-which is a variation of what is known as the swing equation, shows that
-if there is a transient increase in the electrical load of the power
-system (equivalent to an increase in \(P_e\) and thus \(T_e\)), the
-rotor of a synchronous generator will begin to decelerate as its stored
-kinetic energy is converted to electrical energy
+turbine). Equation~\ref{eq:swing}, which is a variation of what is known
+as the swing equation, is an energy balance across the synchronous
+generator. It shows that if there is a transient increase in the
+electrical load of the power system (equivalent to an increase in
+\(P_e\) and thus \(T_e\)), the rotor of a synchronous generator will
+begin to decelerate as its stored kinetic energy is converted to
+electrical energy
 (\protect\hyperlink{ref-elgerdElectricEnergySystems1971}{Elgerd, 1971};
 \protect\hyperlink{ref-graingerPowerSystemAnalysis1994}{Grainger,
 1994}).
@@ -842,20 +863,20 @@ Rebours
 
 The relationship between the active power imbalance in a power system
 (\(P_{gen}-P_{load}\)) and AC frequency is obtained by extending the
-dynamics of the swing equation from a single synchronous generator to
-all synchronous generators in a synchronous area
-(Equation~\ref{eq:swing_area}). Equation~\ref{eq:swing_area} shows that
-the rate of change of frequency (RoCoF) is proportional to the active
-power imbalance and inversely proportional to the system's inertia
-constant, \(H\). This form of the swing equation only models the
-\textbf{inertial response} of synchronous generators; that is, it does
-not include the load damping response offered by (frequency-dependent)
-induction motor loads. The generation inertia constant is often used a
-proxy for the system inertia constant since the high speed and mass of
-generator rotors mean that they store significant quantities of kinetic
-energy (\protect\hyperlink{ref-denholmInertiaPowerGrid2020}{Denholm et
-al., 2020}; \protect\hyperlink{ref-ulbigImpactLowRotational2014}{Ulbig
-et al., 2014}).
+swing equation from a single synchronous generator to all synchronous
+generators in a synchronous area (Equation~\ref{eq:swing_area}).
+Equation~\ref{eq:swing_area} shows that the rate of change of frequency
+(RoCoF) is proportional to the active power imbalance and inversely
+proportional to the system's inertia constant, \(H\). This form of the
+swing equation only models the \textbf{inertial response} of synchronous
+generators; that is, it does not include the load damping response
+offered by (frequency-dependent) induction motor loads. The generation
+inertia constant is often used a proxy for the system inertia constant
+since the high speed and mass of generator rotors mean that they store
+significant quantities of kinetic energy
+(\protect\hyperlink{ref-denholmInertiaPowerGrid2020}{Denholm et al.,
+2020}; \protect\hyperlink{ref-ulbigImpactLowRotational2014}{Ulbig et
+al., 2014}).
 
 \begin{equation}\protect\hypertarget{eq:swing_area}{}{\frac{2H}{f}\frac{df}{dt} = \frac{P_{gen}-P_{load}}{S_{g, total}}}\label{eq:swing_area}\end{equation}
 
@@ -864,8 +885,8 @@ where \(H\) is the inertia constant of the synchronous area
 is the AC frequency, \(\frac{df}{dt}\) is the rate of change of
 frequency or RoCoF, \(S_{g,total}\) is the total apparent power of
 synchronous generators, and \(P_{gen}\) and \(P_{load}\) are the power
-system's total active power supply and total active power demand
-(including losses), respectively.
+system's total active power supply and active power demand (including
+losses), respectively.
 
 Equation~\ref{eq:swing_area} shows that a power system's AC frequency is
 an indicator of active power balance
@@ -905,9 +926,9 @@ shedding or \textbf{OFGS})
 (\protect\hyperlink{ref-australianenergymarketoperatorEnduringPrimaryFrequency2021}{Australian
 Energy Market Operator, 2021a};
 \protect\hyperlink{ref-hartmannEffectsDecreasingSynchronous2019}{Hartmann
-et al., 2019}). The activation of these schemes is undesirable; UFLS
-adversely affects power system reliability and both are intended to be a
-last line of defence against frequency-driven system collapse.
+et al., 2019}). The activation of these schemes is undesirable,
+particularly since UFLS can lead to power system reliability standards
+being breached.
 
 \hypertarget{sec:lit_review-balancing_threats}{%
 \subsubsection{Threats to active power
@@ -923,9 +944,9 @@ Power system variability refers to \emph{expected} or forecasted changes
 to active power supply and/or demand. Sources of variability include
 fluctuations in load, oscillatory active power output from synchronous
 generators and VRE generation \textbf{ramping} (i.e.~a sustained
-increase or decrease in active power output), which includes changes in
-solar PV generation during sunrise or sunset and in wind generation with
-wind speed variations
+increase or decrease in active power output). VRE ramping includes
+changes in solar PV generation during sunrise or sunset and in wind
+generation with wind speed variations
 (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{Australian
 Energy Market Operator, 2020a};
 \protect\hyperlink{ref-bloomItIndisputableFive2017}{Bloom et al., 2017};
@@ -936,11 +957,10 @@ Energy Market Operator, 2020a};
 \paragraph{Power system uncertainty}\label{power-system-uncertainty}}
 
 Power system uncertainty refers to \emph{unexpected} changes to active
-power supply and/or demand. These can be further categorised as ``known
-unknowns'' and ``unknown unknowns''. Source of uncertainty include
-demand and VRE generation forecast errors, and singular or widespread
-outage events triggered by the weather or unexpected system responses
-and interactions.
+power supply and/or demand. Source of uncertainty include demand and VRE
+generation forecast errors, and singular or widespread outage events
+triggered by the weather or unexpected system responses and
+interactions.
 (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{Australian
 Energy Market Operator, 2020a};
 \protect\hyperlink{ref-egglestonSecurityResilienceTechnical2021}{Eggleston
@@ -952,19 +972,20 @@ et al., 2021};
 \subsection{Operational
 paradigms}\label{sec:lit_review-operational_paradigms}}
 
-Given the need for at least some degree of balancing coordination in a
-power system, SOs are ultimately responsible for ensuring that their
-control area is operated in a secure and reliable manner
-(\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
-2008}). Though the powers, responsibilities and degree of ring-fencing
-imposed upon the SO vary from jurisdiction to jurisdiction, these are
-largely dictated by the control area's operational paradigm
+Though governance and operational arrangements vary from jurisdiction to
+jurisdiction, the powers, responsibilities and degree of ring-fencing
+imposed upon the SO are largely dictated by the operational paradigm of
+the control area
 (\protect\hyperlink{ref-chawlaGlobalTrendsElectricity2013}{Chawla and
 Pollitt, 2013}). Below, I discuss the two possible operational
 paradigms: where the SO is a \textbf{vertically-integrated utility}, and
 where the SO is, at the very least, responsible for operating a
 transmission system that forms the physical basis of a \textbf{wholesale
-electricity market}.
+electricity market}. In both cases, it is the SO that is ultimately
+responsible for ensuring that their the transmission network in their
+control area is operated in a secure and reliable manner
+(\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
+2008}).
 
 \hypertarget{vertically-integrated-utility}{%
 \subsubsection{Vertically-integrated
@@ -1012,44 +1033,41 @@ Healy, 2013};
 2006}). Two features common to electricity industry restructuring
 processes were the unbundling of vertically-integrated utilities and the
 introduction of competition for wholesale supply (and in some cases,
-demand) via an \textbf{electricity market} (an auction-based mechanism
-for the sale and/or purchase of electricity).
+demand) via an \textbf{electricity market} -- an auction-based mechanism
+for the sale and/or purchase of electrical energy.
 
 \hypertarget{unbundling}{%
 \paragraph{Unbundling}\label{unbundling}}
 
 In most cases, the unbundling of a vertically-integrated utility divided
-generation ownership, and made the SO responsible for the secure and
-reliable operation of the transmission network whilst barring them from
-owning generation assets. In some jurisdictions, SOs were also given
-ownership of the transmission network (e.g.~Transmission System
-Operators, or TSOs, in many European control areas) whereas others made
-their SOs ``independent'' by relieving them of any asset ownership
-(e.g.~Independent System Operators in North American control areas).
-Some SOs, such as those in North America and the Australian NEM, were
-also given market operation responsibilities
+generation ownership and barred the SO from owning generation assets. In
+some jurisdictions, SOs retained ownership of the transmission network
+(e.g.~Transmission System Operators, or TSOs, in many European control
+areas) whereas others made their SOs ``independent'' by relieving them
+of any asset ownership (e.g.~Independent System Operators in North
+American control areas). Some SOs, such as those in North America and
+the Australian NEM, were also given market operation responsibilities
 (\protect\hyperlink{ref-chawlaGlobalTrendsElectricity2013}{Chawla and
 Pollitt, 2013}).
 
 \hypertarget{market-models}{%
 \paragraph{Market models}\label{market-models}}
 
-Much like the diverse outcomes of unbundling, the design and
-implementation of wholesale electricity markets differs across
-jurisdictions that undertook electricity industry restructuring. Despite
-these differences, electricity markets worldwide can broadly be
+The design and implementation of wholesale electricity markets differs
+across jurisdictions that undertook electricity industry restructuring.
+Despite these differences, electricity markets worldwide can broadly be
 categorised into two markets models\footnote{My descriptions of central
   and self-dispatch electricity markets differ slightly to those of
   Ahlqvist et al.
   (\protect\hyperlink{ref-ahlqvistSurveyComparingCentralized2022}{2022}),
   who focus on the level of centralisation in day-ahead timeframes. They
   categorise the Australian NEM as a decentralised market as
-  participants manage self-commitment; however, the SO still produces
+  participants manage unit commitment. However, the SO still produces
   resource-specific production and consumption targets through a central
-  dispatch process that also clears the real-time market. Refer to
-  Section~\ref{sec:info-context-nem} for more detail.} that are
-distinguished by the degree of centralisation in system and market
-operations
+  dispatch process that also clears the real-time market. As such, I
+  categorise the NEM as a semi-centralised market (refer to
+  Section~\ref{sec:info-context-nem}).} that are distinguished by the
+degree of centralisation in system and market operations
 (\protect\hyperlink{ref-ahlqvistSurveyComparingCentralized2022}{Ahlqvist
 et al., 2022};
 \protect\hyperlink{ref-barrosoClassificationElectricityMarket2005}{Barroso
@@ -1064,11 +1082,10 @@ et al., 2005};
   and, in some cases, unit commitment (see
   Section~\ref{sec:lit_review-balancing_practices-scheduling}) are made
   by the SO. System and market operations are often \textbf{integrated}
-  (i.e.~the SO is also the market operator) through the creation of a
-  \textbf{mandatory power pool}, in which supply offers are aggregated
-  and cleared against a demand forecast (one-sided pool) or against an
-  aggregated demand curve constructed from potential buyers (two-sided
-  pool)
+  (i.e.~the SO is also the market operator) through a \textbf{mandatory
+  power pool} in which supply offers are aggregated and cleared against
+  a demand forecast (one-sided pool), or against an aggregated demand
+  curve constructed from potential buyers (two-sided pool)
   (\protect\hyperlink{ref-barrosoClassificationElectricityMarket2005}{Barroso
   et al., 2005}). In these markets, locational prices for energy and
   \textbf{ancillary services} (services procured to maintain security
@@ -1076,10 +1093,10 @@ et al., 2005};
   processes that consider the physical constraints of the transmission
   system. This market model has been adopted in Independent System
   Operator/Regional Transmission Operator (ISO/RTO) markets in North
-  America (refer to Section~\ref{sec:fcs-NA} for more detail) and, as I
+  America (refer to Section~\ref{sec:fcs-NA} for more detail). As I
   discuss further in Section~\ref{sec:info-context-nem}, the Australian
-  NEM's design is predominantly based on this model (though it does
-  incorporate some features of more decentralised markets).
+  NEM's design is predominantly based on this model though it does
+  incorporate some features of more decentralised markets.
 \item
   Decentralised or \textbf{self-dispatch} markets, where decisions
   regarding dispatch and unit commitment are made by market
@@ -1087,9 +1104,9 @@ et al., 2005};
   decoupled. These types of markets facilitate trade through bilateral
   contracts between suppliers and buyers. Whilst scheduling and dispatch
   is managed by market participants, they are required to submit
-  intended schedules to the SO ahead of delivery (often during the
-  day-ahead). The SO is responsible for taking redispatch actions to
-  ensure that transmission constraints are not violated, and for
+  intended schedules to the SO ahead of delivery (often during the day
+  before delivery). The SO is responsible for taking redispatch actions
+  to ensure that transmission constraints are not violated, and for
   determining the requirement for and procuring balancing services
   (another name for frequency control services, which I discuss in
   greater detail in
@@ -1135,12 +1152,12 @@ electricity markets with multiple market \textbf{platforms}
 Security Board, 2020a};
 \protect\hyperlink{ref-isemongerBenefitsRisksVirtual2006}{Isemonger,
 2006}). Platforms are formal sub-markets for energy (and sometimes
-ancillary services) that are predominantly cleared ahead of the delivery
-of electricity and/or ancillary services. The number of platforms
+ancillary services) that are cleared ahead of the delivery of
+electricity and/or ancillary services. The number of platforms
 implemented in a particular market is often related to its market model.
 Self-dispatch markets can maximise trade and better facilitate market
 participants balancing their positions by implementing multiple market
-platforms (typically day-ahead and several intra-day) (see
+platforms (typically day-ahead and several intra-day, see
 Section~\ref{sec:fcs-EU}), whereas the number of platforms in central
 dispatch markets (typically real-time and in most cases, day-ahead) is
 limited by the computational complexity of the optimisation algorithm(s)
@@ -1153,11 +1170,11 @@ et al., 2018}).
 \section{Balancing practices in operational
 timeframes}\label{sec:lit_review-balancing_practices}}
 
-SOs employ \textbf{balancing practices} in operational timeframes (which
-include the processes, services and markets shown in
+SOs employ \textbf{balancing practices} in operational timeframes
+(including the non-faded processes, services and markets shown in
 Figure~\ref{fig:power_system_timeframes}) to obtain \textbf{balancing
-flexibility}. Balancing flexibility is procured either to directly
-address variability, or as optionality to mange uncertainty
+flexibility}. Balancing flexibility is procured either to address
+variability directly, or as optionality to mange uncertainty
 (\protect\hyperlink{ref-heggartyQuantifyingPowerSystem2020}{Heggarty et
 al., 2020},
 \protect\hyperlink{ref-heggartyQuantifyingPowerSystem2020}{2020};
@@ -1172,9 +1189,7 @@ vertically-integrated utility have been adapted into or integrated with
 market-based mechanisms.
 
 In the subsections that follow, I describe balancing practices in the
-order of the timescales in which they are relevant (i.e.~from
-milliseconds to years, as shown in
-Figure~\ref{fig:power_system_timeframes}).
+order of the timescales in which they are relevant.
 
 \hypertarget{sec:lit_review-balancing_practices-fcs}{%
 \subsection{Frequency control
@@ -1196,8 +1211,8 @@ output) for responding to an under-frequency event and/or
 \textbf{footroom} (the ability to decrease active power output) for
 responding to an over-frequency event
 (\protect\hyperlink{ref-etoUseFrequencyResponse2010}{Eto et al., 2010}).
-Whereas vertically-integrated utilities must schedule resources to
-provide frequency control services, SOs in restructured electricity
+Vertically-integrated utilities schedule their own resources to provide
+frequency control services, whereas SOs in restructured electricity
 industries typically procure frequency control services through
 regulatory and market-based mechanisms (see
 Section~\ref{sec:fcs-context-procurement}).
@@ -1241,10 +1256,10 @@ Van Hertem, 2016};
 \subsubsection{Fast frequency response}\label{fast-frequency-response}}
 
 IBRs and loads on frequency-responsive relays can provide what is
-typically known as fast frequency response (FFR). The most prominent
-use-case for FFR is the mitigation of high RoCoFs through a response
-delivered within a matter of milliseconds to a few seconds following a
-contingency event
+typically known as fast frequency response (FFR). The most
+well-discussed use-case for FFR is mitigating high RoCoFs through a
+response delivered within a matter of milliseconds to a few seconds
+following a contingency event
 (\protect\hyperlink{ref-australianenergymarketoperatorFastFrequencyResponse2017}{Australian
 Energy Market Operator, 2017a};
 \protect\hyperlink{ref-millerTechnologyCapabilitiesFast2017}{Miller et
@@ -1297,9 +1312,9 @@ et al., 2012b};
 Hiskens, 2003}). For generators, this is achieved through \textbf{droop
 control}, in which a synchronous speed deviation produces a change in
 the active power output of a generator according to its droop
-characteristic (Figure~\ref{fig:droop}, e.g.~from A to B along \(L_0\)).
-Droop control is implemented in the turbine governors of synchronous
-generators and the inverter control systems of IBRs
+characteristic (Figure~\ref{fig:droop}, e.g.~from \(A\) to \(B\) along
+\(L_0\)). Droop control is implemented in the turbine governors of
+synchronous generators and the inverter control systems of IBRs
 (\protect\hyperlink{ref-fernandez-guillamonPowerSystemsHigh2019}{Fernández-Guillamón
 et al., 2019};
 \protect\hyperlink{ref-linResearchRoadmapGridForming2020}{Lin et al.,
@@ -1323,9 +1338,8 @@ ideally be sustained until secondary frequency control can take over
 \subsubsection{Secondary frequency
 control}\label{secondary-frequency-control}}
 
-Secondary frequency response (SFR) is designed to take over from and
-``relieve'' fast-acting PFR. SFR is implemented in resource-level load
-controllers, which can
+Secondary frequency response (SFR) is designed to relieve fast-acting
+PFR. SFR is implemented in resource-level load controllers, which can
 (\protect\hyperlink{ref-etoFrequencyControlRequirements2018}{Eto et al.,
 2018}; \protect\hyperlink{ref-undrillNotesFrequencyControl2019}{Undrill,
 2019}).:
@@ -1392,15 +1406,15 @@ tertiary frequency response (TFR) is deployed to relieve PFR and SFR
 (\protect\hyperlink{ref-hewickerDimensioningControlReserves2020}{Hewicker
 et al., 2020}). Some jurisdictions, such as those operated by the
 California and Midcontinent ISOs, have introduced \textbf{ramping
-reserves}, which are essentially a form of TFR intended to address
-increased variability and uncertainty across dispatch intervals
-(i.e.~several minutes to an hour) due to growing penetrations of VRE
+reserves} -- a form of TFR intended to address increased variability and
+uncertainty across dispatch intervals (i.e.~several minutes to an hour)
+due to growing penetrations of VRE
 (\protect\hyperlink{ref-elaElectricityMarketsRenewables2017}{Ela et al.,
 2017}; \protect\hyperlink{ref-elaWholesaleElectricityMarket2016}{Ela et
-al., 2016}). Others, such as the Australian NEM, rely on balancing
-flexibility obtained through frequent scheduling processes (though the
-introduction of an operating reserve service -- a form of ramping TFR --
-had recently been proposed; see Section~\ref{sec:reserves-orcontext})
+al., 2016}). Other jurisdictions, such as the Australian NEM, rely on
+balancing flexibility obtained through frequent scheduling processes
+(though the introduction of a TFR service had recently been proposed;
+see Section~\ref{sec:reserves-orcontext})
 (\protect\hyperlink{ref-australianenergymarketoperatorPowerSystemRequirements2020}{Australian
 Energy Market Operator, 2020b};
 \protect\hyperlink{ref-rieszFrequencyControlAncillary2015}{Riesz et al.,
@@ -1411,8 +1425,7 @@ Energy Market Operator, 2020b};
 
 The purpose of \textbf{scheduling} is to produce efficient (or economic)
 generation and consumption schedules for the minutes to days ahead based
-on expected power system conditions (typically non-scheduled demand and
-VRE generation forecasts). Inspired by Chow et al.
+on expected power system conditions. In a similar manner to Chow et al.
 (\protect\hyperlink{ref-chowElectricityMarketDesign2005}{2005}), I
 divide the scheduling problem into three phases: dispatch, unit
 commitment and longer-term scheduling.
@@ -1420,24 +1433,23 @@ commitment and longer-term scheduling.
 \hypertarget{dispatch}{%
 \subsubsection{Dispatch}\label{dispatch}}
 
-Dispatch involves the assignment of generation or consumption targets to
-already-committed (see
-Section~\ref{sec:lit_review-balancing_practices-scheduling-uc}) power
-system resources in real-time (i.e.~several minutes ahead of delivery).
-Dispatch is carried out by vertically-integrated utilities, the SO in
-central dispatch markets and self-managed by market participants in
-self-dispatch markets. In the first two cases, the power system is
-dispatched by a SO running a process known as
+Dispatch involves assigning generation or consumption targets to
+already-committed power system resources in real-time (i.e.~several
+minutes ahead of delivery). Dispatch is carried out by the monopoly
+utility in vertically-integrated electricity industries, the SO in
+central dispatch markets and is self-managed by market participants in
+self-dispatch markets. In the first two cases, the SO dispatches power
+system resources by running a process known as
 \textbf{security-constrained economic dispatch}. Security-constrained
-economic dispatch typically seeks to find a minimum cost operating
-configuration for committed generation and loads such that a short-term
-forecast of non-scheduled demand can be met subject to network
-constraints and stability and reliability requirements\footnote{This is
-  a common variant of the generic problem description described in
+economic dispatch seeks to find a minimum cost operating configuration
+for committed generation and loads such that a short-term forecast of
+non-scheduled demand can be met subject to network constraints and
+stability and reliability requirements\footnote{This is a common variant
+  of the generic problem description described in
   Section~\ref{sec:lit_review-operations}.}
 (\protect\hyperlink{ref-graingerPowerSystemAnalysis1994}{Grainger,
-1994}). Some SOs solve this problem for a single interval (e.g.~as in
-the Australian NEM), whereas others, including the California and
+1994}). Some SOs solve this problem for a single interval (e.g.~in the
+Australian NEM), whereas others, including the California and
 Midcontinent ISOs, solve a multi-period dispatch to procure and, to some
 extent, price capabilities to address expected non-scheduled demand
 ramps (\protect\hyperlink{ref-elaSchedulingPricingExpected2016}{Ela and
@@ -1474,8 +1486,7 @@ costs (those attached to resource start-up, shut-down and operation at
 minimum load) that require SOs and market participants to make
 non-trivial \textbf{unit commitment} decisions (i.e.~whether a resource
 should be online or offline). Depending on the resource, these decisions
-are made anywhere from 5 minutes to several hours ahead of power
-delivery
+are made several minutes to hours ahead of power delivery
 (\protect\hyperlink{ref-agoraenergiewendeFlexibilityThermalPower2017}{Agora
 Energiewende, 2017};
 \protect\hyperlink{ref-denholmHowLowCan2018}{Denholm et al., 2018}).
@@ -1484,21 +1495,21 @@ Unit commitment is:
 \begin{itemize}
 \tightlist
 \item
-  Self-managed by market participants in self-dispatch markets and in
-  single-platform semi-centralised markets such as the Australian NEM;
+  Managed by vertically-integrated utilities for all resources in
+  jurisdictions that have not undergone restructuring;
 \item
   Built into the day-ahead market and intra-day reliability processes in
   central dispatch markets; and
 \item
-  Managed by vertically-integrated utilities for all resources in
-  jurisdictions that have not undergone restructuring.
+  Self-managed by market participants in self-dispatch markets and in
+  single-platform semi-centralised markets such as the Australian NEM.
 \end{itemize}
 
-In the latter two cases, the SO runs a process known as
-\textbf{security-constrained unit commitment}, which typically seeks to
-determine the minimum cost subset of power system resources that should
-be committed to meet a non-scheduled demand forecast for a future
-horizon (usually 36--48 hours ahead) subject to network constraints and
+In the first two cases, the SO runs a process known as
+\textbf{security-constrained unit commitment}, which seeks to determine
+the minimum cost subset of power system resources that should be
+committed to meet a non-scheduled demand forecast for a future horizon
+(usually 36--48 hours ahead) subject to network constraints and
 stability and reliability requirements. Security-constrained unit
 commitment is usually formulated as a mixed-integer linear program.
 Solving integer programs is computationally complex due to the
@@ -1509,34 +1520,34 @@ et al., 2020};
 2014}).
 
 In the day-ahead platforms of central dispatch markets, market
-participants submit start-up and no-load (minimum load) costs in
-addition to a piecewise linear offer for energy
+participants submit start-up and minimum load costs in addition to a
+piecewise linear offer for energy
 (\protect\hyperlink{ref-herreroEvolvingBiddingFormats2020}{Herrero et
-al., 2020}). The SO solves a security-constrained unit commitment
-problem to clear the day-ahead market and produce an ahead schedule,
-which is usually only financially binding (i.e.~deviations from this
-schedule are settled using real-time prices), in addition to locational
-prices for energy and ancillary services for each market interval in the
-day-ahead horizon (usually each hour)
+al., 2020}). The SO then solves a security-constrained unit commitment
+problem to clear the day-ahead market. This produces locational prices
+for energy and ancillary services for each market interval in the
+day-ahead horizon (usually each hour) and an ahead schedule
 (\protect\hyperlink{ref-cramtonElectricityMarketDesign2017}{Cramton,
 2017}; \protect\hyperlink{ref-isemongerEvolvingDesignRTO2009}{Isemonger,
-2009}). As discussed in
+2009}). The ahead schedule is typically only financially binding; that
+is, any real-time deviations from this schedule are settled using
+real-time market prices. As discussed in
 Section~\ref{sec:lit_review-operational_paradigms-markets-platforms},
 the day-ahead market platform provides market participants with an
 opportunity to hedge their real-time market position, and gives both
-market participants and the SO a degree of certainty in schedules well
+market participants and the SO greater certainty of resource schedules
 before power delivery.
 
 \hypertarget{longer-term-scheduling}{%
 \subsubsection{Longer-term scheduling}\label{longer-term-scheduling}}
 
 Operational planning actions taken in longer-term scheduling timeframes
-(i.e.~a day ahead to a few years ahead) include resource maintenance
-scheduling, the management of energy/fuel reserves and ensuring that any
-social and environmental obligations placed on resources are met
-(e.g.~regulated discharges from hydroelectric scheme dams). Many of
-these activities are conducted on the basis of information supplied by
-longer-term weather/climate, power system and market forecasts
+(i.e.~a day to years ahead) include resource maintenance scheduling, the
+management of energy/fuel reserves and ensuring that any social and
+environmental obligations placed on resources are met (e.g.~regulated
+discharges from hydroelectric scheme dams). Many of these activities are
+conducted on the basis of information supplied by longer-term
+weather/climate, power system and market forecasts
 (\protect\hyperlink{ref-denholmHowLowCan2018}{Denholm et al., 2018};
 \protect\hyperlink{ref-helistoIncludingOperationalAspects2019}{Helistö
 et al., 2019};
@@ -1549,9 +1560,9 @@ degradation from operation
 (\protect\hyperlink{ref-mcphersonImpactsStorageDispatch2020}{McPherson
 et al., 2020}; \protect\hyperlink{ref-xuRoleModelingBattery2022}{Xu,
 2022}). In restructured electricity industries, longer-term scheduling
-requires market participants to also consider and potentially change
-their forward market position, which is shaped by the electricity
-derivatives and contracts they hold
+also requires market participants to consider and potentially modify
+their position in forward markets in which electricity derivatives and
+contracts are traded
 (\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill
 and Esplin, 2020}).
 
@@ -1560,8 +1571,7 @@ and Esplin, 2020}).
 timeframes}\label{sec:lit_review-design}}
 
 Energy transition has prompted policy-makers worldwide to revisit and
-redesign existing balancing practices in their jurisdictions (see
-Section~\ref{sec:fcs-intro} and Section~\ref{sec:reserves-intro}). While
+redesign existing balancing practices in their jurisdictions. While
 there is a degree of international consensus surrounding desirable
 high-level design outcomes
 (Section~\ref{sec:lit_review-design_outcomes}) and the design areas that
@@ -1594,8 +1604,8 @@ three have been previously discussed in the literature and in a
 co-authored submission to an Australian NEM reform process
 (\protect\hyperlink{ref-macgillResponseEnergySecurity2020}{MacGill et
 al., 2020b}). As I discuss further in Section~\ref{sec:fcs-design} and
-Section~\ref{sec:reserves-intro}, there are, in practice, trade-offs
-that mean that an improvement in one outcome may come at the expense of
+Section~\ref{sec:reserves-intro}, in practice there are trade-offs that
+mean that an improvement in one outcome may come at the expense of
 another.
 
 \begin{enumerate}
@@ -1622,13 +1632,12 @@ another.
 \item
   \textbf{Minimising administrative costs and complexity}.
   Administrative costs, such as those associated with operating a market
-  for procuring balancing flexibility or with verifying the delivery of
-  balancing flexibility, can be significant. Administrative costs
-  include expenses related to metering equipment, IT systems and
-  additional staff. Complex administrative arrangements can be
-  problematic as they may interact with other components and/or
-  processes in the power system in ways that are unforeseen and
-  unintended.
+  for procuring balancing flexibility or with verifying its delivery,
+  can be significant. Administrative costs include expenses related to
+  metering equipment, IT systems and additional staff. Complex
+  administrative arrangements can be problematic as they may hamper
+  effective balancing flexibility delivery and/or interact with other
+  power system processes in ways that are unforeseen and unintended.
 \end{enumerate}
 
 \hypertarget{sec:lit_review-design_challenges}{%
@@ -1668,11 +1677,12 @@ standards and practices, and efficiency, an outcome championed by
 economists and often pursued through markets, significantly contributes
 to the complexity and contested nature of the design process in
 restructured electricity industries. One perspective of this tension
-(which I present in Section~\ref{sec:fcs-intro} and
-Section~\ref{sec:reserves-intro} and is extensively discussed by Chao et
-al. (\protect\hyperlink{ref-chaoInterfaceEngineeringMarket2005}{2005}))
-is that the efficiency gains obtained through market-based mechanisms
-for procuring balancing flexibility may come at the expense of the
+which I present in
+Sections~\ref{sec:fcs-intro}, \ref{sec:reserves-intro} and is
+extensively discussed by Chao et al.
+(\protect\hyperlink{ref-chaoInterfaceEngineeringMarket2005}{2005})) is
+that the efficiency gains obtained through market-based mechanisms for
+procuring balancing flexibility may come at the expense of the
 redundancy, certainty and control that a SO might require to guarantee
 effective balancing. An alternative perspective of this tension is that
 restructuring enables market participants to scrutinise and lobby for
@@ -1688,13 +1698,13 @@ charges''
 
 The tension between effectiveness and efficiency can be reframed as the
 problem of specifying the degree to which balancing flexibility
-procurement arrangements are \emph{centralised}. Typically, the
-procurement of specialised and system-critical frequency control
-services is more closely managed by the SO whereas the provision of some
-forms of balancing flexibility in scheduling timeframes is largely left
-to market participants to manage. I draw on this problem framing when
-outlining the research objectives of this thesis in Chapter
-\ref{sec:research_framework}.
+procurement arrangements are \emph{centralised} (i.e.~managed by the
+SO). Typically, the procurement of specialised and system-critical
+frequency control services is closely managed by the SO whereas the
+provision of some forms of balancing flexibility in scheduling
+timeframes is largely left to market participants to self-manage. I use
+this problem framing when outlining the research objectives of this
+thesis in Chapter \ref{sec:research_framework}.
 
 \hypertarget{sec:lit_review-design-challenges-secondbest}{%
 \subsubsection{The requirement for ``second-best''
@@ -1748,14 +1758,13 @@ Lancaster, 1956, p. 14}).
 
 There are several facets of the design problem warrant a ``second-best''
 approach to design solutions. Firstly, as raised in
-Section~\ref{sec:fcs-intro} and demonstrated in
-(\protect\hyperlink{ref-nahmmacherStrategiesShocksPower2016}{Nahmmacher
-et al., 2016}), there is often an asymmetry between the high
-costs\footnote{I refer here to quantifiable economic costs, but there
-  are of course significant social costs associated with the loss of
-  electricity supply given that it is necessary for many end-uses
-  including other essential services that are critical to the health and
-  wellbeing of people
+Section~\ref{sec:fcs-intro} and modelled in Nahmmacher et al.
+(\protect\hyperlink{ref-nahmmacherStrategiesShocksPower2016}{2016}),
+there is often an asymmetry between the high costs\footnote{I refer here
+  to quantifiable economic costs, but there are of course significant
+  social costs associated with the loss of electricity supply given that
+  it is necessary for many end-uses including other essential services
+  that are critical to the health and wellbeing of people
   (\protect\hyperlink{ref-australianenergymarketoperatorSubmissionAERWALDO2020}{Australian
   Energy Market Operator, 2020c},
   \protect\hyperlink{ref-australianenergymarketoperator2020ISPAppendix2020}{2020d};
@@ -1804,19 +1813,18 @@ allocation in Australian frequency control markets in
 Section~\ref{sec:fcs}.
 
 Secondly, because unbundled SOs have neither direct control nor
-ownership of generation or demand-side resources (see
-Section~\ref{sec:lit_review-operational_paradigms}), policy-makers in
+ownership of generation or demand-side resources, policy-makers in
 restructured jurisdictions are constrained in the design problem because
 SOs must \emph{procure} rather than provide balancing flexibility. In
-the absence of such a constraint, it might be more effective and/or
+the absence of ownership restrictions, it might be more effective and/or
 efficient for the SO itself to provide balancing flexibility. Referring
 to ancillary services (of which frequency control services are a
 subset), Pollitt and Anaya
 (\protect\hyperlink{ref-pollittCompetitionMarketsAncillary2019}{2019})
-argue that in the absence of limits on SO ownership, Coase's insights on
-the nature of the firm suggest that transaction costs would determine
-whether the SO provides ancillary services themselves or outsources
-their provision via spot market procurement
+argue that in the absence of limits on SO ownership, R. H. Coase's
+insights on the nature of the firm suggest that transaction costs would
+determine whether the SO provides ancillary services themselves or
+outsources their provision via spot market procurement
 (\protect\hyperlink{ref-coaseNatureFirm1937}{Coase, 1937}):
 
 \begin{quote}
@@ -1831,7 +1839,7 @@ good way to manage external suppliers who would otherwise exercise
 market power.
 \end{quote}
 
-This excerpt alludes to the ``quality'' constraint imposed by the
+This excerpt alludes to the ``quality constraint'' imposed by the
 construct of (spot) markets. As I discuss in
 Section~\ref{sec:fcs-efficiency-challenges} and
 Section~\ref{sec:reserves-intro}, spot markets work best with
@@ -1847,16 +1855,16 @@ from other services. For example, mechanical inertia provision requires
 the commitment of synchronous generation, which in turn augments rotor
 angle stability and system strength
 (\protect\hyperlink{ref-billimoriaMarketDesignSystem2020}{Billimoria et
-al., 2020}).
-
-In practice, long-term bilateral contracts constitute a ``second-best''
-solution that enables SOs to procure balancing flexibility in the
+al., 2020}). A practical, ``second-best'' solution to procuring these
+types of balancing flexibility is for the SO to use long-term bilateral
+contracts. Contracting can be a preferable procurement mechanism in the
 presence of uncertainty or market power, or where there is a requirement
 for a tailored service or a multi-faceted product
 (\protect\hyperlink{ref-pollittCompetitionMarketsAncillary2019}{Pollitt
 and Anaya, 2019}). If there are benefits to be gained from competitive
-pressure, these sorts of contracts can be awarded to market participants
-through tender processes that assess multiple criteria
+pressure, contracts can be awarded to market participants through tender
+processes designed to assess a single criterion (e.g.~price) or multiple
+criteria (e.g.~price, community benefit and delivery risk)
 (\protect\hyperlink{ref-reboursFundamentalDesignIssues2007}{Y. Rebours
 et al., 2007}).
 
@@ -1864,17 +1872,18 @@ et al., 2007}).
 \subsubsection{The design problem is
 underdetermined}\label{the-design-problem-is-underdetermined}}
 
-The design problem for balancing practices is often
-\textbf{underdetermined}, i.e.~it has many possible solutions. As I
-argue in Section~\ref{sec:reserves-intro}, this is because some
+The design problem for balancing practices is \textbf{underdetermined}.
+In other words. there are many possible design solution configurations.
+As I argue in Section~\ref{sec:reserves-intro}, this is because some
 processes, services and markets have overlapping roles and functions.
-One of the challenges that arises from a wide solution space is
-assessing the various trade-offs between different objectives
+The primary challenges of a wide solution space are that policy-makers
+must determine the trade-offs between different design objectives for
+each solution configuration (e.g.~between complexity, reducing
+constraints on the system and the level of engineering nuance), and that
+they must also assess which trade-offs are most acceptable across all
+practical solution configurations
 (\protect\hyperlink{ref-vanderveenElectricityBalancingMarket2016}{van
-der Veen and Hakvoort, 2016}). For example, it is challenging for
-policy-makers to simultaneously minimise complexity, reduce constraints
-on the system and account for the interdependency, interoperability and
-interchangeability of balancing practices.
+der Veen and Hakvoort, 2016}).
 
 \hypertarget{grid-architectures}{%
 \subsubsection{Grid architectures}\label{grid-architectures}}
@@ -1895,10 +1904,10 @@ real-time markets
 2016};
 \protect\hyperlink{ref-schittekatteDistributedEnergyResources2022}{Schittekatte
 and Pototschnig, 2022}). Transitioning to any one grid architecture
-requires forward-looking balancing practice design; however, given
+requires forward-looking balancing practice design; however, given that
 long-term planning involves deep uncertainties
 (\protect\hyperlink{ref-lambertChallengeLongTermPolicy2003}{Lambert et
-al., 2003}), policy-makers must maximise \emph{design} flexibility (or
+al., 2003}), policy-makers must maximise \emph{design flexibility} (or
 alternatively, reduce the number of design and system constraints
 imposed by operational practices) to retain option value
 (\protect\hyperlink{ref-fisherInvestmentUncertaintyOption2000}{Fisher,
@@ -1909,15 +1918,15 @@ imposed by operational practices) to retain option value
 outcomes}\label{diversity-of-initial-conditions-and-outcomes}}
 
 The design process has proceeded differently across jurisdictions due,
-in part, to technological, infrastructural, institutional and
-behavioural differences
+in part, to technological, infrastructural, institutional, geographical
+and behavioural differences
 (\protect\hyperlink{ref-ahlqvistSurveyComparingCentralized2022}{Ahlqvist
 et al., 2022};
 \protect\hyperlink{ref-papaefthymiouPowerSystemFlexibility2018}{Papaefthymiou
 et al., 2018}). These differences are likely to persist as jurisdictions
 revisit their balancing practices due to the \textbf{path dependency} of
 energy systems (i.e.~initial ``lock-ins'' have a large bearing on what
-system trajectories and futures are possible)
+system trajectories and futures are considered to be possible)
 (\protect\hyperlink{ref-fouquetPathDependenceEnergy2016}{Fouquet,
 2016}). Diversity of initial conditions and outcomes poses a challenge
 to the design problem because policy-makers in one jurisdiction must
@@ -1957,7 +1966,7 @@ relying on {[}VRE{]} is technologically possible'', the design process
 is ``institutionally complex''
 (\protect\hyperlink{ref-papaefthymiou100RenewableEnergy2016}{Papaefthymiou
 and Dragoon, 2016, p. 81}). The latter invites new perspectives on
-challenges and solutions --- for example, proponents of stronger price
+challenges and solutions -- for example, proponents of stronger price
 formation in real-time markets now not only argue that it is essential
 for efficient operation of and investment in utility-scale resources,
 but also that it is necessary so that the market can serve as a means to
@@ -1974,8 +1983,8 @@ efficient and streamlined balancing practices arise not from ``optimal''
 settings, but from solutions that combine and compromise. Chapters
 \ref{sec:fcs}, \ref{sec:reserves} and \ref{sec:info} attempt to take
 such an approach when assessing how best to balance electricity markets
-with increasing penetrations of variable renewable energy in operational
-timeframes.
+in operational timeframes with increasing penetrations of variable
+renewable energy.
 
 \hypertarget{sec:research_framework}{%
 \chapter{Research framework}\label{sec:research_framework}}
@@ -2115,9 +2124,10 @@ empirical evidence for market modelling assumptions (next subsection)
 and policy discussion in this thesis. Data was obtained using
 NEM-specific open-source packages including \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}),
-\texttt{NEMSEER} (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash,
-2023a}), the \texttt{AEMO\ Monthly\ Data\ Archive} tool
-(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023b}) and
+\texttt{NEMSEER}
+(\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}}),
+the \texttt{AEMO\ Monthly\ Data\ Archive} tool
+(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023a}) and
 \texttt{nem-bidding-dashboard}
 (\protect\hyperlink{ref-gormanNembiddingdashboard2023}{Gorman and
 Chambers, 2023}), and analysed in Python and Julia
@@ -4472,11 +4482,10 @@ volumes (but not prices) in their offer up to tens of seconds before the
 delivery interval
 (\protect\hyperlink{ref-australianenergymarketcommissionBiddingGoodFaith2015}{Australian
 Energy Market Commission, 2015};
-\protect\hyperlink{ref-paulmcardleTwoRecentImprovements2021}{Paul
-McArdle, 2021}). In 2021, the market settlement period was changed from
-30 minutes (the average of prices of the preceding six 5-minute
-intervals) to 5 minutes to better align settlement with dispatch and
-pricing
+\protect\hyperlink{ref-paulmcardleTwoRecentImprovements2021}{\textbf{paulmcardleTwoRecentImprovements2021?}}).
+In 2021, the market settlement period was changed from 30 minutes (the
+average of prices of the preceding six 5-minute intervals) to 5 minutes
+to better align settlement with dispatch and pricing
 (\protect\hyperlink{ref-australianenergymarketoperator5MSCommencement2022}{Australian
 Energy Market Operator, 2022a}). Since resources are expected to
 linearly ramp between one dispatch target and the next, the dispatch
@@ -5419,7 +5428,7 @@ of reserves:
   level declared in the last run of Pre-Dispatch PASA prior to delivery
   --- see Section~\ref{sec:reserves-ahead_soint}) by approximately 225\%
   in NSW and 170\% in SA
-  (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}).
+  (\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}}).
 \end{enumerate}
 
 Furthermore, with additional BESS and flexible gas resources expected to
@@ -6101,8 +6110,7 @@ acceptable)\footnote{The Australian Energy Regulator, which is
 and since the NEM has no formal gate closure, MPs can rebid until the
 NEM dispatch engine begins to run for the relevant delivery interval
 (typically tens of seconds prior to its commencement)
-(\protect\hyperlink{ref-paulmcardleTwoRecentImprovements2021}{Paul
-McArdle, 2021}).
+(\protect\hyperlink{ref-paulmcardleTwoRecentImprovements2021}{\textbf{paulmcardleTwoRecentImprovements2021?}}).
 
 \hypertarget{sec:info-context-nem-knowledge_processes}{%
 \subsubsection{Market knowledge
@@ -6467,8 +6475,8 @@ forecast data from 30MPD and 5MPD) and 15 minutes (bottom, using
 forecast data from 5MPD) ahead of delivery. The dashed \& annotated
 black lines denote major system events and market changes in the NEM.
 Pre-dispatch price forecasts data were obtained using \texttt{NEMSEER}
-(\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}), and actual
-market price data were obtained using \texttt{NEMOSIS}
+(\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}}),
+and actual market price data were obtained using \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
 Errors for each forecasted interval were calculated following the
 omission of the two 30MPD forecasts that overlap with the 5MPD forecast
@@ -6523,9 +6531,9 @@ published between 4 minutes \& 30 seconds and 3 minutes prior to
 delivery (\protect\hyperlink{ref-mcardleFileCreationTimes2022}{McArdle,
 2022})). Source: \texttt{NEMSEER} documentation
 (\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{Prakash,
-2023c}), using data obtained using \texttt{NEMSEER}
-(\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}) and
-\texttt{NEMOSIS}
+2023b}), using data obtained using \texttt{NEMSEER}
+(\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}})
+and \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
 This plot was generated using \texttt{matplotlib}
 (\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter,
@@ -6573,7 +6581,7 @@ we calculated the percentage of rebids from each technology type in June
 of every year from 2013 to 2021\footnote{Only June, a month with a large
   number of absolute price errors in NSW in 2021
   (\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{Prakash,
-  2023c}), was analysed due to the sheer volume of rebid data from 2019
+  2023b}), was analysed due to the sheer volume of rebid data from 2019
   onwards.}. Figure~\ref{fig:share_rebids_june_2013_2021} shows that
 rebids in June have grown considerably; there were 1-2 million rebids in
 June in 2013-2017, but this increased to approximately 2.5 million
@@ -6625,7 +6633,7 @@ number of rebids made in June of that year. June was selected because it
 was this month in 2021 that saw the highest occurrence of significant
 price forecast errors in several NEM regions across a range of ahead
 times for half-hourly dispatch intervals (see Prakash
-(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023c})).
+(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023b})).
 OCGT refers to open cycle gas turbines, CCGT refers to combined cycle
 gas turbines and DR/VPP includes demand response \& virtual power
 plants, the latter of which has predominantly referred to aggregated
@@ -6636,7 +6644,7 @@ obtained from Nemweb
 (\protect\hyperlink{ref-australianenergymarketoperatorNemwebMarketData2023}{Australian
 Energy Market Operator, 2023f}) using the open-source
 \texttt{AEMO\ Monthly\ Data\ Archive\ Tool}
-(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023b}).
+(\protect\hyperlink{ref-prakashAEMOMonthlyData2023}{Prakash, 2023a}).
 This plot was generated using \texttt{matplotlib}
 (\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter,
 2007}).}\label{fig:share_rebids_june_2013_2021}
@@ -6655,7 +6663,7 @@ which provides an interesting case study given its relatively low price
 volatility historically (Figure~\ref{fig:nem_daily_price_spreads}) yet
 recent experience with sudden \& significant price forecast swings
 (refer to Prakash
-(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023c}) and
+(\protect\hyperlink{ref-prakashEnergyPriceConvergence2023}{2023b}) and
 Figure~\ref{fig:nsw_5min_price_demand_errors_2021}).
 
 \hypertarget{sec:info-case_study-bess_simulations-method}{%
@@ -6679,10 +6687,10 @@ this study:
 \item
   Price forecast data generated from processing 30MPD and 5MPD price
   forecasts obtained using \texttt{NEMSEER}
-  (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}) in three
-  steps. Firstly, because 30MPD only produces forecasts with half-hourly
-  resolution, 30MPD price forecasts were imputed using the next
-  observation carried backwards (i.e.~forecasted price at 13:30 is
+  (\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}})
+  in three steps. Firstly, because 30MPD only produces forecasts with
+  half-hourly resolution, 30MPD price forecasts were imputed using the
+  next observation carried backwards (i.e.~forecasted price at 13:30 is
   applied to intervals ending at 13:25, 13:20, \ldots, 13:05). This
   reflects a typical interpretation of a 30MPD forecast. Secondly,
   because 30MPD is only run every half hour, the latest set of 30MPD
@@ -6760,7 +6768,7 @@ would not be prohibitive. Source/Figures were generated using
 Krumbiegel, 2021}). All of the aforementioned packages and this study's
 source code
 (\protect\hyperlink{ref-prakashNEMStorageUnderUncertainty2023}{Prakash,
-2023d}) are open-source and freely-available.
+2023c}) are open-source and freely-available.
 
 \hypertarget{sec:info-case_study-bess_simulations-method-sensitivity_analysis}{%
 \paragraph{Sensitivity
@@ -7305,7 +7313,7 @@ Energy Market Operator, 2023f}) and were obtained using two open-source
 tools: \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018})
 and \texttt{NEMSEER}
-(\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash, 2023a}).
+(\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}}).
 
 The source code (including data extraction through the aforementioned
 tools) and results from this study are hosted in two GitHub
@@ -7318,12 +7326,12 @@ repositories:
   and the battery energy storage system modelling, please refer to this
   repository: https://github.com/prakaa/NEMStorageUnderUncertainty
   (\protect\hyperlink{ref-prakashNEMStorageUnderUncertainty2023}{Prakash,
-  2023d}).
+  2023c}).
 \item
   For material related to the analysis of market participant
   (re)bidding, please refer to this repository:
   https://github.com/prakaa/nem-rebidding-analysis-2012-2021
-  (\protect\hyperlink{ref-prakashNEMReBidding2023}{Prakash, 2023e}).
+  (\protect\hyperlink{ref-prakashNEMReBidding2023}{Prakash, 2023d}).
 \end{itemize}
 
 \hypertarget{sec:conclusion}{%
@@ -7978,8 +7986,8 @@ max-scaled (i.e.~counts at each ahead time were divided by the counts at
 Figure~\ref{fig:discount_function_fitting}. The exponential and
 hyperbolic discount functions were then fitted to this curve using curve
 fitting tools in the \texttt{scipy} package
-(\protect\hyperlink{ref-mckinney-proc-scipy-2010}{Wes McKinney, 2010}).
-The values of \(r\) obtained from this process (outlined in
+(\protect\hyperlink{ref-mckinney-proc-scipy-2010}{McKinney, 2010}). The
+values of \(r\) obtained from this process (outlined in
 Table~\ref{tbl:discount-rates}) were then used alongside their
 corresponding discount functions in the arbitrage with discounting MILP
 formulation (Section~\ref{sec:appendix-milps-arbdisc}).
@@ -8022,10 +8030,10 @@ explained by the latter forecasting periods late at night or early in
 the morning --- periods when supply \& demand conditions are typically
 more stable and thus predictable
 (\protect\hyperlink{ref-prakashLookingPredispatchDemand2023}{Prakash,
-2023f}). Pre-dispatch price forecast data were obtained using
-\texttt{NEMSEER} (\protect\hyperlink{ref-prakashNEMSEER2023}{Prakash,
-2023a}), and actual market price data were obtained using
-\texttt{NEMOSIS}
+2023e}). Pre-dispatch price forecast data were obtained using
+\texttt{NEMSEER}
+(\protect\hyperlink{ref-prakashNEMSEER2023}{\textbf{prakashNEMSEER2023?}}),
+and actual market price data were obtained using \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
 Errors within an hour of delivery were calculated using 5MPD forecasts.
 Refer the research data for this article for further details and source
@@ -9665,6 +9673,12 @@ McConnell, D., Forcey, T., Sandiford, M., 2015. Estimating the value of
 electricity storage in an energy-only wholesale market. Applied Energy
 159, 422--432. \url{https://doi.org/10.1016/j.apenergy.2015.09.006}
 
+\leavevmode\vadjust pre{\hypertarget{ref-mckinney-proc-scipy-2010}{}}%
+McKinney, W., 2010. Data {Structures} for {Statistical Computing} in
+{Python}, in: Walt, S. van der, Millman, J. (Eds.), Proceedings of the
+9th {Python} in {Science Conference}. pp. 56--61.
+\url{https://doi.org/10.25080/Majora-92bf1922-00a}
+
 \leavevmode\vadjust pre{\hypertarget{ref-mcphersonImpactsStorageDispatch2020}{}}%
 McPherson, M., McBennett, B., Sigler, D., Denholm, P., 2020. Impacts of
 storage dispatch on revenue in electricity markets. Journal of Energy
@@ -9808,13 +9822,6 @@ Papavasiliou, A., 2020. Scarcity pricing and the missing {European}
 market for real-time reserve capacity. Electricity Journal 33, 106863.
 \url{https://doi.org/10.1016/j.tej.2020.106863}
 
-\leavevmode\vadjust pre{\hypertarget{ref-paulmcardleTwoRecentImprovements2021}{}}%
-Paul McArdle, 2021. Two recent improvements (in late {November} 2021) by
-{AEMO} in the dispatch process - {Reduced Gate Closure} on {Rebids}
-{[}WWW Document{]}. URL
-\url{https://wattclarity.com.au/articles/2021/12/two-improvements-in-nemde-dispatch/}
-(accessed 5.23.2022).
-
 \leavevmode\vadjust pre{\hypertarget{ref-plotlytechnologiesinc.CollaborativeDataScience2015}{}}%
 Plotly Technologies Inc., 2015. Collaborative data science {[}WWW
 Document{]}. URL \url{https://plot.ly}
@@ -9831,33 +9838,29 @@ the organized balancing market: {A} symbiosis yet? {Case} of three
 \url{https://doi.org/10.1016/j.enpol.2018.11.009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashAEMOMonthlyData2023}{}}%
-Prakash, A., 2023b.
+Prakash, A., 2023a.
 \href{https://github.com/prakaa/mms-monthly-cli}{{AEMO Monthly Data
 Archive Tool}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashEnergyPriceConvergence2023}{}}%
-Prakash, A., 2023c. Energy price convergence in 2021 - {NEMSEER}
+Prakash, A., 2023b. Energy price convergence in 2021 - {NEMSEER}
 documentation {[}WWW Document{]}. URL
 \url{https://nemseer.readthedocs.io/en/latest/examples/price_convergence_2021.html\#absolute-price-error-for-each-region-by-dispatch-interval-and-ahead-time}
 (accessed 8.11.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashLookingPredispatchDemand2023}{}}%
-Prakash, A., 2023f. Looking at pre-dispatch demand forecast errors in
+Prakash, A., 2023e. Looking at pre-dispatch demand forecast errors in
 2021 - {NEMSEER} documentation {[}WWW Document{]}. URL
 \url{https://nemseer.readthedocs.io/en/latest/examples/pd_demand_forecast_error_2021.html}
 (accessed 8.18.2023).
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashNEMReBidding2023}{}}%
-Prakash, A., 2023e.
+Prakash, A., 2023d.
 \href{https://github.com/prakaa/nem-rebidding-analysis-2012-2021}{{NEM}
 ({Re}){Bidding Analysis}, 2012-2021}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-prakashNEMSEER2023}{}}%
-Prakash, A., 2023a.
-\href{https://doi.org/10.5281/zenodo.7397514}{{NEMSEER}}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-prakashNEMStorageUnderUncertainty2023}{}}%
-Prakash, A., 2023d. {NEMStorageUnderUncertainty}.
+Prakash, A., 2023c. {NEMStorageUnderUncertainty}.
 \url{https://doi.org/10.5281/ZENODO.8118850}
 
 \leavevmode\vadjust pre{\hypertarget{ref-prakashQuantifyingReserveCapabilities2023}{}}%
@@ -10201,12 +10204,6 @@ Modelling} on {Optimal Control} of {Residential Battery Systems}, in:
 Conference} ({APPEEC}). Presented at the 2022 {IEEE PES} 14th
 {Asia-Pacific Power} and {Energy Engineering Conference} ({APPEEC}), pp.
 1--7. \url{https://doi.org/10.1109/APPEEC53445.2022.10072037}
-
-\leavevmode\vadjust pre{\hypertarget{ref-mckinney-proc-scipy-2010}{}}%
-Wes McKinney, 2010. Data {Structures} for {Statistical Computing} in
-{Python}, in: van der Walt, S., Jarrod Millman (Eds.), Proceedings of
-the 9th {Python} in {Science Conference}. pp. 56--61.
-\url{https://doi.org/10.25080/Majora-92bf1922-00a}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wilsonIntroductoryPresentation20202020}{}}%
 Wilson, S., 2020.
