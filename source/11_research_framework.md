@@ -8,13 +8,13 @@ This chapter outlines the motivating research question of this thesis, the objec
 
 The research question that this thesis aims to address is outlined below:
 
-> **Given existing design challenges and increasing penetrations of variable renewable energy resources as energy transition proceeds, how should we design or, at the very least, approach the design of operational practices for balancing electricity markets?**
+> *Given existing design challenges and increasing penetrations of variable renewable energy resources as energy transition proceeds, how should we design or, at the very least, approach the design of operational practices for balancing electricity markets?*
 
 As the full scope of this research question is not possible to address within a single doctoral thesis, I focus on aspects of the design problem that are encompassed by the two following research objectives:
 
 ### Research Objective 1
 
->  To determine what features are needed in centrally-coordinated arrangements for procuring frequency control services during energy transition.
+>  *To determine what features are needed in centrally-coordinated arrangements for procuring frequency control services during energy transition.*
 
 Frequency control services are a significant component of a system operator's balancing toolkit and are critical to ensuring that imbalances are quickly addressed. The design of frequency control arrangements in restructured electricity industries will need to be revisited as resource mixes, network topologies and broader market arrangements and policy settings change with growing penetrations of variable renewable energy resources. Few of the studies that examine the changes required in frequency control arrangements during energy transition consider the design problem through both an engineering and economics lens, and even fewer draw on past experience with existing practices to inform future design. 
 
@@ -22,7 +22,7 @@ Frequency control services are a significant component of a system operator's ba
 
 ### Research Objective 2
 
-> To better understand how the **capabilities** and **deployability** of balancing flexibility in scheduling timeframes are changing during energy transition, and whether these changes impact the suitability of more decentralised operational balancing practices.
+> _To better understand how the **capabilities** and **deployability** of balancing flexibility in scheduling timeframes are changing during energy transition, and whether these changes impact the suitability of more decentralised operational balancing practices._
 
 In wholesale electricity markets, market participation decisions determine the type and quantity of balancing flexibility available within scheduling timeframes. There is a role for empirical studies examining whether decentralised operational balancing practices, such as markets, are purpose-fit to deliver the balancing flexibility requirements of electricity markets in transition – particularly given that new markets for flexibility (e.g. reserve product markets) can introduce additional costs, constraints and complexity and even encroach upon the functions of existing operational practices. [Chapter @sec:reserves] focuses on understanding the balancing flexibility **capabilities** available in scheduling timeframes both now and into the near future, and using this knowledge to inform market design. In this chapter, I offer a practical method for quantifying the time-varying spectrum of upwards and downwards balancing flexibility capabilities, and then use this method to assess historical and projected resource mixes in two regions of the Australian National Electricity Market. The results from my analysis suggest that with higher penetrations of renewable energy: 1) downwards flexibility margins can be exhausted around noon if wind and solar are unable or unwilling to provide it, 2) upwards flexibility becomes more scarce during morning and evening peak demand events and 3) a greater portion of upwards flexibility is provided by energy-limited resources. Using these findings, I examine and compare the suitability of various flexibility design options, with a particular focus on assessing the need for an additional reserve product market. I finally recommend that policy-makers examine how existing operational practices can be augmented to elicit upwards flexibility provision, and that duration specifications and sustained footroom procurement be considered for reserve products.
 
