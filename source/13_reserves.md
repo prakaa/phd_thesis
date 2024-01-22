@@ -2,7 +2,11 @@
 
 ## Link to thesis
 
-Link to the rest of the thesis
+In wholesale electricity markets, market participation decisions determine the type and quantity of balancing flexibility available within scheduling timeframes. There is a role for empirical studies examining whether decentralised operational balancing practices, such as markets, are purpose-fit to deliver the balancing flexibility requirements of electricity markets in transition – particularly given that new markets for flexibility (e.g. reserve product markets) can introduce additional costs, constraints and complexity and even encroach upon the functions of existing operational practices. This focuses on understanding the balancing flexibility **capabilities** available in scheduling timeframes both now and into the near future, and using this knowledge to inform market design. The purpose of this chapter is to address the "capabilities" component of the second research objective of this thesis (see @sec:research_framework).
+
+The content of this chapter is from the following peer-reviewed journal article published in *Energy Policy*:
+
+**Prakash, A.**, Ashby, R., Bruce, A. & MacGill, I. Quantifying reserve capabilities for designing flexible electricity markets: An Australian case study with increasing penetrations of renewables. Energy Policy 177, 113551 (2023).
 
 ## Abstract
 
