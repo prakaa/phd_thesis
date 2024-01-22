@@ -1,4 +1,4 @@
-# Abbreviations and Nomenclature{.unnumbered}
+# Abbreviations and nomenclature{.unnumbered}
 
 \begin{longtable}[l]{l l}
 \textbf{5MS} & Five minute settlement \\
