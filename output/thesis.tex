@@ -327,7 +327,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        January 23, 2024
+        February 7, 2024
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -651,14 +651,14 @@ discuss the challenges involved in operational practice design. Finally,
 in Section~\ref{sec:lit_review-gap}, I summarise the motivation for the
 work contained within this thesis.
 
-In this chapter, I use \textbf{bold text} to indicate that a (new) term
-or concept being is defined.
+In this chapter, I use \textbf{bold text} to introduce definitions for a
+(new) term or concept.
 
 \hypertarget{sec:lit_review-power_systems}{%
 \section{Power systems}\label{sec:lit_review-power_systems}}
 
 Given the welfare and economic benefits associated with electricity
-access, many states in the 20\textsuperscript{th} century constructed
+access, many countries in the 20\textsuperscript{th} century constructed
 bulk power systems to leverage investment and operational economies of
 scale. These systems sought to efficiently deliver \textbf{active power}
 (the component of apparent power that does work at a load) to numerous
@@ -879,7 +879,8 @@ Unlike many other commodity transportation networks, an active power
 supply-demand imbalance can lead to deviations in technical parameters
 -- voltage and AC frequency -- that not only have the potential to
 damage equipment connected to the power system, but also to trigger a
-system collapse
+system collapse (see
+Section~\ref{sec:lit_review-balancing_need-consequences})
 (\protect\hyperlink{ref-borensteinEconomicsElectricityReliability2023}{Borenstein
 et al., 2023}).
 
@@ -896,7 +897,6 @@ system frequency (\(f\)) (Equation~\ref{eq:synch_speed})
 2011}):
 
 \begin{equation}\protect\hypertarget{eq:synch_speed}{}{N_s = \frac{120f}{P}}\label{eq:synch_speed}\end{equation}
-
 where \(N_s\) is the synchronous speed in revolutions per minute, \(P\)
 is the number of (rotor) magnetic poles and \(f\) is the electrical
 frequency in Hertz (Hz).
@@ -922,7 +922,6 @@ electrical energy
 1994}).
 
 \begin{equation}\protect\hypertarget{eq:swing}{}{J\omega_{sm}\frac{d\omega_{sm}}{dt} = P_m - P_e}\label{eq:swing}\end{equation}
-
 where \(\omega_{sm}\) is the synchronous machine rotor shaft velocity,
 \(J\) is moment of inertia of the rotor, \(P_m\) is mechanical power,
 \(T_m\) is mechanical torque, \(P_e\) is electrical power and \(T_e\) is
@@ -952,15 +951,14 @@ proportional to the system's inertia constant, \(H\). This form of the
 swing equation only models the \textbf{inertial response} of synchronous
 generators; that is, it does not include the load damping response
 offered by (frequency-dependent) induction motor loads. The generation
-inertia constant is often used a proxy for the system inertia constant
-since the high speed and mass of generator rotors mean that they store
-significant quantities of kinetic energy
+inertia constant is often used as a proxy for the system inertia
+constant since the high speed and mass of generator rotors mean that
+they store significant quantities of kinetic energy
 (\protect\hyperlink{ref-denholmInertiaPowerGrid2020}{Denholm et al.,
 2020}; \protect\hyperlink{ref-ulbigImpactLowRotational2014}{Ulbig et
 al., 2014}).
 
 \begin{equation}\protect\hypertarget{eq:swing_area}{}{\frac{2H}{f}\frac{df}{dt} = \frac{P_{gen}-P_{load}}{S_{g, total}}}\label{eq:swing_area}\end{equation}
-
 where \(H\) is the inertia constant of the synchronous area
 (\(H=\sum_{g} H_g\), where \(H_g = \frac{J_g(2\pi f)^2}{2S_g}\)), \(f\)
 is the AC frequency, \(\frac{df}{dt}\) is the rate of change of
@@ -1063,8 +1061,8 @@ paradigms: where the SO is a \textbf{vertically-integrated utility}, and
 where the SO is, at the very least, responsible for operating a
 transmission system that forms the physical basis of a \textbf{wholesale
 electricity market}. In both cases, it is the SO that is ultimately
-responsible for ensuring that their the transmission network in their
-control area is operated in a secure and reliable manner
+responsible for ensuring that the transmission network in their control
+area is operated in a secure and reliable manner
 (\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
 2008}).
 
@@ -1255,7 +1253,7 @@ SOs employ \textbf{balancing practices} in operational timeframes
 (including the non-faded processes, services and markets shown in
 Figure~\ref{fig:power_system_timeframes}) to obtain \textbf{balancing
 flexibility}. Balancing flexibility is procured either to address
-variability directly, or as optionality to mange uncertainty
+variability directly, or as optionality to manage uncertainty
 (\protect\hyperlink{ref-heggartyQuantifyingPowerSystem2020}{Heggarty et
 al., 2020},
 \protect\hyperlink{ref-heggartyQuantifyingPowerSystem2020}{2020};
@@ -1352,7 +1350,7 @@ loosely to date to refer to three distinct control configurations:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  An \emph{inherent} response delivered by IBRs that, though they lack a
+  An \emph{inherent} response delivered by IBRs that, though lacking a
   spinning mass, resembles the inertial response of synchronous machines
   (sometimes referred to as virtual inertia)
   (\protect\hyperlink{ref-linResearchRoadmapGridForming2020}{Lin et al.,
@@ -1593,7 +1591,7 @@ committed to meet a non-scheduled demand forecast for a future horizon
 (usually 36--48 hours ahead) subject to network constraints and
 stability and reliability requirements. Security-constrained unit
 commitment is usually formulated as a mixed-integer linear program.
-Solving integer programs is computationally complex due to the
+Solving mixed-integer programs is computationally complex due to the
 non-convexity of the integral solution space
 (\protect\hyperlink{ref-knuevenMixedintegerProgrammingFormulations2020}{Knueven
 et al., 2020};
@@ -1905,7 +1903,8 @@ subset), Pollitt and Anaya
 argue that in the absence of limits on SO ownership, R. H. Coase's
 insights on the nature of the firm suggest that transaction costs would
 determine whether the SO provides ancillary services themselves or
-outsources their provision via spot market procurement
+outsources their provision via procurement through \textbf{spot markets}
+(markets that involve immediate trade)
 (\protect\hyperlink{ref-coaseNatureFirm1937}{Coase, 1937}):
 
 \begin{quote}
