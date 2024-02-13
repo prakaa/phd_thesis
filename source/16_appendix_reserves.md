@@ -1,6 +1,6 @@
 \appendix
-\renewcommand\thefigure{\thesection.\arabic{figure}}
-\renewcommand\thetable{\thesection.\arabic{table}}
+\renewcommand\thefigure{\thechapter.\arabic{figure}}
+\renewcommand\thetable{\thechapter.\arabic{table}}
 # Data and assumptions used in market simulation {#sec:appendix-reserves_assumptions}
 
 ## Resource ramp rates
