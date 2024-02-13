@@ -1,8 +1,10 @@
+\pagenumbering{roman}
 # Abstract {.unnumbered}
 
 <!-- This is the abstract -->
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, lacinia ante sit amet, sollicitudin erat. Aliquam efficitur vehicula leo sed condimentum. Phasellus lobortis eros vitae rutrum egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at urna imperdiet, vulputate orci eu, sollicitudin leo. Donec nec dui sagittis, malesuada erat eget, vulputate tellus. Nam ullamcorper efficitur iaculis. Mauris eu vehicula nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.
+\newpage
 
 # Publications arising from this thesis {.unnumbered}
 
@@ -31,6 +33,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, 
 > **Prakash, A.**, Ashby, R., Keeratimahat, K., Bruce, A. & MacGill, I. UNSW CEEM Response to Post 2025 Market Design Options Paper. http://dx.doi.org/10.13140/RG.2.2.27716.81284 (2021)
 
 > **Prakash, A.**, Nicholls, A., Heim, D., Bruce, A. & Macgill, I. Response to Capacity Mechanism Project High-Level Design Paper. http://dx.doi.org/10.13140/RG.2.2.35007.59043 (2022)
-
-\pagenumbering{roman}
-\setcounter{page}{1}
