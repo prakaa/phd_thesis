@@ -264,7 +264,7 @@ Our work highlights that the increasing frequency and severity of price forecast
 
 While some of the market design options we discussed may prove effective in improving resource scheduling outcomes, they predominantly consist of larger market design or structural changes that would be particularly challenging to implement in the NEM. Instead, we focus on how schedule and price convergence could be improved. One low-regret option is to increase the frequency at which centralised knowledge processes are run. However, just as continuous *trading* can overwhelm exchanges and induce an inefficient "arms race for speed" [@budishHighFrequencyTradingArms2015; @silva-rodriguezShortTermWholesale2022; @ahlqvistSurveyComparingCentralized2022], our analysis suggests that *bidding*, when continuous and unrestricted, may have deleterious impacts on system schedule convergence and thus system balancing. As such, we recommend that policy-makers in the NEM consider market participation restrictions that might better incentivise truthful or, at the very least, structured MP bidding strategies that are less likely to contribute to price forecast divergence and extreme and sudden price forecast swings. Furthermore, our analysis serves as a reminder to policy-makers elsewhere to exercise caution when making the short-term electricity markets in their jurisdictions faster and more flexible.
 
-## Data Availability {-}
+## Data availability {-}
 
 The data used in this study were made publicly available by the Australian Energy Market Operator through their Nemweb portal [@australianenergymarketoperatorNemwebMarketData2023] and were obtained using two open-source tools: `NEMOSIS` [@gormanNEMOSISNEMOpen2018] and `NEMSEER` [@prakashNEMSEERPythonPackage2023].
 

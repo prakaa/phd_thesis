@@ -114,7 +114,7 @@ An inter-dispatch operating reserve product has been proposed in the NEM. It wou
 
 The assessment of reserve capabilities to justify this new product has been limited. AEMO has previously analysed ramping capabilities over timeframes greater than 30 minutes [@australianenergymarketoperatorRenewableIntegrationStudy2020], the total reserve capacity available within various timeframes across NEM regions and years [@australianenergymarketoperatorSubmissionAEMCDirections2021] and regularly forecasts in-market reserves (@sec:reserves-ahead_soint). However, these studies do not consider flexibility capability available *after* resources are dispatched, or do not explore the time-varying spectrum of this capability. Using the methodology outlined in @sec:reserves-modeloverview, we incorporate these elements when quantifying balancing flexibility capabilities in NSW and SA to inform an assessment of the operational benefits of additional balancing products (@sec:reserves-casestudy).
 
-## Modelling Available Reserves and Footroom {#sec:reserves-modeloverview}
+## Modelling available reserves and footroom {#sec:reserves-modeloverview}
 
 To quantify balancing flexibility capabilities, we consider headroom and footroom that can be converted to stable active power output within a particular time *horizon*. We will refer to these as *available reserves* and *available footroom*[^18], respectively. Though these metrics do not explicitly consider whether resources are frequency-responsive, how long a potential response can be sustained for and whether network constraints restrain flexibility provision, calculating these quantities is broadly useful for understanding the balancing flexibility that could be deployed in a meshed system within operational timeframes (minutes to hours).
 
@@ -230,7 +230,7 @@ $$ AF_{h,t}=\sum_{r_c \in \mathcal{R}_c}{AF_{r_c,h,t}^{ON}} + \sum_{r_v \in \mat
 
 These equations are used to calculate system available reserves and footroom for all reserve horizons of interest ($h \in \mathcal{H}$) across all of the dispatch intervals in a given scenario year ($t \in \mathcal{T}$).
 
-## Case Study: Two Regions in the National Electricity Market {#sec:reserves-casestudy}
+## Case study: two regions in the National Electricity Market {#sec:reserves-casestudy}
 
 ### Scenarios
 
