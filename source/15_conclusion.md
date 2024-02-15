@@ -38,14 +38,18 @@ Solely examining *capabilities* is insufficient for understanding the *actual av
 
 The broad scope of this thesis's research question and the various limitations of the work within this thesis imposed by assumptions and constraints on scope  mean that there are multiple potential directions and improvements that could be pursued to extend the work contained within this thesis. In the subsections below, I highlight the most significant of these directions and improvements.
 
-### Network constraints
+### Demand and distributed, consumer-owned energy resources
 
-### Demand response and distributed, consumer-owned energy resources
-
-### Examining market structure
 
 ### Interactions with investment timeframes
 
+### Empirical studies of market participant behaviour
+
+With a specific focus on market information, [Chapter @sec:info] discusses behavioural factors and market participant preferences that influence resource scheduling. However, while most of the studies reviewed in [@sec:info-context-esr-operation] and the storage scheduling outlined in [@sec:info-case_study-bess_simulations] *model* market participant behaviour, there is a need for more in-depth empirical research on market participant behaviour. For instance, analysing market participant rebidding time series data could offer policy-makers with a clearer picture of how participants actually offer balancing flexibility to the system in their jurisdictions. Moreover, the findings from these studies could be used to inform flexibility assessment modelling efforts (e.g. input bidding assumptions for market models). In particular, such studies are likely to better illustrate how market participants manage resources across a portfolio – a significant concern in jurisdictions such as the NEM that must contend with supply-side concentration and vertical re-integration (i.e. firms that operate a retail business whilst also owning generation assets) [@australianenergyregulatorStateEnergyMarket2022; @simshauserLessonsAustraliaNational2019; @chesterAustraliaNationalElectricity2024].
+
+### Modelling the network
+
+The system models in [Chapter @sec:reserves] assumed that each modelled market region is a copper-plate network with no interconnection to other regions. Furthermore, the BESS dispatch models in [Chapter @sec:info] assumed that BESS dispatch is not restricted by constraints in the NEM's dispatch engine. As discussed in [Chapter @sec:reserves], transmission network constraints arising from thermal and stability limits are likely to reduce the balancing flexibility available to the system, whereas interconnection is only likely to change the quantity and composition of balancing flexibility under certain conditions. Regardless, modelling both network constraints and interconnection will provide a more accurate picture of the extent to which balancing flexibility capabilities can be realised.
 
 ## Closing remarks {#sec:conclusion-closing_remarks}
 
