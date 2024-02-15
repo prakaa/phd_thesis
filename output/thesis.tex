@@ -327,7 +327,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        February 7, 2024
+        February 15, 2024
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -336,11 +336,7 @@ of Philosophy
 
 
 % This is where the converted markdown files will go 
-\vspace*{\fill}
-
-\noindent \textit{
-I, Abhijith Prakash, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
-} \vspace*{\fill} \pagenumbering{gobble} \newpage
+\pagenumbering{roman}
 
 \hypertarget{abstract}{%
 \chapter*{Abstract}\label{abstract}}
@@ -354,6 +350,7 @@ ultrices posuere cubilia Curae; Donec at urna imperdiet, vulputate orci
 eu, sollicitudin leo. Donec nec dui sagittis, malesuada erat eget,
 vulputate tellus. Nam ullamcorper efficitur iaculis. Mauris eu vehicula
 nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.
+\newpage
 
 \hypertarget{publications-arising-from-this-thesis}{%
 \chapter*{Publications arising from this
@@ -436,9 +433,6 @@ http://dx.doi.org/10.13140/RG.2.2.27716.81284 (2021)
 Response to Capacity Mechanism Project High-Level Design Paper.
 http://dx.doi.org/10.13140/RG.2.2.35007.59043 (2022)
 \end{quote}
-
-\pagenumbering{roman}
-\setcounter{page}{1}
 
 \hypertarget{acknowledgements}{%
 \chapter*{Acknowledgements}\label{acknowledgements}}
@@ -770,7 +764,7 @@ that they can influence the manner in which a power system is operated.
 \begin{figure}
 \hypertarget{fig:power_system_timeframes}{%
 \centering
-\includegraphics[width=1.35\textwidth,height=\textheight]{source/figures/power_system_timeframes.pdf}
+\includegraphics[width=1.3\textwidth,height=\textheight]{source/figures/power_system_timeframes.pdf}
 \caption[High-level overview of power system concepts, phenomena and
 processes, services and markets relevant within operational
 timeframes]{A high-level overview of power system concepts, phenomena
@@ -2070,8 +2064,8 @@ With the need for robust design decisions supported by context-specific
 analysis, the work in Chapters \ref{sec:fcs}, \ref{sec:reserves} and
 \ref{sec:info} contributes to the field of power system operational
 practice design by providing recommendations to system operators, market
-designers and energy system policy-makers based on detailed empirical
-studies and models of facets of the Australian National Electricity
+designers and energy system policy-makers based on models and detailed
+empirical studies of facets of the Australian National Electricity
 Market. Whilst some of the recommendations in these chapters may be
 unsuitable for other jurisdictions, the work in this thesis also
 contributes to the broader literature by serving as an example for
@@ -2178,13 +2172,13 @@ In wholesale electricity markets, market participation decisions
 determine the type and quantity of balancing flexibility available
 within scheduling timeframes. There is a role for empirical studies
 examining whether decentralised operational balancing practices, such as
-markets, are purpose-fit to deliver the balancing flexibility
-requirements of electricity markets in transition -- particularly given
-that new markets for flexibility (e.g.~reserve product markets) can
-introduce additional costs, constraints and complexity and even encroach
-upon the functions of existing operational practices. Chapter
-\ref{sec:reserves} focuses on understanding the balancing flexibility
-\textbf{capabilities} available in scheduling timeframes both now and
+markets for services and products, are purpose-fit to deliver the
+balancing flexibility requirements of electricity markets in transition
+-- particularly given that new markets for flexibility (e.g.~reserve
+product markets) can introduce additional costs, constraints and
+complexity, and even encroach upon the functions of existing operational
+practices. Chapter \ref{sec:reserves} focuses on understanding balancing
+flexibility \textbf{capabilities} in scheduling timeframes both now and
 into the near future, and using this knowledge to inform market design.
 In this chapter, I offer a practical method for quantifying the
 time-varying spectrum of upwards and downwards balancing flexibility
@@ -2198,7 +2192,7 @@ during morning and evening peak demand events and 3) a greater portion
 of upwards flexibility is provided by energy-limited resources. Using
 these findings, I examine and compare the suitability of various
 flexibility design options, with a particular focus on assessing the
-need for an additional reserve product market. I finally recommend that
+need for an additional reserve product market. I recommend that
 policy-makers examine how existing operational practices can be
 augmented to elicit upwards flexibility provision, and that duration
 specifications and sustained footroom procurement be considered for
@@ -2377,8 +2371,8 @@ plotted using \texttt{Makie.jl}
 Krumbiegel, 2021}).
 
 \hypertarget{sec:fcs}{%
-\chapter{Frequency control arrangements: insights from the National
-Electricity Market}\label{sec:fcs}}
+\chapter{Designing frequency control arrangements: insights from the
+National Electricity Market}\label{sec:fcs}}
 
 \hypertarget{link-to-thesis}{%
 \section{Link to thesis}\label{link-to-thesis}}
@@ -5057,8 +5051,8 @@ inform an assessment of the operational benefits of additional balancing
 products (Section~\ref{sec:reserves-casestudy}).
 
 \hypertarget{sec:reserves-modeloverview}{%
-\section{Modelling Available Reserves and
-Footroom}\label{sec:reserves-modeloverview}}
+\section{Modelling available reserves and
+footroom}\label{sec:reserves-modeloverview}}
 
 To quantify balancing flexibility capabilities, we consider headroom and
 footroom that can be converted to stable active power output within a
@@ -5275,7 +5269,7 @@ across all of the dispatch intervals in a given scenario year
 (\(t \in \mathcal{T}\)).
 
 \hypertarget{sec:reserves-casestudy}{%
-\section{Case Study: Two Regions in the National Electricity
+\section{Case study: two regions in the National Electricity
 Market}\label{sec:reserves-casestudy}}
 
 \hypertarget{scenarios}{%
@@ -6022,8 +6016,7 @@ reserve product specifications.
 \hypertarget{sec:info}{%
 \chapter{The scheduling role of future pricing information in
 electricity markets with rising deployments of renewables and energy
-storage: an Australian National Electricity Market case
-study}\label{sec:info}}
+storage: a National Electricity Market case study}\label{sec:info}}
 
 \hypertarget{link-to-thesis-2}{%
 \section{Link to thesis}\label{link-to-thesis-2}}
@@ -6697,16 +6690,17 @@ Energy Market Operator, 2023b},
 \hypertarget{fig:nem_daily_price_spreads}{%
 \centering
 \includegraphics{source/figures/historical_daily_price_spreads.pdf}
-\caption{Common logarithm of the daily price spread (where \(p_{max}\)
-and \(p_{min}\) are the maximum and minimum price for any given day,
-respectively) in all mainland NEM regions (i.e.~excluding TAS, which is
-connected to mainland Australia via a high voltage DC transmission line)
-from 2012 to the end of 2021. The maximum potential spread (dashed red
-line) is the difference between the market price cap (revised each
-Australian financial year) and the fixed market price floor (-1000
-AUD/MW/hr). The dashed vertical black line denotes the commencement of 5
-minute settlement in the NEM. Price data were obtained using
-\texttt{NEMOSIS}
+\caption[Daily price spread in all mainland NEM regions from 2012 to the
+end of 2021]{Common logarithm of the daily price spread (where
+\(p_{max}\) and \(p_{min}\) are the maximum and minimum price for any
+given day, respectively) in all mainland NEM regions (i.e.~excluding
+TAS, which is connected to mainland Australia via a high voltage DC
+transmission line) from 2012 to the end of 2021. The maximum potential
+spread (dashed red line) is the difference between the market price cap
+(revised each Australian financial year) and the fixed market price
+floor (-1000 AUD/MW/hr). The dashed vertical black line denotes the
+commencement of 5 minute settlement in the NEM. Price data were obtained
+using \texttt{NEMOSIS}
 (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}).
 This plot was generated using \texttt{matplotlib}
 (\protect\hyperlink{ref-hunterMatplotlib2DGraphics2007}{Hunter,
@@ -6756,14 +6750,16 @@ in 2017 and a double-separation event in 2018.
 \hypertarget{fig:nem_historical_price_forecast_errors}{%
 \centering
 \includegraphics{source/figures/price_errors_nemwide_2012_2021.pdf}
-\caption{NEM-wide (i.e.~all regions) monthly price forecast error counts
-binned by error direction and magnitude (excluding -300 AUD/MW/hr \(<\)
-errors \(\leq\) 300 AUD/MW/hr ) for forecasts made up to 24 hours (top,
-using forecast data from 30MPD and 5MPD), 2 hours (middle, using
-forecast data from 30MPD and 5MPD) and 15 minutes (bottom, using
-forecast data from 5MPD) ahead of delivery. The dashed and annotated
-black lines denote major system events and market changes in the NEM.
-Pre-dispatch price forecasts data were obtained using \texttt{NEMSEER}
+\caption[Counts of NEM-wide price forecast errors, binned by direction
+and magnitude, for each month from 2012 to 2021]{NEM-wide (i.e.~all
+regions) monthly price forecast error counts binned by error direction
+and magnitude (excluding -300 AUD/MW/hr \(<\) errors \(\leq\) 300
+AUD/MW/hr ) for forecasts made up to 24 hours (top, using forecast data
+from 30MPD and 5MPD), 2 hours (middle, using forecast data from 30MPD
+and 5MPD) and 15 minutes (bottom, using forecast data from 5MPD) ahead
+of delivery. The dashed and annotated black lines denote major system
+events and market changes in the NEM. Pre-dispatch price forecasts data
+were obtained using \texttt{NEMSEER}
 (\protect\hyperlink{ref-prakashNEMSEERPythonPackage2023}{Prakash et al.,
 2023b}), and actual market price data were obtained using
 \texttt{NEMOSIS}
@@ -6813,9 +6809,10 @@ rebidding activity to the rise in price forecast errors in the NEM.
 \hypertarget{fig:nsw_5min_price_demand_errors_2021}{%
 \centering
 \includegraphics{source/figures/NSW_demand_price_forecast_errors_300ahead_2021.pdf}
-\caption{Demand forecast error plotted against the price forecast error
-for the NSW region in 2021. Each point in the scatter plot corresponds
-to errors calculated from the forecasts in the last 5MPD run for each
+\caption[Demand vs price forecast errors from the last 5MPD run for NSW,
+2021]{Demand forecast error plotted against the price forecast error for
+the NSW region in 2021. Each point in the scatter plot corresponds to
+errors calculated from the forecasts in the last 5MPD run for each
 dispatch interval (nominally run 5 minutes prior to delivery, but
 published between 4.5 minutes and 3 minutes prior to delivery
 (\protect\hyperlink{ref-mcardleFileCreationTimes2022}{McArdle, 2022})).
@@ -6853,8 +6850,9 @@ commissioned with or adopting automated bidding systems (or
 \hypertarget{fig:bid_file_size_2012_2022}{%
 \centering
 \includegraphics{source/figures/monthly_bidding_data_size_2012_2023.pdf}
-\caption{File sizes of monthly NEM bid and offer data zipfiles from 2012
-to 2022 scraped from AEMO's monthly data archive
+\caption[Monthly NEM bid and offer data zipfile size from 2012 to
+2022]{File sizes of monthly NEM bid and offer data zipfiles from 2012 to
+2022 scraped from AEMO's monthly data archive
 (\protect\hyperlink{ref-australianenergymarketoperatorElectricityDataModel2023}{Australian
 Energy Market Operator, 2023d}). The zipfile for each month consists of
 a single CSV with one AEMO data table (BIDPEROFFER) that contains
@@ -6927,9 +6925,10 @@ arbitrage revenues of various BESS ESRs.
 \hypertarget{fig:share_rebids_june_2013_2021}{%
 \centering
 \includegraphics{source/figures/rebids_june_share_by_tech_2013_2021.pdf}
-\caption{Share of all rebids by technology type submitted in June for
-every year from 2013 to 2021. The number at the top of each column is
-the total number of rebids made in June of that year. June was selected
+\caption[Share of rebids by technology type in June from 2013 to
+2021]{Share of all rebids by technology type submitted in June for every
+year from 2013 to 2021. The number at the top of each column is the
+total number of rebids made in June of that year. June was selected
 because it was this month in 2021 that saw the highest occurrence of
 significant price forecast errors in several NEM regions across a range
 of ahead times for half-hourly dispatch intervals (see Prakash
@@ -7045,16 +7044,18 @@ Yurdakul and Billimoria, 2023}).
 \hypertarget{fig:bess_schedules}{%
 \centering
 \includegraphics{source/figures/storage_simulations.pdf}
-\caption{The study's scheduling methodologies applied across 10 dispatch
-intervals (50 minutes). The top of the figure (within the red brace)
-corresponds to the RHOC simulation methodology. The scheduler optimises
-successive steps, each with a lookahead horizon length of 3 intervals or
-15 minutes, and binds the first action of each step (red horizontal
-bars) to create a simulated BESS schedule. The bottom of the figure
-(within the blue brace) corresponds to the perfect foresight
-methodology. The perfect foresight scheduler optimises a single step
-that looks over the entire study period to produce a perfect foresight
-BESS schedule.}\label{fig:bess_schedules}
+\caption[The study\textquotesingle s methodology for scheduling BESS
+under imperfect and perfect foresight]{The study's scheduling
+methodologies applied across 10 dispatch intervals (50 minutes). The top
+of the figure (within the red brace) corresponds to the RHOC simulation
+methodology. The scheduler optimises successive steps, each with a
+lookahead horizon length of 3 intervals or 15 minutes, and binds the
+first action of each step (red horizontal bars) to create a simulated
+BESS schedule. The bottom of the figure (within the blue brace)
+corresponds to the perfect foresight methodology. The perfect foresight
+scheduler optimises a single step that looks over the entire study
+period to produce a perfect foresight BESS
+schedule.}\label{fig:bess_schedules}
 }
 \end{figure}
 
@@ -7228,13 +7229,14 @@ assumptions related to the BESS's operating characteristics in Appendix
 \hypertarget{fig:nem_bess_bidding}{%
 \centering
 \includegraphics{source/figures/aggregate_bess_bidding_0406_2021_2023.pdf}
-\caption{Final aggregate BESS offers adjusted by resource availability
-and binned by offer price, and the NEM-wide volume weighted average
-prices on June 4 2021 and June 4 2023. Note that BESS, like other
-resources in the NEM, tend to shift capacity to lower price bands during
-periods of high prices. While BESS capacity was predominantly offered in
-at 1000+ AUD/MW/hr between high price events in 2021, there was a higher
-degree of quantity segmentation across 50 AUD/MW/hr+ price bands in 2023
+\caption[Aggregated final BESS offers on June 4 2021 and June 4
+2023]{Final aggregate BESS offers adjusted by resource availability and
+binned by offer price, and the NEM-wide volume weighted average prices
+on June 4 2021 and June 4 2023. Note that BESS, like other resources in
+the NEM, tend to shift capacity to lower price bands during periods of
+high prices. While BESS capacity was predominantly offered in at 1000+
+AUD/MW/hr between high price events in 2021, there was a higher degree
+of quantity segmentation across 50 AUD/MW/hr+ price bands in 2023
 (albeit with higher total offer volumes). Nevertheless, more than half
 of the aggregate in-market BESS capacity was at times offered into the
 market for at least 10,000 AUD/MW/hr on June 4 2023. Final offers were
@@ -7310,15 +7312,17 @@ a 4 hour BESS, \textasciitilde40--43\% for a 1 hour BESS and as much as
 \hypertarget{fig:bess_price_revenue}{%
 \centering
 \includegraphics{source/figures/NSW_100MW_100MWh_Revenue_Lookahead.pdf}
-\caption{The revenue earned by a 100 MW/100 MWh BESS (scheduled using
-the \emph{Arbitrage} formulation) plotted against the energy price in
-the same dispatch interval. Orange points correspond to dispatch
-interval decisions made with a lookahead horizon length of 15 hours and
-blue points correspond to dispatch interval decisions made with a
-lookahead horizon length of 1 hour. Under ideal operation, the points
-should form a ``tick'' shape -- more negative prices should lead to
-greater revenues as the BESS charges, and a higher price should lead to
-greater revenues as the BESS discharges.}\label{fig:bess_price_revenue}
+\caption[Revenue vs energy price for simulated BESSs with 1 hour storage
+duration over the simulated year (2021)]{The revenue earned by a 100
+MW/100 MWh BESS (scheduled using the \emph{Arbitrage} formulation)
+plotted against the energy price in the same dispatch interval. Orange
+points correspond to dispatch interval decisions made with a lookahead
+horizon length of 15 hours and blue points correspond to dispatch
+interval decisions made with a lookahead horizon length of 1 hour. Under
+ideal operation, the points should form a ``tick'' shape -- more
+negative prices should lead to greater revenues as the BESS charges, and
+a higher price should lead to greater revenues as the BESS
+discharges.}\label{fig:bess_price_revenue}
 }
 \end{figure}
 
@@ -7326,7 +7330,8 @@ greater revenues as the BESS discharges.}\label{fig:bess_price_revenue}
 \hypertarget{fig:vpi_vpf}{%
 \centering
 \includegraphics{source/figures/NSW_100_allformulations_vpi_vpf.pdf}
-\caption{VPI (bars with black edges) and VPF (bars with grey edges) for
+\caption[Value of perfect information and foresight for each simulated
+BESS]{VPI (bars with black edges) and VPF (bars with grey edges) for
 BESS with different storage durations (15 minutes to 4 hours across
 subfigures from top to bottom), lookahead horizon lengths (5 minutes to
 15 hours across the horizontal axis of each subfigure) and optimisation
@@ -7376,12 +7381,14 @@ imperfect information to varying degrees by:
 \hypertarget{fig:bess_throughputs}{%
 \centering
 \includegraphics{source/figures/NSW_100_arbitrage_throughputpenalty_no_degradation_600000_throughputs.pdf}
-\caption{Cumulative throughput (discharged energy) for BESSs with
-different storage durations (15 minutes, 1 hour and 4 hours in the
-subfigures from left to right) and different scheduling lookahead
-horizon lengths (different coloured lines in each subfigure) in 2021.
-The dashed red line indicates the end-of-year cumulative throughput of a
-100 MWh BESS that is cycled once per day.}\label{fig:bess_throughputs}
+\caption[Cumulative throughput of BESSs with 15 minutes, 1 hour and 4
+hours of storage throughout the simulated year (2021)]{Cumulative
+throughput (discharged energy) for BESSs with different storage
+durations (15 minutes, 1 hour and 4 hours in the subfigures from left to
+right) and different scheduling lookahead horizon lengths (different
+coloured lines in each subfigure) in 2021. The dashed red line indicates
+the end-of-year cumulative throughput of a 100 MWh BESS that is cycled
+once per day.}\label{fig:bess_throughputs}
 }
 \end{figure}
 
@@ -7600,8 +7607,8 @@ elsewhere to exercise caution when making the short-term electricity
 markets in their jurisdictions faster and more flexible.
 
 \hypertarget{data-availability}{%
-\section*{Data Availability}\label{data-availability}}
-\addcontentsline{toc}{section}{Data Availability}
+\section*{Data availability}\label{data-availability}}
+\addcontentsline{toc}{section}{Data availability}
 
 The data used in this study were made publicly available by the
 Australian Energy Market Operator through their Nemweb portal
@@ -7635,33 +7642,203 @@ repositories:
 \hypertarget{sec:conclusion}{%
 \chapter{Conclusion}\label{sec:conclusion}}
 
-\hypertarget{thesis-summary}{%
-\section{Thesis summary}\label{thesis-summary}}
+Prompted by rising deployments of VRE, policy-makers are contemplating
+redesigning operational practices in their jurisdictions to deliver more
+effective and efficient balancing in decarbonising power systems and
+electricity markets. Given the challenges and complexities of the design
+problem, these outcomes require flexible, ``second-best'' and
+context-specific solutions.
 
-In summary, pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Nunc eleifend, ex a luctus porttitor,
-felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla
-blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet
-egestas leo sollicitudin at.
+This thesis aims to address the following research question:
 
-\hypertarget{future-work}{%
-\section{Future work}\label{future-work}}
+\begin{quote}
+Given existing design challenges and increasing penetrations of variable
+renewable energy resources as energy transition proceeds, how should we
+design or, at the very least, approach the design of operational
+practices for balancing electricity markets?
+\end{quote}
 
-There are several potential directions for extending this thesis. Lorem
-ipsum dolor sit amet, consectetur adipiscing elit. Aliquam gravida ipsum
-at tempor tincidunt. Aliquam ligula nisl, blandit et dui eu, eleifend
-tempus nibh. Nullam eleifend sapien eget ante hendrerit commodo.
-Pellentesque pharetra erat sit amet dapibus scelerisque.
+The broad scope of this research question was narrowed through two
+research objectives (see below), which were investigated through models
+and detailed empirical studies of facets of the Australian National
+Electricity Market. In this chapter, I first summarise the main findings
+of the research within this thesis according to the research objective
+they address. Specifically, Section~\ref{sec:conclusion-ro1} summarises
+insights from Chapter \ref{sec:fcs} that address Research Objective 1,
+and Section~\ref{sec:conclusion-ro2} summarises the main findings from
+Chapter \ref{sec:reserves} and Chapter \ref{sec:info}, which together
+address Research Objective 2. I then highlight potential opportunities
+for future work in Section~\ref{sec:conclusion-future_work}. Finally, I
+provide brief closing remarks in
+Section~\ref{sec:conclusion-closing_remarks}.
 
-Vestibulum suscipit tellus risus, faucibus vulputate orci lobortis eget.
-Nunc varius sem nisi. Nunc tempor magna sapien, euismod blandit elit
-pharetra sed. In dapibus magna convallis lectus sodales, a consequat sem
-euismod. Curabitur in interdum purus. Integer ultrices laoreet aliquet.
-Nulla vel dapibus urna. Nunc efficitur erat ac nisi auctor sodales.
+\hypertarget{sec:conclusion-ro1}{%
+\section{Research Objective 1}\label{sec:conclusion-ro1}}
+
+\begin{quote}
+\textbf{RO1}: To determine what features are needed in
+centrally-coordinated arrangements for procuring frequency control
+services during energy transition.
+\end{quote}
+
+Frequency control services are a significant component of a system
+operator's balancing toolkit and are critical to ensuring that
+imbalances are quickly addressed. The design of frequency control
+arrangements in restructured electricity industries will need to be
+revisited as resource mixes, network topologies and broader market
+arrangements and policy settings change with growing penetrations of
+variable renewable energy resources.
+
+Based on the review of North American and European frequency control
+arrangements and the analysis of the NEM's presented in Chapter
+\ref{sec:fcs}, I offer four insights consisting of desirable features
+and design principles for policy-makers revisiting their jurisdiction's
+frequency control arrangements during energy transition:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Control deficiencies may not be addressable through introducing new
+  frequency control services. While this solution may address emerging
+  needs, such as low-inertia operation, policy-makers need to better
+  understand the interdependency, interoperability and
+  interchangeability between frequency control services and the
+  interactions with other technical attributes of the power system
+  (e.g.~system strength) to ensure that frequency control is first and
+  foremost effective. Once this has been achieved, the short-run
+  efficiency of arrangements can be improved through mechanisms such as
+  dynamic and probabilistic dimensioning and co-optimising the
+  procurement of interchangeable frequency control services.
+\item
+  A dynamically efficient outcome in some power systems may require
+  additional investments in capability. Prices for frequency control
+  services can be strengthened through scarcity pricing, which may
+  better reflect the system's preference for security and reliability.
+  Such pricing mechanisms are complementary to appropriate and efficient
+  cost-allocation based on causation or needs. Both efficient price
+  formation and cost-allocation will improve the potential for frequency
+  control services derivatives, which may assist in providing price
+  signals for investment.
+\item
+  System operators should systematically and frequently verify frequency
+  control service delivery, where relevant, and withhold or penalise
+  remuneration when delivery is deemed to be insufficient. If such
+  monitoring is in place, remuneration can be performance-based to drive
+  the provision of high quality frequency control services. Performance
+  monitoring would also enable the system operator to assess frequency
+  control arrangements and identify any deficiencies in control action
+  or procurement.
+\item
+  During energy transition, a suitable set of frequency control
+  arrangements will most likely involve a combination of market-based
+  and regulatory mechanisms. Frequency control is a power system public
+  good and achieving frequency stability requires a degree of
+  coordination and cooperation between resources. These characteristics
+  make it difficult to establish complete markets for frequency control
+  services, and an emphasis on market solutions may obscure these
+  characteristics to market participants and undermine effective
+  control. In contrast, regulatory mechanisms may prove to be more
+  robust and resilient in the face of uncertainties, particularly those
+  that are exogenous to the power system (e.g.~climate risk). Regardless
+  of whether arrangements are skewed towards market-based mechanisms or
+  regulatory mechanisms, designers should be more forward-looking and
+  avoid assumptions regarding the provision of frequency control
+  capabilities over time, particularly when there is a pervasive
+  competition norm and effective frequency control relies on sequential
+  and hierarchical control actions.
+\end{enumerate}
+
+\hypertarget{sec:conclusion-ro2}{%
+\section{Research Objective 2}\label{sec:conclusion-ro2}}
+
+\begin{quote}
+\textbf{RO2}: To better understand how the \textbf{capabilities} and
+\textbf{deployability} of balancing flexibility in scheduling timeframes
+are changing during energy transition, and whether these changes impact
+the suitability of more decentralised operational balancing practices.
+\end{quote}
+
+There is a role for empirical studies examining whether decentralised
+operational balancing practices, such as markets for services and
+products, are purpose-fit to deliver the balancing flexibility
+requirements of electricity markets in transition -- particularly given
+that new markets for flexibility (e.g.~reserve product markets) can
+introduce additional costs, constraints and complexity, and even
+encroach upon the functions of existing operational practices.
+
+By quantifying the time-varying spectrum of balancing flexibility
+\textbf{capabilities} in scheduling timeframes for historical and
+projected resource mixes in two regions of the NEM in Chapter
+\ref{sec:reserves}, I show that with higher penetrations of VRE: 1)
+downwards flexibility margins can be exhausted around noon if wind and
+solar are unable or unwilling to provide it, 2) upwards flexibility
+becomes more scarce during morning and evening peak demand events and 3)
+a greater portion of upwards flexibility is provided by energy-limited
+resources. Based on these findings and an assessment of various
+flexibility design options, I recommend that policy-makers examine how
+existing operational practices can be augmented to elicit upwards
+flexibility provision, and that duration specifications and sustained
+footroom procurement be considered for reserve products.
+
+Solely examining \emph{capabilities} is insufficient for understanding
+the \emph{actual availability} of balancing flexibility given that the
+latter is shaped by market participation decisions. As such, I also
+examine some aspects of the \textbf{deployability} of balancing
+flexibility capabilities. In Chapter \ref{sec:info}, I explore how
+market information, participation rules and participant operational
+strategies affect scheduling decisions and thus balancing flexibility
+provision qenergy storage resources, which are widely touted to be
+critical to balancing decarbonised power systems. I first highlight the
+increasing frequency and severity of errors in AEMO-generated price
+forecasts, which are widely used by market participants in the NEM to
+schedule their resources, and propose a hypothesis that market
+participant (re)bidding is partially responsible for this phenomenon. I
+then model the extent to which BESS wholesale energy market arbitrage
+revenues might be reduced (compared to perfect foresight operation)
+should these forecasts guide battery energy storage scheduling. I find
+that revenue reductions can be significant, ranging from from
+\textasciitilde15--20\% reduction in potential annual arbitrage revenue
+for a 4 hour BESS to 60+\% for a 15 minute BESS. Based on the findings
+from these analyses, I discuss potential changes to market participant
+scheduling strategies and market design that could improve scheduling
+outcomes. I recommend that Australian policy-makers not only increase
+the frequency at which centralised knowledge processes are run, but also
+consider whether stricter market participation restrictions might
+incentivise participant bidding strategies that are less likely to
+induce sudden price forecast swings that can hamper effective
+scheduling.
+
+\hypertarget{sec:conclusion-future_work}{%
+\section{Future work}\label{sec:conclusion-future_work}}
+
+The broad scope of this thesis's research question and the various
+limitations of the work within this thesis imposed by assumptions and
+constraints on scope mean that there are multiple potential directions
+and improvements that could be pursued to extend the work contained
+within this thesis. In the subsections below, I highlight the most
+significant of these directions and improvements.
+
+\hypertarget{network-constraints}{%
+\subsection{Network constraints}\label{network-constraints}}
+
+\hypertarget{demand-response-and-distributed-consumer-owned-energy-resources}{%
+\subsection{Demand response and distributed, consumer-owned energy
+resources}\label{demand-response-and-distributed-consumer-owned-energy-resources}}
+
+\hypertarget{examining-market-structure}{%
+\subsection{Examining market
+structure}\label{examining-market-structure}}
+
+\hypertarget{interactions-with-investment-timeframes}{%
+\subsection{Interactions with investment
+timeframes}\label{interactions-with-investment-timeframes}}
+
+\hypertarget{sec:conclusion-closing_remarks}{%
+\section{Closing remarks}\label{sec:conclusion-closing_remarks}}
 
 \appendix
-\renewcommand\thefigure{\thesection.\arabic{figure}}
-\renewcommand\thetable{\thesection.\arabic{table}}
+\renewcommand\thefigure{\thechapter.\arabic{figure}}
+\renewcommand\thetable{\thechapter.\arabic{table}}
 
 \hypertarget{sec:appendix-reserves_assumptions}{%
 \chapter{Data and assumptions used in market
@@ -8290,12 +8467,16 @@ Table~\ref{tbl:discount-rates}) were then used alongside their
 corresponding discount functions in the arbitrage with discounting MILP
 formulation (Section~\ref{sec:appendix-milps-arbdisc}).
 
+\def\pandoctableshortcapt{Discount rates and RMSD from each discount
+function fit}
+
 \hypertarget{tbl:discount-rates}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}m{(\columnwidth - 4\tabcolsep) * \real{0.3291}}
   >{\raggedright\arraybackslash}m{(\columnwidth - 4\tabcolsep) * \real{0.3291}}
   >{\raggedright\arraybackslash}m{(\columnwidth - 4\tabcolsep) * \real{0.3291}}@{}}
-\caption{\label{tbl:discount-rates}Discount rates obtained from fitting
+\caption[Discount rates and RMSD from each discount function
+fit]{\label{tbl:discount-rates}Discount rates obtained from fitting
 discount functions to max-scaled significant price forecast error counts
 over time, and the root-mean-square deviation (RMSD) of each
 fit.}\tabularnewline
@@ -8309,11 +8490,14 @@ Discount rate (\(hr^{-1}\)) & 0.1994 & 0.4203 \\
 RMSD & 0.088 & 0.049 \\
 \end{longtable}
 
+\let\pandoctableshortcapt\relax
+
 \begin{figure}
 \hypertarget{fig:nsw_significant_price_error_counts}{%
 \centering
 \includegraphics{source/figures/NSW1_percent_above_300.0_2021.png}
-\caption{Significant price forecast errors (i.e.~\textgreater{} 300
+\caption[Count of significant price errors by forecast ahead
+time]{Significant price forecast errors (i.e.~\textgreater{} 300
 AUD/MW/hr, see Section~\ref{sec:info-case_study-price_forecast_errors}
 for a definition of ``significant'') as a proportion of all price
 forecast errors for a given forecast ahead time in NSW in 2021. The
@@ -8358,10 +8542,12 @@ exponential discount function were used.
 \hypertarget{fig:discount_function_fitting}{%
 \centering
 \includegraphics{source/figures/curve_fits_300.0.png}
-\caption{Discount function fits to the price forecast error counts for
-NSW in 2021. To ensure that forecasts further out from delivery were
-discounted to a greater degree, significant price forecast errors counts
-were max-scaled and then subtracted from one
+\caption[Price forecast error counts for NSW in 2021, and the fitted
+exponential and hyperbolic discount functions]{Discount function fits to
+the price forecast error counts for NSW in 2021. To ensure that
+forecasts further out from delivery were discounted to a greater degree,
+significant price forecast errors counts were max-scaled and then
+subtracted from one
 (i.e.~\(1-\frac{\textrm{counts}_{\textrm{ahead time}}}{\textrm{counts}_{\textrm{24 hours ahead}}}\))}\label{fig:discount_function_fitting}
 }
 \end{figure}

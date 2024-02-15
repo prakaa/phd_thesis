@@ -1,4 +1,4 @@
-# The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: an Australian National Electricity Market case study {#sec:info}
+# The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: a National Electricity Market case study {#sec:info}
 
 ## Link to thesis
 
