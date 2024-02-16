@@ -38,10 +38,21 @@ Solely examining *capabilities* is insufficient for understanding the *actual av
 
 The broad scope of this thesis's research question and the various limitations of the work within this thesis imposed by assumptions and constraints on scope  mean that there are multiple potential directions and improvements that could be pursued to extend the work contained within this thesis. In the subsections below, I highlight the most significant of these directions and improvements.
 
-### Demand and distributed, consumer-owned energy resources
+### Greater consideration of demand response and distributed, consumer-owned energy resources
 
+A critical are of future research is to gain a deeper understanding of how future electricity markets can harness the numerous benefits – of which financial benefits for the NEM are estimated to be 1.0–6.3 billion AUD by 2030-2040 [@australianenergymarketcommissionUnlockingCERBenefits2023] –  presented by demand response and distributed, consumer-owned energy resources offering balancing flexibility to the system. There are three avenues for future work in this space that should be pursued: 
+
+1. Policy-makers must evaluate whether incremental adjustments to operational practices and market design offer material benefits. This involves not only advancing "enabling" reform, such as the flexible trading agreements [@australianenergymarketcommissionUnlockingCERBenefits2023] and central dispatch visibility and integration mechanisms [@australianenergymarketcommissionIntegratingPriceresponsiveResources2023a] being considered in the NEM, but also taking a holistic view when assessing seemingly unrelated reform pathways (e.g. as discussed in [@sec:reserves-intro], the constraints imposed by new reserve product markets on smaller resources). 
+
+2. Policy-makers must develop a vision for a target future grid architecture. An important component of this second avenue is determining the extent to which arrangements should be "layered"; that is, whether new distribution system operator roles should be created and what these new entities should be responsible for [@energysecurityboardConsumerEnergyResources2024; @kristovTaleTwoVisions2016; @schittekatteDistributedEnergyResources2022].
+
+3. Research on the needs, preferences and motivations of energy consumers should be continued as arrangements change. Existing work has already challenged the notion that financial incentives alone (e.g. residential and business tariffs) are sufficient to unlock flexibility from demand response and distributed, consumer-owned energy resources.
 
 ### Interactions with investment timeframes
+
+The design of practices and policies in operational timeframes should ideally consider those relevant in investment and planning timeframes, as that they are inextricably linked. For instance, as discussed in [@sec:reserves-intro], resource adequacy policies that sit aside the operation of short-term wholesale electricity markets (e.g. longer-term firming revenue or capacity contracts) may weaken the case for building investment signals into, or altogether implementing new markets for flexibility.
+
+Holistic design processes should not only work from the "top-down" (i.e. from investment and planning to operational timeframes), but also from the "bottom-up". With an increasing number of countries adopting hybrid market arrangements ("auctioning of long-term contracts to support investment, together with short-term energy markets") to drive decarbonisation and satisfy security-of-supply requirements [@roquesAdaptingElectricityMarkets2017; @kepplerWhySustainableProvision2022], further research on contract design is required to ensure that long-term contracts preserve short-term market scheduling incentives. Neglecting this interdependency can have deleterious effects; for example, the contracts-for-difference issued to VRE resources through reverse auctions in Australia have provided project owners with investment support, but have also diminished real-time market price signals and thus incentives seen by project operators [@macgillEndtoendElectricityMarket2020]. A notable piece of work in this domain is by @billimoriaContractDesignStorage2023a, which investigates how the design of longer-term storage contracts affects the alignment between financial incentives for market participants and the need of the system.
 
 ### Empirical studies of market participant behaviour
 

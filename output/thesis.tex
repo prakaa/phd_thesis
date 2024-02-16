@@ -327,7 +327,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        February 15, 2024
+        February 16, 2024
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -2371,8 +2371,8 @@ plotted using \texttt{Makie.jl}
 Krumbiegel, 2021}).
 
 \hypertarget{sec:fcs}{%
-\chapter{Designing frequency control arrangements: insights from the
-National Electricity Market}\label{sec:fcs}}
+\chapter{Frequency control arrangements: insights from the National
+Electricity Market}\label{sec:fcs}}
 
 \hypertarget{link-to-thesis}{%
 \section{Link to thesis}\label{link-to-thesis}}
@@ -7818,20 +7818,139 @@ and improvements that could be pursued to extend the work contained
 within this thesis. In the subsections below, I highlight the most
 significant of these directions and improvements.
 
-\hypertarget{network-constraints}{%
-\subsection{Network constraints}\label{network-constraints}}
+\hypertarget{greater-consideration-of-demand-response-and-distributed-consumer-owned-energy-resources}{%
+\subsection{Greater consideration of demand response and distributed,
+consumer-owned energy
+resources}\label{greater-consideration-of-demand-response-and-distributed-consumer-owned-energy-resources}}
 
-\hypertarget{demand-response-and-distributed-consumer-owned-energy-resources}{%
-\subsection{Demand response and distributed, consumer-owned energy
-resources}\label{demand-response-and-distributed-consumer-owned-energy-resources}}
+A critical are of future research is to gain a deeper understanding of
+how future electricity markets can harness the numerous benefits -- of
+which financial benefits for the NEM are estimated to be 1--6.3 billion
+AUD by 2030-2040
+(\protect\hyperlink{ref-australianenergymarketcommissionUnlockingCERBenefits2023}{Australian
+Energy Market Commission, 2023f}) -- presented by demand response and
+distributed, consumer-owned energy resources offering balancing
+flexibility to the system. There are three avenues for future work in
+this space that should be pursued:
 
-\hypertarget{examining-market-structure}{%
-\subsection{Examining market
-structure}\label{examining-market-structure}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Policy-makers must evaluate whether incremental adjustments to
+  operational practices and market design offer material benefits. This
+  involves not only advancing ``enabling'' reform, such as the flexible
+  trading agreements
+  (\protect\hyperlink{ref-australianenergymarketcommissionUnlockingCERBenefits2023}{Australian
+  Energy Market Commission, 2023f}) and central dispatch visibility and
+  integration mechanisms
+  (\protect\hyperlink{ref-australianenergymarketcommissionIntegratingPriceresponsiveResources2023a}{Australian
+  Energy Market Commission, 2023g}) being considered in the NEM, but
+  also taking a holistic view when assessing seemingly unrelated reform
+  pathways (e.g.~as discussed in Section~\ref{sec:reserves-intro}, the
+  constraints imposed by new reserve product markets on smaller
+  resources).
+\item
+  Policy-makers must develop a vision for a target future grid
+  architecture. An important component of this second avenue is
+  determining the extent to which arrangements should be ``layered'';
+  that is, whether new distribution system operator roles should be
+  created and what these new entities should be responsible for
+  (\protect\hyperlink{ref-energysecurityboardConsumerEnergyResources2024}{Energy
+  Security Board, 2024};
+  \protect\hyperlink{ref-kristovTaleTwoVisions2016}{Kristov et al.,
+  2016};
+  \protect\hyperlink{ref-schittekatteDistributedEnergyResources2022}{Schittekatte
+  and Pototschnig, 2022}).
+\item
+  Research on the needs, preferences and motivations of energy consumers
+  should be continued as arrangements change. Existing work has already
+  challenged the notion that financial incentives alone
+  (e.g.~residential and business tariffs) are sufficient to unlock
+  flexibility from demand response and distributed, consumer-owned
+  energy resources.
+\end{enumerate}
 
 \hypertarget{interactions-with-investment-timeframes}{%
 \subsection{Interactions with investment
 timeframes}\label{interactions-with-investment-timeframes}}
+
+The design of practices and policies in operational timeframes should
+ideally consider those relevant in investment and planning timeframes,
+as that they are inextricably linked. For instance, as discussed in
+Section~\ref{sec:reserves-intro}, resource adequacy policies that sit
+aside the operation of short-term wholesale electricity markets
+(e.g.~longer-term firming revenue or capacity contracts) may weaken the
+case for building investment signals into, or altogether implementing
+new markets for flexibility.
+
+Holistic design processes should not only work from the ``top-down''
+(i.e.~from investment and planning to operational timeframes), but also
+from the ``bottom-up''. With an increasing number of countries adopting
+hybrid market arrangements (``auctioning of long-term contracts to
+support investment, together with short-term energy markets'') to drive
+decarbonisation and satisfy security-of-supply requirements
+(\protect\hyperlink{ref-kepplerWhySustainableProvision2022}{Keppler et
+al., 2022};
+\protect\hyperlink{ref-roquesAdaptingElectricityMarkets2017}{Roques and
+Finon, 2017}), further research on contract design is required to ensure
+that long-term contracts preserve short-term market scheduling
+incentives. Neglecting this interdependency can have deleterious
+effects; for example, the contracts-for-difference issued to VRE
+resources through reverse auctions in Australia have provided project
+owners with investment support, but have also diminished real-time
+market price signals and thus incentives seen by project operators
+(\protect\hyperlink{ref-macgillEndtoendElectricityMarket2020}{MacGill
+and Esplin, 2020}). A notable piece of work in this domain is by
+Billimoria and Simshauser
+(\protect\hyperlink{ref-billimoriaContractDesignStorage2023a}{2023}),
+which investigates how the design of longer-term storage contracts
+affects the alignment between financial incentives for market
+participants and the need of the system.
+
+\hypertarget{empirical-studies-of-market-participant-behaviour}{%
+\subsection{Empirical studies of market participant
+behaviour}\label{empirical-studies-of-market-participant-behaviour}}
+
+With a specific focus on market information, Chapter \ref{sec:info}
+discusses behavioural factors and market participant preferences that
+influence resource scheduling. However, while most of the studies
+reviewed in Section~\ref{sec:info-context-esr-operation} and the storage
+scheduling outlined in
+Section~\ref{sec:info-case_study-bess_simulations} \emph{model} market
+participant behaviour, there is a need for more in-depth empirical
+research on market participant behaviour. For instance, analysing market
+participant rebidding time series data could offer policy-makers with a
+clearer picture of how participants actually offer balancing flexibility
+to the system in their jurisdictions. Moreover, the findings from these
+studies could be used to inform flexibility assessment modelling efforts
+(e.g.~input bidding assumptions for market models). In particular, such
+studies are likely to better illustrate how market participants manage
+resources across a portfolio -- a significant concern in jurisdictions
+such as the NEM that must contend with supply-side concentration and
+vertical re-integration (i.e.~firms that operate a retail business
+whilst also owning generation assets)
+(\protect\hyperlink{ref-australianenergyregulatorStateEnergyMarket2022}{Australian
+Energy Regulator, 2022a};
+\protect\hyperlink{ref-chesterAustraliaNationalElectricity2024}{Chester,
+2024};
+\protect\hyperlink{ref-simshauserLessonsAustraliaNational2019}{Simshauser,
+2019}).
+
+\hypertarget{modelling-the-network}{%
+\subsection{Modelling the network}\label{modelling-the-network}}
+
+The system models in Chapter \ref{sec:reserves} assumed that each
+modelled market region is a copper-plate network with no interconnection
+to other regions. Furthermore, the BESS dispatch models in Chapter
+\ref{sec:info} assumed that BESS dispatch is not restricted by
+constraints in the NEM's dispatch engine. As discussed in Chapter
+\ref{sec:reserves}, transmission network constraints arising from
+thermal and stability limits are likely to reduce the balancing
+flexibility available to the system, whereas interconnection is only
+likely to change the quantity and composition of balancing flexibility
+under certain conditions. Regardless, modelling both network constraints
+and interconnection will provide a more accurate picture of the extent
+to which balancing flexibility capabilities can be realised.
 
 \hypertarget{sec:conclusion-closing_remarks}{%
 \section{Closing remarks}\label{sec:conclusion-closing_remarks}}
@@ -8651,6 +8770,11 @@ Australian Energy Market Commission, 2023e.
 \href{https://www.aemc.gov.au/sites/default/files/2023-08/ERC0352\%20-\%20Integrating\%20price-responsive\%20resources\%20into\%20the\%20NEM\%20-\%20Consultation\%20paper.pdf}{Integrating
 price-responsive resources into the {NEM}}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionIntegratingPriceresponsiveResources2023a}{}}%
+Australian Energy Market Commission, 2023g.
+\href{https://www.aemc.gov.au/sites/default/files/2023-12/ERC0352\%20-\%20Integrating\%20price-responsive\%20resources\%20into\%20the\%20NEM.pdf}{Integrating
+price-responsive resources into the {NEM}}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionNationalElectricityRules2023}{}}%
 Australian Energy Market Commission, 2023a.
 \href{https://energy-rules.aemc.gov.au/ner/477/272296\#3.8.22}{National
@@ -8666,6 +8790,11 @@ significant price outcomes by the {AER}}.
 Australian Energy Market Commission, 2023c.
 \href{https://www.aemc.gov.au/sites/default/files/2023-08/directions_paper_2023_0.pdf}{Operating
 reserve market directions paper}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionUnlockingCERBenefits2023}{}}%
+Australian Energy Market Commission, 2023f.
+\href{https://www.aemc.gov.au/sites/default/files/2023-08/ERC0346\%20CER\%20Benefits\%20Directions\%20paper\%20-\%20rule\%20change.pdf}{Unlocking
+{CER} benefits through flexible trading}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-australianenergymarketcommissionUpdatingShortTerm2022}{}}%
 Australian Energy Market Commission, 2022.
@@ -9288,6 +9417,13 @@ Chernyakhovskiy, I., Bowen, T., Gokhale-Welch, C., Zinaman, O., 2021.
 NREL/TP-6A20-78815, 1808497, MainId:32732).
 \url{https://doi.org/10.2172/1808497}
 
+\leavevmode\vadjust pre{\hypertarget{ref-chesterAustraliaNationalElectricity2024}{}}%
+Chester, L., 2024.
+\href{https://ses.library.usyd.edu.au/bitstream/handle/2123/32110/Australia\%27s\%20NEM_Bidding\%20rules\%20market\%20power\%20and\%20wholesale\%20electricity\%20prices\%20FINAL\%20UPDATED\%202\%20FEBRUARY\%202024.pdf?sequence=3}{Australia's
+{National Electricity Market}: {Bidding} rules, market power and
+wholesale electricity prices}. {Discipline of Political Economy, School
+of Social and Political Sciences, The University of Sydney}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-chesterEnergyProblemRepresentation2019}{}}%
 Chester, L., Elliot, A., 2019. Energy problem representation: {The}
 historical and contemporary framing of {Australian} electricity policy.
@@ -9516,6 +9652,12 @@ Elgerd, O.I., 1971. Electric energy systems theory: An introduction.
 Energy Exemplar, 2021. {PLEXOS} \textbar{} {Energy Market Simulation
 Software} {[}WWW Document{]}. URL
 \url{https://www.energyexemplar.com/plexos} (accessed 4.13.2022).
+
+\leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardConsumerEnergyResources2024}{}}%
+Energy Security Board, 2024.
+\href{https://www.energy.gov.au/sites/default/files/2024-02/ESB\%20report\%20-\%20CONSUMER\%20ENERGY\%20RESOURCES\%20AND\%20THE\%20TRANSFORMATION\%20OF\%20THE\%20NEM.pdf}{Consumer
+energy resources and the transformation of the {NEM} - {Critical}
+priorties to support transformation: A call to action}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-energysecurityboardPost2025Market2021}{}}%
 Energy Security Board, 2021a. Post 2025 {Market Design Options} -- {A}
