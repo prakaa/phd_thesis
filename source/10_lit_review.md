@@ -43,7 +43,7 @@ A knowledge of physical power system phenomena and the timescales in which they 
 
 1.  *Electromagnetic* phenomena arise from the coupling of electrical and magnetic fields within **synchronous machines** (generators and motors that rotate at a speed proportional to AC frequency) and between power system resources. They occur on the timescale of milliseconds to seconds. IBR controls also operate in this timeframe.
 
-2.  *Electromechanical* phenomena are slower (seconds to minutes ) and arise as a result of electromagnetic fields interacting with rotating masses and mechanical forces. These typically occur in generators and motors.
+2.  *Electromechanical* phenomena are slower (seconds to minutes) and arise as a result of electromagnetic fields interacting with rotating masses and mechanical forces. These typically occur in generators and motors.
 
 3.  *Thermodynamic* phenomena are slower still. They encompass chemical fuel conversion and heat transfer processes in boilers. These phenomena occur over seconds to minutes to hours. The dynamics of the primary energy sources for hydroelectricity and VRE are also studied across these timescales [@keeratimahatAnalysisShorttermOperational2021].
 

@@ -4,7 +4,7 @@
 
 Frequency control services are a significant component of a system operator's balancing toolkit and are critical to ensuring that imbalances are quickly addressed. The design of frequency control arrangements in restructured electricity industries will need to be revisited as resource mixes, network topologies and broader market arrangements and policy settings change with growing penetrations of variable renewable energy resources. This chapter aims to provide a perspective on what features are desirable in the market-based frequency control arrangements as jurisdictions decarbonise by drawing on experiences from the Australian National Electricity Market. The purpose of this chapter is to address the first research objective of this thesis (see @sec:research_framework).
 
-The content of this chapter is from the following peer-reviewed journal article published in *Renewable and Sustainable Energy Reviews*:
+The following peer-reviewed journal article published in *Renewable and Sustainable Energy Reviews* constitutes this chapter:
 
 **Prakash, A.**, Bruce, A. & MacGill, I. Insights on designing effective and efficient frequency control arrangements from the Australian National Electricity Market. Renewable and Sustainable Energy Reviews 161, 112303 (2022).
 
