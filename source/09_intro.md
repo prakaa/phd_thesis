@@ -6,6 +6,13 @@
 
 ## Context and motivation
 
+TODO: Fix Handbook citation
+
+Mitigation of the wide-ranging and adverse impacts of climate change on ecological and human systems requires reducing and eventually halting global anthropogenic greenhouse gas emissions, of which largest source is the electricity sector [@portnerIPCC2022Climate2022; @internationalenergyagencyNetZero20502021]. Reducing emissions requires an unprecedented deployment of renewable energy, storage and transmission – not only to replace emissions-intensive fossil fuel generation, but also to meet projected increases in the demand for electricity driven by economic development  and electrification [@internationalrenewableenergyagencyGlobalRenewablesOutlook2020]. Fortunately, investment in the energy transition is being buoyed by two reinforcing forces: increasing direct investment or investment support from policy-makers for low-carbon technologies and enablers, and technology and deployment cost declines that accompany increasing deployment (to date, these have been significant for solar photovolatic panels and lithium-ion battery energy storage) [@wayEmpiricallyGroundedTechnology2021; @joskowHierarchiesMarketsPartially2022; @glachantHandbookElectricityMarkets2021].
+
+As power systems across the world begin to experience higher penetrations of variable renewable energy
+
+
 High level context setting and motivation, higher level thesis objective
 
 ## Research questions and methods
