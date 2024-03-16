@@ -6,7 +6,7 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, lacinia ante sit amet, sollicitudin erat. Aliquam efficitur vehicula leo sed condimentum. Phasellus lobortis eros vitae rutrum egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at urna imperdiet, vulputate orci eu, sollicitudin leo. Donec nec dui sagittis, malesuada erat eget, vulputate tellus. Nam ullamcorper efficitur iaculis. Mauris eu vehicula nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.
 \newpage
 
-# Publications arising from this thesis {.unnumbered}
+# Works arising from this thesis {.unnumbered}
 
 ## Peer-reviewed journal articles {.unnumbered}
 
@@ -16,9 +16,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, 
  
  > **Prakash, A.**, Bruce, A. & MacGill, I. NEMSEER: A Python package for downloading and handling historical National Electricity Market forecast data produced by the Australian Energy Market Operator. Journal of Open Source Software 8, 5883 (2023)
 
-## Working papers {.unnumbered}
+## Submitted manuscripts {.unnumbered}
 
-> **Prakash, A**., Bruce, A. & MacGill, I. The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: an Australian National Electricity Market case study. Submitted to Energy Policy
+> **Prakash, A**., Bruce, A. & MacGill, I. The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: an Australian National Electricity Market case study. Submitted to Energy Economics
 
 ## Regulatory submissions {.unnumbered}
 
@@ -33,3 +33,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, 
 > **Prakash, A.**, Ashby, R., Keeratimahat, K., Bruce, A. & MacGill, I. UNSW CEEM Response to Post 2025 Market Design Options Paper. http://dx.doi.org/10.13140/RG.2.2.27716.81284 (2021)
 
 > **Prakash, A.**, Nicholls, A., Heim, D., Bruce, A. & Macgill, I. Response to Capacity Mechanism Project High-Level Design Paper. http://dx.doi.org/10.13140/RG.2.2.35007.59043 (2022)
+
+## Open source software development {.unnumbered}
+
+> Gorman, N., **Prakash, A.** NEMOSIS: NEM Open-source information service. A Python package for downloading historical data published by the Australian Energy Market Operator (AEMO). https://github.com/UNSW-CEEM/NEMOSIS (2023)
+
+> **Prakash, A.**, Gorman, N., Katona, K., McConnell, D., Heim, D. NEMSEER: A package for downloading and handling forecasts for the National Electricity Market (NEM) from the Australian Energy Market Operator (AEMO). https://github.com/UNSW-CEEM/NEMSEER (2023)
+
+>**Prakash, A.** AEMO Monthly Data Archive Tool: A package and CLI utility to check for available data and download tables from AEMO's Monthly Data Archive. https://github.com/prakaa/mms-monthly-cli (2023)
