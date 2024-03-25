@@ -8,7 +8,7 @@ Market participation decisions and thus resource schedules are informed by knowl
 
 The content of this chapter is from the following manuscript submitted to *Energy Economics*:
 
-> **Prakash, A**., Bruce, A. & MacGill, I. The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: an Australian National Electricity Market case study. Submitted to Energy Economics
+> **Prakash, A**., Bruce, A. & MacGill, I. The scheduling role of future pricing information in electricity markets with rising deployments of renewables and energy storage: an Australian National Electricity Market case study. Submitted to Energy Economics and under review
 
 ## Abstract
 
