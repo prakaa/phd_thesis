@@ -13,6 +13,11 @@ I am lucky to have a mum and dad who have been very supportive and love me very 
 I am lucky to have received feedback and support for the work in this thesis from many individuals and organisations. Thank you to Andrew Corrigan and Max Zekulich for sharing their data and analysis on frequency response and FCAS markets. To the team at WattClarity and to the Australian Energy Market Operator, the Australian Energy Market Commission and the Energy Security Board, thank you for the opportunity to present and get feedback on parts of this thesis. To the Australian Government Research Training Program and the UNSW Digital Grid Futures Institute, thank you for your financial support and to the UNSW Sydney Research Technology Services, thanks for giving me access to Katana. And to the various reviewers of the work in this thesis, thank you for your thoughtful comments.
 
 Finally, I am lucky to have drawn the cards that I have in the lottery in life. I am immensely grateful to have been able to live, work and play on the awe-inspiring lands of the Dharug and Gundungurra people in a lucky country.
+
+This thesis was written in Markdown and compiled with Pandoc using a template originally developed by Tom Pollard, with contributions from myself:
+
+> Tom Pollard et al. (2016). Template for writing a PhD thesis in Markdown. Zenodo. http://dx.doi.org/10.5281/zenodo.58490
+
 \newpage
 
 
