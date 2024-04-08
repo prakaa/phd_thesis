@@ -327,7 +327,7 @@ of Philosophy
 
         \normalsize
         UNSW Sydney, Australia\\
-        April 2, 2024
+        April 9, 2024
 
         % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
@@ -804,7 +804,7 @@ I attempt to achieve these objectives through the following three
 \end{enumerate}
 
 The links between the research question, the research objectives and the
-research questions are shown in Figure~\ref{fig:research_framework} and
+research methods are shown in Figure~\ref{fig:research_framework} and
 are discussed in greater detail in Chapter \ref{sec:research_framework}.
 
 \hypertarget{contributions}{%
@@ -888,8 +888,9 @@ This thesis consists of 7 chapters and 4 appendices.
 
 \textbf{Chapter \ref{sec:lit_review}} provides relevant context on power
 systems and power system operation, and an overview of the literature on
-the challenges with and the desirable outcomes of designing operational
-practices in electricity markets with growing penetrations of VRE.
+the desirable outcomes of and challenges associated with designing
+operational practices in electricity markets with growing penetrations
+of VRE.
 
 \textbf{Chapter \ref{sec:research_framework}} outlines the motivating
 research question, the research objectives and research methods of this
@@ -930,11 +931,11 @@ context on grid-scale energy storage resource deployment, operation and
 market participation to date. Then, in a case study of the NEM, I
 examine errors in the NEM's centralised price forecasts, propose a
 hypothesis to explain increasing divergence and the occurrence of price
-swings in these forecasts, and subsequently use the same centralised
-price forecasts to schedule a variety of battery energy storage systems
-for wholesale energy market arbitrage to assess the impact of imperfect
-foresight on arbitrage revenues. I conclude by discussing changes to
-market participant scheduling and market design that could maximise the
+swings in these forecasts, and subsequently use these same forecasts to
+schedule a variety of battery energy storage systems for wholesale
+energy market arbitrage to assess the impact of imperfect foresight on
+arbitrage revenues. I conclude by discussing changes to market
+participant scheduling and market design that could maximise the
 balancing value of resources such as battery energy storage systems.
 \textbf{Appendix \ref{sec:appendix-milps}} presents the mixed-integer
 linear program formulations used in the storage modelling in Chapter
@@ -1006,7 +1007,7 @@ Figure~\ref{fig:elec_supply_chain}. Generators supply the system with
 alternating current (AC) power either through a direct electromagnetic
 connection or, if they are inverter-based resources (IBRs)\footnote{These
   include VRE IBRs (solar PV and Type III and Type IV wind turbines),
-  battery energy storage systems and voltage sourcec converter high
+  battery energy storage systems and voltage source converter high
   voltage direct current (HVDC) transmission lines
   (\protect\hyperlink{ref-achillesIntegratingInverterBasedResources2017}{Achilles
   et al., 2017};
@@ -1108,20 +1109,19 @@ that they can influence the manner in which a power system is operated.
 \hypertarget{fig:power_system_timeframes}{%
 \centering
 \includegraphics[width=1.3\textwidth,height=\textheight]{source/figures/power_system_timeframes.pdf}
-\caption[High-level overview of power system concepts, phenomena and
+\caption[High-level overview of power system concepts, phenomena, and
 processes, services and markets relevant within operational
 timeframes]{A high-level overview of power system concepts, phenomena
-and the processes, services and markets relevant within operational
-timeframes (bounded by the red dashed box). All non-faded text in the
-bottom section indicates a process, service and/or market
-(i.e.~operational practice) related to active power balancing. All bold
-red text in the bottom section indicates a process, service and/or
-market related to active power balancing that is discussed in detail in
-this thesis. Processes, services and markets bounded by the blue dashed
-box occur within scheduling timeframes. Phenomena and stability
-categories, and their timeframes of relevance, are based on those
-discussed in Machowski et al.
-(\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{2020}),
+and practices relevant within operational timeframes (bounded by the red
+dashed box). All non-faded text in the bottom section indicates a
+process, service and/or market (i.e.~operational practice) related to
+active power balancing. All bold red text in the bottom section
+indicates a process, service and/or market related to active power
+balancing that is discussed in detail in this thesis. Processes,
+services and markets bounded by the blue dashed box occur within
+scheduling timeframes. Phenomena and stability categories, and their
+timeframes of relevance, are based on those discussed in Machowski et
+al. (\protect\hyperlink{ref-machowskiPowerSystemDynamics2020}{2020}),
 Hatziargyriou et al.
 (\protect\hyperlink{ref-hatziargyriouDefinitionClassificationPower2021}{2021})
 and Matevosyan et al.
@@ -1373,8 +1373,8 @@ Energy Market Operator, 2020a};
 \paragraph{Power system uncertainty}\label{power-system-uncertainty}}
 
 Power system uncertainty refers to \emph{unexpected} changes to active
-power supply and/or demand. Source of uncertainty include demand and VRE
-generation forecast errors, and singular or widespread outage events
+power supply and/or demand. Sources of uncertainty include demand and
+VRE generation forecast errors, and singular or widespread outage events
 triggered by the weather or unexpected system responses and interactions
 (\protect\hyperlink{ref-australianenergymarketoperatorRenewableIntegrationStudy2020}{Australian
 Energy Market Operator, 2020a};
@@ -1389,16 +1389,15 @@ paradigms}\label{sec:lit_review-operational_paradigms}}
 
 Though governance and operational arrangements vary from jurisdiction to
 jurisdiction, the powers, responsibilities and degree of ring-fencing
-imposed upon the SO are largely dictated by the operational paradigm of
-the control area
+imposed upon the SO are largely dictated by one of two possible
+operational paradigms for a control area
 (\protect\hyperlink{ref-chawlaGlobalTrendsElectricity2013}{Chawla and
-Pollitt, 2013}). Below, I discuss the two possible operational
-paradigms: where the SO is a \textbf{vertically-integrated utility}, and
-where the SO is, at the very least, responsible for operating a
-transmission system that forms the physical basis of a \textbf{wholesale
-electricity market}. In both cases, it is the SO that is ultimately
-responsible for ensuring that the transmission network in their control
-area is operated in a secure and reliable manner
+Pollitt, 2013}): where the SO is a \textbf{vertically-integrated
+utility}, and where the SO is, at the very least, responsible for
+operating a transmission system that forms the physical basis of a
+\textbf{wholesale electricity market}. In both cases, it is the SO that
+is ultimately responsible for ensuring that the transmission network in
+their control area is operated in a secure and reliable manner
 (\protect\hyperlink{ref-roquesMarketDesignGeneration2008}{Roques,
 2008}).
 
@@ -1476,7 +1475,7 @@ categorised into two markets models\footnote{My descriptions of central
   Ahlqvist et al.
   (\protect\hyperlink{ref-ahlqvistSurveyComparingCentralized2022}{2022}),
   who focus on the level of centralisation in day-ahead timeframes. They
-  categorise the Australian NEM as a decentralised market as
+  categorise the Australian NEM as a decentralised market because market
   participants manage unit commitment. However, the SO still produces
   resource-specific production and consumption targets through a central
   dispatch process that also clears the real-time market. As such, I
@@ -4122,14 +4121,14 @@ Energy Market Operator, 2019c}) .
 \centering
 \includegraphics{source/figures/regional_SCADA_frequencies.eps}
 \caption[System frequency (as registered by phasor measurement units and
-AEMO\textquotesingle s AGC) during the power system event on the
-25\^{}th\^{} of August, 2018]{Regional phasor measurement unit frequency
-data and AGC reference frequency data from AEMO's NSW control centre
-(obtained using NEMOSIS
-(\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al., 2018}))
-during the power system event on the 25\textsuperscript{th} of August,
-2018. Note that the AGC reference frequency deviates in the opposite
-direction to local frequency in QLD and SA.}\label{fig:regional_freq}
+AEMO\textquotesingle s AGC) during the power system event on the 25th of
+August, 2018]{Regional phasor measurement unit frequency data and AGC
+reference frequency data from AEMO's NSW control centre (obtained using
+NEMOSIS (\protect\hyperlink{ref-gormanNEMOSISNEMOpen2018}{Gorman et al.,
+2018})) during the power system event on the 25\textsuperscript{th} of
+August, 2018. Note that the AGC reference frequency deviates in the
+opposite direction to local frequency in QLD and
+SA.}\label{fig:regional_freq}
 }
 \end{figure}
 
@@ -7962,7 +7961,7 @@ and Sioshansi, 2018}):
 \end{itemize}
 
 \hypertarget{sec:info-conclusion}{%
-\section{Conclusion and policy implications}\label{sec:info-conclusion}}
+\section{Conclusion}\label{sec:info-conclusion}}
 
 With growing deployments of flexible yet potentially energy-constrained
 VRE and ESRs and increasingly active demand-side resources,

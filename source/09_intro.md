@@ -28,7 +28,7 @@ I focus on three aspects of this question that are encompassed by the following 
 
 2. *To better understand how balancing flexibility capabilities in scheduling timeframes are changing during energy transition, and how these changes might impact the suitability and design of more decentralised operational balancing practices.*
 
-3. *To explore how more decentralised operational balancing practices can be configured to maximise the deployability of  balancing flexibility in scheduling timeframes.*
+3. *To explore how more decentralised operational balancing practices can be configured to maximise the deployability of balancing flexibility in scheduling timeframes.*
 
 I attempt to achieve these objectives through the following three **research methods**:
 
@@ -36,7 +36,7 @@ I attempt to achieve these objectives through the following three **research met
 2. Analysis of system and market data from the Australian NEM to provide empirical evidence for techno-economic modelling assumptions and to support the discussion of policy options.
 3. Techno-economic (market) optimisation modelling. This includes the modelling of market regions of the NEM, and of market participation schedules for battery energy storage systems engaged in energy arbitrage.
 
-The links between the research question, the research objectives and the research questions are shown in [@fig:research_framework] and are discussed in greater detail in [Chapter @sec:research_framework].
+The links between the research question, the research objectives and the research methods are shown in [@fig:research_framework] and are discussed in greater detail in [Chapter @sec:research_framework].
 
 ## Contributions
 
@@ -64,7 +64,7 @@ Additional contributions related to this thesis include:
 
 This thesis consists of 7 chapters and 4 appendices.
 
-**[Chapter @sec:lit_review]** provides relevant context on power systems and power system operation, and an overview of the literature on the challenges with and the desirable outcomes of designing operational practices in electricity markets with growing penetrations of VRE.
+**[Chapter @sec:lit_review]** provides relevant context on power systems and power system operation, and an overview of the literature on the desirable outcomes of and challenges associated with designing operational practices in electricity markets with growing penetrations of VRE.
 
 **[Chapter @sec:research_framework]** outlines the motivating research question, the research objectives and research methods of this thesis in detail.
 
@@ -72,7 +72,7 @@ This thesis consists of 7 chapters and 4 appendices.
 
 **[Chapter @sec:reserves]** focuses on understanding balancing flexibility *capabilities* available in scheduling timeframes as VRE and storage become a larger part of system resource mixes. In this chapter, I first provide an overview of how balancing flexibility is enabled and procured in the NEM before describing a methodology to quantify available reserves and footroom across deployment horizons for various resource types. I then quantify the available reserves and footroom in two regions of the NEM for existing resource mixes in 2020 and potential resources mixes in 2025, with two scenarios for the latter. From the findings of this case study, I explore the role of reserve products in securing balancing flexibility. **[Appendix @sec:appendix-reserves_assumptions]** outlines the sources for key input data and assumptions, and provides further details regarding how these data were used in the analysis.
  
-**[Chapter @sec:info]** explores how future pricing information and market participant operational strategies affect the *deployability* of balancing flexibility from energy storage resources. In this chapter, I first summarise market information, participation and clearing processes in the NEM in addition to providing context on grid-scale energy storage resource deployment, operation and market participation to date. Then, in a case study of the NEM, I examine errors in the NEM's centralised price forecasts, propose a hypothesis to explain increasing divergence and the occurrence of price swings in these forecasts, and subsequently use the same centralised price forecasts to schedule a variety of battery energy storage systems for wholesale energy market arbitrage to assess the impact of imperfect foresight on arbitrage revenues. I conclude by discussing changes to market participant scheduling and market design that could maximise the balancing value of resources such as battery energy storage systems. **[Appendix @sec:appendix-milps]** presents the mixed-integer linear program formulations used in the storage modelling in [Chapter @sec:info], and **[Appendix @sec:appendix-discounting]** describes the methodology used to model a storage scheduler discounting price forecasts (one of the formulations used in the storage modelling in [Chapter @sec:info] and described in [Appendix @sec:appendix-milps]).
+**[Chapter @sec:info]** explores how future pricing information and market participant operational strategies affect the *deployability* of balancing flexibility from energy storage resources. In this chapter, I first summarise market information, participation and clearing processes in the NEM in addition to providing context on grid-scale energy storage resource deployment, operation and market participation to date. Then, in a case study of the NEM, I examine errors in the NEM's centralised price forecasts, propose a hypothesis to explain increasing divergence and the occurrence of price swings in these forecasts, and subsequently use these same forecasts to schedule a variety of battery energy storage systems for wholesale energy market arbitrage to assess the impact of imperfect foresight on arbitrage revenues. I conclude by discussing changes to market participant scheduling and market design that could maximise the balancing value of resources such as battery energy storage systems. **[Appendix @sec:appendix-milps]** presents the mixed-integer linear program formulations used in the storage modelling in [Chapter @sec:info], and **[Appendix @sec:appendix-discounting]** describes the methodology used to model a storage scheduler discounting price forecasts (one of the formulations used in the storage modelling in [Chapter @sec:info] and described in [Appendix @sec:appendix-milps]).
 
 **[Chapter @sec:conclusion]** concludes the thesis. In this chapter, I summarise the contributions of this thesis and highlight avenues for further work.
 
