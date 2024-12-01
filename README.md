@@ -4,6 +4,8 @@ This repository contains my PhD thesis.
 
 **Balance of Power: Designing operational practices for balancing electricity markets with growing penetrations of renewable energy**
 
+The thesis is available via [UNSWorks](http://hdl.handle.net/1959.4/103258) (open-access).
+
 ## Summary
 
 Massive deployments of solar and wind generation mean that power systems worldwide are beginning to experience high penetrations of variable renewable energy. Given the challenges and opportunities posed by these resources to the effective and efficient balancing of supply and demand in power systems, policy-makers are revisiting the design of power system operational practices such as grid codes, system operator processes and, in jurisdictions with wholesale competition, electricity markets. 
